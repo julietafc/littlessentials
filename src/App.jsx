@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from "react";
-import SecHeroe from "./components/SecHeroe";
-import NavBar from "./components/NavBar";
+import SecHeroe from "./components/SecHeroe/SecHeroe";
+import NavBar from "./components/NavBar/NavBar";
 import "./App.scss";
 import "./index.scss";
 
