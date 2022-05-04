@@ -1,4 +1,4 @@
-import "../SecHeroe/SecHeroe.scss";
+import "../SecHeroe/secHeroe.scss";
 export default function SecHeroe(props) {
   return (
     <section className="SecHeroe">
