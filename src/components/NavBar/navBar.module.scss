@@ -1,0 +1,21 @@
+@use "../../sass/base/" as *;
+
+.NavBar {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.h1 {
+  font-size: 5rem;
+  animation: moving 25s linear infinite;
+  color: red;
+  transform: translateX(-25%);
+}
+
+@keyframes moving {
+  to {
+    transform: translateX(120%);
+    color: aqua;
+  }
+}

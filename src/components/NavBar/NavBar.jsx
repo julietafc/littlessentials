@@ -1,8 +1,8 @@
-import "../NavBar/navBar.scss";
+import styles from "../NavBar/navBar.module.scss";
 export default function NavBar(props) {
   return (
-    <div className="NavBar">
-      <h2>:)</h2>
+    <div className={styles.NavBar}>
+      <h1 className={styles.h1}>Littlessentials</h1>
     </div>
   );
 }
