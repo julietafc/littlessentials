@@ -18,14 +18,14 @@ export default function CircularText(props) {
   }
 
   const style = {
-    transform: `rotate(${grades}deg)`,
+    transform: `translateY(20px) rotate(${grades}deg)`,
     transition: "transform .8s ease-out",
   };
 
   return (
     <section className={styles.CircularText}>
       <div className={styles.svgContainer}>
-        <svg className={styles.svg} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+        <svg className={styles.svg} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
           <g
             style={style}
             onTransitionEnd={(e) => {

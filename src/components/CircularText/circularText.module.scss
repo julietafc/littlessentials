@@ -23,14 +23,13 @@
 
 .group {
   --rotation: -45deg;
-  transform-origin: bottom center;
-  transform: rotate(var(--rotation));
-  // background-color: aqua;
+  transform-origin: 100px 100px;
+  transform: translateY(100px) rotate(var(--rotation));
   transition: transform 3s;
 }
 
 .path {
-  fill: none;
+  fill: yellow;
 }
 
 .circle {
