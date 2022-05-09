@@ -1,8 +1,11 @@
 @use "../base/colors" as *;
+@use "../base/fonts" as *;
 
 :root {
   @each $property, $value in $colorVars {
     --#{$property}: #{$value};
   }
   --margin-top: 2rem;
+  --font-body: "Manrope", sans-serif;
+  --font-headline: "Abril Fatface", cursive;
 }

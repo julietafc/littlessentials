@@ -14,7 +14,7 @@ export default function CircularText(props) {
     let x = window.pageYOffset === 0 ? 1 : window.pageYOffset;
     const height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
     let a = (x * 360) / (height - window.innerHeight);
-    grades = -180 + a / 2.5;
+    grades = -45 + a / 3;
   }
 
   const style = {
@@ -25,24 +25,25 @@ export default function CircularText(props) {
   return (
     <section className={styles.CircularText}>
       <div className={styles.svgContainer}>
-        <svg
-          className={styles.svg}
-          style={style}
-          onTransitionEnd={(e) => {
-            props.handleScroll(e, true);
-            console.log("transition end");
-          }}
-          id="Layer_1"
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 300 300"
-        >
-          <path id="myTextPath" className={styles.path} d="M250,150c0,55.23-44.77,100-100,100s-100-44.77-100-100c0-32.08,15.1-60.62,38.58-78.92,16.95-13.21,38.26-21.08,61.42-21.08,55.23,0,100,44.77,100,100Z" />
-          <text className={styles.text}>
-            <textPath xlinkHref="#myTextPath" startOffset="0" className={styles.textPath}>
-              <tspan dy="5">{props.texto}</tspan>
-            </textPath>
-          </text>
+        <svg className={styles.svg} id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100">
+          <g
+            style={style}
+            onTransitionEnd={(e) => {
+              props.handleScroll(e, true);
+              console.log("transition end");
+            }}
+            className={styles.group}
+          >
+            <path id="myTextPath" className={styles.path} d="M25,100c0-41.42,33.58-75,75-75,.07,0,.15,0,.22,0,41.32,.12,74.78,33.65,74.78,75s-33.58,75-75,75S25,141.42,25,100Z" />
+            <circle className={styles.circle} cx="100" cy="100" r="72.5" />
+
+            <text className={styles.text}>
+              <textPath xlinkHref="#myTextPath" startOffset="0" className={styles.textPath}>
+                <tspan dy="0">{props.texto}</tspan>
+              </textPath>
+            </text>
+          </g>
+          <rect className={styles.rectangle} x="0" y="80" width="200" height="20" />
         </svg>
       </div>
       <div className={styles.textContainer}>

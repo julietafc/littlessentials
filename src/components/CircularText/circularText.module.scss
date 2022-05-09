@@ -12,10 +12,18 @@
 }
 
 .svg {
-  --rotation: -180deg;
+  --rotation: 0;
   width: 50%;
   min-width: 300px;
   transform-origin: center;
+  transform: rotate(var(--rotation));
+  // background-color: aqua;
+  transition: transform 3s;
+}
+
+.group {
+  --rotation: -45deg;
+  transform-origin: bottom center;
   transform: rotate(var(--rotation));
   // background-color: aqua;
   transition: transform 3s;
@@ -25,19 +33,29 @@
   fill: none;
 }
 
+.circle {
+  fill: none;
+}
+
+.rectangle {
+  fill: yellow;
+  fill: url(#MyGradient);
+}
+
 .text {
-  margin-left: -50%;
+  transform-origin: center bottom;
+  transform: rotate(-10deg);
   fill: red;
   font-size: 1rem;
 }
 
-.textContainer {
-  position: absolute;
-  width: 100%;
-  height: 60%;
-  bottom: 0;
-  left: 0;
-  background-color: rgb(255, 228, 196);
-  box-shadow: 0 -15px 15px rgb(255, 228, 196);
-  padding: 2rem;
-}
+// .textContainer {
+//   position: absolute;
+//   width: 100%;
+//   height: 60%;
+//   bottom: 0;
+//   left: 0;
+//   background-color: rgb(255, 228, 196);
+//   box-shadow: 0 -15px 15px rgb(255, 228, 196);
+//   padding: 2rem;
+// }

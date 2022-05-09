@@ -3,6 +3,7 @@ import React from "react";
 import SecHeroe from "./components/SecHeroe/SecHeroe";
 import NavBar from "./components/NavBar/NavBar";
 import CircularText from "./components/CircularText/CircularText";
+import FaceLogo from "./components/FaceLogo/FaceLogo";
 import "./App.scss";
 import "./index.scss";
 
@@ -47,7 +48,9 @@ function App() {
       <NavBar></NavBar>
       <SecHeroe></SecHeroe>
       <SecHeroe></SecHeroe>
+      <FaceLogo></FaceLogo>
       <SecHeroe></SecHeroe>
+
       <CircularText texto="littlessentials the best box" isOnScroll={isOnScroll} setIsOnScroll={setIsOnScroll} handleScroll={handleScroll} />
       <SecHeroe></SecHeroe>
       <SecHeroe></SecHeroe>
