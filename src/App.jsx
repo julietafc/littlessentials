@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import SecHeroe from "./components/SecHeroe/SecHeroe";
+import SecInfo from "./components/SecInfo/SecInfo";
 import NavBar from "./components/NavBar/NavBar";
 import CircularText from "./components/CircularText/CircularText";
 import FaceLogo from "./components/FaceLogo/FaceLogo";
+import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
 import "./App.scss";
 import "./index.scss";
 
@@ -45,15 +47,14 @@ function App() {
 
   return (
     <div className="App">
+      <SecHeroe color="white"></SecHeroe>
       <NavBar></NavBar>
-      <SecHeroe></SecHeroe>
-      <SecHeroe></SecHeroe>
+      <SecInfo></SecInfo>
       <FaceLogo></FaceLogo>
-      <SecHeroe></SecHeroe>
-
+      <SecInfo></SecInfo>
       <CircularText texto="littlessentials the best box" isOnScroll={isOnScroll} setIsOnScroll={setIsOnScroll} handleScroll={handleScroll} />
-      <SecHeroe></SecHeroe>
-      <SecHeroe></SecHeroe>
+      <SecInfo></SecInfo>
+      <SecInfo></SecInfo>
     </div>
   );
 }

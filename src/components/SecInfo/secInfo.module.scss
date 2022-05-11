@@ -1,0 +1,11 @@
+.SecInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 90vh;
+  .h1 {
+    position: sticky;
+    top: 1rem;
+  }
+}

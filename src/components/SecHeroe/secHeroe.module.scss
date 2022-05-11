@@ -6,9 +6,32 @@
   justify-content: center;
   flex-direction: column;
   min-height: 90vh;
+  font-family: var(--font-body);
+  background-color: var(--tan);
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .h1 {
-  font-size: 12rem;
+  font-size: calc(2rem + 5vw);
   font-weight: lighter;
-  color: var(--tan);
+
+  .bold {
+    font-family: var(--font-headline);
+  }
+}
+
+.element {
+  width: calc(2rem + 5vw);
+}
+
+.h2 {
+  font-size: 2rem;
+  font-weight: lighter;
 }

@@ -14,7 +14,7 @@ export default function CircularText(props) {
     let x = window.pageYOffset === 0 ? 1 : window.pageYOffset;
     const height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
     let a = (x * 360) / (height - window.innerHeight);
-    grades = -45 + a / 3;
+    grades = -95 + a / 2;
   }
 
   const style = {
