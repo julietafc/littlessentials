@@ -1,21 +1,44 @@
 @use "../../sass/base/" as *;
 
 .NavBar {
-  position: relative;
+  position: sticky;
   width: 100%;
   overflow-x: hidden;
+  top: 0;
+  z-index: 10;
+  background-color: var(--tan);
+
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  font-family: var(--font-body);
+
+  color: white;
+  opacity: 0;
+  margin-top: -87px;
+  pointer-events: none;
+  transform-origin: top;
+  transition: opacity 0.2s ease-out;
+  &.visible {
+    opacity: 1;
+    pointer-events: all;
+  }
 }
 
-.h1 {
-  font-size: 5rem;
-  animation: moving 25s linear infinite;
-  color: red;
-  transform: translateX(-25%);
+.mainNav,
+.subNav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
-@keyframes moving {
-  to {
-    transform: translateX(120%);
-    color: aqua;
+.subNav {
+  button {
+    border: none;
+    color: white;
+    background-color: var(--tan);
+    font-weight: lighter;
+    font-size: 1.1rem;
   }
 }

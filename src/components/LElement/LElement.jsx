@@ -3,8 +3,8 @@ import styles from "../LElement/lElement.module.scss";
 export default function LElement(props) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.24 268.24" width={props.width}>
-      <g id="Layer_2" dataName="Layer 2">
-        <g id="Layer_1-2" dataName="Layer 1">
+      <g id="Layer_2" dataname="Layer 2">
+        <g id="Layer_1-2" dataname="Layer 1">
           <path
             fill={props.color}
             className={styles.path}

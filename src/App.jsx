@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import React from "react";
 import SecHeroe from "./components/SecHeroe/SecHeroe";
 import SecInfo from "./components/SecInfo/SecInfo";
@@ -12,8 +12,18 @@ import "./index.scss";
 function App() {
   const [isOnScroll, setIsOnScroll] = useState(false);
   const [x, setX] = useState(0);
+  const [offsetY, setOffsetY] = useState(0);
+  const handleEvent = () => {
+    setOffsetY(window.pageYOffset);
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleEvent);
+    return () => {
+      window.removeEventListener("scroll", handleEvent);
+    };
+  }, []);
 
-  window.addEventListener("scroll", handleScroll);
+  // window.addEventListener("scroll", handleScroll);
 
   let top = window.pageYOffset;
 
@@ -22,39 +32,41 @@ function App() {
 
   const height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
   let y;
-  console.log(top);
-  console.log(height);
+  // console.log(top);
+  // console.log(height);
 
-  function handleScroll(e, animationEnds) {
-    console.log("handleScroll");
-    window.removeEventListener("scroll", handleScroll);
-    if (animationEnds) {
-      setIsOnScroll(false);
-      window.addEventListener("scroll", handleScroll);
-    } else {
-      window.removeEventListener("scroll", handleScroll);
-      setIsOnScroll(true);
-      y = 2;
-      if (window.pageYOffset > top) {
-        setX(x + y);
-        top = window.pageYOffset;
-      } else {
-        setX(x - y);
-        top = window.pageYOffset;
-      }
-    }
-  }
+  // function handleScroll(e, animationEnds) {
+  //   // console.log("handleScroll");
+  //   window.removeEventListener("scroll", handleScroll);
+  //   if (animationEnds) {
+  //     setIsOnScroll(false);
+  //     window.addEventListener("scroll", handleScroll);
+  //   } else {
+  //     window.removeEventListener("scroll", handleScroll);
+  //     setIsOnScroll(true);
+  //     y = 2;
+  //     if (window.pageYOffset > top) {
+  //       setX(x + y);
+  //       top = window.pageYOffset;
+  //     } else {
+  //       setX(x - y);
+  //       top = window.pageYOffset;
+  //     }
+  //   }
+  // }
 
   return (
     <div className="App">
       <SecHeroe color="white"></SecHeroe>
-      <NavBar></NavBar>
-      <SecInfo></SecInfo>
-      <FaceLogo></FaceLogo>
-      <SecInfo></SecInfo>
-      <CircularText texto="littlessentials the best box" isOnScroll={isOnScroll} setIsOnScroll={setIsOnScroll} handleScroll={handleScroll} />
-      <SecInfo></SecInfo>
-      <SecInfo></SecInfo>
+      <div className="pageWrapper">
+        <NavBar></NavBar>
+        <SecInfo offsetY={offsetY}></SecInfo>
+        <FaceLogo></FaceLogo>
+        <SecInfo></SecInfo>
+        <CircularText texto="littlessentials the best box" offsetY={offsetY} />
+        <SecInfo></SecInfo>
+        <SecInfo></SecInfo>
+      </div>
     </div>
   );
 }
