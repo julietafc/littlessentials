@@ -2,11 +2,11 @@ import styles from "../SecInfo/secInfo.module.scss";
 export default function SecInfo(props) {
   const img2Style = {
     // transition: "transform .3s linear",
-    transform: `translateY(-${props.offsetY * 0.2}px)`,
+    transform: `translateY(-${200 + props.offsetY * 0.2}px)`,
   };
   const img1Style = {
     // transition: "transform .3s linear",
-    transform: `translateY(-${props.offsetY * 0.4}px)`,
+    transform: `translateY(-${props.offsetY * 0.5}px)`,
   };
 
   return (
