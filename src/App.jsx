@@ -1,9 +1,12 @@
 import { useRef, useEffect, useState } from "react";
 import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import SecHeroe from "./components/SecHeroe/SecHeroe";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
 import SecInfo from "./components/SecInfo/SecInfo";
 import NavBar from "./components/NavBar/NavBar";
-import CircularText from "./components/CircularText/CircularText";
+
 import FaceLogo from "./components/FaceLogo/FaceLogo";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
 import "./App.scss";
@@ -58,15 +61,15 @@ function App() {
   return (
     <div className="App">
       <SecHeroe color="white"></SecHeroe>
-      <div className="pageWrapper">
+      <main className="pageWrapper">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+        </Routes>
         <NavBar></NavBar>
         <SecInfo offsetY={offsetY}></SecInfo>
-        <FaceLogo></FaceLogo>
-        <SecInfo></SecInfo>
-        <CircularText texto="littlessentials the best box" offsetY={offsetY} />
-        <SecInfo></SecInfo>
-        <SecInfo></SecInfo>
-      </div>
+        {/*<FaceLogo></FaceLogo> */}
+      </main>
     </div>
   );
 }
