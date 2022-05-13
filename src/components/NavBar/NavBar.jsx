@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import styles from "../NavBar/navBar.module.scss";
 import LElement from "../LElement/LElement";
+import { Link } from "react-router-dom";
 
 export default function NavBar(props) {
   const ref = useRef();
@@ -45,6 +46,7 @@ export default function NavBar(props) {
         <li className={styles.li}>
           <a>how it works</a>
         </li>
+        <Link to="About">About</Link>
         <li className={styles.li}>
           <a>about</a>
         </li>
