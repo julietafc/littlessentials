@@ -10,6 +10,7 @@ import FaceLogo from "../components/FaceLogo/FaceLogo";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
 import SectionIntro from "../components/SectionsHome/SectionIntro";
 import SectionMission from "../components/SectionsHome/SectionMission";
+import SectionManifesto from "../components/SectionsHome/SectionManifesto";
 
 export default function Home(props) {
   const [isOnScroll, setIsOnScroll] = useState(false);
@@ -91,7 +92,7 @@ export default function Home(props) {
         <NavBar></NavBar>
         <SectionIntro offsetY={offsetY}></SectionIntro>
         <SectionMission />
-
+        <SectionManifesto />
         {/*<FaceLogo></FaceLogo> */}
       </main>
 
