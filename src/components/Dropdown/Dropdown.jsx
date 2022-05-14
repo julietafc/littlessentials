@@ -1,0 +1,28 @@
+// import { useState } from "react";
+// import { MenuItems } from "../MenuItems/MenuItems";
+// import { Link } from "react-router-dom";
+// import "./Dropdown.scss";
+
+// export default function Dropdown() {
+//   const [click, setClick] = useState(false);
+//   const handleClick = () => setClick(!click);
+//   return (
+//     <>
+//       <ul onClick={handleClick} className={click ? "dropdown-menu clicked" : "dropdown-menu"}>
+//         {MenuItems.map((item, index) => {
+//           return (
+//             <li key={index}>
+//               <Link className={item.cName} to={item.path} onClick={() => setClick(false)}>
+//                 {item.title}
+//               </Link>
+//             </li>
+//           );
+//         })}
+//       </ul>
+//       <main>
+//         <h2>Welcome to the homepage!</h2>
+//         <p>You can do this, I believe in you.</p>
+//       </main>
+//     </>
+//   );
+// }

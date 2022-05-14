@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, Router } from "react-router-dom";
 import SecHeroe from "./components/SecHeroe/SecHeroe";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
