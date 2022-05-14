@@ -1,0 +1,19 @@
+@use "../../index.scss";
+
+.button {
+  border-style: none;
+  color: #8b5028;
+  background-color: transparent;
+  font-size: 0.9rem;
+  border: 1px solid #8b5028;
+  padding: 9px 32px;
+  border-radius: 20px;
+  float: right;
+  margin-right: 1rem;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: #8b5028;
+    color: white;
+  }
+}

@@ -1,19 +1,16 @@
 @use "../../sass/base/" as *;
 .SecInfo {
-  font-family: var(--font-body);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-top: 12rem;
   min-height: 100vh;
-  gap: 2rem;
 
   p {
-    margin-top: 2rem;
+    margin: 1rem 0 2rem 0;
     max-width: 45ch;
   }
 }
 .text {
-  width: 50%;
+  margin-left: 1.5rem;
 }
 .h2 {
   top: 1rem;
@@ -29,8 +26,19 @@
   img {
     position: absolute;
     width: 50%;
+
     &:first-child {
-      width: 80%;
+      left: 5rem;
+      top: -2rem;
+    }
+    &:nth-child(2) {
+      right: 2.8rem;
+      z-index: 1;
+      width: 35%;
+    }
+    &:last-child {
+      top: 11rem;
+      left: 9rem;
     }
   }
 }
