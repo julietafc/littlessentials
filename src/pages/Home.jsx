@@ -1,16 +1,12 @@
 import { useRef, useEffect, useState } from "react";
 import React from "react";
-import { Routes, Route, Link, Router } from "react-router-dom";
 import SecHeroe from "../components/SecHeroe/SecHeroe";
-import StepByStep from "../pages/StepByStep";
-import Faq from "../pages/Faq";
+
 import SecInfo from "../components/SecInfo/SecInfo";
 import NavBar from "../components/NavBar/NavBar";
 
 import FaceLogo from "../components/FaceLogo/FaceLogo";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
-import "../App.scss";
-import "../index.scss";
 
 export default function Home() {
   const [isOnScroll, setIsOnScroll] = useState(false);
