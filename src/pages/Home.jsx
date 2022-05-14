@@ -11,6 +11,7 @@ import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveI
 import SectionIntro from "../components/SectionsHome/SectionIntro";
 import SectionMission from "../components/SectionsHome/SectionMission";
 import SectionManifesto from "../components/SectionsHome/SectionManifesto";
+import SectionWorks from "../components/SectionsHome/SectionWorks";
 
 export default function Home(props) {
   const [isOnScroll, setIsOnScroll] = useState(false);
@@ -93,6 +94,7 @@ export default function Home(props) {
         <SectionIntro offsetY={offsetY}></SectionIntro>
         <SectionMission />
         <SectionManifesto />
+        <SectionWorks />
         {/*<FaceLogo></FaceLogo> */}
       </main>
 
