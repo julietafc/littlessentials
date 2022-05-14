@@ -12,13 +12,12 @@ export default function SecHeroe(props) {
     <section className={styles.SecHeroe}>
       <div className={styles.logo} style={style}>
         <h1 className={styles.h1}>
-          <span className={styles.bold}>Littl</span>essentials
+          <span className={styles.bold}>littl</span>essentials
         </h1>
         {/* <img className={styles.element} src={props.src} alt="" /> */}
         <LElement color={style.color} width="100"></LElement>
         <h2 className={styles.h2}>simplifying parenthood in a conscious way</h2>
       </div>
-      <BtnCO2></BtnCO2>
     </section>
   );
 }

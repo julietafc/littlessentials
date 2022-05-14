@@ -1,15 +1,16 @@
 import { useRef, useEffect, useState } from "react";
 import React from "react";
 import SecHeroe from "../components/SecHeroe/SecHeroe";
-import { Launcher } from "react-chat-window";
 
 import SecInfo from "../components/SecInfo/SecInfo";
 import NavBar from "../components/NavBar/NavBar";
+import BtnCO2 from "../components/BtnCO2/BtnCO2";
+import CO2Modal from "../components/CO2Modal/CO2Modal";
 
 import FaceLogo from "../components/FaceLogo/FaceLogo";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
 
-export default function Home() {
+export default function Home(props) {
   const [isOnScroll, setIsOnScroll] = useState(false);
   const [x, setX] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
@@ -80,23 +81,21 @@ export default function Home() {
   //     }
   //   };
 
+  const [show, setShow] = useState(false);
+
   return (
-    <div className="App">
+    <div className="Home">
       <SecHeroe color="white"></SecHeroe>
       <main className="pageWrapper">
         <NavBar></NavBar>
         <SecInfo offsetY={offsetY}></SecInfo>
+
         {/*<FaceLogo></FaceLogo> */}
-        <Launcher
-          agentProfile={{
-            teamName: "react-chat-window",
-            imageUrl: "https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png",
-          }}
-          // onMessageWasSent={this._onMessageWasSent.bind(this)}
-          // messageList={this.state.messageList}
-          showEmoji
-        />
       </main>
+
+      <button onClick={() => setShow(true)}>Show modal</button>
+      <BtnCO2></BtnCO2>
+      <CO2Modal show={show} onClose={() => setShow(false)} />
     </div>
   );
 }
