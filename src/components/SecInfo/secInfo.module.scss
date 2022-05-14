@@ -4,8 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
-  background-color: rgb(240, 35, 35);
+  min-height: 100vh;
   gap: 2rem;
 
   p {
@@ -14,7 +13,6 @@
   }
 }
 .text {
-  background-color: cadetblue;
   width: 50%;
 }
 .h2 {

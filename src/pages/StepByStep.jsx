@@ -1,3 +1,4 @@
+import "./StepByStep.scss";
 export default function StepByStep() {
   return (
     <>

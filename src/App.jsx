@@ -14,28 +14,28 @@ import "./App.scss";
 import "./index.scss";
 
 function App() {
-  const [isOnScroll, setIsOnScroll] = useState(false);
-  const [x, setX] = useState(0);
-  const [offsetY, setOffsetY] = useState(0);
-  const handleEvent = () => {
-    setOffsetY(window.pageYOffset);
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleEvent);
-    return () => {
-      window.removeEventListener("scroll", handleEvent);
-    };
-  }, []);
+  // const [isOnScroll, setIsOnScroll] = useState(false);
+  // const [x, setX] = useState(0);
+  // const [offsetY, setOffsetY] = useState(0);
+  // const handleEvent = () => {
+  //   setOffsetY(window.pageYOffset);
+  // };
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleEvent);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleEvent);
+  //   };
+  // }, []);
 
   // window.addEventListener("scroll", handleScroll);
 
-  let top = window.pageYOffset;
+  // let top = window.pageYOffset;
 
-  const body = document.body,
-    html = document.documentElement;
+  // const body = document.body,
+  //   html = document.documentElement;
 
-  const height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-  let y;
+  // const height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+  // let y;
   // console.log(top);
   // console.log(height);
 
@@ -61,15 +61,12 @@ function App() {
 
   return (
     <div className="App">
-      <SecHeroe color="white"></SecHeroe>
       <main className="pageWrapper">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="step-by-step" element={<StepByStep />} />
           <Route path="faw" element={<Faq />} />
         </Routes>
-        <NavBar></NavBar>
-        <SecInfo offsetY={offsetY}></SecInfo>
         {/*<FaceLogo></FaceLogo> */}
       </main>
     </div>

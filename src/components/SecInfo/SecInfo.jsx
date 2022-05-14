@@ -12,8 +12,8 @@ export default function SecInfo(props) {
   return (
     <section className={styles.SecInfo}>
       <div className={styles.images}>
-        <img src="../assets/pic02.webp" alt="" style={img2Style} />
-        <img src="../assets/pic01.webp" alt="" style={img1Style} />
+        <img src="../assets/pic02.webp" alt="" />
+        <img src="../assets/pic01.webp" alt="" />
       </div>
       <div className={styles.text}>
         <h2 className={styles.h2}>Inspiring a conscious lifestyle for parents so you can focus on what matters most - your family.</h2>
