@@ -3,7 +3,8 @@ import styles from "../NavBar/navBar.module.scss";
 import LElement from "../LElement/LElement";
 import { Link } from "react-router-dom";
 
-// import { Dropdown } from "../Dropdown/Dropdown";
+import "./NavBar.scss";
+import Dropdown from "../Dropdown/Dropdown";
 
 export default function NavBar(props) {
   const ref = useRef();
@@ -67,7 +68,6 @@ export default function NavBar(props) {
       <div className="menu-icon" onClick={handleClick}>
         <i className={click ? "fas fa-times" : "fas fa-bars"} />
       </div>
-
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li className="nav-item">
           <Link to="/" className="nav-links" onClick={closeMobileMenu}>
@@ -75,16 +75,25 @@ export default function NavBar(props) {
           </Link>
         </li>
         <li className="nav-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-          <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
-            How it works <i className="fas fa-caret-down" />
+          <Link to="/services" className="nav-links" onClick={closeMobileMenu}>
+            Services <i className="fas fa-caret-down" />
           </Link>
-
           {dropdown && <Dropdown />}
         </li>
-
+        <li className="nav-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+          <Link to="/hola" className="nav-links" onClick={closeMobileMenu}>
+            Hola <i className="fas fa-caret-down" />
+          </Link>
+          {dropdown && <Dropdown />}
+        </li>
         <li className="nav-item">
-          <Link to="/sign-up" className="nav-links-mobile" onClick={closeMobileMenu}>
-            Sign up
+          <Link to="/products" className="nav-links" onClick={closeMobileMenu}>
+            Products
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/contact-us" className="nav-links" onClick={closeMobileMenu}>
+            Contact Us
           </Link>
         </li>
       </ul>
@@ -132,29 +141,5 @@ export default function NavBar(props) {
         </li>
       </ul> */}
     </nav>
-  );
-}
-
-function Dropdown() {
-  const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
-  return (
-    <>
-      <ul onClick={handleClick} className={click ? "dropdown-menu clicked" : "dropdown-menu"}>
-        {MenuItems.map((item, index) => {
-          return (
-            <li key={index}>
-              <Link className={item.cName} to={item.path} onClick={() => setClick(false)}>
-                {item.title}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-      <main>
-        <h2>Welcome to the homepage!</h2>
-        <p>You can do this, I believe in you.</p>
-      </main>
-    </>
   );
 }

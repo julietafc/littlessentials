@@ -11,9 +11,6 @@ export default function Home() {
         <CircularText texto="littlessentials the best box" offsetY={offsetY} />
         <SecInfo></SecInfo>
         <SecInfo></SecInfo> */}
-        <nav>
-          <Link to="About">Home</Link>
-        </nav>
       </main>
     </>
   );

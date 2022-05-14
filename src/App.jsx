@@ -2,8 +2,9 @@ import { useRef, useEffect, useState } from "react";
 import React from "react";
 import { Routes, Route, Link, Router } from "react-router-dom";
 import SecHeroe from "./components/SecHeroe/SecHeroe";
-import Home from "./pages/Home/Home";
-import About from "./pages/About/About";
+import Home from "./pages/Home";
+import StepByStep from "./pages/StepByStep";
+import Faq from "./pages/Faq";
 import SecInfo from "./components/SecInfo/SecInfo";
 import NavBar from "./components/NavBar/NavBar";
 
@@ -64,7 +65,8 @@ function App() {
       <main className="pageWrapper">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route path="step-by-step" element={<StepByStep />} />
+          <Route path="faw" element={<Faq />} />
         </Routes>
         <NavBar></NavBar>
         <SecInfo offsetY={offsetY}></SecInfo>
