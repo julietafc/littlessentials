@@ -16,7 +16,7 @@ export const MenuItem2 = [
   },
   {
     title: "Low Carbon",
-    path: "/low",
+    path: "/lowcarbon",
     cName: "dropdown-link",
   },
 ];

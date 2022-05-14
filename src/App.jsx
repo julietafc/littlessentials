@@ -5,10 +5,13 @@ import SecHeroe from "./components/SecHeroe/SecHeroe";
 import Home from "./pages/Home";
 import StepByStep from "./pages/StepByStep";
 import Faq from "./pages/Faq";
-import SecInfo from "./components/SecInfo/SecInfo";
-import NavBar from "./components/NavBar/NavBar";
 
 import Story from "./pages/Story";
+import Guide from "./pages/Guide";
+import Manifesto from "./pages/Manifesto";
+import Carbon from "./pages/Carbon";
+import Partners from "./pages/Partners";
+import Contact from "./pages/Contact";
 
 import FaceLogo from "./components/FaceLogo/FaceLogo";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
@@ -67,6 +70,11 @@ function App() {
           <Route path="step-by-step" element={<StepByStep />} />
           <Route path="faq" element={<Faq />} />
           <Route path="story" element={<Story />} />
+          <Route path="guide" element={<Guide />} />
+          <Route path="manifesto" element={<Manifesto />} />
+          <Route path="lowcarbon" element={<Carbon />} />
+          <Route path="partners" element={<Partners />} />
+          <Route path="contact" element={<Contact />} />
         </Routes>
         {/*<FaceLogo></FaceLogo> */}
       </main>
