@@ -11,6 +11,7 @@
     "react": "^18.0.0",
     "react-chat-window": "^1.2.1",
     "react-dom": "^18.0.0",
+    "react-icons": "^4.3.1",
     "react-router-dom": "^6.3.0",
     "react-scroll-motion": "^0.2.6",
     "sass": "^1.51.0"

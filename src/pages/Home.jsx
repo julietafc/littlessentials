@@ -12,6 +12,8 @@ import SectionIntro from "../components/SectionsHome/SectionIntro";
 import SectionMission from "../components/SectionsHome/SectionMission";
 import SectionManifesto from "../components/SectionsHome/SectionManifesto";
 import SectionWorks from "../components/SectionsHome/SectionWorks";
+import Slider from "../components/Slider/Slider";
+import { SliderData } from "../components/Slider/SliderData";
 
 export default function Home(props) {
   const [isOnScroll, setIsOnScroll] = useState(false);
@@ -95,6 +97,7 @@ export default function Home(props) {
         <SectionMission />
         <SectionManifesto />
         <SectionWorks />
+        <Slider slides={SliderData} />
         {/*<FaceLogo></FaceLogo> */}
       </main>
 
