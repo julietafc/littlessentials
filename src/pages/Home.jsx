@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import React from "react";
 import SecHeroe from "../components/SecHeroe/SecHeroe";
+import { Launcher } from "react-chat-window";
 
 import SecInfo from "../components/SecInfo/SecInfo";
 import NavBar from "../components/NavBar/NavBar";
@@ -53,6 +54,31 @@ export default function Home() {
   //     }
   //   }
   // }
+  // ;
+  //   constructor() {
+  //     super();
+  //     this.state = {
+  //       messageList: []
+  //     };
+  //   };
+
+  //   _onMessageWasSent(message) {
+  //     this.setState({
+  //       messageList: [...this.state.messageList, message]
+  //     })
+  //   };
+
+  //   _sendMessage(text) {
+  //     if (text.length > 0) {
+  //       this.setState({
+  //         messageList: [...this.state.messageList, {
+  //           author: 'them',
+  //           type: 'text',
+  //           data: { text }
+  //         }]
+  //       })
+  //     }
+  //   };
 
   return (
     <div className="App">
@@ -61,6 +87,15 @@ export default function Home() {
         <NavBar></NavBar>
         <SecInfo offsetY={offsetY}></SecInfo>
         {/*<FaceLogo></FaceLogo> */}
+        <Launcher
+          agentProfile={{
+            teamName: "react-chat-window",
+            imageUrl: "https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png",
+          }}
+          // onMessageWasSent={this._onMessageWasSent.bind(this)}
+          // messageList={this.state.messageList}
+          showEmoji
+        />
       </main>
     </div>
   );
