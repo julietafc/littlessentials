@@ -91,13 +91,13 @@ export default function NavBar(props) {
           </Link>
         </li> */}
         <li className="nav-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-          <Link to="/services" className="nav-links" onClick={closeMobileMenu}>
+          <Link to="/" className="nav-links nopointer" onClick={closeMobileMenu}>
             how it works
           </Link>
           {dropdown && <Dropdown />}
         </li>
         <li className="nav-item" onMouseEnter={onMouseEnter2} onMouseLeave={onMouseLeave2}>
-          <Link to="/hola" className="nav-links" onClick={closeMobileMenu}>
+          <Link to="/" className="nav-links nopointer" onClick={closeMobileMenu}>
             about
           </Link>
           {dropdown2 && <Dropdown2 />}
