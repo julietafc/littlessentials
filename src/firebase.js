@@ -3,7 +3,7 @@
 // import firebase from "firebase/app";
 // import "dotenv/config";
 import { initializeApp } from "firebase/app";
-import "firebase/auth";
+import { getAuth } from "firebase/auth";
 
 const app = initializeApp({
   // apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -25,3 +25,4 @@ const app = initializeApp({
 
 // export const auth = app.auth();
 export default app;
+export const auth = getAuth(app);
