@@ -1,0 +1,14 @@
+section {
+  min-height: 100vh;
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  .card {
+    width: 10px;
+  }
+
+  div {
+    padding: 2rem;
+    width: 45%;
+  }
+}

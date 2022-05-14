@@ -2,13 +2,14 @@ import { useRef, useEffect, useState } from "react";
 import React from "react";
 import SecHeroe from "../components/SecHeroe/SecHeroe";
 
-import SecInfo from "../components/SecInfo/SecInfo";
 import NavBar from "../components/NavBar/NavBar";
 import BtnCO2 from "../components/BtnCO2/BtnCO2";
 import CO2Modal from "../components/CO2Modal/CO2Modal";
 
 import FaceLogo from "../components/FaceLogo/FaceLogo";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
+import SectionIntro from "../components/SectionsHome/SectionIntro";
+import SectionMission from "../components/SectionsHome/SectionMission";
 
 export default function Home(props) {
   const [isOnScroll, setIsOnScroll] = useState(false);
@@ -88,7 +89,8 @@ export default function Home(props) {
       <SecHeroe color="white"></SecHeroe>
       <main className="pageWrapper">
         <NavBar></NavBar>
-        <SecInfo offsetY={offsetY}></SecInfo>
+        <SectionIntro offsetY={offsetY}></SectionIntro>
+        <SectionMission />
 
         {/*<FaceLogo></FaceLogo> */}
       </main>

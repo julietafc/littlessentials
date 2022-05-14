@@ -1,6 +1,6 @@
 import Button from "../Button/Button";
-import styles from "../SecInfo/secInfo.module.scss";
-export default function SecInfo(props) {
+import styles from "./SectionIntro.module.scss";
+export default function SectionIntro(props) {
   const img2Style = {
     // transition: "transform .3s linear",
     transform: `translateY(-${200 + props.offsetY * 0.2}px)`,
