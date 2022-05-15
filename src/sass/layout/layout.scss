@@ -6,3 +6,32 @@ body {
   padding-top: 8em;
   min-height: 100vh;
 }
+
+.layout_innerpages {
+  padding: 8rem 5rem;
+  min-height: 100vh;
+
+  section {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    width: 50%;
+    border-radius: 10px;
+    margin-right: 3rem;
+  }
+
+  .articles_wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    article {
+      width: 40%;
+      margin: 2rem 1rem;
+    }
+  }
+}
