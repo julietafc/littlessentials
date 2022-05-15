@@ -14,6 +14,7 @@ import SectionManifesto from "../components/SectionsHome/SectionManifesto";
 import SectionWorks from "../components/SectionsHome/SectionWorks";
 import Slider from "../components/Slider/Slider";
 import { SliderData } from "../components/Slider/SliderData";
+import Footer from "../components/Footer/Footer";
 
 export default function Home(props) {
   const [isOnScroll, setIsOnScroll] = useState(false);
@@ -104,6 +105,7 @@ export default function Home(props) {
       <button onClick={() => setShow(true)}>Show modal</button>
       <BtnCO2></BtnCO2>
       <CO2Modal show={show} onClose={() => setShow(false)} />
+      <Footer />
     </div>
   );
 }
