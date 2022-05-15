@@ -25,13 +25,13 @@ export default function NavBar(props) {
         setIsNavVisible(false);
       }
 
-      console.log("entry", entry);
+      // console.log("entry", entry);
     }, appearOptions);
     observer.observe(ref.current);
   }, []);
 
   useEffect(() => {
-    console.log(isNavVisible);
+    // console.log(isNavVisible);
   }, [isNavVisible]);
 
   return (

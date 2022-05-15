@@ -26,8 +26,6 @@ function App() {
     };
   }, []);
 
-  // window.addEventListener("scroll", handleScroll);
-
   let top = window.pageYOffset;
 
   const body = document.body,
@@ -35,28 +33,6 @@ function App() {
 
   const height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
   let y;
-  // console.log(top);
-  // console.log(height);
-
-  // function handleScroll(e, animationEnds) {
-  //   // console.log("handleScroll");
-  //   window.removeEventListener("scroll", handleScroll);
-  //   if (animationEnds) {
-  //     setIsOnScroll(false);
-  //     window.addEventListener("scroll", handleScroll);
-  //   } else {
-  //     window.removeEventListener("scroll", handleScroll);
-  //     setIsOnScroll(true);
-  //     y = 2;
-  //     if (window.pageYOffset > top) {
-  //       setX(x + y);
-  //       top = window.pageYOffset;
-  //     } else {
-  //       setX(x - y);
-  //       top = window.pageYOffset;
-  //     }
-  //   }
-  // }
 
   return (
     <AuthProvider>
@@ -69,6 +45,7 @@ function App() {
           <SecInfo></SecInfo>
           <CircularText texto="littlessentials the best box" offsetY={offsetY} />
           <SecInfo></SecInfo>
+
           <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
             <div className="w-100" style={{ maxWidth: "400px" }}>
               <SignUp></SignUp>
