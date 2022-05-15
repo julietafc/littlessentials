@@ -17,6 +17,14 @@
   max-width: 25ch;
 }
 
+.element {
+  width: 20%;
+  position: absolute;
+  right: 3rem;
+  z-index: -99;
+  opacity: 50%;
+}
+
 .images {
   position: relative;
   width: 50%;

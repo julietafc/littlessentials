@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import React from "react";
 import { Routes, Route, Link, Router } from "react-router-dom";
 import SecHeroe from "./components/SecHeroe/SecHeroe";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 // import { Launcher } from "react-chat-window";
 import Home from "./pages/Home";
@@ -64,22 +65,23 @@ function App() {
   // }
 
   return (
-    <div className="App">
-      <main className="pageWrapper">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="step-by-step" element={<StepByStep />} />
-          <Route path="faq" element={<Faq />} />
-          <Route path="story" element={<Story />} />
-          <Route path="guide" element={<Guide />} />
-          <Route path="manifesto" element={<Manifesto />} />
-          <Route path="lowcarbon" element={<Carbon />} />
-          <Route path="partners" element={<Partners />} />
-          <Route path="contact" element={<Contact />} />
-        </Routes>
-        {/*<FaceLogo></FaceLogo> */}
+    <ParallaxProvider>
+      <div className="App">
+        <main className="pageWrapper">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="step-by-step" element={<StepByStep />} />
+            <Route path="faq" element={<Faq />} />
+            <Route path="story" element={<Story />} />
+            <Route path="guide" element={<Guide />} />
+            <Route path="manifesto" element={<Manifesto />} />
+            <Route path="lowcarbon" element={<Carbon />} />
+            <Route path="partners" element={<Partners />} />
+            <Route path="contact" element={<Contact />} />
+          </Routes>
+          {/*<FaceLogo></FaceLogo> */}
 
-        {/* <Launcher
+          {/* <Launcher
           agentProfile={{
             teamName: "react-chat-window",
             imageUrl: "https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png",
@@ -88,8 +90,9 @@ function App() {
           // messageList={this.state.messageList}
           showEmoji
         /> */}
-      </main>
-    </div>
+        </main>
+      </div>
+    </ParallaxProvider>
   );
 }
 
