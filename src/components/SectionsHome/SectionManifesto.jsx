@@ -2,12 +2,16 @@ import CardsManifesto from "../Cards/CardsManifesto";
 import Cards from "../Cards/CardsMission";
 import Button from "../Button/Button";
 import "./SectionManifesto.scss";
+import { Link } from "react-router-dom";
 export default function SectionValues(props) {
   return (
     <section className="manifesto">
       <div className="header">
         <h3>OUR MANIFESTO</h3>
-        <Button className="button" label="our values" />
+
+        <Link to="/values">
+          <Button className="button" label="our values" />
+        </Link>
       </div>
       <div className="cards_container">
         <CardsManifesto className="card" heading="Curation" text="Curating essential items so we have what we need, and we use what we have." />
