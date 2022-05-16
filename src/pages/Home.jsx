@@ -5,6 +5,7 @@ import SecHeroe from "../components/SecHeroe/SecHeroe";
 import NavBar from "../components/NavBar/NavBar";
 import BtnCO2 from "../components/BtnCO2/BtnCO2";
 import CO2Modal from "../components/CO2Modal/CO2Modal";
+import Chat from "../components/Chat";
 
 import FaceLogo from "../components/FaceLogo/FaceLogo";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
@@ -62,30 +63,6 @@ export default function Home(props) {
   //   }
   // }
   // ;
-  //   constructor() {
-  //     super();
-  //     this.state = {
-  //       messageList: []
-  //     };
-  //   };
-
-  //   _onMessageWasSent(message) {
-  //     this.setState({
-  //       messageList: [...this.state.messageList, message]
-  //     })
-  //   };
-
-  //   _sendMessage(text) {
-  //     if (text.length > 0) {
-  //       this.setState({
-  //         messageList: [...this.state.messageList, {
-  //           author: 'them',
-  //           type: 'text',
-  //           data: { text }
-  //         }]
-  //       })
-  //     }
-  //   };
 
   const [show, setShow] = useState(false);
 
@@ -104,6 +81,7 @@ export default function Home(props) {
 
       <button onClick={() => setShow(true)}>Show modal</button>
       <BtnCO2></BtnCO2>
+      <Chat />
       <CO2Modal show={show} onClose={() => setShow(false)} />
       <Footer />
     </div>

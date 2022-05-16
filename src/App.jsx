@@ -4,7 +4,7 @@ import { Routes, Route, Link, Router } from "react-router-dom";
 import SecHeroe from "./components/SecHeroe/SecHeroe";
 import { ParallaxProvider } from "react-scroll-parallax";
 
-// import { Launcher } from "react-chat-window";
+import { Launcher } from "react-chat-window";
 import Home from "./pages/Home";
 import StepByStep from "./pages/StepByStep";
 import Faq from "./pages/Faq";
@@ -80,16 +80,6 @@ function App() {
             <Route path="contact" element={<Contact />} />
           </Routes>
           {/*<FaceLogo></FaceLogo> */}
-
-          {/* <Launcher
-          agentProfile={{
-            teamName: "react-chat-window",
-            imageUrl: "https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png",
-          }}
-          // onMessageWasSent={this._onMessageWasSent.bind(this)}
-          // messageList={this.state.messageList}
-          showEmoji
-        /> */}
         </main>
       </div>
     </ParallaxProvider>

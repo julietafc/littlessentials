@@ -12,7 +12,7 @@ export const SliderData = [
     id: "slide2",
     imagePath: "/assets/img05.png",
     imageAlt: "Slide 2 Image",
-    title: "Konges Sløjd:",
+    title: "Konges Sløjd",
     text: "Konges Sløjd is a creative brand that salutes the wild, varied and perfectly imperfect life with children. The brand aims to blaze a trail for garments, toys and interiors produced in a way that is kinder to the environment and made to last. Everything is crafted to survive snuggly newborns, adventurous toddlers or curious children and still be passed on. They embrace the ups and downs of parenthood and hope to bring a little bit of simplicity into your lives through their comfy, technical and versatile collections.",
     action: "Slide 2 Image Action",
     actionHref: "href",
