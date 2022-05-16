@@ -10,7 +10,7 @@ import StepByStep from "./pages/StepByStep";
 import Faq from "./pages/Faq";
 import Story from "./pages/Story";
 import Guide from "./pages/Guide";
-import Manifesto from "./pages/Manifesto";
+import Values from "./pages/Values";
 import Carbon from "./pages/Carbon";
 import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
@@ -74,7 +74,7 @@ function App() {
             <Route path="faq" element={<Faq />} />
             <Route path="story" element={<Story />} />
             <Route path="guide" element={<Guide />} />
-            <Route path="manifesto" element={<Manifesto />} />
+            <Route path="values" element={<Values />} />
             <Route path="lowcarbon" element={<Carbon />} />
             <Route path="partners" element={<Partners />} />
             <Route path="contact" element={<Contact />} />

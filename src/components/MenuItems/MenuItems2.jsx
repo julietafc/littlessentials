@@ -10,8 +10,8 @@ export const MenuItem2 = [
     cName: "dropdown-link",
   },
   {
-    title: "Manifesto",
-    path: "/manifesto",
+    title: "Core Values",
+    path: "/values",
     cName: "dropdown-link",
   },
   {
