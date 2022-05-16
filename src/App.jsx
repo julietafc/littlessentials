@@ -16,6 +16,8 @@ import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
 
 import FaceLogo from "./components/FaceLogo/FaceLogo";
+import SignUp from "./components/SignUp/SignUp";
+import { Container } from "react-bootstrap";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
 
 function App() {
@@ -78,6 +80,12 @@ function App() {
             <Route path="lowcarbon" element={<Carbon />} />
             <Route path="partners" element={<Partners />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="signup" element={
+            <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
+          <div className="w-100" style={{ maxWidth: "400px" }}>
+            <SignUp></SignUp>
+          </div>
+        </Container>}/>
           </Routes>
           {/*<FaceLogo></FaceLogo> */}
         </main>
