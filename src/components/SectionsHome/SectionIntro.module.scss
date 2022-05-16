@@ -5,7 +5,6 @@
   min-height: 90vh;
 
   p {
-    margin: 1rem 0 2rem 0;
     max-width: 45ch;
   }
 }
@@ -14,12 +13,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
-.h1 {
-  top: 1rem;
-  font-family: var(--font-heading);
-  font-weight: 100;
-  font-size: 3rem;
 }
 
 .element {

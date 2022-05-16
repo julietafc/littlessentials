@@ -70,7 +70,7 @@ export default function Home(props) {
   return (
     <div className="Home">
       <SecHeroe color="white"></SecHeroe>
-      <main className="pageWrapper layout">
+      <main className="layout">
         <NavBar className="navbar"></NavBar>
         <SectionIntro offsetY={offsetY}></SectionIntro>
         <SectionMission />
@@ -79,10 +79,11 @@ export default function Home(props) {
         <Slider slides={SliderData} />
         {/*<FaceLogo></FaceLogo> */}
       </main>
-
-      <BtnCO2 setShow={setShow}></BtnCO2>
-      <Chat />
-      <CO2Modal show={show} onClose={() => setShow(false)} />
+      <div className="floating_actions">
+        <BtnCO2 setShow={setShow}></BtnCO2>
+        <Chat />
+        <CO2Modal show={show} onClose={() => setShow(false)} />
+      </div>
       <Footer />
     </div>
   );

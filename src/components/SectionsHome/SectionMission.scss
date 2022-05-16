@@ -1,15 +1,12 @@
 section.mission {
   min-height: 100vh;
-  padding: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  .card {
-    width: 10px;
-  }
+  margin-top: 1rem;
 
   div {
-    padding: 2rem;
-    width: 45%;
+    padding: 6rem;
+    min-height: 26rem;
   }
 }

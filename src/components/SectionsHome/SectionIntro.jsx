@@ -2,6 +2,7 @@ import Button from "../Button/Button";
 import styles from "./SectionIntro.module.scss";
 import pebble from "/assets/lake-pebble.svg";
 import { Parallax } from "react-scroll-parallax";
+import "../../App.scss";
 export default function SectionIntro(props) {
   const img2Style = {
     // transition: "transform .3s linear",

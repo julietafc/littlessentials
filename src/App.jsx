@@ -4,7 +4,6 @@ import { Routes, Route, Link, Router } from "react-router-dom";
 import SecHeroe from "./components/SecHeroe/SecHeroe";
 import { ParallaxProvider } from "react-scroll-parallax";
 
-import { Launcher } from "react-chat-window";
 import Home from "./pages/Home";
 import StepByStep from "./pages/StepByStep";
 import Faq from "./pages/Faq";
