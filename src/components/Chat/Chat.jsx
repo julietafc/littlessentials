@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Launcher } from "react-chat-window";
 
+import "./Chat.scss";
+
 export default class Chat extends Component {
   constructor() {
     super();

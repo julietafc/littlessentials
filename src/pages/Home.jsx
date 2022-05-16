@@ -5,7 +5,7 @@ import SecHeroe from "../components/SecHeroe/SecHeroe";
 import NavBar from "../components/NavBar/NavBar";
 import BtnCO2 from "../components/BtnCO2/BtnCO2";
 import CO2Modal from "../components/CO2Modal/CO2Modal";
-import Chat from "../components/Chat";
+import Chat from "../components/Chat/Chat";
 
 import FaceLogo from "../components/FaceLogo/FaceLogo";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
@@ -79,8 +79,7 @@ export default function Home(props) {
         {/*<FaceLogo></FaceLogo> */}
       </main>
 
-      <button onClick={() => setShow(true)}>Show modal</button>
-      <BtnCO2></BtnCO2>
+      <BtnCO2 setShow={setShow}></BtnCO2>
       <Chat />
       <CO2Modal show={show} onClose={() => setShow(false)} />
       <Footer />
