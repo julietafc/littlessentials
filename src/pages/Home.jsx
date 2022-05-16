@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar/NavBar";
 import BtnCO2 from "../components/BtnCO2/BtnCO2";
 import CO2Modal from "../components/CO2Modal/CO2Modal";
 import Chat from "../components/Chat/Chat";
+import "../sass/layout/layout.scss";
 
 import FaceLogo from "../components/FaceLogo/FaceLogo";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
@@ -69,8 +70,8 @@ export default function Home(props) {
   return (
     <div className="Home">
       <SecHeroe color="white"></SecHeroe>
-      <main className="pageWrapper">
-        <NavBar></NavBar>
+      <main className="pageWrapper layout">
+        <NavBar className="navbar"></NavBar>
         <SectionIntro offsetY={offsetY}></SectionIntro>
         <SectionMission />
         <SectionManifesto />
