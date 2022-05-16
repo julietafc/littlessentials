@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { SliderData } from "./SliderData";
 import Button from "../Button/Button";
 
-import "./Slider.scss";
+import "./SectionSlider.scss";
 
 // import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons-fa";
 
-const Slider = ({ slides }) => {
+const SectionSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
 
@@ -34,7 +34,7 @@ const Slider = ({ slides }) => {
                 <div className="slide_text">
                   <img className="slide_img" src={slide.imagePath} />
                   <div className="text">
-                    <h4>PARTNERS</h4>
+                    <h5>PARTNERS</h5>
                     <h1>{slide.title}</h1>
                     <p>{slide.text}</p>
                     <Button />
@@ -59,4 +59,4 @@ const Slider = ({ slides }) => {
   );
 };
 
-export default Slider;
+export default SectionSlider;

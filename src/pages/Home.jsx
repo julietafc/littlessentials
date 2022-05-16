@@ -14,8 +14,8 @@ import SectionIntro from "../components/SectionsHome/SectionIntro";
 import SectionMission from "../components/SectionsHome/SectionMission";
 import SectionManifesto from "../components/SectionsHome/SectionManifesto";
 import SectionWorks from "../components/SectionsHome/SectionWorks";
-import Slider from "../components/Slider/Slider";
-import { SliderData } from "../components/Slider/SliderData";
+import SectionSlider from "../components/SectionsHome/SectionSlider";
+import { SliderData } from "../components/SectionsHome/SliderData";
 import Footer from "../components/Footer/Footer";
 
 export default function Home(props) {
@@ -76,7 +76,7 @@ export default function Home(props) {
         <SectionMission />
         <SectionManifesto />
         <SectionWorks />
-        <Slider slides={SliderData} />
+        <SectionSlider slides={SliderData} />
         {/*<FaceLogo></FaceLogo> */}
       </main>
       <div className="floating_actions">
