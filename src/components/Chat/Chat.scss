@@ -1,3 +1,17 @@
 .sc-launcher {
-  background-color: #8b5028;
+  background-color: var(--tan);
+}
+
+.sc-chat-window.opened {
+  z-index: 99;
+  height: 65%;
+  width: 30%;
+
+  .sc-header {
+    background-color: var(--desert);
+  }
+
+  .sc-header--img {
+    width: 15%;
+  }
 }
