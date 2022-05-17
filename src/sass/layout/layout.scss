@@ -8,12 +8,18 @@ body {
 }
 
 .layout_innerpages {
-  padding: 8rem 5rem;
+  padding: 5rem;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   section {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    margin: 4rem;
   }
 
   img {
@@ -33,6 +39,9 @@ body {
       width: 40%;
       margin: 2rem 1rem;
     }
+  }
+  .accordion .accordion-flush .accordion-item {
+    width: 70%;
   }
 }
 

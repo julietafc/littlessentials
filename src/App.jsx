@@ -73,7 +73,7 @@ function App() {
             <Route path="faq" element={<Faq />} />
             <Route path="story" element={<Story />} />
             <Route path="guide" element={<Guide />} />
-            <Route path="manifesto" element={<Manifesto />} />
+            <Route path="values" element={<Values />} />
             <Route path="lowcarbon" element={<Carbon />} />
             <Route path="partners" element={<Partners />} />
             <Route path="contact" element={<Contact />} />
