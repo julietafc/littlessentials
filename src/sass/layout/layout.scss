@@ -69,8 +69,19 @@ body {
     }
 
     section {
+      width: 45%;
       align-items: baseline;
       margin-left: 5rem;
+    }
+
+    &.guide {
+      section {
+        width: 45%;
+      }
+      h3 {
+        font-family: var(--font-body);
+        margin-top: 2rem;
+      }
     }
   }
 
@@ -99,4 +110,14 @@ body {
 .floating_actions {
   display: flex;
   align-items: center;
+}
+
+.guide_wrapper .banner section {
+  display: flex;
+  align-items: center;
+
+  p,
+  h1 {
+    width: 55%;
+  }
 }
