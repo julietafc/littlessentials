@@ -10,10 +10,14 @@ export default function PartnerWithUs() {
     <>
       <NavBar />
       <Chat />
-      <Banner heading="Get in touch" text="Don't hesitate to reach out! We'd love to hear from you" />
+      <Banner heading="Partner With Us" text="We can help your business by connecting you conscious costumers" />
       <main className="layout_innerpages getintouch">
         <aside>
           <h6>Follow & Connect with us and our community</h6>
+          <div className="social">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+          </div>
         </aside>
         <section>
           <p>

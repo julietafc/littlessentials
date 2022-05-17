@@ -14,6 +14,10 @@ export default function GetInTouch() {
       <main className="layout_innerpages getintouch">
         <aside>
           <h6>Follow & Connect with us and our community</h6>
+          <div className="social">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+          </div>
         </aside>
         <section>
           <p>
