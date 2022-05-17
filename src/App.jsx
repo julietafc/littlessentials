@@ -11,8 +11,9 @@ import Story from "./pages/Story";
 import Guide from "./pages/Guide";
 import Values from "./pages/Values";
 import Carbon from "./pages/Carbon";
-import Partners from "./pages/Partners";
-import Contact from "./pages/Contact";
+import Brands from "./pages/Brands";
+import GetInTouch from "./pages/GetInTouch";
+import PartnerWithUs from "./pages/PartnerWithUs";
 
 import FaceLogo from "./components/FaceLogo/FaceLogo";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
@@ -75,8 +76,9 @@ function App() {
             <Route path="guide" element={<Guide />} />
             <Route path="values" element={<Values />} />
             <Route path="lowcarbon" element={<Carbon />} />
-            <Route path="partners" element={<Partners />} />
-            <Route path="contact" element={<Contact />} />
+            <Route path="brands" element={<Brands />} />
+            <Route path="get-in-touch" element={<GetInTouch />} />
+            <Route path="partner-with-us" element={<PartnerWithUs />} />
           </Routes>
           {/*<FaceLogo></FaceLogo> */}
         </main>
