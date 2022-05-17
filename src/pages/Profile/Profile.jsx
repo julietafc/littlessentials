@@ -27,8 +27,8 @@ export default function Profile(props) {
             {/* {currentUser.email} */}
             {error && <Alert variant="danger">{error}</Alert>}
             <strong>Name: </strong>
-            {currentUser.displayName}
-            <Link to="update-profile" className="btn btn-primary w-100 mt-3">
+            {currentUser && currentUser.displayName}
+            <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
               Update Profile
             </Link>
           </Card.Body>

@@ -22,6 +22,7 @@ import Profile from "./pages/Profile/Profile";
 import { Container } from "react-bootstrap";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
+import UpdateProfile from "./pages/UpdateProfile/UpdateProfile";
 
 function App() {
   // const [isOnScroll, setIsOnScroll] = useState(false);
@@ -87,6 +88,7 @@ function App() {
             <Route path="login" element={<LogIn />} />
             <Route path="profile" element={<Profile />} />
             <Route path="forgot-password" element={<ForgotPassword />} />
+            <Route path="update-profile" element={<UpdateProfile />} />
           </Routes>
           {/*<FaceLogo></FaceLogo> */}
         </main>
