@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "react-router-dom";
 import "./Footer.scss";
 import LElement from "../LElement/LElement";
 
@@ -37,7 +37,9 @@ export default function Footer(props) {
         <p>
           © 2022 <strong>littl</strong>essentials
         </p>
-        <LElement width="35" color="white"></LElement>
+        <Link to="/">
+          <LElement width="35" color="white"></LElement>
+        </Link>
       </div>
     </footer>
   );
