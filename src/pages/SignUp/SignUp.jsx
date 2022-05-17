@@ -8,6 +8,7 @@ export default function SignUp() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
+  const nameRef = useRef();
   const { signup, currentUser } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -23,7 +24,7 @@ export default function SignUp() {
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+      await signup(emailRef.current.value, passwordRef.current.value, nameRef.current.value);
       navigate("/profile");
     } catch {
       setError("Fail to create an account");
@@ -41,19 +42,23 @@ export default function SignUp() {
             {/* {currentUser.email} */}
             {error && <Alert variant="danger">{error}</Alert>}
             <Form onSubmit={handleSubmit}>
-              <Form.Group id="email">
+              <Form.Group id="userName" className="mb-4">
+                <Form.Label>Name</Form.Label>
+                <Form.Control type="text" ref={nameRef} required></Form.Control>
+              </Form.Group>
+              <Form.Group id="email" className="mb-4">
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="email" ref={emailRef} required></Form.Control>
               </Form.Group>
-              <Form.Group id="password">
+              <Form.Group id="password" className="mb-4">
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" ref={passwordRef} required></Form.Control>
               </Form.Group>
-              <Form.Group id="password-confirm">
+              <Form.Group id="password-confirm" className="mb-4">
                 <Form.Label>Password Confirmation</Form.Label>
                 <Form.Control type="password" ref={passwordConfirmRef} required></Form.Control>
               </Form.Group>
-              <Button disabled={loading} className="w-100 mt-3" type="submit">
+              <Button disabled={loading} className="w-100 mt-3 btn-desert" type="submit">
                 Sign Up
               </Button>
             </Form>
