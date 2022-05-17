@@ -4,7 +4,6 @@ import Accordion from "react-bootstrap/Accordion";
 import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";
 import "../sass/layout/layout.scss";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Faq() {
   return (
@@ -12,7 +11,7 @@ export default function Faq() {
       <NavBar />
       <Chat />
       <Banner heading="Frequently Asked Questions" text="Find answers to commonly raised questions"></Banner>
-      <main className="layout_innerpages">
+      <main className="layout_innerpages faq">
         <Accordion style={{ width: "70%" }} defaultActiveKey="0" flush>
           <Accordion.Item eventKey="0">
             <Accordion.Header>I want to give a Littlessentials subscription as a gift. How does it work?</Accordion.Header>
@@ -23,7 +22,7 @@ export default function Faq() {
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
-            <Accordion.Header className="accordion_header">When will I receive my package?</Accordion.Header>
+            <Accordion.Header>When will I receive my package?</Accordion.Header>
             <Accordion.Body>
               <p>Depending on which type of subscription you choose, you will receive a package every month or every 3 months. To reduce our carbon footprint, we ship in batches twice a week - once on Mondays and once on Thursdays.</p>
               <p>Expect following delivery times: Denmark: 1-2 days Europe: 2-3 days</p>

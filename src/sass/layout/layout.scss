@@ -11,7 +11,7 @@ body {
   padding: 5rem;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+
   justify-content: center;
   align-items: center;
 
@@ -19,7 +19,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 4rem;
+    // margin: 4rem;
   }
 
   img {
@@ -42,6 +42,36 @@ body {
   }
   .accordion .accordion-flush .accordion-item {
     width: 70%;
+  }
+
+  .p_inner {
+    width: 50%;
+  }
+
+  &.faq {
+    flex-direction: column;
+
+    h5 {
+      margin-top: 3rem;
+      font-family: var(--font-body);
+    }
+
+    p {
+      font-family: var(--font-body);
+    }
+  }
+
+  &.getintouch {
+    align-items: baseline;
+
+    h6 {
+      font-family: var(--font-body);
+    }
+
+    section {
+      align-items: baseline;
+      margin-left: 5rem;
+    }
   }
 }
 

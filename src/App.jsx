@@ -84,8 +84,6 @@ function App() {
             <Route path="brands" element={<Brands />} />
             <Route path="get-in-touch" element={<GetInTouch />} />
             <Route path="partner-with-us" element={<PartnerWithUs />} />
-            <Route path="partners" element={<Partners />} />
-            <Route path="contact" element={<Contact />} />
             <Route path="signup" element={<SignUp />} />
             <Route path="login" element={<LogIn />} />
             <Route path="profile" element={<Profile />} />
