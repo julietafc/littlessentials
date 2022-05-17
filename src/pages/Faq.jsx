@@ -2,6 +2,7 @@ import Banner from "../components/Banner/Banner";
 import NavBar from "../components/NavBar/NavBar";
 import Accordion from "react-bootstrap/Accordion";
 import Chat from "../components/Chat/Chat";
+import Footer from "../components/Footer/Footer";
 import "../sass/layout/layout.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -60,6 +61,7 @@ export default function Faq() {
           <p>Can't find the answer you are looking for Please chat to our friendly team</p>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
