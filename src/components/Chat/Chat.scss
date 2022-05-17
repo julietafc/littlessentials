@@ -2,7 +2,8 @@
   background-color: var(--tan);
 }
 
-.sc-chat-window.opened {
+.sc-chat-window.opened,
+.sc-chat-window.closed {
   z-index: 99;
   height: 65%;
   width: 30%;
