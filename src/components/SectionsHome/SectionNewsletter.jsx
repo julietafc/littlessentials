@@ -3,7 +3,7 @@ import "./SectionMission.scss";
 export default function SectionNewsletter(props) {
   return (
     <section>
-      <h4>Stay in the loop</h4>
+      <h4>Receive 10% off your first order when you sign up for our newsletter.</h4>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -12,7 +12,7 @@ export default function SectionNewsletter(props) {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Sign up
+          Subscribe
         </Button>
       </Form>
     </section>

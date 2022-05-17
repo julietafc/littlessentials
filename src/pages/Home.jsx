@@ -17,6 +17,9 @@ import SectionWorks from "../components/SectionsHome/SectionWorks";
 import SectionSlider from "../components/SectionsHome/SectionSlider";
 import { SliderData } from "../components/SectionsHome/SliderData";
 import Footer from "../components/Footer/Footer";
+import SectionTestimonial from "../components/SectionsHome/SectionTestimonial";
+import SectionNewsletter from "../components/SectionsHome/SectionNewsletter";
+import SectionIG from "../components/SectionsHome/SectionIG";
 
 export default function Home(props) {
   const [isOnScroll, setIsOnScroll] = useState(false);
@@ -72,11 +75,14 @@ export default function Home(props) {
       <SecHeroe color="white"></SecHeroe>
       <main className="layout">
         <NavBar className="navbar"></NavBar>
-        <SectionIntro offsetY={offsetY}></SectionIntro>
+        <SectionIntro />
         <SectionMission />
         <SectionManifesto />
         <SectionWorks />
         <SectionSlider slides={SliderData} />
+        <SectionTestimonial />
+        <SectionNewsletter />
+        <SectionIG />
         {/*<FaceLogo></FaceLogo> */}
       </main>
       <div className="floating_actions">
