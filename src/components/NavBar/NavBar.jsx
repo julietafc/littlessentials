@@ -79,7 +79,7 @@ export default function NavBar(props) {
   return (
     <nav className={`${styles.NavBar} ${isNavVisible ? styles.visible : ""}`} ref={ref}>
       <Link to="/">
-        <LElement width="50" color="white"></LElement>
+        <LElement width="35" color="white"></LElement>
       </Link>
       <div className="menu-icon" onClick={handleClick}>
         <i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -109,7 +109,7 @@ export default function NavBar(props) {
         </li>
         <li className="nav-item">
           <Link to="/contact" className="nav-links" onClick={closeMobileMenu}>
-            contact
+            connect
           </Link>
         </li>
       </ul>

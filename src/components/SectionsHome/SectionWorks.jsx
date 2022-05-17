@@ -18,9 +18,9 @@ export default function SectionWorks(props) {
         </div>
       </div>
       <div className="">
-        <h4> HOW IT WORKS</h4>
-        <h2 className="">Inspiring a conscious lifestyle for parents so you can focus on what matters most - your family.</h2>
-        <p>Get the best out of your time with your little ones by subscribing to a curated selection of clothes, toys & gear for children aged 0-6, that cater to their growth, developmental milestones and the changing seasons.</p>
+        <h5> HOW IT WORKS</h5>
+        <h2 className="">Simply subscribe, enjoy and pass it on</h2>
+        <p>With littlessentials you make a difference and reduce your family’s carbon footprint by renting high quality products instead of buying.</p>
         <Button label="learn more" />
       </div>
     </section>

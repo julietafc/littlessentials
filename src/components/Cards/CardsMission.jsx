@@ -1,8 +1,7 @@
-import "./Cards.scss";
 export default function CardsMission(props) {
   return (
-    <div>
-      <h3>{props.heading}</h3>
+    <div className={props.className}>
+      <h2>{props.heading}</h2>
       <p>{props.text}</p>
     </div>
   );

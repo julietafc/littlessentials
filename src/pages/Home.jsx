@@ -5,6 +5,8 @@ import SecHeroe from "../components/SecHeroe/SecHeroe";
 import NavBar from "../components/NavBar/NavBar";
 import BtnCO2 from "../components/BtnCO2/BtnCO2";
 import CO2Modal from "../components/CO2Modal/CO2Modal";
+import Chat from "../components/Chat/Chat";
+import "../sass/layout/layout.scss";
 
 import FaceLogo from "../components/FaceLogo/FaceLogo";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
@@ -12,8 +14,9 @@ import SectionIntro from "../components/SectionsHome/SectionIntro";
 import SectionMission from "../components/SectionsHome/SectionMission";
 import SectionManifesto from "../components/SectionsHome/SectionManifesto";
 import SectionWorks from "../components/SectionsHome/SectionWorks";
-import Slider from "../components/Slider/Slider";
-import { SliderData } from "../components/Slider/SliderData";
+import SectionSlider from "../components/SectionsHome/SectionSlider";
+import { SliderData } from "../components/SectionsHome/SliderData";
+import Footer from "../components/Footer/Footer";
 
 export default function Home(props) {
   const [isOnScroll, setIsOnScroll] = useState(false);
@@ -61,49 +64,27 @@ export default function Home(props) {
   //   }
   // }
   // ;
-  //   constructor() {
-  //     super();
-  //     this.state = {
-  //       messageList: []
-  //     };
-  //   };
-
-  //   _onMessageWasSent(message) {
-  //     this.setState({
-  //       messageList: [...this.state.messageList, message]
-  //     })
-  //   };
-
-  //   _sendMessage(text) {
-  //     if (text.length > 0) {
-  //       this.setState({
-  //         messageList: [...this.state.messageList, {
-  //           author: 'them',
-  //           type: 'text',
-  //           data: { text }
-  //         }]
-  //       })
-  //     }
-  //   };
 
   const [show, setShow] = useState(false);
 
   return (
     <div className="Home">
       <SecHeroe color="white"></SecHeroe>
-      <main className="pageWrapper">
-        <NavBar></NavBar>
+      <main className="layout">
+        <NavBar className="navbar"></NavBar>
         <SectionIntro offsetY={offsetY}></SectionIntro>
         <SectionMission />
         <SectionManifesto />
         <SectionWorks />
-        <Slider slides={SliderData} />
+        <SectionSlider slides={SliderData} />
         {/*<FaceLogo></FaceLogo> */}
       </main>
-
-      <button onClick={() => setShow(true)}>Show modal</button>
-      <BtnCO2></BtnCO2>
-      <CO2Modal show={show} onClose={() => setShow(false)} />
+      <div className="floating_actions">
+        <BtnCO2 setShow={setShow}></BtnCO2>
+        <Chat />
+        <CO2Modal show={show} onClose={() => setShow(false)} />
+      </div>
+      <Footer />
     </div>
   );
 }
