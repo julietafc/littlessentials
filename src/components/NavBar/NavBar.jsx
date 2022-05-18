@@ -2,11 +2,10 @@ import { useRef, useEffect, useState } from "react";
 import styles from "../NavBar/navBar.module.scss";
 import LElement from "../LElement/LElement";
 import { Link } from "react-router-dom";
-// import Dropdown from "react-bootstrap/Dropdown";
 
 import "./NavBar.scss";
 import Dropdown from "../Dropdown/Dropdown";
-// import Dropdown2 from "../Dropdown/Dropdown2";
+import Dropdown2 from "../Dropdown/Dropdown2";
 
 export default function NavBar(props) {
   const ref = useRef();
@@ -42,6 +41,7 @@ export default function NavBar(props) {
 
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [dropdown2, setDropdown2] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -53,6 +53,13 @@ export default function NavBar(props) {
       setDropdown(true);
     }
   };
+  const onMouseEnter2 = () => {
+    if (window.innerWidth < 960) {
+      setDropdown2(false);
+    } else {
+      setDropdown2(true);
+    }
+  };
 
   const onMouseLeave = () => {
     if (window.innerWidth < 960) {
@@ -61,21 +68,13 @@ export default function NavBar(props) {
       setDropdown(false);
     }
   };
-  // const onMouseEnter2 = () => {
-  //   if (window.innerWidth < 960) {
-  //     setDropdown2(false);
-  //   } else {
-  //     setDropdown2(true);
-  //   }
-  // };
-
-  // const onMouseLeave2 = () => {
-  //   if (window.innerWidth < 960) {
-  //     setDropdown2(false);
-  //   } else {
-  //     setDropdown2(false);
-  //   }
-  // };
+  const onMouseLeave2 = () => {
+    if (window.innerWidth < 960) {
+      setDropdown2(false);
+    } else {
+      setDropdown2(false);
+    }
+  };
 
   return (
     <nav className={`${styles.NavBar} ${styles.visible}`} ref={ref}>
@@ -86,69 +85,12 @@ export default function NavBar(props) {
         <i className={click ? "fas fa-times" : "fas fa-bars"} />
       </div>
       <ul className={click ? "nav-menu active" : "nav-menu"}>
-        <li className="nav-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-          <Link to="/services" className="nav-links" onClick={closeMobileMenu}>
-            Services <i className="fas fa-caret-down" />
-          </Link>
-          {dropdown && <Dropdown />}
-        </li>
         {/* <li className="nav-item">
           <Link to="/" className="nav-links" onClick={closeMobileMenu}>
             Home
           </Link>
         </li> */}
-        {/* <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            how it works
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item>
-              <Link to="story">Step by Step </Link>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Link to="story">FAQ</Link>
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-        <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            about
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item>
-              <Link to="story">Our guide </Link>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Link to="story">Our story</Link>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Link to="story">Core values</Link>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Link to="story">Low carbon</Link>
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-
-        <Link to="/">partners</Link>
-        <Dropdown>
-          <Dropdown.Toggle variant="success" id="dropdown-basic">
-            connect
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item>
-              <Link to="story"></Link>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Link to="story">Get in touch</Link>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Link to="story">Partner with us</Link>
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown> */}
-
-        {/* <li className="nav-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+        <li className="nav-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
           <Link to="/" className="nav-links nopointer" onClick={closeMobileMenu}>
             how it works
           </Link>
@@ -169,7 +111,7 @@ export default function NavBar(props) {
           <Link to="/contact" className="nav-links" onClick={closeMobileMenu}>
             connect
           </Link>
-        </li> */}
+        </li>
       </ul>
 
       <ul className={styles.subNav}>
