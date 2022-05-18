@@ -1,0 +1,34 @@
+.carousel {
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+  padding: 6rem;
+  display: flex;
+  color: black;
+
+  .carousel-indicators {
+    bottom: 120px;
+  }
+
+  &.slide {
+    opacity: 100%;
+  }
+
+  .carousel-inner {
+    width: 100%;
+    .active.carousel-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 3rem 0;
+
+      p {
+        width: 50%;
+      }
+      img {
+        width: 40%;
+        margin-right: 4rem;
+      }
+    }
+  }
+}

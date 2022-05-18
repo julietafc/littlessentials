@@ -20,7 +20,7 @@ import Footer from "../components/Footer/Footer";
 import SectionTestimonial from "../components/SectionsHome/SectionTestimonial";
 import SectionNewsletter from "../components/SectionsHome/SectionNewsletter";
 import SectionIG from "../components/SectionsHome/SectionIG";
-import SectionCarousel from "../components/Carousel/Carousel";
+import SectionCarousel from "../components/SectionsHome/SectionCarousel";
 
 export default function Home(props) {
   const [isOnScroll, setIsOnScroll] = useState(false);
