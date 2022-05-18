@@ -17,6 +17,22 @@
 }
 .nav-menu {
   display: flex;
+  align-items: center;
+
+  * {
+    margin: 0 1rem;
+  }
+  .dropdown {
+    #dropdown-basic {
+      all: unset;
+      border: none;
+    }
+
+    .show {
+      position: absolute;
+      width: 100%;
+    }
+  }
 }
 
 .nav-item {

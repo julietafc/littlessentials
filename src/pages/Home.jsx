@@ -14,8 +14,8 @@ import SectionIntro from "../components/SectionsHome/SectionIntro";
 import SectionMission from "../components/SectionsHome/SectionMission";
 import SectionManifesto from "../components/SectionsHome/SectionManifesto";
 import SectionWorks from "../components/SectionsHome/SectionWorks";
-import SectionSlider from "../components/SectionsHome/SectionSlider";
-import { SliderData } from "../components/SectionsHome/SliderData";
+// import SectionSlider from "../components/SectionsHome/SectionSlider";
+// import { SliderData } from "../components/SectionsHome/SliderData";
 import Footer from "../components/Footer/Footer";
 import SectionTestimonial from "../components/SectionsHome/SectionTestimonial";
 import SectionNewsletter from "../components/SectionsHome/SectionNewsletter";
@@ -23,18 +23,18 @@ import SectionIG from "../components/SectionsHome/SectionIG";
 import SectionCarousel from "../components/SectionsHome/SectionCarousel";
 
 export default function Home(props) {
-  const [isOnScroll, setIsOnScroll] = useState(false);
+  // const [isOnScroll, setIsOnScroll] = useState(false);
   const [x, setX] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
   const handleEvent = () => {
     setOffsetY(window.pageYOffset);
   };
-  useEffect(() => {
-    window.addEventListener("scroll", handleEvent);
-    return () => {
-      window.removeEventListener("scroll", handleEvent);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleEvent);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleEvent);
+  //   };
+  // }, []);
 
   // window.addEventListener("scroll", handleScroll);
 

@@ -1,28 +1,19 @@
 .dropdown-menu {
-  background: white;
-  width: 100%;
+  background: red;
+  width: 200px;
   position: absolute;
+  top: 80px;
   list-style: none;
   text-align: start;
-  top: 65px;
-  height: 150px;
-  padding: 2em 3em;
-  left: 0;
-  display: flex;
-  color: black;
-
-  h3 {
-    width: 30%;
-    margin-right: 10em;
-  }
 }
 
 .dropdown-menu li {
+  background: #1888ff;
   cursor: pointer;
 }
 
 .dropdown-menu li:hover {
-  text-decoration: underline;
+  background: #5cabff;
 }
 
 .dropdown-menu.clicked {
@@ -34,7 +25,7 @@
   height: 100%;
   width: 100%;
   text-decoration: none;
-  color: black;
+  color: #fff;
   padding: 16px;
 }
 

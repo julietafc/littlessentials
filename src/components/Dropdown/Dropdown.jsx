@@ -5,11 +5,12 @@ import "./Dropdown.scss";
 
 export default function Dropdown() {
   const [click, setClick] = useState(false);
+
   const handleClick = () => setClick(!click);
+
   return (
     <>
       <ul onClick={handleClick} className={click ? "dropdown-menu clicked" : "dropdown-menu"}>
-        <h3> 3 simple steps that will give you time and space to focus on what really matters</h3>
         {MenuItems.map((item, index) => {
           return (
             <li key={index}>

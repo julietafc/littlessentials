@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SliderData } from "./SliderData";
 import Button from "../Button/Button";
 
-import "./SectionSlider.scss";
+// import "./SectionSlider.scss";
 
 // import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons-fa";
 
