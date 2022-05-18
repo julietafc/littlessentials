@@ -14,19 +14,19 @@ export function AuthProvider({ children }) {
   const [error, setError] = useState("");
   // console.log("currentUser", currentUser);
 
-  function signup(email, password, userName) {
+  function signup(email, password) {
     setLoading(true);
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        return updateProfile(auth.currentUser, {
-          displayName: userName,
-        });
-      })
-      .then((res) => console.log(res))
-      .catch((err) => setError(err.message))
-      .finally(() => {
-        setLoading(false);
-      });
+    return createUserWithEmailAndPassword(auth, email, password);
+    // .then(() => {
+    //   return updateProfile(auth.currentUser, {
+    //     displayName: userName,
+    //   });
+    // })
+    // .then((res) => console.log(res))
+    // .catch((err) => setError(err.message))
+    // .finally(() => {
+    //   setLoading(false);
+    // });
   }
 
   function login(email, password) {
@@ -39,6 +39,12 @@ export function AuthProvider({ children }) {
 
   function resetPassword(email) {
     return sendPasswordResetEmail(auth, email);
+  }
+
+  function udProfile(userName) {
+    return updateProfile(auth.currentUser, {
+      displayName: userName,
+    });
   }
 
   function udEmail(email) {
@@ -65,6 +71,7 @@ export function AuthProvider({ children }) {
   const value = {
     currentUser,
     signup,
+    udProfile,
     login,
     logout,
     resetPassword,
