@@ -7,11 +7,8 @@ export default function SectionValues(props) {
   return (
     <section className="manifesto">
       <div className="header">
-        <h3>OUR MANIFESTO</h3>
-
-        <Link to="/values">
-          <Button className="button" label="our values" />
-        </Link>
+        <h2>Our manifesto</h2>
+        <Button className="button" label="our values" />
       </div>
       <div className="cards_container">
         <CardsManifesto className="card" heading="Curation" text="Curating essential items so we have what we need, and we use what we have." />

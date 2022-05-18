@@ -4,7 +4,6 @@ import { Routes, Route, Link, Router } from "react-router-dom";
 import SecHeroe from "./components/SecHeroe/SecHeroe";
 import { ParallaxProvider } from "react-scroll-parallax";
 
-import { Launcher } from "react-chat-window";
 import Home from "./pages/Home";
 import StepByStep from "./pages/StepByStep";
 import Faq from "./pages/Faq";
@@ -12,8 +11,9 @@ import Story from "./pages/Story";
 import Guide from "./pages/Guide";
 import Values from "./pages/Values";
 import Carbon from "./pages/Carbon";
-import Partners from "./pages/Partners";
-import Contact from "./pages/Contact";
+import Brands from "./pages/Brands";
+import GetInTouch from "./pages/GetInTouch";
+import PartnerWithUs from "./pages/PartnerWithUs";
 
 import FaceLogo from "./components/FaceLogo/FaceLogo";
 import SignUp from "./pages/SignUp/SignUp";
@@ -82,8 +82,9 @@ function App() {
             <Route path="guide" element={<Guide />} />
             <Route path="values" element={<Values />} />
             <Route path="lowcarbon" element={<Carbon />} />
-            <Route path="partners" element={<Partners />} />
-            <Route path="contact" element={<Contact />} />
+            <Route path="brands" element={<Brands />} />
+            <Route path="get-in-touch" element={<GetInTouch />} />
+            <Route path="partner-with-us" element={<PartnerWithUs />} />
             <Route path="signup" element={<SignUp />} />
             <Route path="login" element={<LogIn />} />
             <Route path="profile" element={<Profile />} />

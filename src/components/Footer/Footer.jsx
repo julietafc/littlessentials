@@ -24,12 +24,12 @@ export default function Footer(props) {
           </div>
           <div className="column">
             <h4>partners</h4>
-            <Link to="/partners">brands </Link>
+            <Link to="/brands">brands </Link>
           </div>
           <div className="column">
             <h4>connect</h4>
-            <Link to="/partners">get in touch </Link>
-            <Link to="/partners">partner with us </Link>
+            <Link to="/get-in-touch">get in touch </Link>
+            <Link to="/partner-with-us">partner with us </Link>
           </div>
         </div>
       </div>
@@ -37,7 +37,9 @@ export default function Footer(props) {
         <p>
           © 2022 <strong>littl</strong>essentials
         </p>
-        <LElement width="35" color="white"></LElement>
+        <Link to="/">
+          <LElement width="35" color="white"></LElement>
+        </Link>
       </div>
     </footer>
   );

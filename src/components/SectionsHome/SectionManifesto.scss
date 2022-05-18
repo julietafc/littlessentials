@@ -1,7 +1,7 @@
 section.manifesto {
   display: flex;
   flex-direction: column;
-  padding: 0 7em;
+  padding: 0 6em;
 
   h3 {
     margin-bottom: 0;
@@ -34,7 +34,20 @@ section.manifesto {
       border-radius: 10px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+    }
+  }
+
+  .img_wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  img {
+    width: 22%;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
     }
   }
 }

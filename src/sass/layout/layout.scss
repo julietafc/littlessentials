@@ -1,3 +1,5 @@
+@use "../../sass/base/" as *;
+
 body {
   font-family: var(--font-body);
 }
@@ -8,12 +10,18 @@ body {
 }
 
 .layout_innerpages {
-  padding: 8rem 5rem;
+  padding: 5rem;
   min-height: 100vh;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
 
   section {
     display: flex;
     align-items: center;
+    flex-direction: column;
+    // margin: 4rem;
   }
 
   img {
@@ -33,5 +41,118 @@ body {
       width: 40%;
       margin: 2rem 1rem;
     }
+  }
+  .accordion .accordion-flush .accordion-item {
+    width: 70%;
+  }
+
+  .p_inner {
+    width: 50%;
+  }
+
+  &.faq {
+    flex-direction: column;
+
+    h5 {
+      margin-top: 3rem;
+      font-family: var(--font-body);
+    }
+
+    p {
+      font-family: var(--font-body);
+    }
+  }
+
+  &.getintouch {
+    align-items: baseline;
+
+    h6 {
+      font-family: var(--font-body);
+    }
+
+    section {
+      width: 45%;
+      align-items: baseline;
+      margin-left: 5rem;
+    }
+
+    &.guide {
+      section {
+        width: 45%;
+      }
+      h3 {
+        font-family: var(--font-body);
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  .social a {
+    margin-right: 1em;
+    font-weight: 300;
+  }
+
+  &.brands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .card_brand {
+      margin: 1rem;
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      border-radius: 0px;
+    }
+  }
+}
+
+.floating_actions {
+  display: flex;
+  align-items: center;
+}
+
+.guide_wrapper .banner section {
+  display: flex;
+  align-items: center;
+
+  p,
+  h1 {
+    width: 55%;
+  }
+}
+
+.news {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  background: var(--light);
+
+  h5 {
+    width: 40%;
+    margin-right: 3rem;
+    font-family: var(--font-body);
+  }
+}
+
+.testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+
+  .text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  img {
+    width: 40%;
+    margin-right: 2rem;
   }
 }

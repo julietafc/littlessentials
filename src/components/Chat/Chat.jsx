@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Launcher } from "react-chat-window";
 
+import "./Chat.scss";
+
 export default class Chat extends Component {
   constructor() {
     super();
@@ -36,7 +38,7 @@ export default class Chat extends Component {
         <Launcher
           agentProfile={{
             teamName: "littlessentials support",
-            imageUrl: "/assets/icon-white.png",
+            imageUrl: "/assets/logomark-light.svg",
           }}
           onMessageWasSent={this._onMessageWasSent.bind(this)}
           messageList={this.state.messageList}

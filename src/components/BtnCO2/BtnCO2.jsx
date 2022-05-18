@@ -8,9 +8,9 @@ export default function BtnCO2(props) {
   }
 
   return (
-    <button onClick={() => setShow(true)} className={styles.btnCO2}>
+    <button onClick={() => props.setShow(true)} className={styles.btnCO2}>
       <p>
-        this website <br />
+        this website only <br />
         emites 0.49g
         <br /> of CO2 <br />
       </p>

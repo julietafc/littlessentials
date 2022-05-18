@@ -1,13 +1,31 @@
-.h1 {
-  font-size: 5rem;
-  animation: moving 25s linear infinite;
-  color: red;
-  transform: translateX(-25%);
+// .h1 {
+//   font-size: 5rem;
+//   animation: moving 25s linear infinite;
+//   color: red;
+//   transform: translateX(-25%);
+// }
+
+// @keyframes moving {
+//   to {
+//     transform: translateX(120%);
+//     color: aqua;
+//   }
+// }
+
+.section {
+  background: grey;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes moving {
-  to {
-    transform: translateX(120%);
-    color: aqua;
-  }
+.h1 {
+  font-size: 4rem;
+}
+.p {
+  font-size: 1.2rem;
+  width: 55%;
 }
