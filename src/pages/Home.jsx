@@ -20,6 +20,7 @@ import Footer from "../components/Footer/Footer";
 import SectionTestimonial from "../components/SectionsHome/SectionTestimonial";
 import SectionNewsletter from "../components/SectionsHome/SectionNewsletter";
 import SectionIG from "../components/SectionsHome/SectionIG";
+import SectionCarousel from "../components/Carousel/Carousel";
 
 export default function Home(props) {
   const [isOnScroll, setIsOnScroll] = useState(false);
@@ -79,7 +80,8 @@ export default function Home(props) {
         <SectionMission />
         <SectionManifesto />
         <SectionWorks />
-        <SectionSlider slides={SliderData} />
+        <SectionCarousel />
+        {/* <SectionSlider slides={SliderData} /> */}
         <SectionTestimonial />
         <SectionNewsletter />
         <SectionIG />
