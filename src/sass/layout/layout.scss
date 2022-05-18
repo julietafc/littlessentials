@@ -1,3 +1,5 @@
+@use "../../sass/base/" as *;
+
 body {
   font-family: var(--font-body);
 }
@@ -119,5 +121,36 @@ body {
   p,
   h1 {
     width: 55%;
+  }
+}
+
+.news {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+
+  h5 {
+    width: 40%;
+    margin-right: 3rem;
+    font-family: var(--font-body);
+  }
+}
+
+.testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+
+  .text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  img {
+    width: 40%;
+    margin-right: 2rem;
   }
 }
