@@ -127,7 +127,9 @@ body {
 .news {
   display: flex;
   justify-content: center;
-  margin: 2rem;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  background: var(--light);
 
   h5 {
     width: 40%;

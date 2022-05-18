@@ -36,4 +36,18 @@ section.manifesto {
       flex-direction: column;
     }
   }
+
+  .img_wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  img {
+    width: 22%;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
 }
