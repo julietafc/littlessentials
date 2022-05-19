@@ -1,13 +1,12 @@
 import Banner from "../components/Banner/Banner";
 import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";
-import NavBar from "../components/NavBar/NavBar";
+
 import Card from "react-bootstrap/Card";
 import "../sass/layout/layout.scss";
 export default function Brands() {
   return (
     <>
-      <NavBar />
       <Chat />
       <Banner heading="Brands" text="Meet our essential partners. " />
       <main className="layout_innerpages brands">

@@ -2,7 +2,6 @@ import { useRef, useEffect, useState } from "react";
 import React from "react";
 import SecHeroe from "../components/SecHeroe/SecHeroe";
 
-import NavBar from "../components/NavBar/NavBar";
 import BtnCO2 from "../components/BtnCO2/BtnCO2";
 import CO2Modal from "../components/CO2Modal/CO2Modal";
 import Chat from "../components/Chat/Chat";
@@ -21,6 +20,7 @@ import SectionTestimonial from "../components/SectionsHome/SectionTestimonial";
 import SectionNewsletter from "../components/SectionsHome/SectionNewsletter";
 import SectionIG from "../components/SectionsHome/SectionIG";
 import SectionCarousel from "../components/SectionsHome/SectionCarousel";
+import Header from "../components/Header/Header";
 
 export default function Home(props) {
   // const [isOnScroll, setIsOnScroll] = useState(false);
@@ -73,11 +73,11 @@ export default function Home(props) {
 
   return (
     <div className="Home">
-      <SecHeroe color="white"></SecHeroe>
+      <Header />
+      {/* <SecHeroe color="white"></SecHeroe> */}
       <main className="layout">
-        <NavBar className="navbar"></NavBar>
         <SectionIntro />
-        <SectionMission />
+        {/* <SectionMission /> */}
         <SectionManifesto />
         <SectionWorks />
         <SectionCarousel />
