@@ -123,3 +123,17 @@ body {
     width: 55%;
   }
 }
+
+.policy {
+  padding: 5rem;
+}
+
+@media screen and (max-width: 769px) {
+  .policy {
+    padding: 2rem;
+
+    .tab-content > .active {
+      margin-top: 3rem;
+    }
+  }
+}

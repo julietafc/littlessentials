@@ -38,9 +38,11 @@ export default function Footer(props) {
           <p>
             © 2022 <strong>littl</strong>essentials
           </p>
-          <Link to="/">Privacy Policy</Link>
-          <Link to="/">Refund Policy</Link>
-          <Link to="/">Shipping Policy</Link>
+          <Link to="/policy">Privacy Policy</Link>
+          <Link to="/policy" eventKey="second">
+            Refund Policy
+          </Link>
+          <Link to="/policy">Shipping Policy</Link>
         </div>
         <Link to="/">
           <LElement width="35" color="white"></LElement>

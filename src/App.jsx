@@ -14,6 +14,7 @@ import Carbon from "./pages/Carbon";
 import Brands from "./pages/Brands";
 import GetInTouch from "./pages/GetInTouch";
 import PartnerWithUs from "./pages/PartnerWithUs";
+import Policy from "./pages/Policy";
 
 import FaceLogo from "./components/FaceLogo/FaceLogo";
 import SignUp from "./pages/SignUp/SignUp";
@@ -90,6 +91,7 @@ function App() {
             <Route path="login" element={<LogIn />} />
             <Route path="profile" element={<Profile />} />
             <Route path="forgot-password" element={<ForgotPassword />} />
+            <Route path="policy" element={<Policy />} />
           </Routes>
           {/*<FaceLogo></FaceLogo> */}
         </main>
