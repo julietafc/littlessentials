@@ -110,6 +110,10 @@ body {
   }
 }
 
+.policy {
+  padding: 5rem;
+}
+
 .floating_actions {
   display: flex;
   align-items: center;
@@ -151,6 +155,16 @@ body {
     p,
     h1 {
       width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 769px) {
+    .policy {
+      padding: 2rem;
+
+      .tab-content > .active {
+        margin-top: 3rem;
+      }
     }
   }
 }

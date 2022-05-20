@@ -14,6 +14,7 @@ import Carbon from "./pages/Carbon";
 import Brands from "./pages/Brands";
 import GetInTouch from "./pages/GetInTouch";
 import PartnerWithUs from "./pages/PartnerWithUs";
+import Policy from "./pages/Policy";
 
 import FaceLogo from "./components/FaceLogo/FaceLogo";
 import SignUp from "./pages/SignUp/SignUp";
@@ -22,6 +23,7 @@ import Profile from "./pages/Profile/Profile";
 import { Container } from "react-bootstrap";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   // const [isOnScroll, setIsOnScroll] = useState(false);
@@ -73,6 +75,7 @@ function App() {
     <ParallaxProvider>
       <div className="App">
         <main className="pageWrapper">
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="step-by-step" element={<StepByStep />} />
@@ -88,6 +91,7 @@ function App() {
             <Route path="login" element={<LogIn />} />
             <Route path="profile" element={<Profile />} />
             <Route path="forgot-password" element={<ForgotPassword />} />
+            <Route path="policy" element={<Policy />} />
           </Routes>
           {/*<FaceLogo></FaceLogo> */}
         </main>
