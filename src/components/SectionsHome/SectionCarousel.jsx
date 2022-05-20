@@ -13,7 +13,7 @@ export default function SectionCarousel() {
           <Button label="learn more" />
         </Link>
       </div>
-      <Carousel fade>
+      <Carousel>
         <Carousel.Item>
           <img src="../assets/img11.png" alt="First slide" />
           <div className="text">
