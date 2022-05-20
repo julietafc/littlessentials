@@ -22,6 +22,7 @@ import Profile from "./pages/Profile/Profile";
 import { Container } from "react-bootstrap";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   // const [isOnScroll, setIsOnScroll] = useState(false);
@@ -73,6 +74,7 @@ function App() {
     <ParallaxProvider>
       <div className="App">
         <main className="pageWrapper">
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="step-by-step" element={<StepByStep />} />
