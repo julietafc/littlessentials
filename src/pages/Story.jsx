@@ -19,14 +19,16 @@ export default function Story() {
           </div>
         </aside>
         <section>
-          <h3>Avoid perfumes in washing products & softeners </h3>
-          <p>Avoid contact with harsh perfumes in detergents. These will wear out your garments faster. Use neutral soaps or natural products such as soap berries instead. If you like fragrances, you can use a few drops of essential oils.</p>
-          <h3>Air out </h3>
-          <p>Avoid contact with harsh perfumes in detergents. These will wear out your garments faster. Use neutral soaps or natural products such as soap berries instead. If you like fragrances, you can use a few drops of essential oils.</p>
-          <h3>Store in a closed wardrobe </h3>
-          <p>Keep your items in a closed off wardrobe to avoid dust and humidity. Keep your toys in toy bags or boxes.</p>
-          <h3>Pass it on</h3>
-          <p>Pass the items your child has outgrown on to a friend, family member or to one of our local partners. Read more about our partners here.</p>
+          <h3>Our mission </h3>
+          <p>
+            We offer high quality, timeless products for children that contribute to conscious consumption and waste reduction by partnering up with local designers & brands and addressing their surplus - benefiting your closet, wallet and the
+            planet.
+          </p>
+          <h3>Who is this for? </h3>
+          <p>
+            Our subscription service curates essential items for your children in a simple & convenient way, removing a part of the overwhelm that comes with being a parent at times. We’re here to empower you, so you can simplify your life and make
+            more time for your kids, family and yourself.
+          </p>
         </section>
       </main>
       <Footer />
