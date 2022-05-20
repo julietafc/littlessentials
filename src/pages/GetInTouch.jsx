@@ -26,16 +26,20 @@ export default function GetInTouch() {
             We also encourage you to write to our amazing support team through the chat
           </p>
           <Form>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Your name</Form.Label>
+              <Form.Control type="text" placeholder="Your name" />
+            </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control type="email" placeholder="Enter email" />
               <Form.Text className="text-muted">We'll never share your email with anyone else.</Form.Text>
             </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Your message</Form.Label>
+              <Form.Control as="textarea" placeholder="Type here whatever comes up in your mind" style={{ height: "100px" }} />
             </Form.Group>
+
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="I've read the Terms & Conditions" />
             </Form.Group>
