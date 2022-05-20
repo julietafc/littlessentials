@@ -9,7 +9,7 @@ export default function SignUp() {
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const nameRef = useRef();
-  const { signup, currentUser } = useAuth();
+  const { signup, signupV, theUser, auth } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -25,12 +25,12 @@ export default function SignUp() {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value, nameRef.current.value);
-      navigate("/profile");
     } catch {
       setError("Fail to create an account");
     }
 
     setLoading(false);
+    navigate("/profile", { replace: true });
   }
 
   return (
@@ -39,7 +39,7 @@ export default function SignUp() {
         <Card>
           <Card.Body>
             <h2 className="text-center mb-4">Sign Up</h2>
-            {/* {currentUser.email} */}
+            {/* {user.email} */}
             {error && <Alert variant="danger">{error}</Alert>}
             <Form onSubmit={handleSubmit}>
               <Form.Group id="userName" className="mb-4">

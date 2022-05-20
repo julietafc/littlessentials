@@ -9,25 +9,58 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState();
+  const [theUser, setTheUser] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [theUserName, setTheUserName] = useState("");
+
   // console.log("currentUser", currentUser);
 
-  function signup(email, password) {
+  useEffect(() => {
+    // const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      console.log(user);
+      user ? setTheUser(user) : setTheUser(null);
+      setError("");
+      setLoading(false);
+      // console.log(user);
+    });
+
+    return () => {
+      unsubscribe;
+    };
+  }, []);
+
+  // useEffect(() => {
+  //   if (theUserName) {
+  //     updateProfile(auth.currentUser, {
+  //       displayName: theUserName,
+  //     }).then((res) => {
+  //       console.log(res);
+  //     });
+  //   }
+  // }, [theUserName]);
+
+  async function signup(email, password, userName) {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
-    // .then(() => {
-    //   return updateProfile(auth.currentUser, {
-    //     displayName: userName,
-    //   });
-    // })
-    // .then((res) => console.log(res))
-    // .catch((err) => setError(err.message))
-    // .finally(() => {
-    //   setLoading(false);
-    // });
+    console.log("signup");
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((res) => {
+        console.log(res);
+        console.log(auth.currentUser);
+        return updateProfile(auth.currentUser, {
+          displayName: userName,
+        });
+      })
+      .catch((err) => setError(err.message))
+      .finally(() => {
+        setLoading(false);
+      });
   }
+
+  /*-------------------------------*/
+
+  /*---------------------------------*/
 
   function login(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
@@ -41,8 +74,9 @@ export function AuthProvider({ children }) {
     return sendPasswordResetEmail(auth, email);
   }
 
-  function udProfile(userName) {
-    return updateProfile(auth.currentUser, {
+  function udProfile(hola, userName) {
+    console.log("udProfile");
+    return updateProfile(hola, {
       displayName: userName,
     });
   }
@@ -55,28 +89,23 @@ export function AuthProvider({ children }) {
     return updatePassword(auth.currentUser, password);
   }
 
-  useEffect(() => {
-    // const auth = getAuth();
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
-      setLoading(false);
-      // console.log(user);
+  function udName(userName) {
+    return updateProfile(auth.currentUser, {
+      displayName: userName,
     });
-
-    return () => {
-      unsubscribe;
-    };
-  }, []);
+  }
 
   const value = {
-    currentUser,
+    theUser,
     signup,
     udProfile,
+    udName,
     login,
     logout,
     resetPassword,
     udEmail,
     udPassword,
+    auth,
   };
 
   return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>;

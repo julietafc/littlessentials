@@ -9,7 +9,7 @@ export default function UpdateProfile() {
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const nameRef = useRef();
-  const { currentUser, udEmail, udPassword } = useAuth();
+  const { theUser, udEmail, udPassword, udName } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -26,11 +26,14 @@ export default function UpdateProfile() {
     setError("");
     setLoading(true);
 
-    if (emailRef.current.vale !== currentUser.email) {
+    if (emailRef.current.vale !== theUser.email) {
       promises.push(udEmail(emailRef.current.value));
     }
     if (passwordRef.current.value) {
       promises.push(udPassword(passwordRef.current.value));
+    }
+    if (nameRef.current.value) {
+      promises.push(udName(nameRef.current.value));
     }
 
     Promise.all(promises)
@@ -51,16 +54,16 @@ export default function UpdateProfile() {
         <Card>
           <Card.Body>
             <h2 className="text-center mb-4">Update Profile</h2>
-            {/* {currentUser.email} */}
+            {/* {theUser.email} */}
             {error && <Alert variant="danger">{error}</Alert>}
             <Form onSubmit={handleSubmit}>
               <Form.Group id="userName" className="mb-4">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="text" ref={nameRef} required defaultValue={currentUser.displayName}></Form.Control>
+                <Form.Control type="text" ref={nameRef} required defaultValue={theUser.displayName}></Form.Control>
               </Form.Group>
               <Form.Group id="email" className="mb-4">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="email" ref={emailRef} required defaultValue={currentUser.email}></Form.Control>
+                <Form.Control type="email" ref={emailRef} required defaultValue={theUser.email}></Form.Control>
               </Form.Group>
               <Form.Group id="password" className="mb-4">
                 <Form.Label>Password</Form.Label>
