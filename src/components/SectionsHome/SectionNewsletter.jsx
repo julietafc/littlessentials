@@ -1,5 +1,6 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import "./SectionNewsletter.scss";
 
 export default function SectionNewsletter(props) {
   return (

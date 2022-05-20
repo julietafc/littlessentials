@@ -123,17 +123,3 @@ body {
     width: 55%;
   }
 }
-
-.news {
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
-  margin-bottom: 3rem;
-  background: var(--light);
-
-  h5 {
-    width: 40%;
-    margin-right: 3rem;
-    font-family: var(--font-body);
-  }
-}
