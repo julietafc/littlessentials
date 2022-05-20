@@ -25,6 +25,7 @@ export default function Footer(props) {
           <div className="column">
             <h4>partners</h4>
             <Link to="/brands">Brands </Link>
+            <Link to="/ngos">NGOs </Link>
           </div>
           <div className="column">
             <h4>connect</h4>

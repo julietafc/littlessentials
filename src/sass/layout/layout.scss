@@ -95,17 +95,35 @@ body {
 
   &.brands {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-direction: column;
 
-    .card_brand {
-      margin: 1rem;
+    p {
+      width: 55%;
+      margin-bottom: 4rem;
     }
-
-    img {
+    .card_wrapper {
       width: 100%;
-      height: 200px;
-      border-radius: 0px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(208px, 298px));
+      gap: 2rem;
+      z-index: -1;
+
+      .card_brand {
+        margin: 1rem;
+      }
+
+      img {
+        width: 100%;
+        height: 200px;
+        border-radius: 0px;
+      }
+    }
+  }
+
+  &.circularity {
+    section {
+      width: 50%;
+      margin-left: 3rem;
     }
   }
 }
@@ -148,17 +166,21 @@ body {
         width: 100%;
       }
     }
-  }
 
-  .guide_wrapper .banner section {
-    padding: 2rem;
-    p,
-    h1 {
-      width: 100%;
+    &.brands {
+      p {
+        width: 100%;
+        margin-bottom: 4rem;
+      }
     }
-  }
 
-  @media screen and (max-width: 769px) {
+    .guide_wrapper .banner section {
+      padding: 2rem;
+      p,
+      h1 {
+        width: 100%;
+      }
+    }
     .policy {
       padding: 2rem;
 

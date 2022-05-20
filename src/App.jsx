@@ -15,6 +15,7 @@ import Brands from "./pages/Brands";
 import GetInTouch from "./pages/GetInTouch";
 import PartnerWithUs from "./pages/PartnerWithUs";
 import Policy from "./pages/Policy";
+import Circularity from "./pages/Circularity";
 
 import FaceLogo from "./components/FaceLogo/FaceLogo";
 import SignUp from "./pages/SignUp/SignUp";
@@ -92,6 +93,7 @@ function App() {
             <Route path="profile" element={<Profile />} />
             <Route path="forgot-password" element={<ForgotPassword />} />
             <Route path="policy" element={<Policy />} />
+            <Route path="ngos" element={<Circularity />} />
           </Routes>
           {/*<FaceLogo></FaceLogo> */}
         </main>

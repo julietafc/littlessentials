@@ -28,7 +28,10 @@ export default function Header() {
               <NavDropdown.Item href="values">Core values</NavDropdown.Item>
               <NavDropdown.Item href="lowcarbon">Low carbon</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="brands">partners</Nav.Link>
+            <NavDropdown title="partners" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="brands">Brands</NavDropdown.Item>
+              <NavDropdown.Item href="ngos">NGOs</NavDropdown.Item>
+            </NavDropdown>
             <NavDropdown title="connect" id="collasible-nav-dropdown">
               <NavDropdown.Item href="get-in-touch">Get in touch</NavDropdown.Item>
               <NavDropdown.Item href="partner-with-us">Partner with us</NavDropdown.Item>
