@@ -15,12 +15,26 @@ export default function SignUp() {
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
+    // function handleSubmit(e) {
     e.preventDefault();
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("passwords do not match");
     }
 
+    // setError("");
+    // setLoading(true);
+    // signup(emailRef.current.value, passwordRef.current.value, nameRef.current.value)
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch(() => {
+    //     setError("Fail to create an account");
+    //   })
+    //   .finally(() => {
+    //     setLoading(false);
+    //     navigate("/profile", { replace: true });
+    //   });
     try {
       setError("");
       setLoading(true);

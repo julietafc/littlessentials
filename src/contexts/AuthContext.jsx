@@ -38,13 +38,15 @@ export function AuthProvider({ children }) {
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
         console.log("step2");
-        updateProfile(auth.currentUser, {
+        return updateProfile(auth.currentUser, {
           displayName: userName,
         });
       })
+      .then((res) => {
+        console.log("after update", res);
+      })
       .catch((err) => setError(err.message))
       .finally(() => {
-        console.log("finaly");
         setLoading(false);
       });
   }
