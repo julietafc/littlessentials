@@ -7,10 +7,12 @@ import Tab from "react-bootstrap/Tab";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
+import Header from "../components/Header/Header";
 
 export default function Policy() {
   return (
     <>
+      <Header />
       <Banner heading="Policies" text="Transparency is one of our core values" />
       <main className="policy">
         <section>

@@ -10,7 +10,7 @@ export default function Brands() {
     <>
       <Header />
       <Chat />
-      <Banner heading="Brands" text="Meet our essential partners. " />
+      <Banner heading="Brands" text="We source products of brands that we believe in and we know will contribute to your little one’s developmental milestones and growth. " />
       <main className="layout_innerpages brands">
         <Card className="card_brand" style={{ width: "18rem" }}>
           <Card.Img variant="top" src="./assets/img06.png" />
