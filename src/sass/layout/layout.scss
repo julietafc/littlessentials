@@ -42,9 +42,6 @@ body {
       margin: 2rem 1rem;
     }
   }
-  .accordion .accordion-flush .accordion-item {
-    width: 70%;
-  }
 
   .p_inner {
     width: 50%;
@@ -52,6 +49,10 @@ body {
 
   &.faq {
     flex-direction: column;
+
+    .accordion .accordion-flush .accordion-item {
+      width: 70%;
+    }
 
     h5 {
       margin-top: 3rem;
