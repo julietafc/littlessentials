@@ -62,7 +62,8 @@ export default function Policy() {
                     </p>
                     <p>Additionally, we use this Order Information to:</p>
                     <ul>
-                      <li>Communicate with you; - Screen our orders for potential risk or fraud;</li>
+                      <li>Communicate with you;</li>
+                      <li>Screen our orders for potential risk or fraud;</li>
                       <li>When in line with the preferences you have shared with us, provide you with information or advertising relating to our products or services. </li>
                     </ul>
 
