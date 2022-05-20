@@ -10,7 +10,7 @@ import "../sass/layout/layout.scss";
 import FaceLogo from "../components/FaceLogo/FaceLogo";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
 import SectionIntro from "../components/SectionsHome/SectionIntro";
-import SectionMission from "../components/SectionsHome/SectionMission";
+// import SectionMission from "../components/SectionsHome/SectionMission";
 import SectionManifesto from "../components/SectionsHome/SectionManifesto";
 import SectionWorks from "../components/SectionsHome/SectionWorks";
 // import SectionSlider from "../components/SectionsHome/SectionSlider";
