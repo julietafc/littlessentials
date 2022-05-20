@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     // const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log(user);
+      // console.log(user);
       user ? setTheUser(user) : setTheUser(null);
       setError("");
       setLoading(false);
@@ -31,29 +31,20 @@ export function AuthProvider({ children }) {
     };
   }, []);
 
-  // useEffect(() => {
-  //   if (theUserName) {
-  //     updateProfile(auth.currentUser, {
-  //       displayName: theUserName,
-  //     }).then((res) => {
-  //       console.log(res);
-  //     });
-  //   }
-  // }, [theUserName]);
-
   async function signup(email, password, userName) {
     setLoading(true);
-    console.log("signup");
+    setTheUserName(userName);
+    console.log("step1");
     createUserWithEmailAndPassword(auth, email, password)
-      .then((res) => {
-        console.log(res);
-        console.log(auth.currentUser);
-        return updateProfile(auth.currentUser, {
+      .then(() => {
+        console.log("step2");
+        updateProfile(auth.currentUser, {
           displayName: userName,
         });
       })
       .catch((err) => setError(err.message))
       .finally(() => {
+        console.log("finaly");
         setLoading(false);
       });
   }
@@ -105,6 +96,7 @@ export function AuthProvider({ children }) {
     resetPassword,
     udEmail,
     udPassword,
+    theUserName,
     auth,
   };
 
