@@ -1,0 +1,45 @@
+section.instagram {
+  display: flex;
+  flex-direction: column;
+  padding: 0 6rem;
+  position: relative;
+  margin-bottom: 4rem;
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .button {
+      margin: 0;
+    }
+  }
+
+  .img_wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+    img {
+      width: 22%;
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  section.instagram {
+    padding: 0 2rem;
+    .header {
+      .button {
+        position: absolute;
+        bottom: -4rem;
+        left: 2rem;
+      }
+    }
+  }
+}
