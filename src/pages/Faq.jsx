@@ -4,10 +4,12 @@ import Accordion from "react-bootstrap/Accordion";
 import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";
 import "../sass/layout/layout.scss";
+import Header from "../components/Header/Header";
 
 export default function Faq() {
   return (
     <>
+      <Header />
       <Chat />
       <Banner heading="Frequently Asked Questions" text="Find answers to commonly raised questions"></Banner>
       <main className="layout_innerpages faq">

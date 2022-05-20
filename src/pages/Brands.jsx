@@ -4,9 +4,11 @@ import Footer from "../components/Footer/Footer";
 
 import Card from "react-bootstrap/Card";
 import "../sass/layout/layout.scss";
+import Header from "../components/Header/Header";
 export default function Brands() {
   return (
     <>
+      <Header />
       <Chat />
       <Banner heading="Brands" text="Meet our essential partners. " />
       <main className="layout_innerpages brands">

@@ -5,9 +5,11 @@ import Footer from "../components/Footer/Footer";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "../sass/layout/layout.scss";
+import Header from "../components/Header/Header";
 export default function PartnerWithUs() {
   return (
     <>
+      <Header />
       <Chat />
       <Banner heading="Partner With Us" text="We can help your business by connecting you conscious costumers" />
       <main className="layout_innerpages getintouch">
