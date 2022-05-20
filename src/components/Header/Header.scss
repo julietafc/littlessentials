@@ -1,0 +1,20 @@
+@use "../../sass/base/" as *;
+
+.dropdown:hover {
+  .dropdown-menu.show {
+    display: block;
+  }
+}
+
+.navbar.navbar-expand-lg.navbar-dark {
+  height: 90px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-around;
+
+  &.bg-dark {
+    background-color: var(--tan) !important;
+  }
+}

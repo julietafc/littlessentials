@@ -2,6 +2,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import "./Header.scss";
 
 import { useRef, useEffect, useState } from "react";
 import LElement from "../LElement/LElement";
