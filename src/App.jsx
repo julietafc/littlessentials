@@ -27,6 +27,34 @@ import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import ScrollToTop from "./ScrollToTop";
 
 function App() {
+  const [brands, setBrands] = useState([]);
+  const URL = "json/brands.json";
+
+  const fetchData = async () => {
+    try {
+      const res = await fetch(URL);
+      const data = await res.json();
+      // console.log(data);
+      setBrands(data);
+      fetchData();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // useEffect(() => {
+  //   const URL = "json/brands.json";
+
+  //   fetch("json/brands.json")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       // console.log(beers);
+  //       setBrands(data);
+  //       fetchData(); // <-- (2) invoke on mount
+  //     });
+  // }, []);
+
   // const [isOnScroll, setIsOnScroll] = useState(false);
   // const [x, setX] = useState(0);
   // const [offsetY, setOffsetY] = useState(0);
