@@ -44,7 +44,7 @@ export default function SignUp() {
     }
 
     setLoading(false);
-    navigate("/profile", { replace: true });
+    navigate("/subscription", { replace: true });
   }
 
   return (

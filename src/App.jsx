@@ -14,15 +14,12 @@ import Carbon from "./pages/Carbon";
 import Brands from "./pages/Brands";
 import GetInTouch from "./pages/GetInTouch";
 import PartnerWithUs from "./pages/PartnerWithUs";
-
-import FaceLogo from "./components/FaceLogo/FaceLogo";
 import SignUp from "./pages/SignUp/SignUp";
 import LogIn from "./pages/LogIn/LogIn";
 import Profile from "./pages/Profile/Profile";
-import { Container } from "react-bootstrap";
-import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import UpdateProfile from "./pages/UpdateProfile/UpdateProfile";
+import Subscription from "./pages/Subscription/Subscription";
 
 function App() {
   // const [isOnScroll, setIsOnScroll] = useState(false);
@@ -90,6 +87,7 @@ function App() {
             <Route path="profile" element={<Profile />} />
             <Route path="forgot-password" element={<ForgotPassword />} />
             <Route path="update-profile" element={<UpdateProfile />} />
+            <Route path="subscription" element={<Subscription />} />
           </Routes>
           {/*<FaceLogo></FaceLogo> */}
         </main>
