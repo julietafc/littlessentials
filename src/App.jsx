@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import React from "react";
 import { Routes, Route, Link, Router } from "react-router-dom";
-import SecHeroe from "./components/SecHeroe/SecHeroe";
+// import SecHeroe from "./components/SecHeroe/SecHeroe";
 import { ParallaxProvider } from "react-scroll-parallax";
 
 import Home from "./pages/Home";
@@ -25,6 +25,7 @@ import { Container } from "react-bootstrap";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import ScrollToTop from "./ScrollToTop";
+import Landing from "./pages/Landing";
 
 function App() {
   // const fetchData = async () => {
@@ -106,6 +107,7 @@ function App() {
             <Route path="forgot-password" element={<ForgotPassword />} />
             <Route path="policy" element={<Policy />} />
             <Route path="ngos" element={<Circularity />} />
+            <Route path="landing" element={<Landing />} />
           </Routes>
           {/*<FaceLogo></FaceLogo> */}
         </main>

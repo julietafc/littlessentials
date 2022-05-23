@@ -1,0 +1,31 @@
+.landing_layout {
+  p {
+    font-size: 2rem;
+    width: 75%;
+    font-weight: 200;
+  }
+
+  .second,
+  .third {
+    display: flex;
+    padding: 0 5rem;
+    margin: 4rem 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .third {
+    background-color: var(--desert);
+    padding: 4rem 0;
+    color: white;
+  }
+
+  .testimonial {
+    background-color: var(--sun);
+    margin: 0 7rem;
+    border-radius: 20px;
+    margin-bottom: 4rem;
+    color: white;
+  }
+}

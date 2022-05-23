@@ -9,3 +9,11 @@
     background-color: var(--tan) !important;
   }
 }
+
+.header_landing.navbar.navbar-expand-lg.navbar-dark {
+  .container {
+    .navbar-collapse {
+      justify-content: flex-end;
+    }
+  }
+}

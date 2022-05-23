@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import React from "react";
-import SecHeroe from "../components/SecHeroe/SecHeroe";
+// import SecHeroe from "../components/SecHeroe/SecHeroe";
 
 import BtnCO2 from "../components/BtnCO2/BtnCO2";
 import CO2Modal from "../components/CO2Modal/CO2Modal";
