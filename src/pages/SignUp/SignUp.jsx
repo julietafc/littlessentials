@@ -8,29 +8,44 @@ export default function SignUp() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const nameRef = useRef();
-  const { signup, currentUser } = useAuth();
+  const userNameRef = useRef();
+  const { signup, loginWithGoogle } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
+    // function handleSubmit(e) {
     e.preventDefault();
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("passwords do not match");
     }
 
+    // setError("");
+    // setLoading(true);
+    // signup(emailRef.current.value, passwordRef.current.value, nameRef.current.value)
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch(() => {
+    //     setError("Fail to create an account");
+    //   })
+    //   .finally(() => {
+    //     setLoading(false);
+    //     navigate("/profile", { replace: true });
+    //   });
+
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value, nameRef.current.value);
-      navigate("/profile");
+      await signup(emailRef.current.value, passwordRef.current.value, userNameRef.current.value);
     } catch {
       setError("Fail to create an account");
     }
 
     setLoading(false);
+    navigate("/subscription", { replace: true });
   }
 
   return (
@@ -39,12 +54,12 @@ export default function SignUp() {
         <Card>
           <Card.Body>
             <h2 className="text-center mb-4">Sign Up</h2>
-            {/* {currentUser.email} */}
+            {/* {user.email} */}
             {error && <Alert variant="danger">{error}</Alert>}
             <Form onSubmit={handleSubmit}>
               <Form.Group id="userName" className="mb-4">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="text" ref={nameRef} required></Form.Control>
+                <Form.Control type="text" ref={userNameRef} required></Form.Control>
               </Form.Group>
               <Form.Group id="email" className="mb-4">
                 <Form.Label>Email</Form.Label>
@@ -62,6 +77,18 @@ export default function SignUp() {
                 Sign Up
               </Button>
             </Form>
+            <p>------------ OR --------------</p>
+            <Button
+              className="w-100 mt-3 btn-desert"
+              onClick={() =>
+                loginWithGoogle().then(() => {
+                  setLoading(false);
+                  navigate("/subscription", { replace: true });
+                })
+              }
+            >
+              Sign Up With Google
+            </Button>
           </Card.Body>
         </Card>
         <div className="w-100 text-center mt-2">

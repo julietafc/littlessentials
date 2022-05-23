@@ -21,11 +21,11 @@ import FaceLogo from "./components/FaceLogo/FaceLogo";
 import SignUp from "./pages/SignUp/SignUp";
 import LogIn from "./pages/LogIn/LogIn";
 import Profile from "./pages/Profile/Profile";
-import { Container } from "react-bootstrap";
-import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import ScrollToTop from "./ScrollToTop";
 import Landing from "./pages/Landing";
+import UpdateProfile from "./pages/UpdateProfile/UpdateProfile";
+import Subscription from "./pages/Subscription/Subscription";
 
 function App() {
   // const fetchData = async () => {
@@ -108,6 +108,8 @@ function App() {
             <Route path="policy" element={<Policy />} />
             <Route path="ngos" element={<Circularity />} />
             <Route path="landing" element={<Landing />} />
+            <Route path="update-profile" element={<UpdateProfile />} />
+            <Route path="subscription" element={<Subscription />} />
           </Routes>
           {/*<FaceLogo></FaceLogo> */}
         </main>

@@ -4,7 +4,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Profile(props) {
-  const { currentUser, logout } = useAuth();
+  const { theUser, logout, theUserName } = useAuth();
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -18,6 +18,10 @@ export default function Profile(props) {
     }
   }
 
+  // if (!theUser.displayName) {
+  //   return null;
+  //  }
+
   return (
     <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
       <div className="w-100" style={{ maxWidth: "400px" }}>
@@ -26,9 +30,16 @@ export default function Profile(props) {
             <h2 className="text-center mb-4">Profile</h2>
             {/* {currentUser.email} */}
             {error && <Alert variant="danger">{error}</Alert>}
-            <strong>Name: </strong>
-            {currentUser.displayName}
-            <Link to="update-profile" className="btn btn-primary w-100 mt-3">
+
+            {theUser && (
+              <>
+                <strong>Name: </strong>
+                <p>{theUser.displayName ? theUser.displayName : "theUserName"}</p>
+                <strong>Email: </strong>
+                <p>{theUser.email}</p>
+              </>
+            )}
+            <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
               Update Profile
             </Link>
           </Card.Body>
