@@ -1,0 +1,23 @@
+.news {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+  margin-bottom: 3rem;
+  background: var(--light);
+
+  h5 {
+    width: 40%;
+    margin-right: 3rem;
+    font-family: var(--font-body);
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .news {
+    flex-direction: column;
+
+    h5 {
+      width: 100%;
+    }
+  }
+}

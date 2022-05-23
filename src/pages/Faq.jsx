@@ -4,14 +4,16 @@ import Accordion from "react-bootstrap/Accordion";
 import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";
 import "../sass/layout/layout.scss";
+import Header from "../components/Header/Header";
 
 export default function Faq() {
   return (
     <>
+      <Header />
       <Chat />
       <Banner heading="Frequently Asked Questions" text="Find answers to commonly raised questions"></Banner>
       <main className="layout_innerpages faq">
-        <Accordion style={{ width: "70%" }} defaultActiveKey="0" flush>
+        <Accordion style={{ zIndex: "-99" }} defaultActiveKey="0" flush>
           <Accordion.Item eventKey="0">
             <Accordion.Header>I want to give a Littlessentials subscription as a gift. How does it work?</Accordion.Header>
             <Accordion.Body>
@@ -53,10 +55,9 @@ export default function Faq() {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-
         <section>
           <h5>Still have questions?</h5>
-          <p>Can't find the answer you are looking for Please chat to our friendly team</p>
+          <p>Can't find the answer you are looking for? Click here and chat with our friendly team</p>
         </section>
       </main>
       <Footer />

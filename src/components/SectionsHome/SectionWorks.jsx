@@ -18,7 +18,6 @@ export default function SectionWorks(props) {
         </div>
       </div>
       <div className="">
-        <h5> HOW IT WORKS</h5>
         <h2 className="">Simply subscribe, enjoy and pass it on</h2>
         <p>With littlessentials you make a difference and reduce your family’s carbon footprint by renting high quality products instead of buying.</p>
         <Button label="learn more" />

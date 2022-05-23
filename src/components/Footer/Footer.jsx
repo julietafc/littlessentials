@@ -25,6 +25,7 @@ export default function Footer(props) {
           <div className="column">
             <h4>partners</h4>
             <Link to="/brands">Brands </Link>
+            <Link to="/ngos">NGOs </Link>
           </div>
           <div className="column">
             <h4>connect</h4>
@@ -34,9 +35,14 @@ export default function Footer(props) {
         </div>
       </div>
       <div className="footer_footer">
-        <p>
-          © 2022 <strong>littl</strong>essentials
-        </p>
+        <div className="right_side">
+          <p>
+            © 2022 <strong>littl</strong>essentials
+          </p>
+          <Link to="/policy">Privacy Policy</Link>
+          <Link to="/policy">Refund Policy</Link>
+          <Link to="/policy">Shipping Policy</Link>
+        </div>
         <Link to="/">
           <LElement width="35" color="white"></LElement>
         </Link>

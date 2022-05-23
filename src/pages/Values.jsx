@@ -1,10 +1,12 @@
 import Banner from "../components/Banner/Banner";
 import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
 import "../sass/layout/layout.scss";
 export default function Values() {
   return (
     <>
+      <Header />
       <Chat />
       <Banner className="banner_guide" heading="Our values" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." />
       <main className="layout_innerpages getintouch guide">

@@ -19,19 +19,22 @@ export default function Header() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <NavDropdown title="how it works" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Step by step</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">FAQ</NavDropdown.Item>
+              <NavDropdown.Item href="step-by-step">Step by step</NavDropdown.Item>
+              <NavDropdown.Item href="faq">FAQ</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="about" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Our story</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Our guide</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Core values</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Low carbon</NavDropdown.Item>
+              <NavDropdown.Item href="story">Our story</NavDropdown.Item>
+              <NavDropdown.Item href="guide">Our guide</NavDropdown.Item>
+              <NavDropdown.Item href="values">Core values</NavDropdown.Item>
+              <NavDropdown.Item href="lowcarbon">Low carbon</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#pricing">partners</Nav.Link>
+            <NavDropdown title="partners" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="brands">Brands</NavDropdown.Item>
+              <NavDropdown.Item href="ngos">NGOs</NavDropdown.Item>
+            </NavDropdown>
             <NavDropdown title="connect" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Get in touch</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Partner with us</NavDropdown.Item>
+              <NavDropdown.Item href="get-in-touch">Get in touch</NavDropdown.Item>
+              <NavDropdown.Item href="partner-with-us">Partner with us</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>

@@ -42,9 +42,6 @@ body {
       margin: 2rem 1rem;
     }
   }
-  .accordion .accordion-flush .accordion-item {
-    width: 70%;
-  }
 
   .p_inner {
     width: 50%;
@@ -52,6 +49,10 @@ body {
 
   &.faq {
     flex-direction: column;
+
+    .accordion .accordion-flush .accordion-item {
+      width: 70%;
+    }
 
     h5 {
       margin-top: 3rem;
@@ -94,19 +95,41 @@ body {
 
   &.brands {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-direction: column;
 
-    .card_brand {
-      margin: 1rem;
+    p {
+      width: 55%;
+      margin-bottom: 4rem;
     }
-
-    img {
+    .card_wrapper {
       width: 100%;
-      height: 200px;
-      border-radius: 0px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(208px, 298px));
+      gap: 2rem;
+      z-index: -1;
+
+      .card_brand {
+        margin: 1rem;
+      }
+
+      img {
+        width: 100%;
+        height: 200px;
+        border-radius: 0px;
+      }
     }
   }
+
+  &.circularity {
+    section {
+      width: 50%;
+      margin-left: 3rem;
+    }
+  }
+}
+
+.policy {
+  padding: 5rem;
 }
 
 .floating_actions {
@@ -124,35 +147,46 @@ body {
   }
 }
 
-.news {
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
-  margin-bottom: 3rem;
-  background: var(--light);
+@media screen and (max-width: 769px) {
+  .layout_innerpages {
+    padding: 3rem;
 
-  h5 {
-    width: 40%;
-    margin-right: 3rem;
-    font-family: var(--font-body);
-  }
-}
+    &.getintouch {
+      flex-direction: column;
+      section {
+        width: 100%;
+        margin: 0;
+        margin-top: 2rem;
+        form {
+          width: 90%;
+        }
+      }
 
-.testimonial {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5rem;
+      &.guide section {
+        width: 100%;
+      }
+    }
 
-  .text {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-  }
+    &.brands {
+      p {
+        width: 100%;
+        margin-bottom: 4rem;
+      }
+    }
 
-  img {
-    width: 40%;
-    margin-right: 2rem;
+    .guide_wrapper .banner section {
+      padding: 2rem;
+      p,
+      h1 {
+        width: 100%;
+      }
+    }
+    .policy {
+      padding: 2rem;
+
+      .tab-content > .active {
+        margin-top: 3rem;
+      }
+    }
   }
 }

@@ -54,5 +54,34 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    .right_side {
+      display: flex;
+      p {
+        margin-bottom: 0;
+        margin-right: 1rem;
+      }
+      a {
+        color: #7a7a7a;
+        padding-right: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  footer .main_grid {
+    flex-direction: column;
+
+    .nav {
+      justify-content: space-between;
+      .column {
+        margin-top: 2rem;
+      }
+    }
+
+    .tagline {
+      width: 100%;
+    }
   }
 }
