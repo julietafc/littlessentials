@@ -1,12 +1,11 @@
 import Banner from "../components/Banner/Banner";
 import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";
-import NavBar from "../components/NavBar/NavBar";
+
 import "../sass/layout/layout.scss";
 export default function Story() {
   return (
     <div className="guide_wrapper">
-      <NavBar />
       <Chat />
       <Banner heading="Our story" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." />
       <main className="layout_innerpages getintouch guide">

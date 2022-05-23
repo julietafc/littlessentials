@@ -1,14 +1,13 @@
 import Banner from "../components/Banner/Banner";
 import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";
-import NavBar from "../components/NavBar/NavBar";
+
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "../sass/layout/layout.scss";
 export default function GetInTouch() {
   return (
     <>
-      <NavBar />
       <Chat />
       <Banner heading="Get in touch" text="Don't hesitate to reach out! We'd love to hear from you" />
       <main className="layout_innerpages getintouch">

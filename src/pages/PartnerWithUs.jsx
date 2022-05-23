@@ -1,14 +1,13 @@
 import Banner from "../components/Banner/Banner";
 import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";
-import NavBar from "../components/NavBar/NavBar";
+
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "../sass/layout/layout.scss";
 export default function PartnerWithUs() {
   return (
     <>
-      <NavBar />
       <Chat />
       <Banner heading="Partner With Us" text="We can help your business by connecting you conscious costumers" />
       <main className="layout_innerpages getintouch">

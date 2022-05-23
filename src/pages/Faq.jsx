@@ -1,5 +1,5 @@
 import Banner from "../components/Banner/Banner";
-import NavBar from "../components/NavBar/NavBar";
+
 import Accordion from "react-bootstrap/Accordion";
 import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";
@@ -8,7 +8,6 @@ import "../sass/layout/layout.scss";
 export default function Faq() {
   return (
     <>
-      <NavBar />
       <Chat />
       <Banner heading="Frequently Asked Questions" text="Find answers to commonly raised questions"></Banner>
       <main className="layout_innerpages faq">
