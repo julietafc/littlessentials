@@ -1,20 +1,17 @@
 import { useRef, useEffect, useState } from "react";
 import React from "react";
-// import SecHeroe from "../components/SecHeroe/SecHeroe";
 
 import BtnCO2 from "../components/BtnCO2/BtnCO2";
 import CO2Modal from "../components/CO2Modal/CO2Modal";
 import Chat from "../components/Chat/Chat";
 import "../sass/layout/layout.scss";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 
-import FaceLogo from "../components/FaceLogo/FaceLogo";
-import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, Move, MoveIn, MoveOut, Sticky, StickyIn, ZoomIn, ZoomOut, Zoom } from "react-scroll-motion";
 import SectionIntro from "../components/SectionsHome/SectionIntro";
 // import SectionMission from "../components/SectionsHome/SectionMission";
 import SectionManifesto from "../components/SectionsHome/SectionManifesto";
 import SectionWorks from "../components/SectionsHome/SectionWorks";
-// import SectionSlider from "../components/SectionsHome/SectionSlider";
-// import { SliderData } from "../components/SectionsHome/SliderData";
 import Footer from "../components/Footer/Footer";
 import SectionTestimonial from "../components/SectionsHome/SectionTestimonial";
 import SectionNewsletter from "../components/SectionsHome/SectionNewsletter";
@@ -71,6 +68,9 @@ export default function Home(props) {
 
   const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div className="Home">
       <Header />
@@ -88,9 +88,26 @@ export default function Home(props) {
         {/*<FaceLogo></FaceLogo> */}
       </main>
       <div className="floating_actions">
-        <BtnCO2 setShow={setShow}></BtnCO2>
+        {/* <BtnCO2 setShow={setShow}></BtnCO2> */}
         <Chat />
-        <CO2Modal show={show} onClose={() => setShow(false)} />
+        {/* <CO2Modal show={show} onClose={() => setShow(false)} /> */}
+        <Button className="co2_button" variant="primary" onClick={handleShow}>
+          this website <br /> only emites <br />
+          0.49g of CO2
+        </Button>
+
+        <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal title</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>I will not close if you click outside me. Don't even try to press escape key.</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary">Understood</Button>
+          </Modal.Footer>
+        </Modal>
       </div>
       <Footer />
     </div>
