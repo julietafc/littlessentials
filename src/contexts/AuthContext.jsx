@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { auth } from "../firebase";
-import { signOut, sendPasswordResetEmail, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, updateProfile, updateEmail, updatePassword } from "firebase/auth";
+import { signOut, sendPasswordResetEmail, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, updateProfile, updateEmail, updatePassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 export const AuthContext = React.createContext();
 
@@ -31,7 +31,7 @@ export function AuthProvider({ children }) {
     };
   }, []);
 
-  async function signup(email, password, userName) {
+  function signup(email, password, userName) {
     setLoading(true);
     setTheUserName(userName);
     console.log("step1");
@@ -52,7 +52,10 @@ export function AuthProvider({ children }) {
   }
 
   /*-------------------------------*/
-
+  function loginWithGoogle() {
+    const provider = new GoogleAuthProvider();
+    return signInWithPopup(auth, provider);
+  }
   /*---------------------------------*/
 
   function login(email, password) {
@@ -67,12 +70,18 @@ export function AuthProvider({ children }) {
     return sendPasswordResetEmail(auth, email);
   }
 
-  function udProfile(hola, userName) {
-    console.log("udProfile");
-    return updateProfile(hola, {
+  function udName(userName) {
+    return updateProfile(auth.currentUser, {
       displayName: userName,
     });
   }
+  // function udProfile(userName) {
+  //   // console.log("udProfile");
+  //   const userData = {
+  //     displayName: userName,
+  //   };
+  //   return updateProfile(auth.currentUser, userData);
+  // }
 
   function udEmail(email) {
     return updateEmail(auth.currentUser, email);
@@ -82,22 +91,16 @@ export function AuthProvider({ children }) {
     return updatePassword(auth.currentUser, password);
   }
 
-  function udName(userName) {
-    return updateProfile(auth.currentUser, {
-      displayName: userName,
-    });
-  }
-
   const value = {
-    theUser,
     signup,
-    udProfile,
     udName,
     login,
+    loginWithGoogle,
     logout,
     resetPassword,
     udEmail,
     udPassword,
+    theUser,
     theUserName,
     auth,
   };

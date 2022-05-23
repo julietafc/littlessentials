@@ -8,8 +8,8 @@ export default function SignUp() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
-  const nameRef = useRef();
-  const { signup, signupV, theUser, auth } = useAuth();
+  const userNameRef = useRef();
+  const { signup, loginWithGoogle } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -35,10 +35,11 @@ export default function SignUp() {
     //     setLoading(false);
     //     navigate("/profile", { replace: true });
     //   });
+
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value, nameRef.current.value);
+      await signup(emailRef.current.value, passwordRef.current.value, userNameRef.current.value);
     } catch {
       setError("Fail to create an account");
     }
@@ -58,7 +59,7 @@ export default function SignUp() {
             <Form onSubmit={handleSubmit}>
               <Form.Group id="userName" className="mb-4">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="text" ref={nameRef} required></Form.Control>
+                <Form.Control type="text" ref={userNameRef} required></Form.Control>
               </Form.Group>
               <Form.Group id="email" className="mb-4">
                 <Form.Label>Email</Form.Label>
@@ -76,6 +77,18 @@ export default function SignUp() {
                 Sign Up
               </Button>
             </Form>
+            <p>------------ OR --------------</p>
+            <Button
+              className="w-100 mt-3 btn-desert"
+              onClick={() =>
+                loginWithGoogle().then(() => {
+                  setLoading(false);
+                  navigate("/subscription", { replace: true });
+                })
+              }
+            >
+              Sign Up With Google
+            </Button>
           </Card.Body>
         </Card>
         <div className="w-100 text-center mt-2">
