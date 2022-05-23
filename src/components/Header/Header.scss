@@ -1,17 +1,25 @@
 @use "../../sass/base/" as *;
 
-.navbar.navbar-expand-lg.navbar-dark {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+.navbar.navbar-expand-lg {
+  &.navbar-dark {
+    position: sticky;
+    top: 0;
+    z-index: 10;
 
-  &.bg-dark {
-    background-color: var(--tan) !important;
+    &.bg-dark {
+      background-color: var(--tan) !important;
+    }
+  }
+
+  .navbar-nav {
+    margin-left: 3rem;
   }
 }
 
 .header_landing.navbar.navbar-expand-lg.navbar-dark {
   .container {
+    max-width: 1400px;
+    margin: 0 auto;
     .navbar-collapse {
       justify-content: flex-end;
     }

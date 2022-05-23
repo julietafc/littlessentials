@@ -77,9 +77,9 @@ export default function Home(props) {
       {/* <SecHeroe color="white"></SecHeroe> */}
       <main className="layout">
         <SectionIntro />
+        <SectionWorks />
         {/* <SectionMission /> */}
         <SectionManifesto />
-        <SectionWorks />
         <SectionCarousel />
         {/* <SectionSlider slides={SliderData} /> */}
         <SectionTestimonial />
