@@ -9,15 +9,15 @@ export default function BrandList(props) {
         <Card.Img variant="top" src="./assets/img06.png" />
         <Card.Body>
           <Card.Title>{brand.title}</Card.Title>
+          <Button
+            onClick={() => {
+              console.log("button");
+              props.setBrand(brand);
+            }}
+          >
+            Learn more
+          </Button>
         </Card.Body>
-        <Button
-          onClick={() => {
-            console.log("button");
-            props.setBrand(brand);
-          }}
-        >
-          Learn more
-        </Button>
       </Card>
     </li>
   ));
