@@ -38,8 +38,8 @@ export default function Header() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Get started</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
+            <Nav.Link href="signup">Get started</Nav.Link>
+            <Nav.Link eventKey={2} href="login">
               Log in
             </Nav.Link>
           </Nav>

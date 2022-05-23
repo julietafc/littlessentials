@@ -4,8 +4,9 @@ import { useAuth } from "../../contexts/AuthContext";
 import styles from "../Subscription/subscription.module.scss";
 import Steps from "./Steps";
 import InfoAside from "./InfoAside";
-import NavBar from "../../components/NavBar/NavBar";
+
 import FormAge from "./FormAge";
+import Header from "../../components/Header/Header";
 
 export default function Subscription(props) {
   console.log("subscription");
@@ -21,7 +22,7 @@ export default function Subscription(props) {
 
   return (
     <>
-      <NavBar />
+      <Header />
       <div className={styles.stepsFormWrapper}>
         <div>
           {theUser && (
