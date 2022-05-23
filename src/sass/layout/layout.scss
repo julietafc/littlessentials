@@ -108,9 +108,18 @@ body {
     }
     .card_wrapper {
       width: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(208px, 298px));
-      gap: 2rem;
+      margin-top: 3rem;
+
+      ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(208px, 348px));
+        gap: 2rem;
+        justify-content: center;
+
+        li {
+          list-style: none;
+        }
+      }
 
       .card_brand {
         margin: 1rem;
