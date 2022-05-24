@@ -9,7 +9,7 @@ export default function Story() {
     <div className="guide_wrapper">
       <Header />
       <Chat />
-      <Banner heading="Our story" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." />
+      <Banner heading="Our story" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." bgColor={"#f0f0f0"} color={"#8b5028"} />
       <div className="layout_innerpages getintouch guide">
         <aside>
           <h6>Follow & Connect with us and our community</h6>

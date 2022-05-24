@@ -13,6 +13,8 @@ export default function Carbon() {
         className="banner_guide"
         heading="Less is more for sure"
         text="We align our online presence with what we believe in; removing the clutter and simplifying our lives, therefore focusing on what matters while minimizing our footprint, also digitally."
+        bgColor={"#f0f0f0"}
+        color={"#8b5028"}
       />
       <div className="lowcarbon">
         <section className="section2">

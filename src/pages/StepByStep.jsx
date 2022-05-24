@@ -9,7 +9,7 @@ export default function StepByStep() {
     <div className="guide_wrapper">
       <Header />
       <Chat />
-      <Banner heading="How it works" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." />
+      <Banner heading="How it works" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." bgColor={"#cf9345"} color={"#f0f0f0"} />
       <div className="layout_innerpages getintouch guide">
         <aside>
           <h6>Follow & Connect with us and our community</h6>

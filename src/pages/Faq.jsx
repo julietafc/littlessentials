@@ -11,7 +11,7 @@ export default function Faq() {
     <>
       <Header />
       <Chat />
-      <Banner heading="Frequently Asked Questions" text="Find answers to commonly raised questions"></Banner>
+      <Banner heading="Frequently Asked Questions" text="Find answers to commonly raised questions" bgColor={"#f1e9de"} color={"#8b5028"} />
       <div className="layout_innerpages faq">
         <Accordion style={{ zIndex: "-99" }} defaultActiveKey="0" flush>
           <Accordion.Item eventKey="0">

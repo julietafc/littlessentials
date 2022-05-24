@@ -11,7 +11,7 @@ export default function PartnerWithUs() {
     <>
       <Header />
       <Chat />
-      <Banner heading="Partner With Us" text="We can help your business by connecting you conscious costumers" />
+      <Banner heading="Partner With Us" text="We can help your business by connecting you conscious costumers" bgColor={"#8b5028"} color={"#d1cbbe"} />
       <div className="layout_innerpages getintouch">
         <aside>
           <h6>Follow & Connect with us and our community</h6>

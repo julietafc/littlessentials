@@ -13,7 +13,7 @@ export default function Policy() {
   return (
     <>
       <Header />
-      <Banner heading="Policies" text="Transparency is one of our core values" />
+      <Banner heading="Policies" text="Transparency is one of our core values" bgColor={"#222222"} color={"#f1e9de"} />
       <div className="policy">
         <section>
           <Tab.Container id="left-tabs-example" defaultActiveKey="first">

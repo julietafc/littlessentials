@@ -9,7 +9,13 @@ export default function Guide() {
     <div className="guide_wrapper">
       <Header />
       <Chat />
-      <Banner className="banner_guide" heading="Caring for your essential items" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." />
+      <Banner
+        className="banner_guide"
+        heading="Caring for your essential items"
+        text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again."
+        bgColor={"#8b5028"}
+        color={"#f1e9de"}
+      />
       <div className="layout_innerpages getintouch guide">
         <aside>
           <h6>Follow & Connect with us and our community</h6>
