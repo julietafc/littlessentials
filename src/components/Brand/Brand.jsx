@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import ScrollToTop from "../../ScrollToTop";
 
 import "./Brand.scss";
 
 export default function Brand(props) {
   return (
     <div className="wrapper">
+      <ScrollToTop />
       <div className="brand_detail">
         <a
           className="return_header"

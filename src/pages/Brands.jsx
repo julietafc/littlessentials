@@ -2,6 +2,7 @@ import Banner from "../components/Banner/Banner";
 import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";
 import React, { useEffect, useState } from "react";
+import ScrollToTop from "../ScrollToTop";
 
 import "../sass/layout/layout.scss";
 import Header from "../components/Header/Header";
@@ -23,6 +24,7 @@ export default function Brands() {
 
   return (
     <>
+      <ScrollToTop />
       <Header />
       <Chat />
       {brand ? (
