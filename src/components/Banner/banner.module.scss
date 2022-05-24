@@ -1,17 +1,3 @@
-// .h1 {
-//   font-size: 5rem;
-//   animation: moving 25s linear infinite;
-//   color: red;
-//   transform: translateX(-25%);
-// }
-
-// @keyframes moving {
-//   to {
-//     transform: translateX(120%);
-//     color: aqua;
-//   }
-// }
-
 .section {
   min-height: 80vh;
   display: flex;
@@ -27,4 +13,14 @@
 .p {
   font-size: 1.2rem;
   width: 55%;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }

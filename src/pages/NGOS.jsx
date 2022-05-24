@@ -5,7 +5,7 @@ import Footer from "../components/Footer/Footer";
 import Card from "react-bootstrap/Card";
 import "../sass/layout/layout.scss";
 import Header from "../components/Header/Header";
-export default function Circularity() {
+export default function NGOS() {
   return (
     <>
       <Header />
@@ -17,7 +17,7 @@ export default function Circularity() {
           circularity partners, who will make sure they get a new home. In every Littlessentials package shipped to you, you will find an envelope and label directed to one of our local NGO partners. You can use this to easily send the items you no
           longer need. Currently we are teamed up with every Mødrehjælpen and Red Barnet shop across Denmark, so you can also just drop by with your used items. In doing so, you make sure they’ll get used by others within your local community.
         </p>
-        <div className="card_wrapper">
+        <div className="card_wrapper_ngos">
           <Card className="card_brand" style={{ width: "18rem" }}>
             <Card.Img variant="top" src="./assets/img06.png" />
             <Card.Body>

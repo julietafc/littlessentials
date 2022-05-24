@@ -5,8 +5,10 @@ export default function Banner(props) {
   return (
     <div className="banner">
       <section style={styleBanner} className={styles.section}>
-        <h1 className={styles.h1}>{props.heading}</h1>
-        <p className={styles.p}>{props.text}</p>
+        <div className={styles.wrapper}>
+          <h1 className={styles.h1}>{props.heading}</h1>
+          <p className={styles.p}>{props.text}</p>
+        </div>
       </section>
     </div>
   );
