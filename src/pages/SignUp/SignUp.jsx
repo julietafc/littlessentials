@@ -1,6 +1,6 @@
 import styles from "./signUp.module.scss";
 import React, { useRef, useState } from "react";
-import { Form, Button, Card, Alert, Container } from "react-bootstrap";
+import { Form, Button, Card, Alert, Container, Spinner } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -74,7 +74,7 @@ export default function SignUp() {
                 <Form.Control type="password" ref={passwordConfirmRef} required></Form.Control>
               </Form.Group>
               <Button disabled={loading} className="w-100 mt-3 btn-desert" type="submit">
-                Sign Up
+                {loading ? <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" /> : "Sign Up"}
               </Button>
             </Form>
             <p>------------ OR --------------</p>
