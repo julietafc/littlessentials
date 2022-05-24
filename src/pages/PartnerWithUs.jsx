@@ -12,7 +12,7 @@ export default function PartnerWithUs() {
       <Header />
       <Chat />
       <Banner heading="Partner With Us" text="We can help your business by connecting you conscious costumers" />
-      <main className="layout_innerpages getintouch">
+      <div className="layout_innerpages getintouch">
         <aside>
           <h6>Follow & Connect with us and our community</h6>
           <div className="social">
@@ -48,7 +48,7 @@ export default function PartnerWithUs() {
             </Button>
           </Form>
         </section>
-      </main>
+      </div>
       <Footer />
     </>
   );

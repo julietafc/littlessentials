@@ -11,7 +11,7 @@ export default function Circularity() {
       <Header />
       <Chat />
       <Banner heading="Encouraging Circularity" text="Missing text here" />
-      <main className="layout_innerpages brands">
+      <div className="layout_innerpages brands">
         <p>
           Children grow out of clothing faster than any other group, and many times what we no longer need is still 100% usable by others. So instead of wasting these items, we encourage you to pass on the items you no longer need to one of our
           circularity partners, who will make sure they get a new home. In every Littlessentials package shipped to you, you will find an envelope and label directed to one of our local NGO partners. You can use this to easily send the items you no
@@ -35,7 +35,7 @@ export default function Circularity() {
             </Card.Body>
           </Card>
         </div>
-      </main>
+      </div>
       <Footer />
     </>
   );

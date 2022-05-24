@@ -22,13 +22,13 @@ export default function Landing() {
     <div className="Home">
       <HeaderLanding />
       <SecHeroe color="white"></SecHeroe>
-      <main className="landing_layout">
+      <div className="landing_layout">
         <Second />
         <Third />
         <SectionNewsletter className="newsletter" />
         <Testimonial />
         <SectionIG />
-      </main>
+      </div>
       <Footer />
     </div>
   );

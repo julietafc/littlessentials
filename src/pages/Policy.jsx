@@ -14,7 +14,7 @@ export default function Policy() {
     <>
       <Header />
       <Banner heading="Policies" text="Transparency is one of our core values" />
-      <main className="policy">
+      <div className="policy">
         <section>
           <Tab.Container id="left-tabs-example" defaultActiveKey="first">
             <Row>
@@ -183,7 +183,7 @@ export default function Policy() {
             </Row>
           </Tab.Container>
         </section>
-      </main>
+      </div>
       <Footer />
     </>
   );

@@ -75,7 +75,7 @@ export default function Home(props) {
     <div className="Home">
       <Header />
       {/* <SecHeroe color="white"></SecHeroe> */}
-      <main className="layout">
+      <div className="layout">
         <SectionIntro />
         <SectionWorks />
         {/* <SectionMission /> */}
@@ -86,7 +86,7 @@ export default function Home(props) {
         <SectionNewsletter />
         <SectionIG />
         {/*<FaceLogo></FaceLogo> */}
-      </main>
+      </div>
       <div className="floating_actions">
         {/* <BtnCO2 setShow={setShow}></BtnCO2> */}
         <Chat />
