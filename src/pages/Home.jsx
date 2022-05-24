@@ -1,8 +1,6 @@
-import { useRef, useEffect, useState } from "react";
+import { useState } from "react";
 import React from "react";
 
-import BtnCO2 from "../components/BtnCO2/BtnCO2";
-import CO2Modal from "../components/CO2Modal/CO2Modal";
 import Chat from "../components/Chat/Chat";
 import "../sass/layout/layout.scss";
 import Modal from "react-bootstrap/Modal";
@@ -81,16 +79,13 @@ export default function Home(props) {
         {/* <SectionMission /> */}
         <SectionManifesto />
         <SectionCarousel />
-        {/* <SectionSlider slides={SliderData} /> */}
         <SectionTestimonial />
         <SectionNewsletter />
         <SectionIG />
         {/*<FaceLogo></FaceLogo> */}
       </div>
       <div className="floating_actions">
-        {/* <BtnCO2 setShow={setShow}></BtnCO2> */}
         <Chat />
-        {/* <CO2Modal show={show} onClose={() => setShow(false)} /> */}
         <Button className="co2_button" variant="primary" onClick={handleShow}>
           this website <br /> only emites <br />
           0.49g of CO2
@@ -98,14 +93,30 @@ export default function Home(props) {
 
         <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal title</Modal.Title>
+            <Modal.Title>Minimizing our footprint, also digitally</Modal.Title>
           </Modal.Header>
-          <Modal.Body>I will not close if you click outside me. Don't even try to press escape key.</Modal.Body>
+          <Modal.Body>
+            <div className="left">
+              <p> Our webpage has a carbon footprint of x CO2, calculated through the Website Carbon Calculator (https://www.websitecarbon.com).</p>
+              <br />
+              <p> A regular website has an average of x CO2. This means we are using 80% less CO2 than the average website.</p>
+              <br />
+              <p>If you would like more info about how you can reduce your digital footprint, feel free to reach out to us via info@littlessentials.dk and we’ll be happy to share what we know with you.</p>
+            </div>
+            <div className="right">
+              <div className="info_1">
+                <h2>80%</h2>
+                <p>less C02</p>
+              </div>
+              <div className="info_2">
+                <h2>0.231g</h2>
+                <p>of CO2 per visit</p>
+              </div>
+            </div>
+          </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary">Understood</Button>
+            <p>Every small change starts with a seed of awareness.</p>
+            <Button variant="primary">Learn more</Button>
           </Modal.Footer>
         </Modal>
       </div>
