@@ -1,6 +1,7 @@
 import Button from "../Button/Button";
 import "./SectionWorks.scss";
 import "../../sass/layout/layout.scss";
+import { Link } from "react-router-dom";
 export default function SectionWorks(props) {
   return (
     <div className="wrapper">
@@ -22,7 +23,9 @@ export default function SectionWorks(props) {
         <div>
           <h2 className="">Simply subscribe, enjoy and pass it on</h2>
           <p>With littlessentials you make a difference and reduce your family’s carbon footprint by renting high quality products instead of buying.</p>
-          <Button label="learn more" />
+          <Link to="step-by-step">
+            <Button label="learn more" />
+          </Link>
         </div>
       </section>
     </div>
