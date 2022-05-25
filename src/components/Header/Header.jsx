@@ -8,6 +8,10 @@ import { useRef, useEffect, useState } from "react";
 import LElement from "../LElement/LElement";
 import { Link } from "react-router-dom";
 
+import LogInSlide from "../LogInSlide/LogInSlide";
+import SignUp from "../../pages/SignUp/SignUp";
+import LogIn from "../../pages/LogIn/LogIn";
+
 export default function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -39,9 +43,15 @@ export default function Header() {
           </Nav>
           <Nav>
             <Nav.Link href="signup">Get started</Nav.Link>
-            <Nav.Link eventKey={2} href="login">
+            {/* <Nav.Link eventKey={2} href="login">
               Log in
-            </Nav.Link>
+            </Nav.Link> */}
+            <LogInSlide name="Log in">
+              <LogIn></LogIn>
+            </LogInSlide>
+            <LogInSlide name="Sign up">
+              <SignUp />
+            </LogInSlide>
           </Nav>
         </Navbar.Collapse>
       </Container>
