@@ -6,6 +6,10 @@ body {
 
 .layout {
   min-height: 100vh;
+
+  .manifesto_mobile {
+    display: none;
+  }
 }
 
 .wrapper {

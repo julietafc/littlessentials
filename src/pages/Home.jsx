@@ -9,6 +9,7 @@ import Button from "react-bootstrap/Button";
 import SectionIntro from "../components/SectionsHome/SectionIntro";
 // import SectionMission from "../components/SectionsHome/SectionMission";
 import SectionManifesto from "../components/SectionsHome/SectionManifesto";
+import SectionManifestoDk from "../components/SectionsHome/SectionManifestoDk";
 import SectionWorks from "../components/SectionsHome/SectionWorks";
 import Footer from "../components/Footer/Footer";
 import SectionTestimonial from "../components/SectionsHome/SectionTestimonial";
@@ -77,7 +78,8 @@ export default function Home(props) {
         <SectionIntro />
         <SectionWorks />
         {/* <SectionMission /> */}
-        <SectionManifesto />
+        <SectionManifesto className="manifesto_mobile" />
+        <SectionManifestoDk className="manifesto_desktop" />
         <SectionCarousel />
         <SectionTestimonial />
         <SectionNewsletter heading="Receive 10% off your first order when you sign up for our newsletter." />

@@ -1,7 +1,9 @@
-.card_left {
-  background-color: var(--pebble);
-}
+.cards {
+  min-height: 200px;
+  border: 1px solid grey;
+  padding: 1rem;
 
-.card_right {
-  background-color: var(--sun);
+  button {
+    float: right;
+  }
 }

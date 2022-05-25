@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function SectionValues(props) {
   return (
     <div className="wrapper">
-      <section className="manifesto">
+      <section className="manifestomb">
         <div className="header">
           <h2>Our Manifesto</h2>
           <Link className="button_manifesto" to="/values">
