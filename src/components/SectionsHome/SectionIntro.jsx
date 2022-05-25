@@ -1,19 +1,9 @@
 import Button from "../Button/Button";
 import styles from "./SectionIntro.module.scss";
 import pebble from "/assets/lake-pebble.svg";
-import { Parallax } from "react-scroll-parallax";
 import "../../App.scss";
 import { Link } from "react-router-dom";
-export default function SectionIntro(props) {
-  const img2Style = {
-    // transition: "transform .3s linear",
-    transform: `translateY(-${200 + props.offsetY * 0.2}px)`,
-  };
-  const img1Style = {
-    // transition: "transform .3s linear",
-    transform: `translateY(-${props.offsetY * 0.5}px)`,
-  };
-
+export default function SectionIntro() {
   return (
     <div className={styles.wrapper}>
       <section className={styles.SecInfo}>

@@ -1,5 +1,4 @@
 import Banner from "../components/Banner/Banner";
-
 import Accordion from "react-bootstrap/Accordion";
 import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";

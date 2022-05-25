@@ -18,7 +18,6 @@ export default function SecHeroe(props) {
           <h4 className={styles.h4}>
             <span className={styles.bold}>littl</span>essentials
           </h4>
-          {/* <img className={styles.element} src={props.src} alt="" /> */}
 
           <h5 className={styles.h5}>simplifying parenthood in a conscious way</h5>
         </div>

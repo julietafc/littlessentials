@@ -1,13 +1,6 @@
-import { useRef, useEffect, useState } from "react";
 import React from "react";
 import SecHeroe from "../components/SectionLanding/SecHeroe/SecHeroe";
-
 import "../sass/layout/landing_layout.scss";
-
-import SectionIntro from "../components/SectionsHome/SectionIntro";
-
-import SectionManifesto from "../components/SectionsHome/SectionManifesto";
-
 import Footer from "../components/Footer/Footer";
 import SectionNewsletter from "../components/SectionsHome/SectionNewsletter";
 import SectionIG from "../components/SectionsHome/SectionIG";

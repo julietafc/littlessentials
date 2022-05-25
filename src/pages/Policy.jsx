@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import Banner from "../components/Banner/Banner";
 
 import Footer from "../components/Footer/Footer";
@@ -9,7 +8,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import Header from "../components/Header/Header";
-import useScript from "../modules/useScript";
 
 export default function Policy() {
   return (

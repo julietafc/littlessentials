@@ -3,7 +3,6 @@ import "./Carbon.scss";
 import Chat from "../components/Chat/Chat";
 import Banner from "../components/Banner/Banner";
 import Footer from "../components/Footer/Footer";
-import SectionNewsletter from "../components/SectionsHome/SectionNewsletter";
 export default function Carbon() {
   return (
     <>
