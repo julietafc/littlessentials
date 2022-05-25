@@ -8,11 +8,15 @@ import { useRef, useEffect, useState } from "react";
 import LElement from "../LElement/LElement";
 import { Link } from "react-router-dom";
 
-import LogInSlide from "../LogInSlide/LogInSlide";
+import OffCanvasForm from "../OffCanvasForm/OffCanvasForm";
 import SignUp from "../../pages/SignUp/SignUp";
 import LogIn from "../../pages/LogIn/LogIn";
+import { useAuth } from "../../contexts/AuthContext";
+import { Button } from "react-bootstrap";
 
 export default function Header() {
+  const { theUser, theUserName, logout } = useAuth();
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -41,16 +45,24 @@ export default function Header() {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="signup">Get started</Nav.Link>
-            {/* <Nav.Link eventKey={2} href="login">
+            {/* <Nav.Link href="signup">Get started</Nav.Link>
+            <Nav.Link eventKey={2} href="login">
               Log in
             </Nav.Link> */}
-            <LogInSlide name="Log in">
-              <LogIn></LogIn>
-            </LogInSlide>
-            <LogInSlide name="Sign up">
-              <SignUp />
-            </LogInSlide>
+            {theUser ? (
+              <Button variant="link" className="text-white text-opacity-50 text-decoration-none" onClick={() => logout()}>
+                log out
+              </Button>
+            ) : (
+              <>
+                <OffCanvasForm name="get started">
+                  <SignUp />
+                </OffCanvasForm>
+                <OffCanvasForm name="log in">
+                  <LogIn />
+                </OffCanvasForm>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

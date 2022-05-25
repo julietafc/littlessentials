@@ -55,7 +55,7 @@ export default function SignUp() {
           <Card.Body>
             <h2 className="text-center mb-4">Sign up</h2>
             {error && <Alert variant="danger">{error}</Alert>}
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} className="border-bottom pb-4">
               <Form.Group id="userName" className="mb-3">
                 <Form.Label>Name</Form.Label>
                 <Form.Control type="text" ref={userNameRef} required></Form.Control>
@@ -73,13 +73,13 @@ export default function SignUp() {
                 <Form.Control type="password" ref={passwordConfirmRef} required></Form.Control>
               </Form.Group>
 
-              <Button disabled={loading} className="w-100 mt-2 mb-2 btn-desert" type="submit">
+              <Button disabled={loading} className="w-100 mt-2  btn-desert" type="submit">
                 {loading ? <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" /> : "Sign Up"}
               </Button>
             </Form>
-            <p className="w-100 pt-2 border-bottom text-center">{`or`}</p>
+
             <Button
-              className="w-100 mt-1 btn-desert"
+              className="w-100 mt-4 btn-desert"
               onClick={() =>
                 loginWithGoogle().then(() => {
                   setLoading(false);

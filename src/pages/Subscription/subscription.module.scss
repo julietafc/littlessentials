@@ -105,7 +105,7 @@ input[type="radio"] {
 .formsWrapper {
   width: 100%;
   min-height: 50vh;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .formsSlider {
@@ -124,6 +124,7 @@ input[type="radio"] {
   transform-origin: center;
   // transform: scale(0.9);
   // transform: translateX(100%);
+
   animation: appearing 0.5s ease 1 forwards;
 }
 
