@@ -1,17 +1,16 @@
 section.works {
-  display: flex;
-  padding: 0 9em;
-  margin: 5rem 0 10rem 0;
-
+  padding: 0 6rem;
+  margin: 5rem 0 12rem 0;
   align-items: center;
 
-  p {
-    margin: 1rem 0 2rem 0;
-    // max-width: 45ch;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
 
     h2 {
       top: 1rem;
-      max-width: 25ch;
+      max-width: 22ch;
     }
   }
 
@@ -23,14 +22,10 @@ section.works {
   }
 
   .steps {
-    width: 70%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-start;
     text-align: left;
-    margin-left: 4rem;
-    margin-top: -2rem;
 
     div {
       margin-bottom: 1em;

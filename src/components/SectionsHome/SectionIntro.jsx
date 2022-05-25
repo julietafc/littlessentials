@@ -21,7 +21,7 @@ export default function SectionIntro(props) {
           <img className={styles.element} src={pebble} />
         </div>
         <div className={styles.images}>
-          <img src="../assets/im01.png" alt="" />
+          <img src="../assets/img01.webp" alt="" />
           <img src="../assets/img02.png" alt="" />
           <img src="../assets/img03.png" alt="" />
         </div>

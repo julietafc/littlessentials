@@ -6,6 +6,12 @@ export default function SectionWorks(props) {
   return (
     <div className="wrapper">
       <section className="works">
+        <div className="header">
+          <h2>High quality items for each phase of your child's growth</h2>
+          <Link to="step-by-step">
+            <Button label="learn more" />
+          </Link>
+        </div>
         <div className="steps">
           <div>
             <h1>01.</h1>
@@ -19,13 +25,6 @@ export default function SectionWorks(props) {
             <h1>03.</h1>
             <h3>Pass it on</h3>
           </div>
-        </div>
-        <div>
-          <h2 className="">Simply subscribe, enjoy and pass it on</h2>
-          <p>With littlessentials you make a difference and reduce your family’s carbon footprint by renting high quality products instead of buying.</p>
-          <Link to="step-by-step">
-            <Button label="learn more" />
-          </Link>
         </div>
       </section>
     </div>

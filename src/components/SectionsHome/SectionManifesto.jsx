@@ -7,7 +7,7 @@ export default function SectionValues(props) {
     <div className="wrapper">
       <section className="manifesto">
         <div className="header">
-          <h2>Our manifesto</h2>
+          <h2>Our Manifesto</h2>
           <Link className="button_manifesto" to="/values">
             <Button label="our values" />
           </Link>

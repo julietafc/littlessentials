@@ -10,7 +10,7 @@ export default function NGOS() {
     <>
       <Header />
       <Chat />
-      <Banner heading="Encouraging Circularity" text="Missing text here" bgColor={"#f1e9de"} color={"#8b5028"} />
+      <Banner heading="Encouraging Circularity" text="We invite you to pass on the items you no longer need to one of our circularity partners listed below." bgColor={"#f1e9de"} color={"#8b5028"} />
       <div className="layout_innerpages brands">
         <p>
           Children grow out of clothing faster than any other group, and many times what we no longer need is still 100% usable by others. So instead of wasting these items, we encourage you to pass on the items you no longer need to one of our

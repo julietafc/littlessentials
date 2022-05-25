@@ -15,8 +15,7 @@ export default function Footer(props) {
           <div className="nav">
             <div className="column">
               <h4>how it works</h4>
-              <Link to="/step-by-step">Step by step</Link>
-              <Link to="/faq">FAQ</Link>
+              <Link to="/how-it-works">Step by step</Link>
             </div>
             <div className="column">
               <h4>about</h4>
@@ -24,6 +23,7 @@ export default function Footer(props) {
               <Link to="/story">Our story</Link>
               <Link to="/values">Our values</Link>
               <Link to="/carbon">Low carbon</Link>
+              <Link to="/faq">FAQ</Link>
             </div>
             <div className="column">
               <h4>partners</h4>
