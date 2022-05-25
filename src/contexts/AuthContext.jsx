@@ -56,6 +56,10 @@ export function AuthProvider({ children }) {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(auth, provider);
   }
+
+  function loginWithFacebook() {
+    console.log("loginWithFacebook");
+  }
   /*---------------------------------*/
 
   function login(email, password) {
