@@ -80,7 +80,7 @@ export default function Home(props) {
         <SectionManifesto />
         <SectionCarousel />
         <SectionTestimonial />
-        <SectionNewsletter />
+        <SectionNewsletter heading="Receive 10% off your first order when you sign up for our newsletter." />
         <SectionIG />
         {/*<FaceLogo></FaceLogo> */}
       </div>
