@@ -7,7 +7,7 @@ import { useAuth } from "../../contexts/AuthContext";
 export default function FormSize(props) {
   // const [index, setIndex] = useState(null);
   const { theUser, theUserName } = useAuth();
-  const userName = theUser.displayName ? theUser.displayName : theUserName;
+  const userName = theUser && theUser.displayName ? theUser.displayName : theUserName;
 
   function handleChange(e) {
     props.setSelectedSize(e.currentTarget.value);
