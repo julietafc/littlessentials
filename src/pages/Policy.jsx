@@ -11,16 +11,6 @@ import Nav from "react-bootstrap/Nav";
 import Header from "../components/Header/Header";
 
 export default function Policy() {
-  const [policy, setPolicy] = useState();
-
-  useEffect(() => {
-    fetch("https://consent.cookiebot.com/9dc7fbc9-78b6-46cb-a385-8c7c37ee2b8d/cd.js")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        // setPolicy(data);
-      });
-  }, []);
   return (
     <>
       <Header />
