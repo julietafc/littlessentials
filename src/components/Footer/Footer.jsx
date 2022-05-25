@@ -22,7 +22,7 @@ export default function Footer(props) {
               <h4>about</h4>
               <Link to="/guide">Our guide</Link>
               <Link to="/story">Our story</Link>
-              <Link to="/values">Core values</Link>
+              <Link to="/values">Our values</Link>
               <Link to="/carbon">Low carbon</Link>
             </div>
             <div className="column">
