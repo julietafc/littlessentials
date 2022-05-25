@@ -24,12 +24,12 @@
 // }
 
 .react-card-flip {
-  height: 200px;
+  min-height: 250px;
   border-radius: 10px;
   display: flex;
 
   .front {
-    min-height: 200px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -40,11 +40,13 @@
 
   .react-card-flipper {
     .react-card-back {
+      min-height: 250px;
       display: flex;
       text-align: center;
       align-items: center;
       padding: 2rem;
       border-radius: 10px;
+      background-color: var(--light);
       box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
       p {
