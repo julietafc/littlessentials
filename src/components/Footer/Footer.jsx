@@ -8,8 +8,8 @@ export default function Footer(props) {
       <div className="footer_wrapper">
         <div className="main_grid">
           <p className="tagline">
-            essentials for your children, <br />
-            yourself and the planet. <br />
+            essentials for your children, yourself and the planet.
+            <br />
             <strong>littl</strong>essentials impacts everyone.
           </p>
           <div className="nav">
