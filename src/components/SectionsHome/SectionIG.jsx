@@ -9,10 +9,10 @@ export default function SectionIG(props) {
         <Button className="button_news" label="check us out" />
       </div>
       <div className="img_wrapper">
-        <img src="../assets/img07.png" alt="" />
-        <img src="../assets/img08.png" alt="" />
-        <img src="../assets/img09.png" alt="" />
-        <img src="../assets/img10.png" alt="" />
+        <img src="../assets/img07.webp" alt="kids garments and accesories" />
+        <img src="../assets/img08.webp" alt="instagram post with sign in invitation" />
+        <img src="../assets/img09.webp" alt="wood camera toy for kids" />
+        <img src="../assets/img10.webp" alt="five star review" />
       </div>
     </section>
   );
