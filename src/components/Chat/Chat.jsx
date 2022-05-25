@@ -38,7 +38,7 @@ export default class Chat extends Component {
         <Launcher
           agentProfile={{
             teamName: "littlessentials support",
-            imageUrl: "/assets/logomark-light.svg",
+            imageUrl: "../assets/logomark-light.svg",
           }}
           onMessageWasSent={this._onMessageWasSent.bind(this)}
           messageList={this.state.messageList}

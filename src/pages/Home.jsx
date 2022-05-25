@@ -5,9 +5,9 @@ import Chat from "../components/Chat/Chat";
 import "../sass/layout/layout.scss";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 import SectionIntro from "../components/SectionsHome/SectionIntro";
-// import SectionMission from "../components/SectionsHome/SectionMission";
 import SectionManifesto from "../components/SectionsHome/SectionManifesto";
 import SectionManifestoDk from "../components/SectionsHome/SectionManifestoDk";
 import SectionWorks from "../components/SectionsHome/SectionWorks";
@@ -73,18 +73,15 @@ export default function Home(props) {
   return (
     <div className="Home">
       <Header />
-      {/* <SecHeroe color="white"></SecHeroe> */}
       <div className="layout">
         <SectionIntro />
         <SectionWorks />
-        {/* <SectionMission /> */}
         <SectionManifesto className="manifesto_mobile" />
         <SectionManifestoDk className="manifesto_desktop" />
         <SectionCarousel />
         <SectionTestimonial />
         <SectionNewsletter heading="Receive 10% off your first order when you sign up for our newsletter." />
         <SectionIG />
-        {/*<FaceLogo></FaceLogo> */}
       </div>
       <div className="floating_actions">
         <Chat />
@@ -118,7 +115,9 @@ export default function Home(props) {
           </Modal.Body>
           <Modal.Footer>
             <p>Every small change starts with a seed of awareness.</p>
-            <Button variant="primary">Learn more</Button>
+            <Link to="lowcarbon">
+              <Button variant="primary">Learn more</Button>
+            </Link>
           </Modal.Footer>
         </Modal>
       </div>
