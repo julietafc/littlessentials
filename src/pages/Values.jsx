@@ -11,11 +11,14 @@ export default function Values() {
       <Banner className="banner_guide" heading="Our values" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." bgColor={"#d1cbbe"} color={"#8b5028"} />
       <div className="layout_innerpages getintouch guide">
         <aside>
-          <h6>Follow & Connect with us and our community</h6>
-          <div className="social">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
+          <div>
+            <h6>Follow & Connect with us and our community</h6>
+            <div className="social">
+              <a href="#">Instagram</a>
+              <a href="#">Facebook</a>
+            </div>
           </div>
+          <img className="el" src="../../assets/color_eco.svg" alt="moon shapes tan color" />
         </aside>
         <section>
           <h3>Simplicity </h3>

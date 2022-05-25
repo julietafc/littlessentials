@@ -12,11 +12,14 @@ export default function Story() {
       <Banner heading="Our story" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." bgColor={"#f0f0f0"} color={"#8b5028"} />
       <div className="layout_innerpages getintouch guide">
         <aside>
-          <h6>Follow & Connect with us and our community</h6>
-          <div className="social">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
+          <div>
+            <h6>Follow & Connect with us and our community</h6>
+            <div className="social">
+              <a href="#">Instagram</a>
+              <a href="#">Facebook</a>
+            </div>
           </div>
+          <img className="el" src="../../assets/color_eco.svg" alt="moon shapes tan color" />
         </aside>
         <section>
           <h3>Our mission </h3>
@@ -24,10 +27,16 @@ export default function Story() {
             We offer high quality, timeless products for children that contribute to conscious consumption and waste reduction by partnering up with local designers & brands and addressing their surplus - benefiting your closet, wallet and the
             planet.
           </p>
-          <h3>Who is this for? </h3>
+          <h3>Who are we? </h3>
           <p>
-            Our subscription service curates essential items for your children in a simple & convenient way, removing a part of the overwhelm that comes with being a parent at times. We’re here to empower you, so you can simplify your life and make
-            more time for your kids, family and yourself.
+            Littlessentials was created by three Copenhagen-based designers, out of a shared value for sustainability and desire to make a difference in the world. As parents and parents-to-be of the future generation, we have come to understand the
+            amount of potential waste generated with having kids. On average, children will use about 280 pieces of clothing in just the first two years of their life. Because they grow so fast, most of these are only worn for 2-3 months, and are
+            discarded while still being in good condition. This creates two issues; parents constantly need to purchase new items for their children and a huge amount of unnecessary waste is generated.
+          </p>
+          <p>
+            To combat these problems, Littlessentials curates the most essential items of clothing, toys and other gear necessary for children aged 0-6, so that parents can enjoy their time with those that matter most, their family. We have partnered
+            up with local brands that offer high-quality, timeless products and work with their overstock in order to reduce waste. When your children have grown out of their items, you can pass them on to our NGO partners, so that the items aren't
+            discarded, but can be enjoyed by others in your community.
           </p>
         </section>
       </div>

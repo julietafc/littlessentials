@@ -93,6 +93,17 @@ body {
         font-family: var(--font-body);
         margin-top: 2rem;
       }
+
+      aside {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+
+        img {
+          width: 140%;
+        }
+      }
     }
   }
 

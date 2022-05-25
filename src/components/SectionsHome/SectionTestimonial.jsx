@@ -7,7 +7,7 @@ export default function SectionTestimonial(props) {
     <div className="wrapper">
       <section className="testimonial">
         <h2 className="heading_mobile"> Essential Community</h2>
-        <img src="../assets/im01.png" alt="" />
+        <img src="../assets/img12.webp" alt="curly hair woman with a kid" />
         <div className="text_wrapper">
           <h2 className="heading_desktop"> Essential Community</h2>
           <div className="text">

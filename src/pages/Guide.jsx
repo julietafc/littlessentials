@@ -18,11 +18,14 @@ export default function Guide() {
       />
       <div className="layout_innerpages getintouch guide">
         <aside>
-          <h6>Follow & Connect with us and our community</h6>
-          <div className="social">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
+          <div>
+            <h6>Follow & Connect with us and our community</h6>
+            <div className="social">
+              <a href="#">Instagram</a>
+              <a href="#">Facebook</a>
+            </div>
           </div>
+          <img className="el" src="../../assets/color_eco.svg" alt="moon shapes tan color" />
         </aside>
         <section>
           <h3>Avoid perfumes in washing products & softeners </h3>
