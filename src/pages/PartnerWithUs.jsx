@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "../sass/layout/layout.scss";
 import Header from "../components/Header/Header";
+import { Link } from "react-router-dom";
 export default function PartnerWithUs() {
   return (
     <>
@@ -14,10 +15,16 @@ export default function PartnerWithUs() {
       <Banner heading="Partner With Us" text="We can help your business by connecting you conscious costumers" bgColor={"#8b5028"} color={"#d1cbbe"} />
       <div className="layout_innerpages getintouch">
         <aside>
-          <h6>Follow & Connect with us and our community</h6>
-          <div className="social">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
+          <div>
+            <h6>Follow & Connect with us and our community</h6>
+            <div className="social">
+              <a href="https://www.instagram.com/littlessentialsuniverse/?hl=es" target="_blank">
+                Instagram
+              </a>
+              <a href="https://www.facebook.com/littlessentialsuniverse" target="_blank">
+                Facebook
+              </a>
+            </div>
           </div>
         </aside>
         <section>

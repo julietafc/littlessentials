@@ -9,13 +9,17 @@ export default function Values() {
       <Header />
       <Chat />
       <Banner className="banner_guide" heading="Our values" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." bgColor={"#d1cbbe"} color={"#8b5028"} />
-      <div className="layout_innerpages getintouch guide">
+      <div className="layout_innerpages">
         <aside>
           <div>
             <h6>Follow & Connect with us and our community</h6>
             <div className="social">
-              <a href="#">Instagram</a>
-              <a href="#">Facebook</a>
+              <a href="https://www.instagram.com/littlessentialsuniverse/?hl=es" target="_blank">
+                Instagram
+              </a>
+              <a href="https://www.facebook.com/littlessentialsuniverse" target="_blank">
+                Facebook
+              </a>
             </div>
           </div>
           <img className="el" src="../../assets/color_eco.svg" alt="moon shapes tan color" />

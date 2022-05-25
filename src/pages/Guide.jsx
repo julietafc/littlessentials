@@ -16,15 +16,8 @@ export default function Guide() {
         bgColor={"#8b5028"}
         color={"#f1e9de"}
       />
-      <div className="layout_innerpages getintouch guide">
+      <div className="layout_innerpages">
         <aside>
-          <div>
-            <h6>Follow & Connect with us and our community</h6>
-            <div className="social">
-              <a href="#">Instagram</a>
-              <a href="#">Facebook</a>
-            </div>
-          </div>
           <img className="el" src="../../assets/color_eco.svg" alt="moon shapes tan color" />
         </aside>
         <section>

@@ -12,11 +12,6 @@ body {
   }
 }
 
-.wrapper {
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
 .layout_innerpages {
   padding: 5rem 0;
   min-height: 100vh;
@@ -24,35 +19,40 @@ body {
   max-width: 1300px;
   margin: 0 auto;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
 
-  section {
+  aside {
     display: flex;
-    align-items: center;
     flex-direction: column;
-  }
+    justify-content: space-between;
+    height: 100vh;
 
-  img {
-    width: 50%;
-    border-radius: 10px;
-    margin-right: 3rem;
-  }
+    .social a {
+      margin-right: 1em;
+      font-weight: 300;
+    }
 
-  .articles_wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 4rem;
-    flex-wrap: wrap;
-    align-items: baseline;
-
-    article {
-      width: 40%;
-      margin: 2rem 1rem;
+    img {
+      width: 140%;
     }
   }
 
-  .p_inner {
-    width: 50%;
+  section {
+    width: 45%;
+    align-items: baseline;
+    margin-left: 5rem;
+
+    h3:not(:first-child) {
+      font-family: var(--font-body);
+      margin-top: 2rem;
+    }
+    h3:first-child {
+      font-family: var(--font-body);
+    }
+
+    h6 {
+      font-family: var(--font-body);
+    }
   }
 
   &.faq {
@@ -72,68 +72,14 @@ body {
     }
   }
 
-  &.getintouch {
-    align-items: baseline;
-
-    h6 {
-      font-family: var(--font-body);
-    }
-
-    section {
-      width: 45%;
-      align-items: baseline;
-      margin-left: 5rem;
-    }
-
-    &.guide {
-      section {
-        width: 45%;
-      }
-      h3 {
-        font-family: var(--font-body);
-        margin-top: 2rem;
-      }
-
-      aside {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100vh;
-
-        img {
-          width: 140%;
-        }
-      }
-    }
-  }
-
-  .social a {
-    margin-right: 1em;
-    font-weight: 300;
-  }
-
   &.brands {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     p {
       width: 55%;
       margin-bottom: 4rem;
-    }
-    .card_wrapper_ngos {
-      width: 100%;
-      margin-top: 3rem;
-      display: flex;
-      justify-content: space-evenly;
-      .card_brand {
-        margin: 1rem;
-      }
-
-      img {
-        width: 100%;
-        height: 200px;
-        border-radius: 0px;
-      }
     }
     .card_wrapper {
       width: 100%;
@@ -160,18 +106,38 @@ body {
         border-radius: 0px;
       }
     }
-  }
+    .card_wrapper_ngos {
+      width: 100%;
+      margin-top: 3rem;
+      display: flex;
+      justify-content: space-evenly;
+      .card_brand {
+        margin: 1rem;
+      }
 
-  &.circularity {
-    section {
-      width: 50%;
-      margin-left: 3rem;
+      img {
+        width: 100%;
+        height: 200px;
+        border-radius: 0px;
+      }
     }
   }
 }
 
 .policy {
   padding: 5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.guide_wrapper .banner section {
+  display: flex;
+  align-items: center;
+
+  p,
+  h1 {
+    width: 55%;
+  }
 }
 
 .floating_actions {
@@ -185,16 +151,6 @@ body {
     height: 150px;
     width: 150px;
     border-radius: 50%;
-  }
-}
-
-.guide_wrapper .banner section {
-  display: flex;
-  align-items: center;
-
-  p,
-  h1 {
-    width: 55%;
   }
 }
 

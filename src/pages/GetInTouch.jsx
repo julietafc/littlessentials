@@ -14,10 +14,16 @@ export default function GetInTouch() {
       <Banner heading="Get in touch" text="Don't hesitate to reach out! We'd love to hear from you" bgColor={"#e8c37f"} color={"#8b5028"} />
       <div className="layout_innerpages getintouch">
         <aside>
-          <h6>Follow & Connect with us and our community</h6>
-          <div className="social">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
+          <div>
+            <h6>Follow & Connect with us and our community</h6>
+            <div className="social">
+              <a href="https://www.instagram.com/littlessentialsuniverse/?hl=es" target="_blank">
+                Instagram
+              </a>
+              <a href="https://www.facebook.com/littlessentialsuniverse" target="_blank">
+                Facebook
+              </a>
+            </div>
           </div>
         </aside>
         <section>
