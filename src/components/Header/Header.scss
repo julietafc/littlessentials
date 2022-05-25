@@ -1,19 +1,40 @@
 @use "../../sass/base/" as *;
 
-.navbar.navbar-expand-lg.navbar-dark {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+.navbar.navbar-expand-lg {
+  &.navbar-dark {
+    position: sticky;
+    top: 0;
+    z-index: 10;
 
-  &.bg-dark {
-    background-color: var(--tan) !important;
+    &.bg-dark {
+      background-color: var(--tan) !important;
+    }
+  }
+
+  .navbar-nav {
+    margin-left: 3rem;
   }
 }
 
 .header_landing.navbar.navbar-expand-lg.navbar-dark {
+  width: 100%;
   .container {
+    padding-top: 1rem;
+    max-width: 1300px;
     .navbar-collapse {
       justify-content: flex-end;
+
+      .navbar-nav {
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: 1.5rem;
+
+          &:hover {
+            opacity: 50%;
+          }
+        }
+      }
     }
   }
 }

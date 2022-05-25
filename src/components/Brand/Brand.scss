@@ -1,0 +1,80 @@
+.brand_detail {
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  .return_header,
+  .return_footer {
+    margin: 4rem;
+    color: black;
+  }
+
+  .return_footer {
+    text-align: center;
+  }
+
+  .brand_header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 4rem;
+    justify-content: center;
+    justify-content: space-around;
+
+    img {
+      width: 40%;
+      margin-left: 4rem;
+    }
+  }
+
+  .brand_body {
+    background-color: var(--light);
+    width: 100%;
+    padding: 5rem;
+    display: flex;
+    justify-content: space-between;
+
+    section {
+      width: 60%;
+
+      p {
+        margin-top: 2.5rem;
+      }
+    }
+
+    aside {
+      h4 {
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .brand_detail {
+    .return_header {
+      text-align: center;
+    }
+    .brand_header {
+      flex-direction: column;
+      text-align: center;
+      img {
+        margin-top: 3rem;
+        margin-left: 0;
+        width: 60%;
+      }
+    }
+
+    .brand_body {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      section {
+        width: 100%;
+      }
+    }
+  }
+}

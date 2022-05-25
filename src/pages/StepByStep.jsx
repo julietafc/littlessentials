@@ -9,8 +9,8 @@ export default function StepByStep() {
     <div className="guide_wrapper">
       <Header />
       <Chat />
-      <Banner heading="How it works" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." />
-      <main className="layout_innerpages getintouch guide">
+      <Banner heading="How it works" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." bgColor={"#cf9345"} color={"#f0f0f0"} />
+      <div className="layout_innerpages getintouch guide">
         <aside>
           <h6>Follow & Connect with us and our community</h6>
           <div className="social">
@@ -28,7 +28,7 @@ export default function StepByStep() {
           <h3>Pass it on</h3>
           <p>Pass the items your child has outgrown on to a friend, family member or to one of our local partners. Read more about our partners here.</p>
         </section>
-      </main>
+      </div>
       <Footer />
     </div>
   );

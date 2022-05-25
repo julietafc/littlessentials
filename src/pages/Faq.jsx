@@ -11,8 +11,8 @@ export default function Faq() {
     <>
       <Header />
       <Chat />
-      <Banner heading="Frequently Asked Questions" text="Find answers to commonly raised questions"></Banner>
-      <main className="layout_innerpages faq">
+      <Banner heading="Frequently Asked Questions" text="Find answers to commonly raised questions" bgColor={"#f1e9de"} color={"#8b5028"} />
+      <div className="layout_innerpages faq">
         <Accordion style={{ zIndex: "-99" }} defaultActiveKey="0" flush>
           <Accordion.Item eventKey="0">
             <Accordion.Header>I want to give a Littlessentials subscription as a gift. How does it work?</Accordion.Header>
@@ -59,7 +59,7 @@ export default function Faq() {
           <h5>Still have questions?</h5>
           <p>Can't find the answer you are looking for? Click here and chat with our friendly team</p>
         </section>
-      </main>
+      </div>
       <Footer />
     </>
   );

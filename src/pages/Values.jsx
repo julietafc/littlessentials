@@ -8,8 +8,8 @@ export default function Values() {
     <>
       <Header />
       <Chat />
-      <Banner className="banner_guide" heading="Our values" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." />
-      <main className="layout_innerpages getintouch guide">
+      <Banner className="banner_guide" heading="Our values" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." bgColor={"#d1cbbe"} color={"#8b5028"} />
+      <div className="layout_innerpages getintouch guide">
         <aside>
           <h6>Follow & Connect with us and our community</h6>
           <div className="social">
@@ -33,7 +33,7 @@ export default function Values() {
           <h3>Kind</h3>
           <p>We recognize that we all have our stories, struggles & learnings. We are empathetic and compassionate. Because we are all just human.</p>
         </section>
-      </main>
+      </div>
       <Footer />
     </>
   );

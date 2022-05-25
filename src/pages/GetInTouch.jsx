@@ -11,8 +11,8 @@ export default function GetInTouch() {
     <>
       <Header />
       <Chat />
-      <Banner heading="Get in touch" text="Don't hesitate to reach out! We'd love to hear from you" />
-      <main className="layout_innerpages getintouch">
+      <Banner heading="Get in touch" text="Don't hesitate to reach out! We'd love to hear from you" bgColor={"#e8c37f"} color={"#8b5028"} />
+      <div className="layout_innerpages getintouch">
         <aside>
           <h6>Follow & Connect with us and our community</h6>
           <div className="social">
@@ -48,7 +48,7 @@ export default function GetInTouch() {
             </Button>
           </Form>
         </section>
-      </main>
+      </div>
       <Footer />
     </>
   );

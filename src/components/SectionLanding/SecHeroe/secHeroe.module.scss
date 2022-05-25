@@ -9,12 +9,17 @@
   font-family: var(--font-body);
   background-color: var(--tan);
   padding: 0 5rem;
+  width: 100%;
+}
+
+.wrapper {
+  max-width: 1300px;
 }
 
 .first {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
 }
 
 .p {

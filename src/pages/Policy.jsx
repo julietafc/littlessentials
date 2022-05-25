@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Banner from "../components/Banner/Banner";
 
 import Footer from "../components/Footer/Footer";
@@ -8,13 +9,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import Header from "../components/Header/Header";
+import useScript from "../modules/useScript";
 
 export default function Policy() {
   return (
     <>
       <Header />
-      <Banner heading="Policies" text="Transparency is one of our core values" />
-      <main className="policy">
+      <Banner heading="Policies" text="Transparency is one of our core values" bgColor={"#222222"} color={"#f1e9de"} />
+      <div className="policy">
         <section>
           <Tab.Container id="left-tabs-example" defaultActiveKey="first">
             <Row>
@@ -183,7 +185,7 @@ export default function Policy() {
             </Row>
           </Tab.Container>
         </section>
-      </main>
+      </div>
       <Footer />
     </>
   );

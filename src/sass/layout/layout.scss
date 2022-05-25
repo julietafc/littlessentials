@@ -5,23 +5,27 @@ body {
 }
 
 .layout {
-  // padding-top: 8em;
   min-height: 100vh;
 }
 
+.wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
 .layout_innerpages {
-  padding: 5rem;
+  padding: 5rem 0;
   min-height: 100vh;
   display: flex;
-
-  justify-content: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  justify-content: space-around;
   align-items: center;
 
   section {
     display: flex;
     align-items: center;
     flex-direction: column;
-    // margin: 4rem;
   }
 
   img {
@@ -51,7 +55,7 @@ body {
     flex-direction: column;
 
     .accordion .accordion-flush .accordion-item {
-      width: 70%;
+      width: 60%;
     }
 
     h5 {
@@ -101,11 +105,35 @@ body {
       width: 55%;
       margin-bottom: 4rem;
     }
+    .card_wrapper_ngos {
+      width: 100%;
+      margin-top: 3rem;
+      display: flex;
+      justify-content: space-evenly;
+      .card_brand {
+        margin: 1rem;
+      }
+
+      img {
+        width: 100%;
+        height: 200px;
+        border-radius: 0px;
+      }
+    }
     .card_wrapper {
       width: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(208px, 298px));
-      gap: 2rem;
+      margin-top: 3rem;
+
+      ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(208px, 348px));
+        gap: 2rem;
+        justify-content: center;
+
+        li {
+          list-style: none;
+        }
+      }
 
       .card_brand {
         margin: 1rem;
@@ -134,6 +162,15 @@ body {
 .floating_actions {
   display: flex;
   align-items: center;
+
+  .co2_button {
+    position: fixed;
+    left: 2rem;
+    bottom: 1.5rem;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
 }
 
 .guide_wrapper .banner section {
@@ -146,7 +183,67 @@ body {
   }
 }
 
+.fade.modal.show {
+  .modal-dialog {
+    max-width: 70%;
+
+    .modal-content {
+      padding: 2rem;
+      background-color: var(--sun);
+      color: var(--desert);
+
+      .modal-header {
+        border-bottom: none;
+        .modal-title {
+          font-size: 2.3rem;
+        }
+      }
+
+      .modal-body {
+        padding: 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left {
+          width: 40%;
+        }
+
+        .right {
+          h2 {
+            font-size: 6rem;
+            margin-bottom: -0.5rem;
+            color: var(--whiteOff);
+          }
+
+          p {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            color: var(--tan);
+          }
+        }
+      }
+
+      .modal-footer {
+        border-top: none;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          text-transform: uppercase;
+          font-size: 1.3rem;
+          color: var(--tan);
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 769px) {
+  .co2_button.btn.btn-primary {
+    display: none;
+  }
   .layout_innerpages {
     padding: 3rem;
 

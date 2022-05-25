@@ -2,6 +2,7 @@ import Banner from "../components/Banner/Banner";
 import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";
 import React, { useEffect, useState } from "react";
+import ScrollToTop from "../ScrollToTop";
 
 import "../sass/layout/layout.scss";
 import Header from "../components/Header/Header";
@@ -23,13 +24,14 @@ export default function Brands() {
 
   return (
     <>
+      <ScrollToTop />
       <Header />
       <Chat />
       {brand ? (
         <Brand brand={brand} setBrand={setBrand} />
       ) : (
         <>
-          <Banner heading="Brands" text="We source products of brands that we believe in and we know will contribute to your little one’s developmental milestones and growth. " />
+          <Banner heading="Brands" text="We source products of brands that we believe in and we know will contribute to your little one’s developmental milestones and growth." bgColor={"#cf9345"} color={"#f1e9de"} />
           <div className="layout_innerpages brands">
             <p>
               We are invested in the origin of our partners products and look for the highest quality goods. Some of the labels we look into when onboarding partners are GOTS (Certified 100% Organic Cotton & Socially Responsible) for clothing, FSC

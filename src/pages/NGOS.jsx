@@ -5,19 +5,19 @@ import Footer from "../components/Footer/Footer";
 import Card from "react-bootstrap/Card";
 import "../sass/layout/layout.scss";
 import Header from "../components/Header/Header";
-export default function Circularity() {
+export default function NGOS() {
   return (
     <>
       <Header />
       <Chat />
-      <Banner heading="Encouraging Circularity" text="Missing text here" />
-      <main className="layout_innerpages brands">
+      <Banner heading="Encouraging Circularity" text="Missing text here" bgColor={"#f1e9de"} color={"#8b5028"} />
+      <div className="layout_innerpages brands">
         <p>
           Children grow out of clothing faster than any other group, and many times what we no longer need is still 100% usable by others. So instead of wasting these items, we encourage you to pass on the items you no longer need to one of our
           circularity partners, who will make sure they get a new home. In every Littlessentials package shipped to you, you will find an envelope and label directed to one of our local NGO partners. You can use this to easily send the items you no
           longer need. Currently we are teamed up with every Mødrehjælpen and Red Barnet shop across Denmark, so you can also just drop by with your used items. In doing so, you make sure they’ll get used by others within your local community.
         </p>
-        <div className="card_wrapper">
+        <div className="card_wrapper_ngos">
           <Card className="card_brand" style={{ width: "18rem" }}>
             <Card.Img variant="top" src="./assets/img06.png" />
             <Card.Body>
@@ -35,7 +35,7 @@ export default function Circularity() {
             </Card.Body>
           </Card>
         </div>
-      </main>
+      </div>
       <Footer />
     </>
   );
