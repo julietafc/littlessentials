@@ -10,14 +10,14 @@ import { Link } from "react-router-dom";
 export default function HeaderLanding() {
   return (
     <Navbar className="header_landing" collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Container>
+      <Container className="header_wrapper">
         <Link to="/">
-          <LElement width="35" color="white"></LElement>
+          <LElement width="55" color="white"></LElement>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Nav.Link href="#deets">sign up today </Nav.Link>
+            <Link to="/">Discover more</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

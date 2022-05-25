@@ -83,7 +83,7 @@ export default function Home(props) {
         <SectionCarousel />
         {/* <SectionSlider slides={SliderData} /> */}
         <SectionTestimonial />
-        <SectionNewsletter />
+        <SectionNewsletter heading="Receive 10% off your first order when you sign up for our newsletter." />
         <SectionIG />
         {/*<FaceLogo></FaceLogo> */}
       </main>

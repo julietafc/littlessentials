@@ -25,7 +25,11 @@ export default function Landing() {
       <main className="landing_layout">
         <Second />
         <Third />
-        <SectionNewsletter className="newsletter" />
+        <SectionNewsletter
+          heading="Sign up to download 
+your free PDF"
+          className="newsletter"
+        />
         <Testimonial />
         <SectionIG />
       </main>
