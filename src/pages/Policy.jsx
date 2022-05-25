@@ -127,7 +127,6 @@ export default function Policy() {
                       <strong>Contact us</strong>
                       <br /> For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e‑mail at <a href="mailto: info@littlessentials.dk">info@littlessentials.dk</a>
                     </p>
-                    <script id="CookieDeclaration" src="https://consent.cookiebot.com/9dc7fbc9-78b6-46cb-a385-8c7c37ee2b8d/cd.js" type="text/javascript" async></script>
                   </Tab.Pane>
                   <Tab.Pane eventKey="second">
                     <h4>Refund Policy</h4>
