@@ -92,7 +92,7 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="step-by-step" element={<StepByStep />} />
+            <Route path="how-it-works" element={<StepByStep />} />
             <Route path="faq" element={<Faq />} />
             <Route path="story" element={<Story />} />
             <Route path="guide" element={<Guide />} />

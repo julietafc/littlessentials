@@ -22,15 +22,14 @@ export default function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown title="how it works" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="step-by-step">Step by step</NavDropdown.Item>
-              <NavDropdown.Item href="faq">FAQ</NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link href="how-it-works">how it works</Nav.Link>
+
             <NavDropdown title="about" id="collasible-nav-dropdown">
               <NavDropdown.Item href="story">Our story</NavDropdown.Item>
               <NavDropdown.Item href="guide">Our guide</NavDropdown.Item>
               <NavDropdown.Item href="values">Our values</NavDropdown.Item>
               <NavDropdown.Item href="lowcarbon">Low carbon</NavDropdown.Item>
+              <NavDropdown.Item href="faq">FAQ</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="partners" id="collasible-nav-dropdown">
               <NavDropdown.Item href="brands">Brands</NavDropdown.Item>
