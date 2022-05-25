@@ -32,6 +32,23 @@
     background-color: var(--desert);
     padding: 6rem 0;
     color: white;
+    .text {
+      position: relative;
+      .el1,
+      .el2 {
+        width: 200px;
+        position: absolute;
+      }
+
+      .el1 {
+        top: -12rem;
+      }
+
+      .el2 {
+        right: 0;
+        top: 11rem;
+      }
+    }
 
     h3 {
       margin-left: 14.8rem;

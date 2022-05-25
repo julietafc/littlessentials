@@ -9,7 +9,7 @@ export default function SecHeroe(props) {
     <section className={styles.SecHeroe}>
       <div className={styles.wrapper}>
         <div className={styles.first}>
-          <img className={styles.img} src="../assets/landing_img.png" alt="" />
+          <img className={styles.img} src="../assets/landing_img.webp" alt="white cards collection" />
           <p className={styles.p}>
             <strong>It Takes A Little Village</strong> to raise a child. We are here to simplify parenting, so you can focus on what really matters most - your family.
           </p>
