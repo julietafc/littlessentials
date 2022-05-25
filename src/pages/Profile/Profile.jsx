@@ -34,7 +34,7 @@ export default function Profile(props) {
             {theUser && (
               <>
                 <strong>Name: </strong>
-                <p>{theUser.displayName ? theUser.displayName : "theUserName"}</p>
+                <p>{theUser.displayName ? theUser.displayName : theUserName}</p>
                 <strong>Email: </strong>
                 <p>{theUser.email}</p>
               </>
