@@ -6,7 +6,8 @@ import { useAuth } from "../../contexts/AuthContext";
 
 export default function FormSize(props) {
   // const [index, setIndex] = useState(null);
-  const { theUserName } = useAuth();
+  const { theUser, theUserName } = useAuth();
+  const userName = theUser.displayName ? theUser.displayName : theUserName;
 
   function handleChange(e) {
     props.setSelectedSize(e.currentTarget.value);
@@ -14,7 +15,7 @@ export default function FormSize(props) {
 
   return (
     <Container className={`${styles.appear} d-flex flex-column align-items-center`}>
-      {theUserName ? <h3>{`Let start ${theUserName}, which size would you need for your first set?`}</h3> : <h3>To start with, what size would you need for your first set?</h3>}
+      <h3>{`${userName ? `Let start ${userName}` : `To start with`}, which size would you need for your first set?`}</h3>
 
       <form action="" className={`${styles.formSize} mt-3 p-3`}>
         <div className={styles.box}>

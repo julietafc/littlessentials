@@ -5,7 +5,7 @@ export default function InfoAside(props) {
     <aside>
       {props.selectedSize && <p>{props.selectedSize.name + " " + props.selectedSize.age}</p>}
       {props.selectedStyle && <p>{props.selectedStyle.name}</p>}
-      {props.selectedPlan && <p>{props.selectedPlan}</p>}
+      {props.selectedPlan && <p>{props.selectedPlan.name}</p>}
     </aside>
   );
 }

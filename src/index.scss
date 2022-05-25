@@ -2,15 +2,20 @@
 
 @import "../node_modules/bootstrap/scss/functions";
 $primary: #8b5028;
+$sun: #e8c37f;
+$tan: #cf9345;
+$desert: #8b5028;
+$info: $sun;
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
 
 $custom-colors: (
-  "sun": #e8c37f,
-  "tan": #cf9345,
-  "desert": #8b5028,
+  "sun": $sun,
+  "tan": $tan,
+  "desert": $desert,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
+$colors: map-merge($colors, $custom-colors);
 
 @import "../node_modules/bootstrap/scss/bootstrap";

@@ -2,42 +2,36 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import styles from "../Subscription/subscription.module.scss";
-import { Container, Row, Button } from "react-bootstrap";
+import { Container, Row, Button, ProgressBar } from "react-bootstrap";
 import Steps from "./Steps";
 import InfoAside from "./InfoAside";
 import FormStyle from "./FormStyle";
 import FormPlan from "./FormPlan";
 import Header from "../../components/Header/Header";
 import FormSize from "./FormSize";
+import { sizes, clothStyles, plans } from "../../modules/options";
 
 export default function Subscription(props) {
-  const sizes = [
-    { name: "Newborn", age: "(0-3 months)" },
-    { name: "Baby", age: "(3-12 months)" },
-    { name: "Junior", age: "(1-3 years)" },
-    { name: "Youngster", age: "(3-6 years)" },
-  ];
-
-  const clothStyles = [
-    {
-      name: "playful",
-      colors: ["F6ECEC", "EEEFFD", "C1C0CF", "DD8C58", "383F48"],
-      url1: "./assets/im01.png",
-      url2: "./assets/img07.png",
-    },
-    {
-      name: "earth",
-      colors: ["FFF8F8", "F2E3DB", "D0D0D0", "E5AE4A", "AB5E11"],
-      url1: "./assets/im01.png",
-      url2: "./assets/img07.png",
-    },
-    {
-      name: "poetic",
-      colors: ["F5F5FC", "EAD2BF", "F0AFA7", "B17562", "89482B"],
-      url1: "./assets/im01.png",
-      url2: "./assets/img07.png",
-    },
-  ];
+  // const clothStyles = [
+  //   {
+  //     name: "playful",
+  //     colors: ["F6ECEC", "EEEFFD", "C1C0CF", "DD8C58", "383F48"],
+  //     url1: "./assets/im01.png",
+  //     url2: "./assets/img07.png",
+  //   },
+  //   {
+  //     name: "earth",
+  //     colors: ["FFF8F8", "F2E3DB", "D0D0D0", "E5AE4A", "AB5E11"],
+  //     url1: "./assets/im01.png",
+  //     url2: "./assets/img07.png",
+  //   },
+  //   {
+  //     name: "poetic",
+  //     colors: ["F5F5FC", "EAD2BF", "F0AFA7", "B17562", "89482B"],
+  //     url1: "./assets/im01.png",
+  //     url2: "./assets/img07.png",
+  //   },
+  // ];
 
   const [step, setStep] = useState(1);
   const [right, setRight] = useState(null);
@@ -53,6 +47,8 @@ export default function Subscription(props) {
   let visible2 = step === 2 || right === 2 || left === 2;
   let visible3 = step === 3 || right === 3 || left === 3;
   let visible4 = step === 4 || right === 4 || left === 4;
+
+  const now = step * 25;
 
   function prev() {
     if (step <= 1) return;
@@ -71,15 +67,16 @@ export default function Subscription(props) {
         <Row>
           <div className={`${styles.stepsFormWrapper} col-xl-8 `}>
             <Steps step={step} setStep={setStep} />
+            <ProgressBar now={now} variant="info" className="w-100" />
             <div className={`${styles.formsWrapper}`}>
-              {visible1 && <FormSize selectedSize={selectedSize} setSelectedSize={setSelectedSize} sizes={sizes} />}
-              {visible2 && <FormStyle selectedStyle={selectedStyle} setSelectedStyle={setSelectedStyle} clothStyles={clothStyles} />}
-              {visible3 && <FormPlan selectedSize={selectedSize} setSelectedSize={setSelectedSize} sizes={sizes} />}
-              {visible4 && <FormSize selectedSize={selectedSize} setSelectedSize={setSelectedSize} sizes={sizes} />}
+              {visible1 && <FormSize selectedSize={selectedSize} setSelectedSize={setSelectedSize} />}
+              {visible2 && <FormStyle selectedStyle={selectedStyle} setSelectedStyle={setSelectedStyle} />}
+              {visible3 && <FormPlan selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />}
+              {visible4 && <FormSize selectedSize={selectedSize} setSelectedSize={setSelectedSize} />}
             </div>
           </div>
           <div className={`${styles.asideWrapper} col `}>
-            <InfoAside selectedSize={sizes[selectedSize - 1]} selectedStyle={clothStyles[selectedStyle - 1]} selectedPlan={selectedPlan} />
+            <InfoAside selectedSize={sizes[selectedSize - 1]} selectedStyle={clothStyles[selectedStyle - 1]} selectedPlan={plans[selectedPlan - 1]} />
           </div>
         </Row>
         <Row>
