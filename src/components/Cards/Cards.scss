@@ -1,9 +1,55 @@
-.cards {
-  min-height: 200px;
-  border: 1px solid grey;
-  padding: 1rem;
+// .cards {
+//   border: 1px solid grey;
+//   padding: 1rem;
+//   .front {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     height: 150px;
+//     padding: 1rem;
+//   }
 
-  button {
-    float: right;
+//   button {
+//     float: right;
+//   }
+// }
+
+// .back {
+//   border: 1px solid grey;
+//   height: 150px;
+//   padding: 1rem;
+//   p {
+//     padding: 2rem;
+//   }
+// }
+
+.react-card-flip {
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+
+  .front {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 2rem;
+  }
+
+  .react-card-flipper {
+    .react-card-back {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
   }
 }
