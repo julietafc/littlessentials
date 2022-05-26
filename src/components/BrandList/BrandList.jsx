@@ -7,18 +7,25 @@ export default function BrandList(props) {
   const allBrands = brands.map((brand, i) => (
     <li key={`${brand + i}`}>
       <ScrollToTop />
-      <Card className="card_brand" style={{ width: "18rem" }}>
+      <Card
+        onClick={() => {
+          console.log("button");
+          props.setBrand(brand);
+        }}
+        className="card_brand"
+        style={{ width: "18rem" }}
+      >
         <Card.Img variant="top" src="./assets/img06.png" />
         <Card.Body>
           <Card.Title>{brand.title}</Card.Title>
-          <Button
+          {/* <Button
             onClick={() => {
               console.log("button");
               props.setBrand(brand);
             }}
           >
-            Learn more
-          </Button>
+            +
+          </Button> */}
         </Card.Body>
       </Card>
     </li>

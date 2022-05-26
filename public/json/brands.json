@@ -26,15 +26,7 @@
     "img2": "softgalleryimg.webp",
     "category": "Clothing"
   },
-  {
-    "title": "CamCam Copenhagen",
-    "description": "Cam Cam Copenhagen’s core originates from the love of babies and children, and a belief that they only deserve the best. They create quality, timeless and tactile design for children, offering poetic products which help create calm and harmonious environments. Their overall design focus is sustainability - this means sustainable, organic production and enduring design and material quality.",
-    "website": "https://camcamcopenhagen.com/",
-    "logo": "camcam.svg",
-    "img1": "liewood.webp",
-    "img2": "camcamimg.webp",
-    "category": "Interior Design"
-  },
+
   {
     "title": "Smallstuff",
     "description": "At Smallstuff they love colors and beautiful designs with a unique mix and match opportunity. In all designs they use natural materials; cotton, wool and wood, combined with handcrafted crochet and knitted items. They want to inspire children and their creativity by entering their universe in a happy and childlike way, while appealing to parents with high quality, natural products.",
@@ -61,5 +53,14 @@
     "img1": "fabelab.webp",
     "img2": "fabelabimg.webp",
     "category": "Clothing, Toys & Interior Design"
+  },
+  {
+    "title": "CamCam Copenhagen",
+    "description": "Cam Cam Copenhagen’s core originates from the love of babies and children, and a belief that they only deserve the best. They create quality, timeless and tactile design for children, offering poetic products which help create calm and harmonious environments. Their overall design focus is sustainability - this means sustainable, organic production and enduring design and material quality.",
+    "website": "https://camcamcopenhagen.com/",
+    "logo": "camcam.svg",
+    "img1": "liewood.webp",
+    "img2": "camcamimg.webp",
+    "category": "Interior Design"
   }
 ]
