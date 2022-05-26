@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Footer.scss";
 import LElement from "../LElement/LElement";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 export default function Footer(props) {
   return (
@@ -12,6 +14,24 @@ export default function Footer(props) {
             <br />
             <strong>littl</strong>essentials impacts everyone.
           </p>
+          <div className="social">
+            <div className="some">
+              <a href="https://www.instagram.com/littlessentialsuniverse/?hl=es" target="_blank">
+                Instagram
+              </a>
+              <a href="https://www.facebook.com/littlessentialsuniverse" target="_blank">
+                Facebook
+              </a>
+            </div>
+            <Form>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="email" placeholder="Enter your email" />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                Subscribe
+              </Button>
+            </Form>
+          </div>
           <div className="nav">
             <div className="column">
               <h4>how it works</h4>
@@ -22,7 +42,7 @@ export default function Footer(props) {
               <Link to="/guide">Our guide</Link>
               <Link to="/story">Our story</Link>
               <Link to="/values">Our values</Link>
-              <Link to="/carbon">Low carbon</Link>
+              <Link to="/lowcarbon">Low carbon</Link>
               <Link to="/faq">FAQ</Link>
             </div>
             <div className="column">
@@ -46,6 +66,7 @@ export default function Footer(props) {
             <Link to="/policy">Refund Policy</Link>
             <Link to="/policy">Shipping Policy</Link>
           </div>
+
           <Link to="/">
             <LElement width="35" color="white"></LElement>
           </Link>

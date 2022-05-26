@@ -8,7 +8,7 @@ export default function SectionWorks(props) {
       <section className="works">
         <div className="header">
           <h2>High quality items for each phase of your child's growth</h2>
-          <Link to="step-by-step">
+          <Link to="how-it-works">
             <Button label="learn more" />
           </Link>
         </div>

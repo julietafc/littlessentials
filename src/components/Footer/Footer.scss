@@ -21,6 +21,25 @@ footer {
         font-size: 1.1rem;
         font-weight: 100;
       }
+      .social {
+        .some {
+          margin-bottom: 1.5rem;
+          display: flex;
+          justify-content: space-between;
+        }
+        a {
+          color: white;
+          font-weight: 200;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        .form-control {
+          background-color: var(--blackIsh);
+        }
+      }
 
       .nav {
         display: flex;
