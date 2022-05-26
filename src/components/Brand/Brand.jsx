@@ -1,5 +1,6 @@
 import React from "react";
 import ScrollToTop from "../../ScrollToTop";
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 
 import "./Brand.scss";
 
@@ -8,31 +9,34 @@ export default function Brand(props) {
     <div className="wrapper">
       <ScrollToTop />
       <div className="brand_detail">
-        <a
+        {/* <a
           className="return_header"
           onClick={() => {
             props.setBrand(null);
           }}
         >
           Return to all brands
-        </a>
+        </a> */}
+        <Breadcrumb>
+          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+          <Breadcrumb.Item href="/brands">Brands</Breadcrumb.Item>
+          <Breadcrumb.Item active>{props.brand.title}</Breadcrumb.Item>
+        </Breadcrumb>
         <div className="brand_header">
-          <div className="header_text">
-            <h1>{props.brand.title}</h1>
-            <p>LOCATION: Copenhagen</p>
-          </div>
-          <img src="../assets/img11.png" alt="" />
+          <img className="logo" src={"assets/brands/" + props.brand.logo} alt="" />
+          <img className="picture" src={"assets/brands/" + props.brand.img2} alt="" />
         </div>
         <div className="brand_body">
           <aside>
             <h4>Website</h4>
             <a href={props.brand.website}>{props.brand.website}</a>
-            <h4>Certifications</h4>
-            <p>website url</p>
+            <h4>Location</h4>
+            <p>Copenhagen, Denmark</p>
             <h4>Category</h4>
-            <p>Toys</p>
+            <p>{props.brand.category}</p>
           </aside>
           <section>
+            <h2>{props.brand.title}</h2>
             <p>{props.brand.description}</p>
           </section>
         </div>

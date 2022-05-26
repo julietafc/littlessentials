@@ -3,8 +3,10 @@
   flex-direction: column;
   max-width: 1400px;
   margin: 0 auto;
+  .breadcrumb {
+    margin: 4rem 6rem;
+  }
 
-  .return_header,
   .return_footer {
     margin: 4rem;
     color: black;
@@ -20,11 +22,14 @@
     align-items: center;
     margin-bottom: 4rem;
     justify-content: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    .logo {
+      width: 20%;
+    }
 
-    img {
-      width: 40%;
-      margin-left: 4rem;
+    .picture {
+      width: 25%;
+      border-radius: 20px;
     }
   }
 
@@ -33,10 +38,10 @@
     width: 100%;
     padding: 5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     section {
-      width: 60%;
+      width: 50%;
 
       p {
         margin-top: 2.5rem;
@@ -46,6 +51,10 @@
     aside {
       h4 {
         margin-top: 2rem;
+      }
+
+      h4:first-child {
+        margin: 0;
       }
     }
   }
