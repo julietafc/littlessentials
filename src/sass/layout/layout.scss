@@ -62,9 +62,11 @@ body {
 
   &.faq {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    .accordion .accordion-flush .accordion-item {
-      width: 100%;
+    .accordion.accordion-flush {
+      width: 65%;
     }
 
     h5 {
@@ -74,6 +76,11 @@ body {
 
     p {
       font-family: var(--font-body);
+    }
+
+    section {
+      margin: 0 auto;
+      text-align: center;
     }
   }
 
@@ -287,6 +294,12 @@ body {
 
       .tab-content > .active {
         margin-top: 3rem;
+      }
+    }
+
+    &.faq {
+      .accordion.accordion-flush {
+        width: 100%;
       }
     }
   }

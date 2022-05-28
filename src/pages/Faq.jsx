@@ -56,7 +56,10 @@ export default function Faq() {
         </Accordion>
         <section>
           <h5>Still have questions?</h5>
-          <p>Can't find the answer you are looking for? Click here and chat with our friendly team</p>
+          <p>
+            Can't find the answer you are looking for? <br />
+            Chat now with our friendly team
+          </p>
         </section>
       </div>
       <Footer />
