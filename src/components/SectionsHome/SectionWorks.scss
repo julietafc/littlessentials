@@ -5,12 +5,25 @@ section.works {
 
   .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 2rem;
-
+    flex-direction: row;
+    .text {
+      align-items: flex-start;
+      flex-direction: column;
+      display: flex;
+    }
     h2 {
       top: 1rem;
       max-width: 22ch;
+    }
+
+    p {
+      max-width: 45ch;
+    }
+
+    .pebble {
+      width: 200px;
     }
   }
 
@@ -27,13 +40,24 @@ section.works {
     align-items: flex-start;
     text-align: left;
 
+    .heading {
+      display: flex;
+      align-items: baseline;
+      margin: 0;
+    }
+    p {
+      max-width: 25ch;
+    }
+
     div {
       margin-bottom: 1em;
 
       h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: 100;
         color: #d1cbbe;
+        margin: 0;
+        margin-right: 0.7rem;
       }
 
       h3 {
@@ -50,10 +74,17 @@ section.works {
     flex-direction: column;
     margin-top: 10rem;
     padding: 0 3rem;
+    position: relative;
+    .pebble {
+      position: absolute;
+      z-index: -99;
+      width: 200px;
+      right: 0;
+    }
 
     .steps {
       width: 100%;
-      flex-direction: row;
+      flex-wrap: wrap;
       margin: 0;
       justify-content: space-evenly;
       margin-bottom: 2rem;

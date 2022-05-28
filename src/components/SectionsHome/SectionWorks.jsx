@@ -2,28 +2,42 @@ import Button from "../Button/Button";
 import "./SectionWorks.scss";
 import "../../sass/layout/layout.scss";
 import { Link } from "react-router-dom";
+import pebble from "/assets/lake-pebble.svg";
 export default function SectionWorks(props) {
   return (
     <div className="wrapper">
       <section className="works">
         <div className="header">
-          <h2>High quality items for each phase of your child's growth</h2>
-          <Link to="how-it-works">
-            <Button label="learn more" />
-          </Link>
+          <div className="text">
+            <h2>High quality items for each phase of your child's growth</h2>
+            <p>In a few simple steps you can customize your experience and enjoy high quality products curated just for you </p>
+            <Link to="how-it-works">
+              <Button label="learn more" />
+            </Link>
+          </div>
+          <img className="pebble" src="/assets/balance-light.svg" alt="kids clothes" />
         </div>
         <div className="steps">
           <div>
-            <h1>01.</h1>
-            <h3>Subscribe</h3>
+            <div className="heading">
+              <h1>01.</h1>
+              <h3>Subscribe</h3>
+            </div>
+            <p>Personalize your subscription to meet your needs</p>
           </div>
           <div>
-            <h1>02.</h1>
-            <h3>Enjoy</h3>
+            <div className="heading">
+              <h1>02.</h1>
+              <h3>Enjoy</h3>
+            </div>
+            <p>Now you can focus on what really matters, your family</p>
           </div>
           <div>
-            <h1>03.</h1>
-            <h3>Pass it on</h3>
+            <div className="heading">
+              <h1>03.</h1>
+              <h3>Pass it on</h3>
+            </div>
+            <p>Drop off the items you no longer need in one of our NGOs partners</p>
           </div>
         </div>
       </section>
