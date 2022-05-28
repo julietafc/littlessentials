@@ -18,7 +18,7 @@ export default function Guide() {
       />
       <div className="layout_innerpages">
         <aside>
-          <img className="el" src="../../assets/color_eco.svg" alt="moon shapes tan color" />
+          <img className="el" src="../../assets/color_clean-shirt.svg" alt="moon shapes tan color" />
         </aside>
         <section>
           <h3>Avoid perfumes in washing products & softeners </h3>

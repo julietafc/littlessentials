@@ -22,7 +22,7 @@ export default function Values() {
               </a>
             </div>
           </div>
-          <img className="el" src="../../assets/color_eco.svg" alt="moon shapes tan color" />
+          <img className="el" src="../../assets/color_hands.svg" alt="moon shapes tan color" />
         </aside>
         <section>
           <h3>Simplicity </h3>
