@@ -1,5 +1,6 @@
 import Header from "../components/Header/Header";
 import "./Carbon.scss";
+import "../sass/layout/layout.scss";
 import Chat from "../components/Chat/Chat";
 import Banner from "../components/Banner/Banner";
 import Footer from "../components/Footer/Footer";
@@ -22,24 +23,24 @@ export default function Carbon() {
         </section>
         <section className="section3">
           <article>
-            <h5>Not loading images before they are actively requested </h5>
-            <img src="../assets/im01.png" alt="" />
+            <h4>Not loading images before they are actively requested </h4>
+            <img src="../assets/logoFace.svg" alt="" />
           </article>
           <article>
-            <img src="../assets/im01.png" alt="" />
-            <h5>Minimizing the power consumption on devices </h5>
+            <img src="../assets/logoFace.svg" alt="" />
+            <h4>Minimizing the power consumption on devices </h4>
           </article>
           <article>
-            <h5>Not using videos</h5>
-            <img src="../assets/im01.png" alt="" />
+            <h4>Not using videos</h4>
+            <img src="../assets/logoFace.svg" alt="" />
           </article>
           <article>
-            <img src="../assets/im01.png" alt="" />
-            <h5>Storing data locally </h5>
+            <img src="../assets/logoFace.svg" alt="" />
+            <h4>Storing data locally </h4>
           </article>
           <article>
-            <h5>Optimizing and limiting the use of custom fonts</h5>
-            <img src="../assets/im01.png" alt="" />
+            <h4>Optimizing and limiting the use of custom fonts</h4>
+            <img src="../assets/logoFace.svg" alt="" />
           </article>
         </section>
         <section className="section1">
