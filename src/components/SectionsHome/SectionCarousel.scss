@@ -21,37 +21,81 @@ section.carousel {
     }
   }
 
-  .carousel {
-    width: 80%;
-    background-color: var(--desert);
-    border-radius: 20px;
-    padding: 5rem;
-    display: flex;
-    margin-left: 10%;
-    color: white;
-
-    &.slide {
-      opacity: 100%;
+  .carousel_main {
+    /* SCROLL SNAPPING */
+    .scroll-container {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      list-style: none;
     }
-
-    .carousel-inner {
-      width: 100%;
+    .scroll-item {
+      scroll-snap-align: center;
       display: flex;
+      flex-direction: column;
+      /* make it square */
+      width: 20em;
 
-      .active.carousel-item {
-        justify-content: center;
-        align-items: flex-start;
-      }
+      /* center contents */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       img {
-        width: 40%;
-        margin-right: 2rem;
+        width: auto;
+        height: 300px;
+        margin-bottom: 1rem;
+        border-radius: 15px;
       }
 
-      p {
-        font-size: 0.9rem;
+      h4 {
+        margin-bottom: 4rem;
+        text-align: center;
       }
+    }
+    /* make 3rd item bigger to show that items don't need to have the same width */
+
+    /* FLEXBOX LAYOUT */
+    .scroll-container[data-layoutmethod="flexbox"] {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center; /* vertically align children */
+    }
+    .scroll-container[data-layoutmethod="flexbox"] .scroll-item {
+      flex: 0 0 auto;
     }
   }
+
+  // .carousel {
+  //   width: 80%;
+  //   background-color: var(--desert);
+  //   border-radius: 20px;
+  //   padding: 5rem;
+  //   display: flex;
+  //   margin-left: 10%;
+  //   color: white;
+
+  //   &.slide {
+  //     opacity: 100%;
+  //   }
+
+  //   .carousel-inner {
+  //     width: 100%;
+  //     display: flex;
+
+  //     .active.carousel-item {
+  //       justify-content: center;
+  //       align-items: flex-start;
+  //     }
+  //     img {
+  //       width: 40%;
+  //       margin-right: 2rem;
+  //     }
+
+  //     p {
+  //       font-size: 0.9rem;
+  //     }
+  //   }
+  // }
 }
 
 @media screen and (max-width: 1024px) {
