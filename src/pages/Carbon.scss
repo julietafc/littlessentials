@@ -39,3 +39,27 @@
     }
   }
 }
+
+@media screen and (max-width: 769px) {
+  .lowcarbon {
+    .section1 p {
+      width: 100%;
+    }
+    .section3 {
+      .reverse {
+        flex-direction: column-reverse;
+      }
+      article {
+        flex-direction: column;
+
+        h4 {
+          text-align: center;
+        }
+        img {
+          width: 100%;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+}

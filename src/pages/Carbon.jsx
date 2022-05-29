@@ -22,25 +22,25 @@ export default function Carbon() {
           <p>Here are a few ways we have reduced our digital footprint:</p>
         </section>
         <section className="section3">
-          <article>
+          <article className="reverse">
             <h4>Not loading images before they are actively requested </h4>
-            <img src="../assets/logoFace.svg" alt="" />
+            <img src="../assets/load.svg" alt="loading icon" />
           </article>
           <article>
-            <img src="../assets/logoFace.svg" alt="" />
+            <img src="../assets/power.svg" alt="power icon" />
             <h4>Minimizing the power consumption on devices </h4>
           </article>
-          <article>
+          <article className="reverse">
             <h4>Not using videos</h4>
-            <img src="../assets/logoFace.svg" alt="" />
+            <img src="../assets/video.svg" alt="video icon" />
           </article>
           <article>
-            <img src="../assets/logoFace.svg" alt="" />
+            <img src="../assets/data.svg" alt="cloud data icon" />
             <h4>Storing data locally </h4>
           </article>
-          <article>
+          <article className="reverse">
             <h4>Optimizing and limiting the use of custom fonts</h4>
-            <img src="../assets/logoFace.svg" alt="" />
+            <img src="../assets/font.svg" alt="font icon" />
           </article>
         </section>
         <section className="section1">
