@@ -1,37 +1,28 @@
 import React from "react";
 import styles from "../Subscription/subscription.module.scss";
 
+function Step(props) {
+  const selections = [props.selectedSize, props.selectedStyle, props.selectedPlan];
+
+  const tick = props.step >= props.no && selections[props.no - 1];
+
+  return (
+    <div className={styles.step}>
+      <input id={`step${props.no}`} type="radio" name="steps" value={props.no} checked={props.step == props.no} onChange={props.handleOnChange} />
+      <label className={styles.label} htmlFor={`step${props.no}`}>
+        <span className={`${styles.circle} ${styles.chosed} ${tick ? "fs-7 fw-bold text-success" : ""} `}>{tick ? <>&#10003;</> : props.no}</span> {props.label}
+      </label>
+    </div>
+  );
+}
+
 export default function Steps(props) {
   const handleOnChange = (e) => {
     console.log(e.target.value);
     props.setStep(Number(e.target.value));
   };
-  return (
-    <div className={styles.stepsContainer}>
-      <div className={styles.step}>
-        <input id="step1" type="radio" name="steps" value={1} checked={props.step == 1} onChange={handleOnChange} />
-        <label className={styles.label} htmlFor="step1">
-          <span className={`${styles.circle} ${styles.chosed}`}>1</span> size
-        </label>
-      </div>
-      <div className={styles.step}>
-        <input id="step2" type="radio" name="steps" value={2} checked={props.step == 2} onChange={handleOnChange} />
-        <label className={styles.label} htmlFor="step2">
-          <span className={`${styles.circle} ${styles.chosed}`}>2</span> style
-        </label>
-      </div>
-      <div className={styles.step}>
-        <input id="step3" type="radio" name="steps" value={3} checked={props.step == 3} onChange={handleOnChange} />
-        <label className={styles.label} htmlFor="step3">
-          <span className={`${styles.circle} ${styles.chosed}`}>3</span> plan
-        </label>
-      </div>
-      <div className={styles.step}>
-        <input id="step4" type="radio" name="steps" value={4} checked={props.step == 4} onChange={handleOnChange} />
-        <label className={styles.label} htmlFor="step4">
-          <span className={`${styles.circle} ${styles.chosed}`}>4</span> save
-        </label>
-      </div>
-    </div>
-  );
+
+  const noSteps = ["size", "style", "plan", "save"].map((label, i) => <Step key={"s-" + i} label={label} no={i + 1} handleOnChange={handleOnChange} {...props} />);
+
+  return <div className={styles.stepsContainer}>{noSteps}</div>;
 }

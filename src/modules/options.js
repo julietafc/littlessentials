@@ -48,7 +48,78 @@ const plans = [
 ];
 
 class Subscription {
-  constructor(userID, size, style, plan) {}
+  constructor(user, size, style, plan, address) {
+    this.user = user;
+    this.size = size;
+    this.style = style;
+    this.plan = plan;
+    this.address = address;
+  }
+
+  //getters
+  get user() {
+    return this.user;
+  }
+
+  get userID() {
+    return this.user.uid;
+  }
+  get userFullName() {
+    return this.user.diplayName;
+  }
+  get userFirstName() {
+    return this.firstName();
+  }
+
+  get size() {
+    return this.size;
+  }
+
+  get style() {
+    return this.style;
+  }
+
+  get plan() {
+    return this.plan;
+  }
+
+  get price() {
+    return this.plan.price;
+  }
+
+  get address() {
+    return this.address;
+  }
+
+  //setters
+  set user(user) {
+    this.user = user;
+  }
+
+  set size(size) {
+    this.size = sizes[size];
+  }
+
+  set style(style) {
+    this.style = clothStyles[style];
+  }
+
+  set plan(plan) {
+    this.plan = plans[plan];
+  }
+
+  set address(address) {
+    this.address = address;
+  }
+
+  //methods
+  firstName() {
+    if (!this.user.diplayName) {
+      return null;
+    }
+    const fullName = this.user.diplayName.split(" ");
+    return fullName[0];
+  }
 }
 
-export { sizes, clothStyles, plans };
+export { sizes, clothStyles, plans, Subscription };
