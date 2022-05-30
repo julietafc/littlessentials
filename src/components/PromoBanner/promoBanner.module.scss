@@ -1,0 +1,25 @@
+.promo_wrapper {
+  overflow: hidden;
+  position: relative;
+  background-color: var(--tan);
+  width: 100%;
+
+  ul {
+    margin: 0;
+    padding: 0.25rem 0;
+    width: 200%;
+    display: flex;
+    list-style: none;
+    transform: translateX(50%);
+    animation: moving 50s linear infinite;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 110%;
+  }
+}
+
+@keyframes moving {
+  to {
+    transform: translateX(-100%);
+  }
+}

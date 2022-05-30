@@ -7,6 +7,10 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
+import { Container, Row, Col } from "react-bootstrap";
+import { plans } from "../modules/options";
+import Plan from "./Subscription/Plan";
+
 import SectionIntro from "../components/SectionsHome/SectionIntro";
 import SectionManifesto from "../components/SectionsHome/SectionManifesto";
 import SectionManifestoDk from "../components/SectionsHome/SectionManifestoDk";
@@ -70,12 +74,17 @@ export default function Home(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const plansList = plans.map((plan, i) => <Plan key={`plan-${i + 1}`} plan={plan} />);
+
   return (
     <div className="Home">
       <Header />
       <div className="layout">
         <SectionIntro />
         <SectionWorks />
+        <Container className="mb-5">
+          <Row>{plansList}</Row>
+        </Container>
         <SectionManifesto className="manifesto_mobile" />
         <SectionManifestoDk className="manifesto_desktop" />
         <SectionCarousel />

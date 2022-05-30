@@ -17,6 +17,7 @@ import PartnerWithUs from "./pages/PartnerWithUs";
 import Policy from "./pages/Policy";
 import NGOS from "./pages/NGOS";
 
+import PromoBanner from "./components/PromoBanner/PromoBanner";
 import FaceLogo from "./components/FaceLogo/FaceLogo";
 import SignUp from "./pages/SignUp/SignUp";
 import LogIn from "./pages/LogIn/LogIn";
@@ -92,6 +93,7 @@ function App() {
       <div className="App">
         <main className="pageWrapper">
           <ScrollToTop />
+          <PromoBanner />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="how-it-works" element={<StepByStep />} />
