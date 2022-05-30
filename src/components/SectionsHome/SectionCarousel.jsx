@@ -30,7 +30,7 @@ export default function SectionCarousel() {
             </li>
             <li class="scroll-item">
               <img src="../assets/brands/camcamimg.webp" alt="First slide" />
-              <h4>Cam Cam Copenhagen</h4>
+              <h4>Cam Cam Cph</h4>
             </li>
             <li class="scroll-item">
               <img src="../assets/brands/small.webp" alt="First slide" />
