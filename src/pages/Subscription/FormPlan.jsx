@@ -40,11 +40,14 @@ function Plan(props) {
 }
 
 export default function FormPlan(props) {
-  const plansList = plans.map((plan, i) => <Plan key={plan + i} plan={plan} no={i + 1} {...props} />);
+  const plansList = plans.map((plan, i) => <Plan key={"p-" + i} plan={plan} no={i + 1} {...props} />);
 
   return (
     <Container className={` ${styles.appear}`}>
-      <Row>{plansList}</Row>
+      <Row>
+        <h3 className="text-center">Choose your plan</h3>
+      </Row>
+      <Row className="mt-3">{plansList}</Row>
     </Container>
   );
 }

@@ -97,15 +97,15 @@ class Subscription {
   }
 
   set size(size) {
-    this.size = size;
+    this.size = sizes[size];
   }
 
   set style(style) {
-    this.style = style;
+    this.style = clothStyles[style];
   }
 
   set plan(plan) {
-    this.plan = plan;
+    this.plan = plans[plan];
   }
 
   set address(address) {

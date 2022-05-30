@@ -113,11 +113,10 @@ input[type="radio"] {
     width: 25%;
   }
 }
-//   display: flex;
-//   position: relative;
-//   width: 200%;
-//   transition: transform 0.5s;
-// }
+
+.radioDelivery input[type="radio"] {
+  display: block;
+}
 
 .appear {
   opacity: 0;
