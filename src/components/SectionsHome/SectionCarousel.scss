@@ -22,6 +22,8 @@ section.carousel {
   }
 
   .carousel_main {
+    position: relative;
+    z-index: 0;
     /* SCROLL SNAPPING */
     .scroll-container {
       overflow-x: auto;
