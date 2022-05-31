@@ -1,0 +1,20 @@
+.linkButton {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--desert);
+    transition: width 0.3s ease;
+  }
+  &.other::after {
+    bottom: 6px;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+}

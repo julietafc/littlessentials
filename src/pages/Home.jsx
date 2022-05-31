@@ -53,8 +53,8 @@ export default function Home(props) {
 
   const height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
   let y;
-  console.log(offsetY, "offsety");
-  console.log(height);
+  // console.log(offsetY, "offsety");
+  // console.log(height);
 
   // function handleScroll(e, animationEnds) {
   //   // console.log("handleScroll");

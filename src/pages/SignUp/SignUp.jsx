@@ -22,20 +22,6 @@ export default function SignUp() {
       return setError("passwords do not match");
     }
 
-    // setError("");
-    // setLoading(true);
-    // signup(emailRef.current.value, passwordRef.current.value, nameRef.current.value)
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch(() => {
-    //     setError("Fail to create an account");
-    //   })
-    //   .finally(() => {
-    //     setLoading(false);
-    //     navigate("/profile", { replace: true });
-    //   });
-
     try {
       setError("");
       setLoading(true);

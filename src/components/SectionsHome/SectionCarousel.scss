@@ -24,16 +24,26 @@ section.carousel {
   .carousel_main {
     position: relative;
     z-index: 0;
+
+    .mask {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      box-shadow: inset -8px -2px 20px 15px rgba(255, 255, 255, 1);
+    }
     /* SCROLL SNAPPING */
     .scroll-container {
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       list-style: none;
-      box-shadow: inset -8px -6px 25px 15px rgba(255, 255, 255, 1);
+
+      // pointer-events: none;
     }
     .scroll-item {
       scroll-snap-align: center;
-      display: flex;
       flex-direction: column;
       /* make it square */
       width: 20em;
@@ -42,11 +52,16 @@ section.carousel {
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: -1;
+      // z-index: -1;
 
       img {
-        width: auto;
-        height: 300px;
+        max-width: 15rem;
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        object-position: 0 0;
+        // height: 300px;
+
         margin-bottom: 1rem;
         border-radius: 15px;
       }
@@ -62,12 +77,18 @@ section.carousel {
     .scroll-container[data-layoutmethod="flexbox"] {
       display: flex;
       flex-wrap: nowrap;
-      align-items: center; /* vertically align children */
+      align-items: center;
+      padding-top: 1rem; /* vertically align children */
+      // gap: 2rem;
     }
     .scroll-container[data-layoutmethod="flexbox"] .scroll-item {
       flex: 0 0 auto;
     }
   }
+
+  // .imgSquare {
+  //   width: 20%;
+  // }
 
   // .carousel {
   //   width: 80%;

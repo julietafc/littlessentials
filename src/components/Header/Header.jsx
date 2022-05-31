@@ -12,8 +12,11 @@ import OffCanvasForm from "../OffCanvasForm/OffCanvasForm";
 import PromoBanner from "../PromoBanner/PromoBanner";
 import SignUp from "../../pages/SignUp/SignUp";
 import LogIn from "../../pages/LogIn/LogIn";
+import LogOut from "../Logout/LogOut";
 import { useAuth } from "../../contexts/AuthContext";
 import { Button } from "react-bootstrap";
+
+import styles from "../../sass/layout/buttons_links.module.scss";
 
 export default function Header() {
   const { theUser, theUserName, logout } = useAuth();
@@ -28,20 +31,22 @@ export default function Header() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="how-it-works">how it works</Nav.Link>
+              <Nav.Link href="how-it-works" className={`${styles.linkButton} ${styles.other}`}>
+                how it works
+              </Nav.Link>
 
-              <NavDropdown title="about" id="collasible-nav-dropdown">
+              <NavDropdown title="about" id="collasible-nav-dropdown" className={`${styles.linkButton} ${styles.other}`}>
                 <NavDropdown.Item href="story">Our story</NavDropdown.Item>
                 <NavDropdown.Item href="guide">Our guide</NavDropdown.Item>
                 <NavDropdown.Item href="values">Our values</NavDropdown.Item>
                 <NavDropdown.Item href="lowcarbon">Low carbon</NavDropdown.Item>
                 <NavDropdown.Item href="faq">FAQ</NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown title="partners" id="collasible-nav-dropdown">
+              <NavDropdown title="partners" id="collasible-nav-dropdown" className={`${styles.linkButton} ${styles.other}`}>
                 <NavDropdown.Item href="brands">Brands</NavDropdown.Item>
                 <NavDropdown.Item href="ngos">NGOs</NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown title="connect" id="collasible-nav-dropdown">
+              <NavDropdown title="connect" id="collasible-nav-dropdown" className={`${styles.linkButton} ${styles.other}`}>
                 <NavDropdown.Item href="get-in-touch">Get in touch</NavDropdown.Item>
                 <NavDropdown.Item href="partner-with-us">Partner with us</NavDropdown.Item>
               </NavDropdown>
@@ -52,9 +57,7 @@ export default function Header() {
               Log in
             </Nav.Link> */}
               {theUser ? (
-                <Button variant="link" className="text-white text-opacity-50 text-decoration-none" onClick={() => logout()}>
-                  log out
-                </Button>
+                <LogOut />
               ) : (
                 <>
                   <OffCanvasForm name="get started">

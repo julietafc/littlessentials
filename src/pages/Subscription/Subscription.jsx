@@ -17,6 +17,7 @@ export default function Subscription(props) {
   const [right, setRight] = useState(null);
   const [left, setLeft] = useState(null);
   const [position, setPosition] = useState(0);
+  const [totalSteps, setTotalSteps] = useState(0);
 
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedStyle, setSelectedStyle] = useState(null);
@@ -29,7 +30,7 @@ export default function Subscription(props) {
   let visible3 = step === 3 || right === 3 || left === 3;
   let visible4 = step === 4 || right === 4 || left === 4;
 
-  const now = step * 25;
+  const now = (step - 1) * 25;
 
   function prev() {
     if (step <= 1) return;
@@ -37,7 +38,7 @@ export default function Subscription(props) {
   }
 
   function next() {
-    if (step >= 4) return;
+    if (step >= totalSteps) return;
     setStep(step + 1);
   }
 
@@ -47,7 +48,7 @@ export default function Subscription(props) {
       <Container className={`${styles.subscriptionWrapper}  pt-5 pb-5`}>
         <Row>
           <div className={`${styles.stepsFormWrapper} col-xl-8 `}>
-            <Steps step={step} setStep={setStep} selectedSize={selectedSize} selectedStyle={selectedStyle} selectedPlan={selectedPlan} />
+            <Steps step={step} setStep={setStep} selectedSize={selectedSize} selectedStyle={selectedStyle} selectedPlan={selectedPlan} setTotalSteps={setTotalSteps} />
             <ProgressBar now={now} variant="info" className="w-100" />
             <div className={`${styles.formsWrapper}`}>
               {visible1 && <FormSize selectedSize={selectedSize} setSelectedSize={setSelectedSize} />}
@@ -73,7 +74,7 @@ export default function Subscription(props) {
               <span>&#8592;</span>prev
             </Button>
             <Button
-              disabled={step >= 4}
+              disabled={step >= totalSteps}
               className="col-xl-2 offset-md-8 btn btn-light fs-5"
               type="button"
               onClick={() => {
