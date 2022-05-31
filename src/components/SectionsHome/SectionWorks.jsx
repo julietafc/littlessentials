@@ -20,22 +20,25 @@ export default function SectionWorks(props) {
         <div className="steps">
           <div>
             <div className="heading">
-              <h1>01.</h1>
-              <h3>Subscribe</h3>
+              <h4>
+                01. <span>Subscribe</span>
+              </h4>
             </div>
             <p>Personalize your subscription to meet your needs</p>
           </div>
           <div>
             <div className="heading">
-              <h1>02.</h1>
-              <h3>Enjoy</h3>
+              <h4>
+                02. <span>Enjoy</span>
+              </h4>
             </div>
             <p>Now you can focus on what really matters, your family</p>
           </div>
           <div>
             <div className="heading">
-              <h1>03.</h1>
-              <h3>Pass it on</h3>
+              <h4>
+                03. <span>Pass it on</span>
+              </h4>
             </div>
             <p>Drop off the items you no longer need in one of our NGOs partners</p>
           </div>

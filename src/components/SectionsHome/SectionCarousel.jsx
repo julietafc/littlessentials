@@ -17,79 +17,35 @@ export default function SectionCarousel() {
         <div className="carousel_main">
           <ul className="scroll-container" data-layoutmethod="flexbox">
             <li className="scroll-item">
-              <img src="../assets/brands/liewood.webp" alt="First slide" />
-              <h4>Liewood</h4>
+              <img src="../assets/brands/liewood.webp" alt="Liewood logo" />
+              <img className="logo_brand" src="../assets/brands/liewood.svg" alt="Liewood logo" />
             </li>
             <li className="scroll-item">
-              <img src="../assets/brands/kongesimg.webp" alt="First slide" />
-              <h4>Konges Sløjd</h4>
+              <img src="../assets/brands/kongesimg.webp" alt="Konges Slojd logo" />
+              <img className="logo_brand" src="../assets/brands/konges.webp" alt="Konges Slojd logo" />
             </li>
             <li className="scroll-item">
-              <img src="../assets/brands/softgalleryimg.webp" alt="First slide" />
-              <h4>Soft Gallery</h4>
+              <img src="../assets/brands/softgalleryimg.webp" alt="Soft Gallery logo" />
+              <img className="logo_brand" src="../assets/brands/softgallery.webp" alt="Soft Gallery logo" />
             </li>
             <li className="scroll-item">
-              <img src="../assets/brands/camcamimg.webp" alt="First slide" />
-              <h4>Cam Cam Cph</h4>
+              <img src="../assets/brands/camcamimg.webp" alt="Cam Cam CPH logo" />
+              <img className="logo_brand" src="../assets/brands/camcam.svg" alt="Cam Cam CPH logo" />
             </li>
             <li className="scroll-item">
-              <img src="../assets/brands/small.webp" alt="First slide" />
-              <h4>Smallstuff</h4>
+              <img src="../assets/brands/small.webp" alt="Smallstuff logo" />
+              <img className="logo_brand" src="../assets/brands/small.png" alt="Smallstuff logo" />
             </li>
             <li className="scroll-item">
-              <img src="../assets/brands/wauw1.webp" alt="First slide" />
-              <h4>Wauw Kapow</h4>
+              <img src="../assets/brands/wauw1.webp" alt="Wauw Kapow logo" />
+              <img className="logo_brand wauw" src="../assets/brands/wauw.webp" alt="Wauw Kapow logo" />
             </li>
             <li className="scroll-item">
-              <img src="../assets/brands/fabelabimg.webp" alt="First slide" />
-              <h4>Fabelab</h4>
+              <img src="../assets/brands/fabelabimg.webp" alt="Fabelab logo" />
+              <img className="logo_brand" src="../assets/brands/fabelab.webp" alt="Fabelab logo" />
             </li>
           </ul>
         </div>
-        {/* <Carousel>
-          <Carousel.Item>
-            <img src="../assets/brands/camcamimg.webp" alt="First slide" />
-            <div className="text">
-              <h4>Liewood</h4>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img src="../assets/brands/camcamimg.webp" alt="First slide" />
-            <div className="text">
-              <h4>Konges Sløjd</h4>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img src="../assets/brands/camcamimg.webp" alt="First slide" />
-            <div className="text">
-              <h4>Soft Gallery</h4>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img src="../assets/brands/camcamimg.webp" alt="First slide" />
-            <div className="text">
-              <h4>CamCam Copenhagen</h4>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img src="../assets/brands/camcamimg.webp" alt="First slide" />
-            <div className="text">
-              <h4>Smallstuff</h4>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img src="../assets/brands/camcamimg.webp" alt="First slide" />
-            <div className="text">
-              <h4>Wauw Kapow</h4>
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img src="../assets/brands/camcamimg.webp" alt="First slide" />
-            <div className="text">
-              <h4>Fabelab</h4>
-            </div>
-          </Carousel.Item>
-        </Carousel> */}
       </section>
     </div>
   );

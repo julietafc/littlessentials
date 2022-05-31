@@ -27,7 +27,7 @@ section.carousel {
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       list-style: none;
-      box-shadow: inset -8px -6px 25px 15px rgba(255, 255, 255, 1);
+      // box-shadow: inset -8px -6px 25px 15px rgba(255, 255, 255, 1);
     }
     .scroll-item {
       scroll-snap-align: center;
@@ -41,6 +41,16 @@ section.carousel {
       justify-content: center;
       align-items: center;
       z-index: -1;
+
+      .logo_brand {
+        width: 150px;
+        height: auto;
+        border-radius: 0;
+
+        &.wauw {
+          width: 90px;
+        }
+      }
 
       img {
         width: auto;
