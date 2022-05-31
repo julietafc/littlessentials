@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import React from "react";
-import { Routes, Route, Link, Router } from "react-router-dom";
+import { Routes, Route, Link, Router, Navigate } from "react-router-dom";
 // import SecHeroe from "./components/SecHeroe/SecHeroe";
 import { ParallaxProvider } from "react-scroll-parallax";
 
@@ -17,6 +17,7 @@ import PartnerWithUs from "./pages/PartnerWithUs";
 import Policy from "./pages/Policy";
 import NGOS from "./pages/NGOS";
 
+import PromoBanner from "./components/PromoBanner/PromoBanner";
 import FaceLogo from "./components/FaceLogo/FaceLogo";
 import SignUp from "./pages/SignUp/SignUp";
 import LogIn from "./pages/LogIn/LogIn";
@@ -26,6 +27,7 @@ import ScrollToTop from "./ScrollToTop";
 import Landing from "./pages/Landing";
 import UpdateProfile from "./pages/UpdateProfile/UpdateProfile";
 import Subscription from "./pages/Subscription/Subscription";
+import { useAuth } from "./contexts/AuthContext";
 
 function App() {
   // const fetchData = async () => {
@@ -84,12 +86,14 @@ function App() {
   //     }
   //   }
   // }
+  const { theUser } = useAuth();
 
   return (
     <ParallaxProvider>
       <div className="App">
         <main className="pageWrapper">
           <ScrollToTop />
+          <PromoBanner />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="how-it-works" element={<StepByStep />} />
@@ -101,15 +105,18 @@ function App() {
             <Route path="brands" element={<Brands />} />
             <Route path="get-in-touch" element={<GetInTouch />} />
             <Route path="partner-with-us" element={<PartnerWithUs />} />
-            <Route path="signup" element={<SignUp />} />
-            <Route path="login" element={<LogIn />} />
-            <Route path="profile" element={<Profile />} />
+
+            {/* <Route path="signup" element={<SignUp />} />
+            <Route path="login" element={<LogIn />} /> */}
+
             <Route path="forgot-password" element={<ForgotPassword />} />
             <Route path="policy" element={<Policy />} />
             <Route path="ngos" element={<NGOS />} />
             <Route path="landing" element={<Landing />} />
-            <Route path="update-profile" element={<UpdateProfile />} />
-            <Route path="subscription" element={<Subscription />} />
+
+            <Route path="profile" element={theUser ? <Profile /> : <Navigate to="/" />} />
+            <Route path="update-profile" element={theUser ? <UpdateProfile /> : <Navigate to="/" />} />
+            <Route path="subscription" element={theUser ? <Subscription /> : <Navigate to="/" />} />
           </Routes>
           {/*<FaceLogo></FaceLogo> */}
         </main>

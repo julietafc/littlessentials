@@ -1,15 +1,13 @@
 import React from "react";
-import styles from "../Subscription/subscription.module.scss";
 import { Container, Row, Button, Col, Spinner, Card } from "react-bootstrap";
-import { plans } from "../../modules/options";
 
-function Plan(props) {
+export default function Plan(props) {
   const plan = props.plan.name;
   const productList = props.plan.products.map((product, i) => <li key={plan + "pr" + i}>{product}</li>);
 
   return (
     <Col>
-      <Card className={`gap-1 rounded-3 ${props.selectedPlan === props.no ? "border-info border-2" : ""} `}>
+      <Card className={`gap-1 rounded-3 border border-2`}>
         <Card.Header as="h5" className={`text-center ${props.plan.bestValue ? "bg-info" : " bg-white border-white text-white"}`}>
           BEST VALUE
         </Card.Header>
@@ -24,7 +22,7 @@ function Plan(props) {
             <h5 className="mt-4">What’s included?</h5>
             <ul>{productList}</ul>
           </>
-          <Button
+          {/* <Button
             variant="white"
             className={`w-100 border-dark mt-3 ${props.selectedPlan === props.no ? "btn-sun" : ""}`}
             onClick={() => {
@@ -32,22 +30,9 @@ function Plan(props) {
             }}
           >
             {props.plan.btnLabel}
-          </Button>
+          </Button> */}
         </Card.Body>
       </Card>
     </Col>
-  );
-}
-
-export default function FormPlan(props) {
-  const plansList = plans.map((plan, i) => <Plan key={"p-" + i} plan={plan} no={i + 1} {...props} />);
-
-  return (
-    <Container className={` ${styles.appear}`}>
-      <Row>
-        <h3 className="text-center">Choose your plan</h3>
-      </Row>
-      <Row className="mt-3">{plansList}</Row>
-    </Container>
   );
 }

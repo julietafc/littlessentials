@@ -29,7 +29,7 @@ export default function LogIn() {
   }
 
   return (
-    <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
+    <Container className="d-flex align-items-center justify-content-center">
       <div className="w-100" style={{ maxWidth: "400px" }}>
         <Card>
           <Card.Body>
@@ -45,11 +45,11 @@ export default function LogIn() {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" ref={passwordRef} required></Form.Control>
               </Form.Group>
-              <Button disabled={loading} className="w-100 mt-3" type="submit">
+              <Button disabled={loading} className="w-100 mt-4 mb-3" type="submit">
                 Log In
               </Button>
             </Form>
-            <div className="w-100 text-center mt-2">
+            <div className="w-100 text-center mt-3 ">
               <Link to="/forgot-password">Forgot Password</Link>
             </div>
           </Card.Body>
