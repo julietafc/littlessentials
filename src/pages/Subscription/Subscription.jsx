@@ -7,7 +7,7 @@ import Steps from "./Steps";
 import InfoAside from "./InfoAside";
 import FormStyle from "./FormStyle";
 import FormPlan from "./FormPlan";
-import FormAddress from "./FormAddress";
+import FormDelivery from "./FormDelivery";
 import Header from "../../components/Header/Header";
 import FormSize from "./FormSize";
 import { sizes, clothStyles, plans } from "../../modules/options";
@@ -54,7 +54,7 @@ export default function Subscription(props) {
               {visible1 && <FormSize selectedSize={selectedSize} setSelectedSize={setSelectedSize} />}
               {visible2 && <FormStyle selectedStyle={selectedStyle} setSelectedStyle={setSelectedStyle} />}
               {visible3 && <FormPlan selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />}
-              {visible4 && <FormAddress address={address} setAddress={setAddress} />}
+              {visible4 && <FormDelivery address={address} setAddress={setAddress} />}
             </div>
           </div>
           <div className={`${styles.asideWrapper} col `}>

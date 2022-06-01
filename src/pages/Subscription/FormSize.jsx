@@ -3,14 +3,28 @@ import { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import styles from "../Subscription/subscription.module.scss";
 import { useAuth } from "../../contexts/AuthContext";
+import { Subscription, sizes } from "../../modules/options";
 
 export default function FormSize(props) {
   // const [index, setIndex] = useState(null);
   const { theUser, theUserName } = useAuth();
   const userName = theUser && theUser.displayName ? theUser.displayName.split(" ")[0] : theUserName.split(" ")[0];
 
+  useEffect(() => {
+    // let subscriber = new Subscription({ name: theUser.displayName, email: theUser.email, ID: theUser.uid });
+    const subscriber = { user: { name: theUser.displayName, email: theUser.email, ID: theUser.uid } };
+    if (!localStorage.getItem("subscriber")) {
+      localStorage.setItem("subscriber", JSON.stringify(subscriber));
+    }
+    console.log(subscriber);
+  }, []);
+
   function handleChange(e) {
-    props.setSelectedSize(e.currentTarget.value);
+    const index = e.currentTarget.value;
+    props.setSelectedSize(index);
+    const subscription = JSON.parse(localStorage.getItem("subscriber"));
+    subscription.size = sizes[index - 1];
+    localStorage.setItem("subscriber", JSON.stringify(subscription));
   }
 
   return (

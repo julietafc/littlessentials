@@ -7,6 +7,12 @@ function Plan(props) {
   const plan = props.plan.name;
   const productList = props.plan.products.map((product, i) => <li key={plan + "pr" + i}>{product}</li>);
 
+  const handleLocalStorage = (index) => {
+    const subscription = JSON.parse(localStorage.getItem("subscriber"));
+    subscription.plan = plans[index];
+    localStorage.setItem("subscriber", JSON.stringify(subscription));
+  };
+
   return (
     <Col>
       <Card className={`gap-1 rounded-3 ${props.selectedPlan === props.no ? "border-info border-2" : ""} `}>
@@ -29,6 +35,7 @@ function Plan(props) {
             className={`w-100 border-dark mt-3 ${props.selectedPlan === props.no ? "btn-sun" : ""}`}
             onClick={() => {
               props.setSelectedPlan(props.no);
+              handleLocalStorage(props.no - 1);
             }}
           >
             {props.plan.btnLabel}

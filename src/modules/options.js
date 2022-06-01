@@ -48,24 +48,24 @@ const plans = [
 ];
 
 class Subscription {
-  constructor(user, size, style, plan, address) {
-    this.user = user;
-    this.size = size;
-    this.style = style;
-    this.plan = plan;
-    this.address = address;
+  constructor(_theuser) {
+    this.theuser = _theuser;
+    this.size = null;
+    this.style = null;
+    this.plan = null;
+    this.address = null;
   }
 
   //getters
-  get user() {
-    return this.user;
+  get theuser() {
+    return this.theuser;
   }
 
   get userID() {
-    return this.user.uid;
+    return this.theuser.uid;
   }
   get userFullName() {
-    return this.user.diplayName;
+    return this.theuser.displayName;
   }
   get userFirstName() {
     return this.firstName();
@@ -92,8 +92,8 @@ class Subscription {
   }
 
   //setters
-  set user(user) {
-    this.user = user;
+  set theuser(usuario) {
+    this.theuser = usuario;
   }
 
   set size(size) {
@@ -114,10 +114,10 @@ class Subscription {
 
   //methods
   firstName() {
-    if (!this.user.diplayName) {
+    if (!this.theuser.displayName) {
       return null;
     }
-    const fullName = this.user.diplayName.split(" ");
+    const fullName = this.theuser.displayName.split(" ");
     return fullName[0];
   }
 }

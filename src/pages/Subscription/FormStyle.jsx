@@ -11,6 +11,11 @@ export default function FormStyle(props) {
   // }, []);
 
   // if (!props.selectedStyle) return <Spinner animation="border" />;
+  const handleLocalStorage = (index) => {
+    const subscription = JSON.parse(localStorage.getItem("subscriber"));
+    subscription.clothStyle = clothStyles[index];
+    localStorage.setItem("subscriber", JSON.stringify(subscription));
+  };
 
   const colorsList = clothStyles[props.selectedStyle ? props.selectedStyle - 1 : 0].colors.map((color, i) => {
     return <li key={color + i} style={{ backgroundColor: `#${color}`, width: "40px", borderRadius: "50%", aspectRatio: "1" }}></li>;
@@ -27,6 +32,7 @@ export default function FormStyle(props) {
           className={`col-xl-2 border-dark ${props.selectedStyle === 1 ? "btn-sun" : ""}`}
           onClick={() => {
             props.setSelectedStyle(1);
+            handleLocalStorage(1 - 1);
           }}
           // autoFocus={props.selectedStyle === 1 || !props.selectedStyle}
         >
@@ -37,6 +43,7 @@ export default function FormStyle(props) {
           className={`col-xl-2 border-dark ${props.selectedStyle === 2 ? "btn-sun" : ""}`}
           onClick={() => {
             props.setSelectedStyle(2);
+            handleLocalStorage(2 - 1);
           }}
           // autoFocus={props.selectedStyle === 2}
         >
@@ -47,6 +54,7 @@ export default function FormStyle(props) {
           className={`col-xl-2 border-dark ${props.selectedStyle === 3 ? "btn-sun" : ""}`}
           onClick={() => {
             props.setSelectedStyle(3);
+            handleLocalStorage(3 - 1);
           }}
           // autoFocus={props.selectedStyle === 3}
         >

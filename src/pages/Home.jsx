@@ -100,7 +100,7 @@ export default function Home(props) {
 
   return (
     <div className="Home">
-      <div className="backGround" style={styleDynamic}></div>
+      {/* <div className="backGround" style={styleDynamic}></div> */}
       <Header />
       <div className="layout">
         <SectionIntro />
