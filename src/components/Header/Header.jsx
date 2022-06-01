@@ -12,7 +12,7 @@ import OffCanvasForm from "../OffCanvasForm/OffCanvasForm";
 import PromoBanner from "../PromoBanner/PromoBanner";
 import SignUp from "../../pages/SignUp/SignUp";
 import LogIn from "../../pages/LogIn/LogIn";
-import LogOut from "../LogOut/LogOut";
+// import LogOut from "../LogOut/LogOut";
 import { useAuth } from "../../contexts/AuthContext";
 import { Button } from "react-bootstrap";
 
