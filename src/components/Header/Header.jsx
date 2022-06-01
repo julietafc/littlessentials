@@ -13,6 +13,7 @@ import PromoBanner from "../PromoBanner/PromoBanner";
 import SignUp from "../../pages/SignUp/SignUp";
 import LogIn from "../../pages/LogIn/LogIn";
 // import LogOut from "../LogOut/LogOut";
+import BtnLogOut from "../BtnLogOut/BtnLogOut";
 import { useAuth } from "../../contexts/AuthContext";
 import { Button } from "react-bootstrap";
 
@@ -57,8 +58,7 @@ export default function Header() {
               Log in
             </Nav.Link> */}
               {theUser ? (
-                // <LogOut />
-                <a>hola</a>
+                <BtnLogOut />
               ) : (
                 <>
                   <OffCanvasForm name="get started">

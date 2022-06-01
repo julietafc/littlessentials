@@ -3,7 +3,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { Button } from "react-bootstrap";
 import styles from "../../sass/layout/buttons_links.module.scss";
 
-export default function LogOut() {
+export default function BtnLogOut() {
   const { logout } = useAuth();
 
   const [hover, setHover] = useState(false);
