@@ -1,6 +1,5 @@
 import "./SectionCarousel.scss";
 import React, { useEffect, useState } from "react";
-import Carousel from "react-bootstrap/Carousel";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 
@@ -9,9 +8,9 @@ function BrandLi(props) {
 
   return (
     <li className="scroll-item">
-      <Link to={`/brands?brand=${title}`}>
+      <Link className="link" to={`/brands?brand=${title}`}>
         <img src={`../assets/brands/${props.img2}`} alt="First slide" className="imgSquare" />
-        <h4>{props.title}</h4>
+        <img src={`../assets/brands/${props.logo}`} alt="First slide" className="logo_brand" />
       </Link>
     </li>
   );

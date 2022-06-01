@@ -54,31 +54,39 @@ section.carousel {
       align-items: center;
       // z-index: -1;
 
-      .logo_brand {
-        width: 150px;
-        height: auto;
-        border-radius: 0;
+      .link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-        &.wauw {
-          width: 90px;
+        .logo_brand {
+          width: 150px;
+          height: auto;
+          border-radius: 0;
+          object-fit: contain;
+
+          &.wauw {
+            width: 90px;
+          }
         }
-      }
 
-      img {
-        max-width: 15rem;
-        width: 100%;
-        aspect-ratio: 1;
-        object-fit: cover;
-        object-position: 0 0;
-        // height: 300px;
+        img {
+          max-width: 15rem;
+          width: 100%;
+          aspect-ratio: 1;
+          object-fit: cover;
+          object-position: 0 0;
+          // height: 300px;
 
-        margin-bottom: 1rem;
-        border-radius: 15px;
-      }
+          margin-bottom: 1rem;
+          border-radius: 15px;
+        }
 
-      h4 {
-        margin-bottom: 4rem;
-        text-align: center;
+        h4 {
+          margin-bottom: 4rem;
+          text-align: center;
+        }
       }
     }
     /* make 3rd item bigger to show that items don't need to have the same width */
