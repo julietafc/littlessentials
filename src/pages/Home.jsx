@@ -3,9 +3,6 @@ import React from "react";
 
 import Chat from "../components/Chat/Chat";
 import "../sass/layout/layout.scss";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
 
 import { Container, Row, Col } from "react-bootstrap";
 import { plans } from "../modules/options";
@@ -25,8 +22,6 @@ import Header from "../components/Header/Header";
 import Co2Button from "../components/Co2Button/Co2Button";
 
 export default function Home(props) {
-  // const [turnWhite, setTurnWhite] = useState(true);
-
   const [isOnScroll, setIsOnScroll] = useState(false);
   const [x, setX] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
@@ -53,29 +48,6 @@ export default function Home(props) {
 
   const height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
   let y;
-  // console.log(offsetY, "offsety");
-  // console.log(height);
-
-  // function handleScroll(e, animationEnds) {
-  //   // console.log("handleScroll");
-  //   window.removeEventListener("scroll", handleScroll);
-  //   if (animationEnds) {
-  //     setIsOnScroll(false);
-  //     window.addEventListener("scroll", handleScroll);
-  //   } else {
-  //     window.removeEventListener("scroll", handleScroll);
-  //     setIsOnScroll(true);
-  //     y = 2;
-  //     if (window.pageYOffset > top) {
-  //       setX(x + y);
-  //       top = window.pageYOffset;
-  //     } else {
-  //       setX(x - y);
-  //       top = window.pageYOffset;
-  //     }
-  //   }
-  // }
-  // ;
 
   const plansList = plans.map((plan, i) => <Plan key={`plan-${i + 1}`} plan={plan} />);
   let first = Number(offsetY) < 600;
