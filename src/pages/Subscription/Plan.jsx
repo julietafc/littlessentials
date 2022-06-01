@@ -1,12 +1,12 @@
 import React from "react";
-import { Container, Row, Button, Col, Spinner, Card } from "react-bootstrap";
+import { Container, Col, Card } from "react-bootstrap";
 
 export default function Plan(props) {
   const plan = props.plan.name;
   const productList = props.plan.products.map((product, i) => <li key={plan + "pr" + i}>{product}</li>);
 
   return (
-    <Col>
+    <Col className=" col-12 col-sm-8 col-md-6 col-lg-4">
       <Card className={`gap-1 rounded-3 border border-2`}>
         <Card.Header as="h5" className={`text-center ${props.plan.bestValue ? "bg-info" : " bg-white border-white text-white"}`}>
           BEST VALUE

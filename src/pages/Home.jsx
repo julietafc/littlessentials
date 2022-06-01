@@ -4,15 +4,12 @@ import React from "react";
 import Chat from "../components/Chat/Chat";
 import "../sass/layout/layout.scss";
 
-import { Container, Row, Col } from "react-bootstrap";
-import { plans } from "../modules/options";
-import Plan from "./Subscription/Plan";
-
 import SectionIntro from "../components/SectionsHome/SectionIntro";
 import SectionManifesto from "../components/SectionsHome/SectionManifesto";
 import SectionManifestoDk from "../components/SectionsHome/SectionManifestoDk";
 import SectionWorks from "../components/SectionsHome/SectionWorks";
 import Footer from "../components/Footer/Footer";
+import SectionPlans from "../components/SectionsHome/SectionPlans";
 import SectionTestimonial from "../components/SectionsHome/SectionTestimonial";
 import SectionNewsletter from "../components/SectionsHome/SectionNewsletter";
 import SectionIG from "../components/SectionsHome/SectionIG";
@@ -49,7 +46,6 @@ export default function Home(props) {
   const height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
   let y;
 
-  const plansList = plans.map((plan, i) => <Plan key={`plan-${i + 1}`} plan={plan} />);
   let first = Number(offsetY) < 600;
   let second = 600 < Number(offsetY) && 2200 > Number(offsetY);
   let thirth = Number(offsetY) > 3900;
@@ -77,9 +73,7 @@ export default function Home(props) {
       <div className="layout">
         <SectionIntro />
         <SectionWorks />
-        <Container className="mb-5">
-          <Row>{plansList}</Row>
-        </Container>
+        <SectionPlans />
         <SectionManifesto className="manifesto_mobile" />
         <SectionManifestoDk className="manifesto_desktop" />
         <SectionCarousel />
