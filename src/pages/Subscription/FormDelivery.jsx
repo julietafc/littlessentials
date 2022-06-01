@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styles from "../Subscription/subscription.module.scss";
 import { Form, Button, Card, Alert, Container, Spinner, Col, Row } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
@@ -37,6 +37,8 @@ function FormAddress() {
   );
 }
 
+function FormGLS() {}
+
 export default function FormDelivery() {
   const [option, setOption] = useState("home");
 
@@ -47,8 +49,20 @@ export default function FormDelivery() {
 
   return (
     <Container className={`${styles.appear}`}>
-      <Row className="gx-5">
-        <Col>
+      <Row className="gx-5 d-flex flex-column flex-lg-row ">
+        <Col className="col-lg-6">
+          <Row>
+            <h3 className="text-center mb-4">Address</h3>
+          </Row>
+          <Row>
+            <Card>
+              <Card.Body>
+                <FormAddress />
+              </Card.Body>
+            </Card>
+          </Row>
+        </Col>
+        <Col className="col-lg-6">
           <Row>
             <h3 className="text-center mb-4">Delivery Options</h3>
           </Row>
@@ -57,25 +71,10 @@ export default function FormDelivery() {
               <Card.Body>
                 <Form onChange={handleChange} className={`${styles.radioDelivery} pb-4`}>
                   <Form.Group>
-                    <Form.Check type="radio" label={`delivery home`} id={`delivery-home`} name="delivery" value={"home"} defaultChecked />
-                    <Form.Check type="radio" label={`packe shop`} id={`packeshop'`} name="delivery" value={"shop"} />
-                    <Form.Check type="radio" label={`mother help`} id={`mother`} name="delivery" value={"ong"} />
+                    <Form.Check type="radio" label={`delivery home`} id={`delivery-home`} name="delivery" value={"home"} />
+                    <Form.Check type="radio" label={`pick up point`} id={`packeshop'`} name="delivery" value={"shop"} />
                   </Form.Group>
                 </Form>
-              </Card.Body>
-            </Card>
-          </Row>
-        </Col>
-        <Col>
-          <Row>
-            <h3 className="text-center mb-4">Address</h3>
-          </Row>
-          <Row>
-            <Card>
-              <Card.Body>
-                {option === "home" && <FormAddress />}
-                {option === "home" && <FormAddress />}
-                {option === "home" && <FormAddress />}
               </Card.Body>
             </Card>
           </Row>
