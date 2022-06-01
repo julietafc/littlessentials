@@ -22,12 +22,22 @@ export default function Brands() {
       });
   }, []);
 
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const brandId = urlParams.get("brand");
+    if (brandId) {
+      const theBrand = brands.filter((brand) => brand.title.split(" ").join("") === brandId);
+      console.log(theBrand);
+      setBrand(theBrand[0]);
+    }
+  }, [brands]);
+
   return (
     <>
       <ScrollToTop />
       <Header />
       <Chat />
-      {brand ? (
+      {brand && brands ? (
         <Brand brand={brand} setBrand={setBrand} />
       ) : (
         <>

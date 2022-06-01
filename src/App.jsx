@@ -30,18 +30,6 @@ import Subscription from "./pages/Subscription/Subscription";
 import { useAuth } from "./contexts/AuthContext";
 
 function App() {
-  // const fetchData = async () => {
-  //   try {
-  //     const res = await fetch(URL);
-  //     const data = await res.json();
-  //     // console.log(data);
-  //     setBrands(data);
-  //     fetchData();
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   // const [isOnScroll, setIsOnScroll] = useState(false);
   // const [x, setX] = useState(0);
   // const [offsetY, setOffsetY] = useState(0);

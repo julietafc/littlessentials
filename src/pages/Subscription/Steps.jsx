@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../Subscription/subscription.module.scss";
 
 function Step(props) {
@@ -10,7 +10,7 @@ function Step(props) {
     <div className={styles.step}>
       <input id={`step${props.no}`} type="radio" name="steps" value={props.no} checked={props.step == props.no} onChange={props.handleOnChange} />
       <label className={styles.label} htmlFor={`step${props.no}`}>
-        <span className={`${styles.circle} ${styles.chosed} ${tick ? "fs-7 fw-bold text-success" : ""} `}>{tick ? <>&#10003;</> : props.no}</span> {props.label}
+        <span className={`${styles.circle} ${styles.chosed} ${tick ? "fs-7 fw-bold " : ""} ${tick && styles.check} `}>{tick ? <>&#10003;</> : props.no}</span> {props.label}
       </label>
     </div>
   );
@@ -22,7 +22,18 @@ export default function Steps(props) {
     props.setStep(Number(e.target.value));
   };
 
-  const noSteps = ["size", "style", "plan", "save"].map((label, i) => <Step key={"s-" + i} label={label} no={i + 1} handleOnChange={handleOnChange} {...props} />);
+  const stepsLabels = ["size", "style", "plan", "delivery", "pay"];
+  const amountOfSteps = stepsLabels.length;
 
-  return <div className={styles.stepsContainer}>{noSteps}</div>;
+  useEffect(() => {
+    props.setTotalSteps(amountOfSteps);
+  }, []);
+
+  const noSteps = stepsLabels.map((label, i) => <Step key={"s-" + i} label={label} no={i + 1} handleOnChange={handleOnChange} {...props} />);
+
+  return (
+    <>
+      <div className={styles.stepsContainer}>{noSteps}</div>
+    </>
+  );
 }

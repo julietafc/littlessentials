@@ -1,10 +1,36 @@
 import "./SectionCarousel.scss";
-
+import React, { useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 
+function BrandLi(props) {
+  const title = props.title.split(" ").join("");
+
+  return (
+    <li className="scroll-item">
+      <Link to={`/brands?brand=${title}`}>
+        <img src={`../assets/brands/${props.img2}`} alt="First slide" className="imgSquare" />
+        <h4>{props.title}</h4>
+      </Link>
+    </li>
+  );
+}
+
 export default function SectionCarousel() {
+  const [brands, setBrands] = useState([]);
+
+  useEffect(() => {
+    fetch("../json/brands.json")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setBrands(data);
+      });
+  }, []);
+
+  const brandsList = brands.map((brand, i) => <BrandLi key={"br-" + i} {...brand} />);
+
   return (
     <div className="wrapper">
       <section className="carousel">
@@ -16,9 +42,10 @@ export default function SectionCarousel() {
         </div>
         <div className="carousel_main">
           <ul className="scroll-container" data-layoutmethod="flexbox">
-            <li className="scroll-item">
-              <img src="../assets/brands/liewood.webp" alt="Liewood logo" />
-              <img className="logo_brand" src="../assets/brands/liewood.svg" alt="Liewood logo" />
+            {brandsList}
+            {/* <li className="scroll-item">
+              <img src="../assets/brands/liewood.webp" alt="First slide" />
+              <h4>Liewood</h4>
             </li>
             <li className="scroll-item">
               <img src="../assets/brands/kongesimg.webp" alt="Konges Slojd logo" />
@@ -41,9 +68,10 @@ export default function SectionCarousel() {
               <img className="logo_brand wauw" src="../assets/brands/wauw.webp" alt="Wauw Kapow logo" />
             </li>
             <li className="scroll-item">
-              <img src="../assets/brands/fabelabimg.webp" alt="Fabelab logo" />
-              <img className="logo_brand" src="../assets/brands/fabelab.webp" alt="Fabelab logo" />
-            </li>
+              <img src="../assets/brands/fabelabimg.webp" alt="First slide" />
+              <h4>Fabelab</h4>
+            </li> */}
+            <li className="mask"></li>
           </ul>
         </div>
       </section>

@@ -24,6 +24,24 @@ export default function FormAddress() {
       <Row className="gx-5">
         <Col>
           <Row>
+            <h3 className="text-center mb-4">Delivery Options</h3>
+            {error && <Alert variant="danger">{error}</Alert>}
+          </Row>
+          <Row>
+            <Card>
+              <Card.Body>
+                <Form onSubmit={handleSubmit} className={`${styles.radioDelivery} pb-4`}>
+                  <Form.Check type="radio" label={`delivery home`} id={`delivery-home`} name="delivery" defaultChecked />
+                  <Form.Check type="radio" label={`packe shop`} id={`packeshop'`} name="delivery" />
+                  <Form.Check type="radio" label={`mother help`} id={`mother`} name="delivery" />
+                  <Form.Check type="radio" label={`other`} id={`other`} name="delivery" />
+                </Form>
+              </Card.Body>
+            </Card>
+          </Row>
+        </Col>
+        <Col>
+          <Row>
             <h3 className="text-center mb-4">Address</h3>
             {error && <Alert variant="danger">{error}</Alert>}
           </Row>
@@ -51,24 +69,6 @@ export default function FormAddress() {
                   <Button disabled={loading} className="w-100 mt-2  btn-desert" type="submit">
                     {loading ? <Spinner as="span" animation="border" size="sm" role="status" aria-hidden="true" /> : "Save"}
                   </Button>
-                </Form>
-              </Card.Body>
-            </Card>
-          </Row>
-        </Col>
-        <Col>
-          <Row>
-            <h3 className="text-center mb-4">Delivery Options</h3>
-            {error && <Alert variant="danger">{error}</Alert>}
-          </Row>
-          <Row>
-            <Card>
-              <Card.Body>
-                <Form onSubmit={handleSubmit} className={`${styles.radioDelivery} pb-4`}>
-                  <Form.Check type="radio" label={`delivery home`} id={`delivery-home`} name="delivery" />
-                  <Form.Check type="radio" label={`packe shop`} id={`packeshop'`} name="delivery" />
-                  <Form.Check type="radio" label={`mother help`} id={`mother`} name="delivery" />
-                  <Form.Check type="radio" label={`other`} id={`other`} name="delivery" />
                 </Form>
               </Card.Body>
             </Card>

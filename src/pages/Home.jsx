@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 
 import Chat from "../components/Chat/Chat";
@@ -22,19 +22,27 @@ import SectionIG from "../components/SectionsHome/SectionIG";
 import SectionCarousel from "../components/SectionsHome/SectionCarousel";
 import Header from "../components/Header/Header";
 
+import Co2Button from "../components/Co2Button/Co2Button";
+
 export default function Home(props) {
-  // const [isOnScroll, setIsOnScroll] = useState(false);
+  // const [turnWhite, setTurnWhite] = useState(true);
+
+  const [isOnScroll, setIsOnScroll] = useState(false);
   const [x, setX] = useState(0);
   const [offsetY, setOffsetY] = useState(0);
+
   const handleEvent = () => {
     setOffsetY(window.pageYOffset);
+    setIsOnScroll(true);
   };
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleEvent);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleEvent);
-  //   };
-  // }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleEvent);
+    return () => {
+      setIsOnScroll(false);
+      window.removeEventListener("scroll", handleEvent);
+    };
+  }, []);
 
   // window.addEventListener("scroll", handleScroll);
 
@@ -45,7 +53,7 @@ export default function Home(props) {
 
   const height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
   let y;
-  // console.log(top);
+  // console.log(offsetY, "offsety");
   // console.log(height);
 
   // function handleScroll(e, animationEnds) {
@@ -69,15 +77,30 @@ export default function Home(props) {
   // }
   // ;
 
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   const plansList = plans.map((plan, i) => <Plan key={`plan-${i + 1}`} plan={plan} />);
+  let first = Number(offsetY) < 600;
+  let second = 600 < Number(offsetY) && 2200 > Number(offsetY);
+  let thirth = Number(offsetY) > 3900;
+  let color = first ? "white" : second ? "#d0e2fd" : thirth ? "#d0e2fd" : "white";
+  // let color = thirth ? "#d0e2fd" : second ? "#d0e2fd" : first ? "white" : "#d0e2fd";
+  let translate = first ? "translateX(100%)" : second ? "translateX(0)" : thirth ? "translateX(0)" : "translateX(-100%)";
+
+  const styleDynamic = {
+    position: "fixed",
+    top: "0",
+    left: "0",
+    zIndex: "-1",
+    width: "100%",
+    height: "100%",
+    backgroundColor: color,
+    transform: translate,
+    // filter: "blur(50px)",
+    transition: "background-color .5s ease, transform .5s ease",
+  };
 
   return (
     <div className="Home">
+      <div className="backGround" style={styleDynamic}></div>
       <Header />
       <div className="layout">
         <SectionIntro />
@@ -94,41 +117,7 @@ export default function Home(props) {
       </div>
       <div className="floating_actions">
         <Chat />
-        <Button className="co2_button" variant="primary" onClick={handleShow}>
-          this website <br /> only emites <br />
-          0.49g of CO2
-        </Button>
-
-        <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
-          <Modal.Header closeButton>
-            <Modal.Title>Minimizing our footprint, also digitally</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div className="left">
-              <p> Our webpage has a carbon footprint of x CO2, calculated through the Website Carbon Calculator (https://www.websitecarbon.com).</p>
-              <br />
-              <p> A regular website has an average of x CO2. This means we are using 80% less CO2 than the average website.</p>
-              <br />
-              <p>If you would like more info about how you can reduce your digital footprint, feel free to reach out to us via info@littlessentials.dk and we’ll be happy to share what we know with you.</p>
-            </div>
-            <div className="right">
-              <div className="info_1">
-                <h2>80%</h2>
-                <p>less C02</p>
-              </div>
-              <div className="info_2">
-                <h2>0.231g</h2>
-                <p>of CO2 per visit</p>
-              </div>
-            </div>
-          </Modal.Body>
-          <Modal.Footer>
-            <p>Every small change starts with a seed of awareness.</p>
-            <Link to="lowcarbon">
-              <Button variant="primary">Learn more</Button>
-            </Link>
-          </Modal.Footer>
-        </Modal>
+        <Co2Button />
       </div>
       <Footer />
     </div>
