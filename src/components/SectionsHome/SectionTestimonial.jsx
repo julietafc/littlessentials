@@ -12,10 +12,10 @@ export default function SectionTestimonial(props) {
           <h2 className="text-center "> Essential Community</h2>
         </Row>
         <Row>
-          <Col className="d-flex justify-content-center justify-content-md-end pe-lg-5 col-12 col-md ">
+          <Col className="d-flex justify-content-center justify-content-md-end pe-lg-3 col-12 col-md ">
             <img src="../assets/img12.webp" alt="curly hair woman with a kid" />
           </Col>
-          <Col>
+          <Col className="ps-lg-4">
             <div className="text_wrapper d-flex justify-content-center mt-4 d-md-block">
               <h2 className="heading_desktop"> Essential Community</h2>
               <div className="text">
