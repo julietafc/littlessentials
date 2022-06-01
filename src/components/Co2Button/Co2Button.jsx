@@ -25,6 +25,9 @@ export default function Co2Button() {
             <p> A regular website has an average of x CO2. This means we are using 80% less CO2 than the average website.</p>
             <br />
             <p>If you would like more info about how you can reduce your digital footprint, feel free to reach out to us via info@littlessentials.dk and we’ll be happy to share what we know with you.</p>
+            <p>
+              <strong>Every small change starts with a seed of awareness.</strong>
+            </p>
           </div>
           <div className="right">
             <div className="info_1">
@@ -43,7 +46,6 @@ export default function Co2Button() {
               <a href="https://drive.google.com/file/d/1DFe1Lp_-voDFrLp-qpONfiGmG_uFoLar/view" target="_blank">
                 5 WAYS WE REDUCE OUR CO2 EMISSIONS
               </a>
-              <p>Every small change starts with a seed of awareness.</p>
             </Col>
             <Col className="d-flex justify-content-end">
               <Link to="lowcarbon">
