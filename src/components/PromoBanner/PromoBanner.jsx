@@ -6,7 +6,7 @@ export default function PromoBanner(props) {
   const promotionsList = promotions.map((promo, i) => <li key={`p-${i}`}>{promo}</li>);
 
   return (
-    <div className={styles.promo_wrapper}>
+    <div className={`${styles.promo_wrapper} d-none d-md-block`}>
       <ul>{promotionsList}</ul>
     </div>
   );
