@@ -10,4 +10,4 @@ Disallow: /
 User-agent: Googlebot-Image
 Disallow: /
 
-Sitemap: http://www.littlessentials.dk/sitemap.xml
+Sitemap: http://www.littlessentials.netlify.app/sitemap.xml
