@@ -4,13 +4,6 @@ import { Container, Row, Button, Col, Spinner } from "react-bootstrap";
 import { clothStyles } from "../../modules/options";
 
 export default function FormStyle(props) {
-  // useEffect(() => {
-  //   if (props.selectedStyle) {
-  //     props.setSelectedStyle(Number(props.selectedStyle));
-  //   }
-  // }, []);
-
-  // if (!props.selectedStyle) return <Spinner animation="border" />;
   const handleLocalStorage = (index) => {
     const subscription = JSON.parse(localStorage.getItem("subscriber"));
     subscription.clothStyle = clothStyles[index];
@@ -18,7 +11,7 @@ export default function FormStyle(props) {
   };
 
   const colorsList = clothStyles[props.selectedStyle ? props.selectedStyle - 1 : 0].colors.map((color, i) => {
-    return <li key={color + i} style={{ backgroundColor: `#${color}`, width: "40px", borderRadius: "50%", aspectRatio: "1" }}></li>;
+    return <li key={color + i} style={{ backgroundColor: `#${color}`, maxWidth: "40px", width: "20%", borderRadius: "50%", aspectRatio: "1" }}></li>;
   });
 
   return (
@@ -62,13 +55,17 @@ export default function FormStyle(props) {
         </Button>
       </Row>
       <Row className="mt-5">
-        <Col>
-          <img src={clothStyles[props.selectedStyle ? props.selectedStyle - 1 : 0].url1} alt="" className="" />
-
-          <h4 className="text-center p-2">{clothStyles[props.selectedStyle ? props.selectedStyle - 1 : 0].name}</h4>
-        </Col>
-        <Col>
+        <Col className="col-lg-6">
           <Row>
+            <img src={clothStyles[props.selectedStyle ? props.selectedStyle - 1 : 0].url1} alt="" className="" />
+          </Row>
+          <Row>
+            <h4 className="text-center p-2">{clothStyles[props.selectedStyle ? props.selectedStyle - 1 : 0].name}</h4>
+          </Row>
+        </Col>
+        <Col className="col-lg-6">
+          <Row className="">
+            <p className="text-center">Contains these colors</p>
             <ul className={`${styles.colorList} d-flex justify-content-around`}>{colorsList}</ul>
           </Row>
           <Row>

@@ -7,22 +7,22 @@ const sizes = [
 
 const clothStyles = [
   {
-    name: "playful",
+    name: "Playful",
     colors: ["F6ECEC", "EEEFFD", "C1C0CF", "DD8C58", "383F48"],
-    url1: "./assets/img08.png",
-    url2: "./assets/img09.png",
+    url1: "./assets/webP/littlessentials_playful-package.webp",
+    url2: "./assets/webP/littlessentials_playful-package2.webp",
   },
   {
-    name: "earth",
+    name: "Earth",
     colors: ["FFF8F8", "F2E3DB", "D0D0D0", "E5AE4A", "AB5E11"],
-    url1: "./assets/im01.png",
-    url2: "./assets/img07.png",
+    url1: "./assets/webP/littlessentials_earth-package.webp",
+    url2: "./assets/webP/littlessentials_earth-package2.webp",
   },
   {
-    name: "poetic",
+    name: "Poetic",
     colors: ["F5F5FC", "EAD2BF", "F0AFA7", "B17562", "89482B"],
-    url1: "./assets/im01.png",
-    url2: "./assets/img07.png",
+    url1: "./assets/webP/littlessentials_poetic-package.webp",
+    url2: "./assets/webP/littlessentials_poetic-package2.webp",
   },
 ];
 

@@ -16,6 +16,7 @@ export default function Subscription(props) {
   const [step, setStep] = useState(1);
   const [right, setRight] = useState(null);
   const [left, setLeft] = useState(null);
+
   const [position, setPosition] = useState(0);
   const [totalSteps, setTotalSteps] = useState(0);
 
@@ -23,7 +24,11 @@ export default function Subscription(props) {
   const [selectedStyle, setSelectedStyle] = useState(null);
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [address, setAddress] = useState(null);
+  const [deliveryAt, setDeliveryAt] = useState(null);
+
   const { theUser, theUserName } = useAuth();
+
+  const infoArr = [selectedSize, selectedStyle, selectedPlan, address];
 
   let visible1 = step === 1 || right === 1 || left === 1;
   let visible2 = step === 2 || right === 2 || left === 2;
@@ -74,8 +79,8 @@ export default function Subscription(props) {
               <span>&#8592;</span>prev
             </Button>
             <Button
-              disabled={step >= totalSteps}
-              className="col-xl-2 offset-md-8 btn btn-light fs-5"
+              disabled={!infoArr[step - 1]}
+              className="col-xl-2 offset-8 btn btn-light fs-5"
               type="button"
               onClick={() => {
                 next();

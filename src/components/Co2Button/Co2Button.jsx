@@ -12,7 +12,7 @@ export default function Co2Button() {
     <>
       <Button className="co2_button" variant="primary" onClick={handleShow}>
         this website <br /> only emites <br />
-        0.49g of CO2
+        0.37g of CO2
       </Button>
       <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
         <Modal.Header closeButton>
