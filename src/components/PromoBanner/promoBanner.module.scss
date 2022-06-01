@@ -1,7 +1,7 @@
 .promo_wrapper {
   overflow: hidden;
   position: relative;
-  background-color: var(--tan);
+  background-color: var(--pebble);
   width: 100%;
 
   ul {
@@ -13,8 +13,8 @@
     transform: translateX(50%);
     animation: moving 50s linear infinite;
     justify-content: space-between;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 110%;
+    color: var(--desert);
+    font-size: 100%;
   }
 }
 

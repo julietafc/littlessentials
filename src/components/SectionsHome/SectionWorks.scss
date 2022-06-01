@@ -52,18 +52,14 @@ section.works {
     div {
       margin-bottom: 1em;
 
-      h1 {
-        font-size: 2.5rem;
-        font-weight: 100;
-        color: #d1cbbe;
-        margin: 0;
-        margin-right: 0.7rem;
-      }
-
       h3 {
-        font-size: 1.5rem;
-        color: #8b5028;
+        font-family: var(--font-headline);
+        color: var(--pebble);
         font-weight: 700;
+
+        span {
+          color: black;
+        }
       }
     }
   }
