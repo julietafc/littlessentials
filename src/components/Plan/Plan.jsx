@@ -6,8 +6,8 @@ export default function Plan(props) {
   const productList = props.plan.products.map((product, i) => <li key={plan + "pr" + i}>{product}</li>);
 
   return (
-    <Col className=" col-12 col-sm-8 col-md-6 col-lg-4">
-      <Card className={`gap-1 rounded-3 border border-2`}>
+    <Col className=" col-12 col-sm-8 col-md-6 col-lg-4" style={{ height: "100%" }}>
+      <Card className={`gap-1 rounded-3 border border-2`} style={{ minHeight: "65vh" }}>
         <Card.Header as="h5" className={`text-center ${props.plan.bestValue ? "bg-info" : " bg-white border-white text-white"}`}>
           BEST VALUE
         </Card.Header>
@@ -22,15 +22,6 @@ export default function Plan(props) {
             <h5 className="mt-4">What’s included?</h5>
             <ul>{productList}</ul>
           </>
-          {/* <Button
-            variant="white"
-            className={`w-100 border-dark mt-3 ${props.selectedPlan === props.no ? "btn-sun" : ""}`}
-            onClick={() => {
-              props.setSelectedPlan(props.no);
-            }}
-          >
-            {props.plan.btnLabel}
-          </Button> */}
         </Card.Body>
       </Card>
     </Col>
