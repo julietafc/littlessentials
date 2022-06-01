@@ -57,7 +57,8 @@ export default function Header() {
               Log in
             </Nav.Link> */}
               {theUser ? (
-                <LogOut />
+                // <LogOut />
+                <a>hola</a>
               ) : (
                 <>
                   <OffCanvasForm name="get started">
