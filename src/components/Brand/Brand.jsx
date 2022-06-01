@@ -24,7 +24,7 @@ export default function Brand(props) {
         </Breadcrumb>
         <div className="brand_header">
           <img className="logo" src={"assets/brands/" + props.brand.logo} alt="" />
-          <img className="picture" src={"assets/brands/" + props.brand.img2} alt="" />
+          <img className="picture" src={"assets/webP/" + props.brand.img1} alt="" />
         </div>
         <div className="brand_body">
           <aside>
