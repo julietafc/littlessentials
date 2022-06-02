@@ -45,6 +45,7 @@
     &:first-child {
       left: 5rem;
       top: -2rem;
+      border-radius: 15px;
     }
     &:nth-child(2) {
       right: 2.8rem;
@@ -54,6 +55,7 @@
     &:last-child {
       top: 11rem;
       left: 9rem;
+      border-radius: 15px;
     }
   }
 }

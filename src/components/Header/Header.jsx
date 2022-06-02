@@ -4,23 +4,19 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./Header.scss";
 
-import { useRef, useEffect, useState } from "react";
 import LElement from "../LElement/LElement";
 import { Link } from "react-router-dom";
 
 import OffCanvasForm from "../OffCanvasForm/OffCanvasForm";
-import PromoBanner from "../PromoBanner/PromoBanner";
 import SignUp from "../../pages/SignUp/SignUp";
 import LogIn from "../../pages/LogIn/LogIn";
-// import LogOut from "../LogOut/LogOut";
 import BtnLogOut from "../BtnLogOut/BtnLogOut";
 import { useAuth } from "../../contexts/AuthContext";
-import { Button } from "react-bootstrap";
 
 import styles from "../../sass/layout/buttons_links.module.scss";
 
 export default function Header() {
-  const { theUser, theUserName, logout } = useAuth();
+  const { theUser } = useAuth();
 
   return (
     <>
@@ -53,10 +49,6 @@ export default function Header() {
               </NavDropdown>
             </Nav>
             <Nav>
-              {/* <Nav.Link href="signup">Get started</Nav.Link>
-            <Nav.Link eventKey={2} href="login">
-              Log in
-            </Nav.Link> */}
               {theUser ? (
                 <BtnLogOut />
               ) : (
