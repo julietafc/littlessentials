@@ -26,12 +26,13 @@ export default function Subscription(props) {
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [address, setAddress] = useState(null);
   const [deliveryAt, setDeliveryAt] = useState(null);
+  const [acepted, setAcepted] = useState(false);
 
   const { theUser, theUserName } = useAuth();
 
   const deliveryValid = address && deliveryAt;
 
-  const infoArr = [selectedSize, selectedStyle, selectedPlan, deliveryValid];
+  const infoArr = [selectedSize, selectedStyle, selectedPlan, deliveryValid, acepted];
 
   let visible1 = step === 1 || right === 1 || left === 1;
   let visible2 = step === 2 || right === 2 || left === 2;
@@ -63,8 +64,8 @@ export default function Subscription(props) {
               {visible1 && <FormSize selectedSize={selectedSize} setSelectedSize={setSelectedSize} />}
               {visible2 && <FormStyle selectedStyle={selectedStyle} setSelectedStyle={setSelectedStyle} />}
               {visible3 && <FormPlan selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />}
-              {visible4 && <FormDelivery address={address} setAddress={setAddress} setDeliveryAt={setDeliveryAt} />}
-              {visible5 && <FormPayment />}
+              {visible4 && <FormDelivery address={address} setAddress={setAddress} deliveryAt={deliveryAt} setDeliveryAt={setDeliveryAt} />}
+              {visible5 && <FormPayment acepted={acepted} setAcepted={setAcepted} />}
             </div>
           </div>
           <div className={`${styles.asideWrapper} col `}>

@@ -21,10 +21,11 @@ export default function InfoAside(props) {
           <Card.Text>{props.selectedPlan && props.selectedPlan.name}</Card.Text>
           <Card.Text style={{ marginTop: "-1.5rem" }}>{props.selectedPlan && props.selectedPlan.period}</Card.Text>
         </Card.Body>
-        <Card.Text className="fs-5">
-          {" "}
-          Total: {props.selectedPlan.price}kr <span className="fs-6">/{props.selectedPlan.periodNom}</span>
-        </Card.Text>
+        {props.selectedPlan && (
+          <Card.Text className="fs-5">
+            Total: {props.selectedPlan.price}kr <span className="fs-6">/{props.selectedPlan.periodNom}</span>
+          </Card.Text>
+        )}
       </Card>
     </aside>
   );

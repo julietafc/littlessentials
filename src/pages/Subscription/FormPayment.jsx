@@ -1,7 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 
-export default function FormPayment() {
+export default function FormPayment(props) {
+  const handleOnChange = () => {
+    props.setAcepted(!props.acepted);
+  };
+
   return (
     <Container className="col col-sm-8 col-md-6">
       <Form>
@@ -28,8 +32,12 @@ export default function FormPayment() {
         </Container>
 
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="I'm agree with the terms and conditions" />
+          <Form.Check type="checkbox" label="I'm agree with the terms and conditions" onChange={handleOnChange} />
         </Form.Group>
+
+        <Button variant="primary" type="submit" className="mt-3 " active={props.acepted}>
+          pay
+        </Button>
       </Form>
     </Container>
   );
