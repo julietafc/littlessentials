@@ -18,7 +18,7 @@ export default function NGOS() {
         </p>
         <div className="card_wrapper_ngos">
           <Card className="card_brand" style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="./assets/img06.png" />
+            <Card.Img style={{ objectFit: "cover" }} variant="top" src={`./assets/webP/morhjelp.webp`} />
             <Card.Body>
               <Card.Title>Mødrehjælpen</Card.Title>
               <Card.Link href="https://moedrehjaelpen.dk/" target="_blank">
@@ -28,7 +28,7 @@ export default function NGOS() {
             </Card.Body>
           </Card>
           <Card className="card_brand" style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="./assets/img06.png" />
+            <Card.Img style={{ objectFit: "cover" }} variant="top" src={`./assets/webP/redbarnet.webp`} />
             <Card.Body>
               <Card.Title>Red Barnet</Card.Title>
               <Card.Link href="https://redbarnet.dk/" target="_blank">

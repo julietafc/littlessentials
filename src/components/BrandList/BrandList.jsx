@@ -15,7 +15,7 @@ export default function BrandList(props) {
         className="card_brand"
         style={{ width: "18rem" }}
       >
-        <Card.Img variant="top" src="./assets/img06.png" />
+        <Card.Img style={{ objectFit: "cover" }} variant="top" src={`./assets/webP/${brand.img1}`} alt={brand.title} />
         <Card.Body>
           <Card.Title>{brand.title}</Card.Title>
           {/* <Button

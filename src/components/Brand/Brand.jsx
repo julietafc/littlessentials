@@ -23,13 +23,15 @@ export default function Brand(props) {
           <Breadcrumb.Item active>{props.brand.title}</Breadcrumb.Item>
         </Breadcrumb>
         <div className="brand_header">
-          <img className="logo" src={"assets/brands/" + props.brand.logo} alt="" />
-          <img className="picture" src={"assets/webP/" + props.brand.img1} alt="" />
+          <img className="logo" src={"assets/brands/" + props.brand.logo} alt={props.brand.title} />
+          <img className="picture" src={"assets/webP/" + props.brand.img1} alt={props.brand.title} />
         </div>
         <div className="brand_body">
           <aside>
             <h4>Website</h4>
-            <a href={props.brand.website}>{props.brand.website}</a>
+            <a href={props.brand.website} target="_blank">
+              {props.brand.website}
+            </a>
             <h4>Location</h4>
             <p>Copenhagen, Denmark</p>
             <h4>Category</h4>
