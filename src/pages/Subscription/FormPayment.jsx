@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function FormPayment(props) {
+  const { theUser } = useAuth();
+
   const handleOnChange = () => {
     props.setAcepted(!props.acepted);
   };
@@ -16,7 +19,7 @@ export default function FormPayment(props) {
 
         <Form.Group className="mb-3" controlId="formName">
           <Form.Label>Name on card</Form.Label>
-          <Form.Control type="text" placeholder="Marie Luarsen" />
+          <Form.Control type="text" placeholder="Marie Luarsen" defaultValue={theUser.displayName} />
         </Form.Group>
 
         <Container className="d-flex justify-content-between">
@@ -35,7 +38,7 @@ export default function FormPayment(props) {
           <Form.Check type="checkbox" label="I'm agree with the terms and conditions" onChange={handleOnChange} />
         </Form.Group>
 
-        <Button variant="primary" type="submit" className="mt-3 " active={props.acepted}>
+        <Button variant="primary" type="submit" className={`mt-3 px-5 border-2 rounded-pill ${props.acepted ? "" : "btn-outline-dark"} `} disabled={!props.acepted}>
           pay
         </Button>
       </Form>

@@ -84,16 +84,18 @@ export default function Subscription(props) {
             >
               <span>&#8592;</span>prev
             </Button>
-            <Button
-              disabled={!infoArr[step - 1]}
-              className="col-4 offset-4 col-md-2 offset-md-8 btn btn-light fs-5"
-              type="button"
-              onClick={() => {
-                next();
-              }}
-            >
-              next <span>&#8594;</span>
-            </Button>
+            {!visible5 && (
+              <Button
+                disabled={!infoArr[step - 1]}
+                className="col-4 offset-4 col-md-2 offset-md-8 btn btn-light fs-5"
+                type="button"
+                onClick={() => {
+                  next();
+                }}
+              >
+                next <span>&#8594;</span>
+              </Button>
+            )}
           </div>
         </Row>
       </Container>
