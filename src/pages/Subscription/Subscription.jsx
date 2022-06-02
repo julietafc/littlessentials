@@ -8,6 +8,7 @@ import InfoAside from "./InfoAside";
 import FormStyle from "./FormStyle";
 import FormPlan from "./FormPlan";
 import FormDelivery from "./FormDelivery";
+import FormPayment from "./FormPayment";
 import Header from "../../components/Header/Header";
 import FormSize from "./FormSize";
 import { sizes, clothStyles, plans } from "../../modules/options";
@@ -28,12 +29,15 @@ export default function Subscription(props) {
 
   const { theUser, theUserName } = useAuth();
 
-  const infoArr = [selectedSize, selectedStyle, selectedPlan, address];
+  const deliveryValid = address && deliveryAt;
+
+  const infoArr = [selectedSize, selectedStyle, selectedPlan, deliveryValid];
 
   let visible1 = step === 1 || right === 1 || left === 1;
   let visible2 = step === 2 || right === 2 || left === 2;
   let visible3 = step === 3 || right === 3 || left === 3;
   let visible4 = step === 4 || right === 4 || left === 4;
+  let visible5 = step === 5 || right === 5 || left === 5;
 
   const now = (step - 1) * 25;
 
@@ -53,13 +57,14 @@ export default function Subscription(props) {
       <Container className={`${styles.subscriptionWrapper}  pt-5 pb-5`}>
         <Row>
           <div className={`${styles.stepsFormWrapper} col-xl-8 `}>
-            <Steps step={step} setStep={setStep} selectedSize={selectedSize} selectedStyle={selectedStyle} selectedPlan={selectedPlan} setTotalSteps={setTotalSteps} />
+            <Steps step={step} setStep={setStep} infoArr={infoArr} setTotalSteps={setTotalSteps} />
             <ProgressBar now={now} variant="info" className="w-100" />
             <div className={`${styles.formsWrapper}`}>
               {visible1 && <FormSize selectedSize={selectedSize} setSelectedSize={setSelectedSize} />}
               {visible2 && <FormStyle selectedStyle={selectedStyle} setSelectedStyle={setSelectedStyle} />}
               {visible3 && <FormPlan selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />}
-              {visible4 && <FormDelivery address={address} setAddress={setAddress} />}
+              {visible4 && <FormDelivery address={address} setAddress={setAddress} setDeliveryAt={setDeliveryAt} />}
+              {visible5 && <FormPayment />}
             </div>
           </div>
           <div className={`${styles.asideWrapper} col `}>

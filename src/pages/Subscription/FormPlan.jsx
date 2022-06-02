@@ -12,6 +12,7 @@ function Plan(props) {
   const handleLocalStorage = (index) => {
     const subscription = JSON.parse(localStorage.getItem("subscriber"));
     subscription.plan = plans[index];
+    subscription.plan.index = index;
     localStorage.setItem("subscriber", JSON.stringify(subscription));
   };
 

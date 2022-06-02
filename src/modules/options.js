@@ -30,6 +30,7 @@ const plans = [
   {
     name: "Basic essentials",
     period: "(monthly subsription)",
+    periodNom: "month",
     items: 15,
     price: 249,
     products: ["2 short onesies", "2 long onesies", "2 Pijamas", "2 Pants", "1 Sweater", "2 Burping clothes", "2 Socks", "1 Pacifier & 1 clips"],
@@ -39,6 +40,7 @@ const plans = [
   {
     name: "Seasonal essentials",
     period: "(3 months subsription)",
+    periodNom: "3 months",
     items: 36,
     price: 499,
     products: ["2 Short  & 2 long onesies", "2 Pijamas", "3 Pants", "1 Sweater", "1 Hat", "2 Burping clothes", "2 Socks", "1 Raddle", "2 Pacifier & 2 clips", "1 Toy", "1 Cuddle cloth", "1 Portable changing mat", "1 Swaddle", "1 Teether"],

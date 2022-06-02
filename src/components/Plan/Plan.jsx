@@ -5,6 +5,7 @@ export default function Plan(props) {
   const plan = props.plan.name;
   const productList = props.plan.products.map((product, i) => <li key={plan + "pr" + i}>{product}</li>);
   const [showList, setShowList] = useState(false);
+
   return (
     <Col className=" col-12 col-sm-8 col-md-6 col-lg-4" style={{ height: "100%" }}>
       <Card className={`gap-1 rounded-3 border border-2 minHeight`}>

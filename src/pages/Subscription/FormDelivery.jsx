@@ -4,15 +4,28 @@ import { Form, Button, Card, Alert, Container, Spinner, Col, Row } from "react-b
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 
-function FormAddress() {
+function FormAddress(props) {
   const streetRef = useRef();
   const zipcodeRef = useRef();
   const cityRef = useRef();
   const phoneRef = useRef();
 
   async function handleSubmit(e) {
-    // function handleSubmit(e) {
+    // function handleS
     e.preventDefault();
+
+    const address = {
+      streetNumber: streetRef.current.value,
+      zipCode: zipcodeRef.current.value,
+      city: cityRef.current.value,
+      phone: phoneRef.current.value,
+    };
+
+    props.setAddress(address);
+
+    const subscription = JSON.parse(localStorage.getItem("subscriber"));
+    subscription.address = address;
+    localStorage.setItem("subscriber", JSON.stringify(subscription));
   }
 
   return (
@@ -33,18 +46,28 @@ function FormAddress() {
         <Form.Label>Phone</Form.Label>
         <Form.Control type="tel" ref={phoneRef} required></Form.Control>
       </Form.Group>
+      <Button variant="primary" type="submit" className="mt-3 ">
+        Confirm address
+      </Button>
     </Form>
   );
 }
 
-function FormGLS() {}
+export default function FormDelivery(props) {
+  const checkHomeRef = useRef();
 
-export default function FormDelivery() {
-  const [option, setOption] = useState("home");
+  useEffect(() => {
+    if (props.address) {
+      checkHomeRef.current.focus();
+    }
+  }, [props.address]);
 
   const handleChange = (e) => {
     console.log(e.target.defaultValue);
-    setOption(e.target.defaultValue);
+    props.setDeliveryAt(e.target.defaultValue);
+    const subscription = JSON.parse(localStorage.getItem("subscriber"));
+    subscription.deliveryAt = e.target.defaultValue;
+    localStorage.setItem("subscriber", JSON.stringify(subscription));
   };
 
   return (
@@ -52,17 +75,17 @@ export default function FormDelivery() {
       <Row className="gx-5 d-flex flex-column flex-lg-row ">
         <Col className="col-lg-6">
           <Row>
-            <h3 className="text-center mb-4">Address</h3>
+            <h3 className="text-center mb-4">Address {props.address && <span className="text-success">✓</span>}</h3>
           </Row>
           <Row>
             <Card>
               <Card.Body>
-                <FormAddress />
+                <FormAddress {...props} />
               </Card.Body>
             </Card>
           </Row>
         </Col>
-        <Col className="col-lg-6">
+        <Col className={props.address ? "col-lg-6" : "col-lg-6 pe-none text-black-50"}>
           <Row>
             <h3 className="text-center mb-4">Delivery Options</h3>
           </Row>
@@ -71,7 +94,7 @@ export default function FormDelivery() {
               <Card.Body>
                 <Form onChange={handleChange} className={`${styles.radioDelivery} pb-4`}>
                   <Form.Group>
-                    <Form.Check type="radio" label={`delivery home`} id={`delivery-home`} name="delivery" value={"home"} />
+                    <Form.Check type="radio" label={`delivery home`} id={`delivery-home`} name="delivery" value={"home"} ref={checkHomeRef} />
                     <Form.Check type="radio" label={`pick up point`} id={`packeshop'`} name="delivery" value={"shop"} />
                   </Form.Group>
                 </Form>

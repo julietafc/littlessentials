@@ -7,6 +7,7 @@ export default function FormStyle(props) {
   const handleLocalStorage = (index) => {
     const subscription = JSON.parse(localStorage.getItem("subscriber"));
     subscription.clothStyle = clothStyles[index];
+    subscription.clothStyle.index = index;
     localStorage.setItem("subscriber", JSON.stringify(subscription));
   };
 

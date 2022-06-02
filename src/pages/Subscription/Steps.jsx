@@ -2,9 +2,7 @@ import React, { useEffect } from "react";
 import styles from "../Subscription/subscription.module.scss";
 
 function Step(props) {
-  const selections = [props.selectedSize, props.selectedStyle, props.selectedPlan];
-
-  const tick = props.step >= props.no && selections[props.no - 1];
+  const tick = props.step >= props.no && props.infoArr[props.no - 1];
 
   return (
     <div className={styles.step}>
