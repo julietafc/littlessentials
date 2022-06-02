@@ -9,9 +9,18 @@ export default function FormPayment(props) {
     props.setAcepted(!props.acepted);
   };
 
+  async function handleSubmit(e) {
+    // function handleS
+    e.preventDefault();
+
+    // const subscription = JSON.parse(localStorage.getItem("subscriber"));
+    // subscription.address = address;
+    // localStorage.setItem("subscriber", JSON.stringify(subscription));
+  }
+
   return (
     <Container className="col col-sm-8 col-md-6">
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formCC">
           <Form.Label>Card Number</Form.Label>
           <Form.Control type="number" placeholder="0000 0000 0000 0000" />
