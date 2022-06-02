@@ -1,0 +1,14 @@
+.plans {
+  .header {
+    padding: 0 6rem;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .plans {
+    .header {
+      padding: 0;
+      text-align: center;
+    }
+  }
+}
