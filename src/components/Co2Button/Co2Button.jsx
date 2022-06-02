@@ -20,9 +20,13 @@ export default function Co2Button() {
         </Modal.Header>
         <Modal.Body>
           <div className="left">
-            <p> Our webpage has a carbon footprint of x CO2, calculated through the Website Carbon Calculator (https://www.websitecarbon.com).</p>
+            <p>
+              Our webpage has a carbon footprint of <strong>0.37g of CO2,</strong> calculated through the Website Carbon Calculator (https://www.websitecarbon.com).
+            </p>
             <br />
-            <p> A regular website has an average of x CO2. This means we are using 80% less CO2 than the average website.</p>
+            <p>
+              A regular website has an average of <strong>0.5g of CO2</strong>. This means we are using <strong>60% less</strong> CO2 of web pages tested.
+            </p>
             <br />
             <p>If you would like more info about how you can reduce your digital footprint, feel free to reach out to us via info@littlessentials.dk and we’ll be happy to share what we know with you.</p>
             <p>
@@ -31,11 +35,11 @@ export default function Co2Button() {
           </div>
           <div className="right">
             <div className="info_1">
-              <h2>80%</h2>
+              <h2>60%</h2>
               <p>less C02</p>
             </div>
             <div className="info_2">
-              <h2>0.231g</h2>
+              <h2>0.37g</h2>
               <p>of CO2 per visit</p>
             </div>
           </div>
