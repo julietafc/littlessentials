@@ -67,10 +67,10 @@ export default function Subscription(props) {
           </div>
         </Row>
         <Row>
-          <div className="col-xl-8 p-2">
+          <div className="col col-xl-8 p-2">
             <Button
               disabled={step <= 1}
-              className="col-xl-2 btn btn-light fs-5"
+              className="col-4 col-md-2 btn btn-light fs-5"
               type="button"
               onClick={() => {
                 prev();
@@ -80,7 +80,7 @@ export default function Subscription(props) {
             </Button>
             <Button
               disabled={!infoArr[step - 1]}
-              className="col-xl-2 offset-8 btn btn-light fs-5"
+              className="col-4 offset-4 col-md-2 offset-md-8 btn btn-light fs-5"
               type="button"
               onClick={() => {
                 next();

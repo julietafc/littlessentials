@@ -9,7 +9,7 @@ function Step(props) {
   return (
     <div className={styles.step}>
       <input id={`step${props.no}`} type="radio" name="steps" value={props.no} checked={props.step == props.no} onChange={props.handleOnChange} />
-      <label className={styles.label} htmlFor={`step${props.no}`}>
+      <label className={`${styles.label} d-flex flex-column flex-md-row gap-md-2 align-items-center`} htmlFor={`step${props.no}`}>
         <span className={`${styles.circle} ${styles.chosed} ${tick ? "fs-7 fw-bold " : ""} ${tick && styles.check} `}>{tick ? <>&#10003;</> : props.no}</span> {props.label}
       </label>
     </div>

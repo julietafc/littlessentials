@@ -2,6 +2,9 @@
   .header {
     padding: 0 6rem;
   }
+  .minHeight {
+    min-height: 65vh;
+  }
 }
 
 @media screen and (max-width: 769px) {
@@ -9,6 +12,10 @@
     .header {
       padding: 0;
       text-align: center;
+    }
+
+    .minHeight {
+      min-height: fit-content;
     }
   }
 }

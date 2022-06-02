@@ -22,7 +22,7 @@ export default function FormStyle(props) {
       <Row className="justify-content-around mt-3">
         <Button
           variant="white"
-          className={`col-xl-2 border-dark ${props.selectedStyle === 1 ? "btn-sun" : ""}`}
+          className={`col-4 col-xl-2 border-dark ${props.selectedStyle === 1 ? "btn-sun" : ""}`}
           onClick={() => {
             props.setSelectedStyle(1);
             handleLocalStorage(1 - 1);
@@ -33,7 +33,7 @@ export default function FormStyle(props) {
         </Button>
         <Button
           variant="white"
-          className={`col-xl-2 border-dark ${props.selectedStyle === 2 ? "btn-sun" : ""}`}
+          className={`col-4 col-xl-2 border-dark ${props.selectedStyle === 2 ? "btn-sun" : ""}`}
           onClick={() => {
             props.setSelectedStyle(2);
             handleLocalStorage(2 - 1);
@@ -44,7 +44,7 @@ export default function FormStyle(props) {
         </Button>
         <Button
           variant="white"
-          className={`col-xl-2 border-dark ${props.selectedStyle === 3 ? "btn-sun" : ""}`}
+          className={`col-4 col-xl-2 border-dark ${props.selectedStyle === 3 ? "btn-sun" : ""}`}
           onClick={() => {
             props.setSelectedStyle(3);
             handleLocalStorage(3 - 1);
@@ -54,22 +54,22 @@ export default function FormStyle(props) {
           poetic
         </Button>
       </Row>
-      <Row className="mt-5">
-        <Col className="col-lg-6">
+      <Row className="mt-5 justify-content-center mb-5">
+        <Col className="d-none d-sm-block">
           <Row>
-            <img src={clothStyles[props.selectedStyle ? props.selectedStyle - 1 : 0].url1} alt="" className="" />
+            <img src={clothStyles[props.selectedStyle ? props.selectedStyle - 1 : 0].url2} alt="" className="" />
           </Row>
           <Row>
             <h4 className="text-center p-2">{clothStyles[props.selectedStyle ? props.selectedStyle - 1 : 0].name}</h4>
           </Row>
         </Col>
-        <Col className="col-lg-6">
+        <Col className="  col-md-6">
           <Row className="">
             <p className="text-center">Contains these colors</p>
             <ul className={`${styles.colorList} d-flex justify-content-around`}>{colorsList}</ul>
           </Row>
           <Row>
-            <img src={clothStyles[props.selectedStyle ? props.selectedStyle - 1 : 0].url2} alt="" />
+            <img src={clothStyles[props.selectedStyle ? props.selectedStyle - 1 : 0].url1} alt="" />
           </Row>
         </Col>
       </Row>

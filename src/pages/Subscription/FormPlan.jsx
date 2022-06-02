@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../Subscription/subscription.module.scss";
 import { Container, Row, Button, Col, Spinner, Card } from "react-bootstrap";
 import { plans } from "../../modules/options";
@@ -6,6 +6,8 @@ import { plans } from "../../modules/options";
 function Plan(props) {
   const plan = props.plan.name;
   const productList = props.plan.products.map((product, i) => <li key={plan + "pr" + i}>{product}</li>);
+
+  const [showList, setShowList] = useState(false);
 
   const handleLocalStorage = (index) => {
     const subscription = JSON.parse(localStorage.getItem("subscriber"));
@@ -26,10 +28,6 @@ function Plan(props) {
             <p className="fs-4">{props.plan.items} items</p>
             <p className="fs-4 fw-bolder">{props.plan.price} kr</p>
           </Container>
-          <>
-            <h5 className="mt-4">What’s included?</h5>
-            <ul>{productList}</ul>
-          </>
           <Button
             variant="white"
             className={`w-100 border-dark mt-3 ${props.selectedPlan === props.no ? "btn-sun" : ""}`}
@@ -40,6 +38,15 @@ function Plan(props) {
           >
             {props.plan.btnLabel}
           </Button>
+          <Container className="d-flex justify-content-center d-sm-none">
+            <Button variant="link" onClick={() => setShowList(!showList)}>
+              {!showList ? "more details ⯆" : "less details ⯅"}
+            </Button>
+          </Container>
+          <div className={!showList && `d-none d-sm-block`}>
+            <h5 className="mt-4">What’s included?</h5>
+            <ul>{productList}</ul>
+          </div>
         </Card.Body>
       </Card>
     </Col>
@@ -50,11 +57,11 @@ export default function FormPlan(props) {
   const plansList = plans.map((plan, i) => <Plan key={"p-" + i} plan={plan} no={i + 1} {...props} />);
 
   return (
-    <Container className={` ${styles.appear}`}>
+    <Container className={` ${styles.appear} mb-3`}>
       <Row>
         <h3 className="text-center">Choose your plan</h3>
       </Row>
-      <Row className="mt-3">{plansList}</Row>
+      <Row className="mt-3 gap-4">{plansList}</Row>
     </Container>
   );
 }
