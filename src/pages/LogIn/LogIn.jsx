@@ -8,7 +8,7 @@ export default function LogIn() {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const { login, currentUser } = useAuth();
+  const { login, currentUser, setShowSignup, setShowLogin } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -55,7 +55,16 @@ export default function LogIn() {
           </Card.Body>
         </Card>
         <div className="w-100 text-center mt-2">
-          Do you need an account? <Link to="/signup">Sign Up</Link>
+          Do you need an account?{" "}
+          <Button
+            variant="link"
+            onClick={() => {
+              setShowLogin(false);
+              setShowSignup(true);
+            }}
+          >
+            sign up
+          </Button>
         </div>
       </div>
     </Container>

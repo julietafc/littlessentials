@@ -14,6 +14,9 @@ export function AuthProvider({ children }) {
   const [error, setError] = useState("");
   const [theUserName, setTheUserName] = useState("");
 
+  const [showSignup, setShowSignup] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+
   // console.log("currentUser", currentUser);
 
   useEffect(() => {
@@ -107,6 +110,10 @@ export function AuthProvider({ children }) {
     theUser,
     theUserName,
     auth,
+    showSignup,
+    setShowSignup,
+    showLogin,
+    setShowLogin,
   };
 
   return <AuthContext.Provider value={value}>{!loading && children}</AuthContext.Provider>;

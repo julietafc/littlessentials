@@ -9,7 +9,8 @@ export default function SignUp() {
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const userNameRef = useRef();
-  const { signup, loginWithGoogle } = useAuth();
+  const { signup, loginWithGoogle, setShowSignup, setShowLogin } = useAuth();
+
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -79,7 +80,16 @@ export default function SignUp() {
         </Card>
 
         <div className="w-100 text-center mt-2">
-          Already have an account? <Link to="/login">Log In</Link>
+          Already have an account?{" "}
+          <Button
+            variant="link"
+            onClick={() => {
+              setShowSignup(false);
+              setShowLogin(true);
+            }}
+          >
+            Log In
+          </Button>
         </div>
       </div>
     </Container>

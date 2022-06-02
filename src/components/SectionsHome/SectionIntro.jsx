@@ -1,9 +1,18 @@
-import Button from "../Button/Button";
+import React, { useState } from "react";
+// import Button from "../Button/Button";
+import { Button } from "react-bootstrap";
 import styles from "./SectionIntro.module.scss";
+import { useAuth } from "../../contexts/AuthContext";
 // import pebble from "/assets/lake-pebble.svg";
 import "../../App.scss";
+import "../Button/Button.scss";
 import { Link } from "react-router-dom";
 export default function SectionIntro() {
+  const { setShowSignup, setShowLogin } = useAuth();
+  const [hover, setHover] = useState(false);
+  const handleMauseOver = () => setHover(true);
+  const handleMauseOut = () => setHover(false);
+
   return (
     <div className={styles.wrapper}>
       <section className={styles.SecInfo}>
@@ -18,9 +27,10 @@ export default function SectionIntro() {
         <div className={styles.text}>
           <h1 className={styles.h1}>Inspiring a conscious lifestyle for parents</h1>
           <p>Get the best out of your time with your little ones by subscribing to a curated selection of clothes, toys & gear for children aged 0-6, that cater to their growth, developmental milestones and the changing seasons.</p>
-          <Link to="signup">
-            <Button label="subscribe now" />
-          </Link>
+
+          <Button className={` ${hover && "bg-transparent text-primary"} rounded-pill px-4`} type="button" onMouseOver={handleMauseOver} onMouseOut={handleMauseOut} onClick={() => setShowSignup(true)}>
+            subscribe now
+          </Button>
         </div>
       </section>
     </div>

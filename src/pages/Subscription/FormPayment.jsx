@@ -1,9 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
+import { postSubscription } from "../../modules/fetchSubscription";
+import { useNavigate } from "react-router-dom";
+import styles from "./subscription.module.scss";
 
 export default function FormPayment(props) {
   const { theUser } = useAuth();
+  const [loading, setLoading] = useState(false);
+  const [showThanks, setShowThanks] = useState(false);
+  const userName = theUser.displayName.split(" ")[0];
+  const navigate = useNavigate();
 
   const handleOnChange = () => {
     props.setAcepted(!props.acepted);
@@ -12,10 +19,13 @@ export default function FormPayment(props) {
   async function handleSubmit(e) {
     // function handleS
     e.preventDefault();
+    const subscription = JSON.parse(localStorage.getItem("subscriber"));
 
-    // const subscription = JSON.parse(localStorage.getItem("subscriber"));
-    // subscription.address = address;
-    // localStorage.setItem("subscriber", JSON.stringify(subscription));
+    postSubscription(theUser.uid, subscription, setLoading, setShowThanks);
+  }
+
+  function resetAndBack(e) {
+    navigate("/", { replace: true });
   }
 
   return (
@@ -48,9 +58,21 @@ export default function FormPayment(props) {
         </Form.Group>
 
         <Button variant="primary" type="submit" className={`mt-3 px-5 border-2 rounded-pill ${props.acepted ? "" : "btn-outline-dark"} `} disabled={!props.acepted}>
-          pay
+          {loading && <span className="spinner-grow spinner-border-sm" role="status" aria-hidden="true"></span>}
+          {loading ? "Loading..." : "pay"}
         </Button>
       </Form>
+      {showThanks && (
+        <div className={styles.thanksModal}>
+          <div>
+            <object id="hand" data="assets/one_line.svg" width="40%" height="40%" type="image/svg+xml"></object>
+            <h3>{`Thanks for your preference ${userName}!`}</h3>
+            <Button variant="primary" type="button" className={`mt-3 px-5 text-primary rounded-pill bg-transparent`} onClick={resetAndBack}>
+              Take me back home
+            </Button>
+          </div>
+        </div>
+      )}
     </Container>
   );
 }

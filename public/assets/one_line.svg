@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .oneLinePath {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-dasharray:1380;
+        stroke-dashoffset:1380;
+        animation: drawing 2s linear forwards .3s;
+      }
+
+      
+
+      @keyframes drawing{
+        from{
+          stroke-dashoffset:1380;
+        }
+        to{
+          stroke-dashoffset:0;
+        }
+      }
+
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <path id='LinePath' class="oneLinePath" d="M68.5,78.5c-11,1.25-28.29-6-20-16,5-6,14.35-4,17.5-1.5,2.55,2,4.86,5.89,4,9-2.11,7.6-24.2,14.16-37,5-13.25-9.48-15.1-32-5-43,3.86-4.21,18.55-11.62,16.5-6.5-6,15,1.17,73.37-3,73-1.47-.13-5.55-10.33-4-11,1.29-.56,3.43,4.54,7,7,9,6.21,30.85-1.82,42-17s11.23-37.37,1-53a44.8,44.8,0,0,0-21-17c-15.92-6.15-36.66-3.29-50,11C1.17,34.92,5.07,56.33,5.5,58.5c4.13,20.7,21.31,30.36,26,33a57.73,57.73,0,0,0,33,7"/>
+  </g>
+</svg>

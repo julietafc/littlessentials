@@ -143,6 +143,32 @@ input[type="radio"] {
   }
 }
 
+.thanksModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.745);
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div {
+    position: relative;
+    max-width: 500px;
+    width: 80%;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 @media only screen and (max-width: 769px) {
   .asideWrapper {
     aside {
