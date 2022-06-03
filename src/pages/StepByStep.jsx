@@ -11,7 +11,7 @@ export default function StepByStep() {
       <Chat />
       <Banner
         heading="How it works"
-        text="With Littlessentials you make a difference and reduce your family’s carbon footprint getting timeless products from eco-friendly brands overstock supplies and giving back to you community through circularity."
+        text="With Littlessentials you make a difference and reduce your family’s carbon footprint. Get timeless products from eco-friendly brands overstock supplies and give back to your community through circularity."
         bgColor={"#cf9345"}
         color={"#f0f0f0"}
       />

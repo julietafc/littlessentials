@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-// import Button from "../Button/Button";
 import { Button } from "react-bootstrap";
 import styles from "./SectionIntro.module.scss";
 import { useAuth } from "../../contexts/AuthContext";
-// import pebble from "/assets/lake-pebble.svg";
 import "../../App.scss";
 import "../Button/Button.scss";
-import { Link } from "react-router-dom";
+
 export default function SectionIntro() {
   const { setShowSignup, setShowLogin } = useAuth();
   const [hover, setHover] = useState(false);
