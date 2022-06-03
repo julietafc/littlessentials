@@ -17,16 +17,11 @@ export function AuthProvider({ children }) {
   const [showSignup, setShowSignup] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
 
-  // console.log("currentUser", currentUser);
-
   useEffect(() => {
-    // const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      // console.log(user);
       user ? setTheUser(user) : setTheUser(null);
       setError("");
       setLoading(false);
-      // console.log(user);
     });
 
     return () => {
@@ -83,13 +78,6 @@ export function AuthProvider({ children }) {
       displayName: userName,
     });
   }
-  // function udProfile(userName) {
-  //   // console.log("udProfile");
-  //   const userData = {
-  //     displayName: userName,
-  //   };
-  //   return updateProfile(auth.currentUser, userData);
-  // }
 
   function udEmail(email) {
     return updateEmail(auth.currentUser, email);
