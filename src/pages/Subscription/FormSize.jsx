@@ -12,7 +12,7 @@ export default function FormSize(props) {
 
   useEffect(() => {
     // let subscriber = new Subscription({ name: theUser.displayName, email: theUser.email, ID: theUser.uid });
-    const subscriber = { user: { name: theUser ? theUser.displayName : theUserName, email: theUser.email, ID: theUser.uid } };
+    const subscriber = { user: { name: theUser ? theUser.displayName : theUserName, email: theUser.email, ID: theUser.uid }, payed: false };
     if (!localStorage.getItem("subscriber")) {
       localStorage.setItem("subscriber", JSON.stringify(subscriber));
     }

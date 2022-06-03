@@ -9,6 +9,7 @@ function getSubscription(uid, setLoading) {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
+      data[0] && localStorage.setItem("subscriber", JSON.stringify(data[0].subscription));
       setLoading(false);
     })
     .catch((err) => {
