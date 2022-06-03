@@ -1,9 +1,9 @@
 function getSubscription(uid, setLoading) {
   setLoading(true);
-  fetch(`https://reicpe-9cc2.restdb.io/rest/littlessentials?q={"userID": "${uid}"}`, {
+  fetch(`${import.meta.env.VITE_RESTDB_URL}?q={"userID": "${uid}"}`, {
     method: "GET",
     headers: {
-      "x-apikey": "606d5dcef5535004310074f4",
+      "x-apikey": import.meta.env.VITE_RESTDB_API_KEY,
     },
   })
     .then((res) => res.json())
