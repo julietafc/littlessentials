@@ -13,6 +13,14 @@
 
   .navbar-nav {
     margin-left: 3rem;
+
+    .nav-link {
+      color: white;
+
+      &:hover {
+        opacity: 80%;
+      }
+    }
   }
 }
 
@@ -26,13 +34,9 @@
 
       .navbar-nav {
         a {
-          color: white;
+          color: white !important;
           text-decoration: none;
           font-size: 1.5rem;
-
-          &:hover {
-            opacity: 50%;
-          }
         }
       }
     }

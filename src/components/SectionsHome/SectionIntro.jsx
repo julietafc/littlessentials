@@ -16,13 +16,10 @@ export default function SectionIntro() {
   return (
     <div className={styles.wrapper}>
       <section className={styles.SecInfo}>
-        {/* <div>
-          <img className={styles.element} src={pebble} />
-        </div> */}
         <div className={styles.images}>
-          <img src="../assets/img01.webp" alt="kids clothes" />
+          <img src="../assets/webP/littlessentials_playful-package2.webp" alt="kids clothes" />
           <img src="../assets/img02.webp" alt="girl holding a camera toy" />
-          <img src="../assets/img03.webp" alt="sustainable sign on the beach" />
+          <img src="../assets/webP/littlessentials_earth-package.webp" alt="mix of products for children" />
         </div>
         <div className={styles.text}>
           <h1 className={styles.h1}>Inspiring a conscious lifestyle for parents</h1>

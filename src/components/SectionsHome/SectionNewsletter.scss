@@ -5,10 +5,12 @@
   background: var(--light);
   width: 100%;
 
-  h5 {
-    width: 40%;
-    margin-right: 3rem;
-    font-family: var(--font-body);
+  ._text {
+    flex-direction: column;
+    h5 {
+      width: 70%;
+      font-family: var(--font-body);
+    }
   }
 }
 

@@ -5,7 +5,10 @@ import "./SectionNewsletter.scss";
 export default function SectionNewsletter(props) {
   return (
     <section className="news">
-      <h5>{props.heading}</h5>
+      <div className="_text">
+        <h2>Stay updated</h2>
+        <h5>{props.heading}</h5>
+      </div>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>

@@ -7,7 +7,6 @@ export default function SectionTestimonial(props) {
   return (
     <div className="wrapper">
       <section className="testimonial col">
-        {/* <h2 className="heading_mobile"> Essential Community</h2> */}
         <Row className="d-md-none d-sm-inline w-100 mb-3">
           <h2 className="text-center "> Essential Community</h2>
         </Row>

@@ -31,7 +31,7 @@ export default function Co2Button() {
           </div>
           <div className="right">
             <div className="info_1">
-              <h2>80%</h2>
+              <h2>60%</h2>
               <p>less C02</p>
             </div>
             <div className="info_2">

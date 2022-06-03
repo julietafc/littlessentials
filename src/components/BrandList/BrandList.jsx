@@ -1,4 +1,3 @@
-import Button from "react-bootstrap/Button";
 import ScrollToTop from "../../ScrollToTop";
 import { useState } from "react";
 import Card from "react-bootstrap/Card";
@@ -18,14 +17,6 @@ export default function BrandList(props) {
         <Card.Img style={{ objectFit: "cover" }} variant="top" src={`./assets/webP/${brand.img1}`} alt={brand.title} />
         <Card.Body>
           <Card.Title>{brand.title}</Card.Title>
-          {/* <Button
-            onClick={() => {
-              console.log("button");
-              props.setBrand(brand);
-            }}
-          >
-            +
-          </Button> */}
         </Card.Body>
       </Card>
     </li>
