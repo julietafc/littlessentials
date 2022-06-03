@@ -1,6 +1,6 @@
 import ScrollToTop from "../../ScrollToTop";
-import { useState } from "react";
 import Card from "react-bootstrap/Card";
+
 export default function BrandList(props) {
   const brands = props.brands;
   const allBrands = brands.map((brand, i) => (

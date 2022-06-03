@@ -9,14 +9,6 @@ export default function Brand(props) {
     <div className="wrapper">
       <ScrollToTop />
       <div className="brand_detail">
-        {/* <a
-          className="return_header"
-          onClick={() => {
-            props.setBrand(null);
-          }}
-        >
-          Return to all brands
-        </a> */}
         <Breadcrumb>
           <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
           <Breadcrumb.Item href="/brands">Brands</Breadcrumb.Item>

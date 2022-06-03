@@ -8,7 +8,7 @@ export default function Values() {
     <>
       <Header />
       <Chat />
-      <Banner className="banner_guide" heading="Our values" text="Follow our simple guide for best care practices of your children’s clothing, toys & gear. Make your items last and use them again and again." bgColor={"#d1cbbe"} color={"#8b5028"} />
+      <Banner className="banner_guide" heading="Our values" text="Sourcing environmentally friendly brands to simplify parenting." bgColor={"#d1cbbe"} color={"#8b5028"} />
       <div className="layout_innerpages">
         <aside>
           <div>

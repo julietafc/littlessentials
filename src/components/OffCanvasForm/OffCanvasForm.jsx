@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Children } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Offcanvas } from "react-bootstrap";
 import styles from "../../sass/layout/buttons_links.module.scss";
 import { useAuth } from "../../contexts/AuthContext";
