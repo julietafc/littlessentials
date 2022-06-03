@@ -18,7 +18,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { Button } from "react-bootstrap";
 
 import styles from "../../sass/layout/buttons_links.module.scss";
-import BtnProfile from "../BtnProfile/BtnProfile";
+import BtnLink from "../BtnLink/BtnLink";
 
 export default function Header() {
   const { theUser, theUserName, logout } = useAuth();
@@ -60,7 +60,8 @@ export default function Header() {
             </Nav.Link> */}
               {theUser ? (
                 <>
-                  <BtnProfile />
+                  <BtnLink link={"/subscription"} label={"subscription"} />
+                  <BtnLink link={"/profile"} label={"profile"} />
                   <BtnLogOut />
                 </>
               ) : (

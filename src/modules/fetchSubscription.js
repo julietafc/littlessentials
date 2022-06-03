@@ -1,5 +1,6 @@
-function getSubscription(user, setUser, setIsFetchin, setShowThanks) {
-  fetch(`https://https://reicpe-9cc2.restdb.io/rest/littlessentials?q={"username": "${user}"}`, {
+function getSubscription(uid, setLoading) {
+  setLoading(true);
+  fetch(`https://reicpe-9cc2.restdb.io/rest/littlessentials?q={"userID": "${uid}"}`, {
     method: "GET",
     headers: {
       "x-apikey": "606d5dcef5535004310074f4",
@@ -8,12 +9,10 @@ function getSubscription(user, setUser, setIsFetchin, setShowThanks) {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      setUser(data[0]);
-      setIsFetchin(false);
+      setLoading(false);
     })
     .catch((err) => {
       console.error(err);
-      setIsFetchin(false);
     });
 }
 
