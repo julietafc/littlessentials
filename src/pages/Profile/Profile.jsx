@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Chat from "../../components/Chat/Chat";
 import Footer from "../../components/Footer/Footer";
 import ScrollToTop from "../../ScrollToTop";
@@ -8,11 +8,17 @@ import Header from "../../components/Header/Header";
 import { Card, Button, Alert, Container } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import { getSubscription } from "../../modules/fetchSubscription";
 
 export default function Profile(props) {
   const { theUser, logout, theUserName } = useAuth();
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    getSubscription(theUser.uid, setLoading);
+  }, []);
 
   async function handleLogout() {
     setError("");
@@ -24,10 +30,6 @@ export default function Profile(props) {
     }
   }
 
-  // if (!theUser.displayName) {
-  //   return null;
-  //  }
-
   return (
     <>
       <ScrollToTop />
@@ -38,7 +40,7 @@ export default function Profile(props) {
           <Card>
             <Card.Body>
               <h2 className="text-center mb-4">Profile</h2>
-              {/* {currentUser.email} */}
+
               {error && <Alert variant="danger">{error}</Alert>}
 
               {theUser && (
