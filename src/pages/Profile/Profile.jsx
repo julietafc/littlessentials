@@ -2,8 +2,13 @@ import React, { useState, useEffect } from "react";
 import Chat from "../../components/Chat/Chat";
 import Footer from "../../components/Footer/Footer";
 import ScrollToTop from "../../ScrollToTop";
-import "../../sass/layout/layout.scss";
 import Header from "../../components/Header/Header";
+import Tab from "react-bootstrap/Tab";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Nav from "react-bootstrap/Nav";
+import ProfileSettings from "./ProfileCmp/ProfileSettings";
+import "./Profile.scss";
 
 import { Card, Button, Alert, Container } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
@@ -35,6 +40,52 @@ export default function Profile(props) {
       <ScrollToTop />
       <Header />
       <Chat />
+      <section className="layout_profile">
+        <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+          <Row>
+            <Col sm={3}>
+              <Nav variant="pills" className="flex-column">
+                <Nav.Item>
+                  <Nav.Link eventKey="first">Settings</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="second">Subscription</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="third">Billing</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="fourth">Messages</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Button variant="link" onClick={handleLogout}>
+                    Log Out
+                  </Button>
+                </Nav.Item>
+              </Nav>
+            </Col>
+            <Col sm={9}>
+              <Tab.Content>
+                <Tab.Pane eventKey="first" id="first">
+                  <ProfileSettings />
+                </Tab.Pane>
+                <Tab.Pane eventKey="second" id="second">
+                  <h4>Subscription edit page</h4>
+                </Tab.Pane>
+                <Tab.Pane eventKey="third" id="third">
+                  <h4>Billing</h4>
+                </Tab.Pane>
+                <Tab.Pane eventKey="fourth" id="fourth">
+                  <h4>Messages page</h4>
+                </Tab.Pane>
+                <Tab.Pane eventKey="fifth" id="fifth">
+                  <h4>Log out</h4>
+                </Tab.Pane>
+              </Tab.Content>
+            </Col>
+          </Row>
+        </Tab.Container>
+      </section>
       <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
         <div className="w-100" style={{ maxWidth: "400px" }}>
           <Card>
