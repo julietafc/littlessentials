@@ -10,7 +10,7 @@ export default function Co2Button() {
 
   return (
     <>
-      <Button className="co2_button" variant="primary" onClick={handleShow}>
+      <Button title="button opening info about CO2" className="co2_button" variant="primary" onClick={handleShow}>
         this website <br /> only emites <br />
         0.37g of CO2
       </Button>
@@ -43,13 +43,15 @@ export default function Co2Button() {
         <Modal.Footer>
           <Row className="w-100">
             <Col>
-              <a href="https://drive.google.com/file/d/1DFe1Lp_-voDFrLp-qpONfiGmG_uFoLar/view" target="_blank">
+              <a href="https://drive.google.com/file/d/1DFe1Lp_-voDFrLp-qpONfiGmG_uFoLar/view" title="link with info about ways to reduce C02 emissions" target="_blank">
                 5 WAYS WE REDUCE OUR CO2 EMISSIONS
               </a>
             </Col>
             <Col className="d-flex justify-content-end">
               <Link to="lowcarbon">
-                <Button variant="primary">Learn more</Button>
+                <Button title="link to low carbon page" variant="primary">
+                  Learn more
+                </Button>
               </Link>
             </Col>
           </Row>
