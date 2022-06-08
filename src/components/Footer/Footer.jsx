@@ -16,10 +16,10 @@ export default function Footer(props) {
           </p>
           <div className="social">
             <div className="some">
-              <a href="https://www.instagram.com/littlessentialsuniverse/?hl=es" target="_blank">
+              <a title="external link to littlessential's instagram account" href="https://www.instagram.com/littlessentialsuniverse/?hl=es" target="_blank">
                 Instagram
               </a>
-              <a href="https://www.facebook.com/littlessentialsuniverse" target="_blank">
+              <a title="external link to littlessential's facebook account" href="https://www.facebook.com/littlessentialsuniverse" target="_blank">
                 Facebook
               </a>
             </div>
@@ -35,25 +35,45 @@ export default function Footer(props) {
           <div className="nav">
             <div className="column">
               <h4>how it works</h4>
-              <Link to="/how-it-works">Step by step</Link>
+              <Link title="link to how it works page" to="/how-it-works">
+                Step by step
+              </Link>
             </div>
             <div className="column">
               <h4>about</h4>
-              <Link to="/guide">Our guide</Link>
-              <Link to="/story">Our story</Link>
-              <Link to="/values">Our values</Link>
-              <Link to="/lowcarbon">Low carbon</Link>
-              <Link to="/faq">FAQ</Link>
+              <Link title="link to littlessentials' care guide" to="/guide">
+                Our guide
+              </Link>
+              <Link title="link to littlessentials' story" to="/story">
+                Our story
+              </Link>
+              <Link title="link to littlessentials' values" to="/values">
+                Our values
+              </Link>
+              <Link title="link to low carbon information" to="/lowcarbon">
+                Low carbon
+              </Link>
+              <Link title="link to frequently asked questions' page" to="/faq">
+                FAQ
+              </Link>
             </div>
             <div className="column">
               <h4>partners</h4>
-              <Link to="/brands">Brands </Link>
-              <Link to="/ngos">NGOs </Link>
+              <Link title="link to littlessentials' current partners" to="/brands">
+                Brands
+              </Link>
+              <Link title="link to littlessentials' ngos partners" to="/ngos">
+                NGOs
+              </Link>
             </div>
             <div className="column">
               <h4>connect</h4>
-              <Link to="/get-in-touch">Get in touch </Link>
-              <Link to="/partner-with-us">Partner with us </Link>
+              <Link title="link to contact form for customers" to="/get-in-touch">
+                Get in touch
+              </Link>
+              <Link title="link to contact form for potential partners" to="/partner-with-us">
+                Partner with us{" "}
+              </Link>
             </div>
           </div>
         </div>
@@ -62,9 +82,15 @@ export default function Footer(props) {
             <p>
               © 2022 <strong>littl</strong>essentials
             </p>
-            <Link to="/policy">Privacy Policy</Link>
-            <Link to="/policy">Refund Policy</Link>
-            <Link to="/policy">Shipping Policy</Link>
+            <Link title="link to littlessentials' privacy policy" to="/policy">
+              Privacy Policy
+            </Link>
+            <Link title="link to littlessentials' refund policy" to="/policy">
+              Refund Policy
+            </Link>
+            <Link title="link to littlessentials' shipping policy" to="/policy">
+              Shipping Policy
+            </Link>
           </div>
 
           <Link to="/">

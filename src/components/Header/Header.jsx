@@ -23,30 +23,48 @@ export default function Header() {
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Link to="/">
+          <Link title="link to homepage" to="/">
             <LElement width="35" color="white"></LElement>
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="how-it-works" className={`${styles.linkButton} ${styles.other}`}>
+              <Nav.Link title="link to how it works page" href="how-it-works" className={`${styles.linkButton} ${styles.other}`}>
                 how it works
               </Nav.Link>
 
               <NavDropdown title="about" id="collasible-nav-dropdown" className={`${styles.linkButton} ${styles.other}`}>
-                <NavDropdown.Item href="story">Our story</NavDropdown.Item>
-                <NavDropdown.Item href="guide">Our guide</NavDropdown.Item>
-                <NavDropdown.Item href="values">Our values</NavDropdown.Item>
-                <NavDropdown.Item href="lowcarbon">Low carbon</NavDropdown.Item>
-                <NavDropdown.Item href="faq">FAQ</NavDropdown.Item>
+                <NavDropdown.Item title="link to littlessentials' story page" href="story">
+                  Our story
+                </NavDropdown.Item>
+                <NavDropdown.Item title="link to littlessentials' guide page" href="guide">
+                  Our guide
+                </NavDropdown.Item>
+                <NavDropdown.Item title="link to littlessentials' values page" href="values">
+                  Our values
+                </NavDropdown.Item>
+                <NavDropdown.Item title="link to information about low carbon practices" href="lowcarbon">
+                  Low carbon
+                </NavDropdown.Item>
+                <NavDropdown.Item title="link to frequently asked question's page" href="faq">
+                  FAQ
+                </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="partners" id="collasible-nav-dropdown" className={`${styles.linkButton} ${styles.other}`}>
-                <NavDropdown.Item href="brands">Brands</NavDropdown.Item>
-                <NavDropdown.Item href="ngos">NGOs</NavDropdown.Item>
+                <NavDropdown.Item title="link to littlessentials' partners page" href="brands">
+                  Brands
+                </NavDropdown.Item>
+                <NavDropdown.Item title="link to littlessentials' ngos page" href="ngos">
+                  NGOs
+                </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="connect" id="collasible-nav-dropdown" className={`${styles.linkButton} ${styles.other}`}>
-                <NavDropdown.Item href="get-in-touch">Get in touch</NavDropdown.Item>
-                <NavDropdown.Item href="partner-with-us">Partner with us</NavDropdown.Item>
+                <NavDropdown.Item title="link to contact form form customers" href="get-in-touch">
+                  Get in touch
+                </NavDropdown.Item>
+                <NavDropdown.Item title="link to contact form for potential partners" href="partner-with-us">
+                  Partner with us
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <Nav>

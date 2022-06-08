@@ -22,7 +22,7 @@ export default function NGOS() {
             <Card.Img style={{ objectFit: "cover" }} variant="top" src={`./assets/webP/morhjelp.webp`} />
             <Card.Body>
               <Card.Title>Mødrehjælpen</Card.Title>
-              <Card.Link href="https://moedrehjaelpen.dk/" target="_blank">
+              <Card.Link href="https://moedrehjaelpen.dk/" title="external link to moedrehjaelpen oficial website" target="_blank">
                 https://moedrehjaelpen.dk/
               </Card.Link>
               {/* <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text> */}
@@ -32,7 +32,7 @@ export default function NGOS() {
             <Card.Img style={{ objectFit: "cover" }} variant="top" src={`./assets/webP/redbarnet.webp`} />
             <Card.Body>
               <Card.Title>Red Barnet</Card.Title>
-              <Card.Link href="https://redbarnet.dk/" target="_blank">
+              <Card.Link href="https://redbarnet.dk/" title="external link to red barnet oficial website" target="_blank">
                 https://redbarnet.dk/
               </Card.Link>
               {/* <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text> */}
