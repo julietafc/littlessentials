@@ -1,6 +1,9 @@
 .plans {
   .header {
     padding: 0 6rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
   }
   .minHeight {
     min-height: 65vh;

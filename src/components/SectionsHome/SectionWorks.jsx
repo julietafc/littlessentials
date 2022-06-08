@@ -1,8 +1,6 @@
-import Button from "../Button/Button";
 import "./SectionWorks.scss";
 import "../../sass/layout/layout.scss";
-import { Link } from "react-router-dom";
-import pebble from "/assets/lake-pebble.svg";
+import ButtonCmp from "../Button/Button";
 export default function SectionWorks(props) {
   return (
     <div className="wrapper">
@@ -11,9 +9,7 @@ export default function SectionWorks(props) {
           <div className="text">
             <h2>High quality items for each phase of your child's growth</h2>
             <p>In a few simple steps you can customize your experience and enjoy high quality products curated just for you </p>
-            <Link to="how-it-works">
-              <Button label="learn more" />
-            </Link>
+            <ButtonCmp label="Learn more" path="/how-it-works" title="link to how it works page" />
           </div>
           <img className="pebble" src="/assets/balance-light.svg" alt="kids clothes" />
         </div>
