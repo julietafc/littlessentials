@@ -10,8 +10,12 @@ export default function Brand(props) {
       <ScrollToTop />
       <div className="brand_detail">
         <Breadcrumb>
-          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="/brands">Brands</Breadcrumb.Item>
+          <Breadcrumb.Item title="link to homepage" href="/">
+            Home
+          </Breadcrumb.Item>
+          <Breadcrumb.Item title="link to Littlessentials' partners list" href="/brands">
+            Brands
+          </Breadcrumb.Item>
           <Breadcrumb.Item active>{props.brand.title}</Breadcrumb.Item>
         </Breadcrumb>
         <div className="brand_header">
@@ -21,7 +25,7 @@ export default function Brand(props) {
         <div className="brand_body">
           <aside>
             <h4>Website</h4>
-            <a href={props.brand.website} target="_blank">
+            <a title={"external link to " + props.brand.title + "'s official website"} href={props.brand.website} target="_blank">
               {props.brand.website}
             </a>
             <h4>Location</h4>
