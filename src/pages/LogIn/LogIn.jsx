@@ -2,13 +2,15 @@ import styles from "./logIn.module.scss";
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert, Container } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
+import { useButtonsState } from "../../contexts/ButtonsStateContext";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function LogIn() {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const { login, currentUser, setShowSignup, setShowLogin } = useAuth();
+  const { login, currentUser } = useAuth();
+  const { setShowSignup, setShowLogin } = useButtonsState();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();

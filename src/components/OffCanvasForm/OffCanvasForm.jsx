@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Button, Offcanvas } from "react-bootstrap";
 import styles from "../../sass/layout/buttons_links.module.scss";
-import { useAuth } from "../../contexts/AuthContext";
+import { useButtonsState } from "../../contexts/ButtonsStateContext";
 
 export default function OffCanvasForm({ btnLabel, name, children, ...props }) {
   const [show, setShow] = useState(false);
   const [hover, setHover] = useState(false);
-  const { showSignup, setShowSignup, showLogin, setShowLogin } = useAuth();
+  const { showSignup, setShowSignup, showLogin, setShowLogin } = useButtonsState();
 
   useEffect(() => {
     if (name === "signup") {

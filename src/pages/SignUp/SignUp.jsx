@@ -2,6 +2,7 @@ import styles from "./signUp.module.scss";
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert, Container, Spinner } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
+import { useButtonsState } from "../../contexts/ButtonsStateContext";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function SignUp() {
@@ -9,7 +10,8 @@ export default function SignUp() {
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const userNameRef = useRef();
-  const { signup, loginWithGoogle, setShowSignup, setShowLogin } = useAuth();
+  const { signup, loginWithGoogle } = useAuth();
+  const { setShowSignup, setShowLogin } = useButtonsState();
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
