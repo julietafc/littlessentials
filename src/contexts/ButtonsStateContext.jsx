@@ -9,12 +9,15 @@ export function useButtonsState() {
 export function ButtonsStateProvider({ children }) {
   const [showSignup, setShowSignup] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
+  const [showChat, setShowChat] = useState(false);
 
   const value = {
     showSignup,
     setShowSignup,
     showLogin,
     setShowLogin,
+    showChat,
+    setShowChat,
   };
 
   return <ButtonsStateContext.Provider value={value}>{children}</ButtonsStateContext.Provider>;

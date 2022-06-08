@@ -4,8 +4,12 @@ import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";
 import "../sass/layout/layout.scss";
 import Header from "../components/Header/Header";
+import { useButtonsState } from "../contexts/ButtonsStateContext";
+import { Button } from "react-bootstrap";
 
 export default function Faq() {
+  const { showChat, setShowChat } = useButtonsState();
+
   return (
     <>
       <Header />
@@ -58,7 +62,19 @@ export default function Faq() {
           <h5>Still have questions?</h5>
           <p>
             Can't find the answer you are looking for? <br />
-            Chat now with our friendly team
+            <span>
+              <Button
+                variant="link"
+                className="p-0"
+                title="link to open the chat support"
+                onClick={() => {
+                  setShowChat(!showChat);
+                }}
+              >
+                Chat now
+              </Button>
+            </span>{" "}
+            with our friendly team
           </p>
         </section>
       </div>
