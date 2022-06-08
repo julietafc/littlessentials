@@ -34,13 +34,13 @@ export default function Header() {
               </Nav.Link>
 
               <NavDropdown title="about" id="collasible-nav-dropdown" className={`${styles.linkButton} ${styles.other}`}>
-                <NavDropdown.Item title="link to littlessentials' story page" href="story">
+                <NavDropdown.Item title="link to Littlessentials' story page" href="story">
                   Our story
                 </NavDropdown.Item>
-                <NavDropdown.Item title="link to littlessentials' guide page" href="guide">
+                <NavDropdown.Item title="link to Littlessentials' guide page" href="guide">
                   Our guide
                 </NavDropdown.Item>
-                <NavDropdown.Item title="link to littlessentials' values page" href="values">
+                <NavDropdown.Item title="link to Littlessentials' values page" href="values">
                   Our values
                 </NavDropdown.Item>
                 <NavDropdown.Item title="link to information about low carbon practices" href="lowcarbon">
@@ -51,10 +51,10 @@ export default function Header() {
                 </NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="partners" id="collasible-nav-dropdown" className={`${styles.linkButton} ${styles.other}`}>
-                <NavDropdown.Item title="link to littlessentials' partners page" href="brands">
+                <NavDropdown.Item title="link to Littlessentials' partners page" href="brands">
                   Brands
                 </NavDropdown.Item>
-                <NavDropdown.Item title="link to littlessentials' ngos page" href="ngos">
+                <NavDropdown.Item title="link to Littlessentials' ngos page" href="ngos">
                   NGOs
                 </NavDropdown.Item>
               </NavDropdown>

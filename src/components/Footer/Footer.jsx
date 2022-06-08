@@ -16,10 +16,10 @@ export default function Footer(props) {
           </p>
           <div className="social">
             <div className="some">
-              <a title="external link to littlessential's instagram account" href="https://www.instagram.com/littlessentialsuniverse/?hl=es" target="_blank">
+              <a title="external link to Littlessentials' instagram account" href="https://www.instagram.com/littlessentialsuniverse/?hl=es" target="_blank">
                 Instagram
               </a>
-              <a title="external link to littlessential's facebook account" href="https://www.facebook.com/littlessentialsuniverse" target="_blank">
+              <a title="external link to Littlessentials' facebook account" href="https://www.facebook.com/littlessentialsuniverse" target="_blank">
                 Facebook
               </a>
             </div>
@@ -41,13 +41,13 @@ export default function Footer(props) {
             </div>
             <div className="column">
               <h4>about</h4>
-              <Link title="link to littlessentials' care guide" to="/guide">
+              <Link title="link to Littlessentials' care guide" to="/guide">
                 Our guide
               </Link>
-              <Link title="link to littlessentials' story" to="/story">
+              <Link title="link to Littlessentials' story" to="/story">
                 Our story
               </Link>
-              <Link title="link to littlessentials' values" to="/values">
+              <Link title="link to Littlessentials' values" to="/values">
                 Our values
               </Link>
               <Link title="link to low carbon information" to="/lowcarbon">
@@ -59,10 +59,10 @@ export default function Footer(props) {
             </div>
             <div className="column">
               <h4>partners</h4>
-              <Link title="link to littlessentials' current partners" to="/brands">
+              <Link title="link to Littlessentials' current partners" to="/brands">
                 Brands
               </Link>
-              <Link title="link to littlessentials' ngos partners" to="/ngos">
+              <Link title="link to Littlessentials' ngos partners" to="/ngos">
                 NGOs
               </Link>
             </div>
@@ -82,13 +82,13 @@ export default function Footer(props) {
             <p>
               © 2022 <strong>littl</strong>essentials
             </p>
-            <Link title="link to littlessentials' privacy policy" to="/policy">
+            <Link title="link to Littlessentials' privacy policy" to="/policy">
               Privacy Policy
             </Link>
-            <Link title="link to littlessentials' refund policy" to="/policy">
+            <Link title="link to Littlessentials' refund policy" to="/policy">
               Refund Policy
             </Link>
-            <Link title="link to littlessentials' shipping policy" to="/policy">
+            <Link title="link to Littlessentials' shipping policy" to="/policy">
               Shipping Policy
             </Link>
           </div>

@@ -8,7 +8,7 @@ export default function SectionValues(props) {
       <section className="manifestomb">
         <div className="header">
           <h2>Our Manifesto</h2>
-          <ButtonCmp label="Our values" path="/values" title="link to the littlessentials' values page" />
+          <ButtonCmp label="Our values" path="/values" title="link to the Littlessentials' values page" />
         </div>
         <div className="cards_container">
           <CardsManifesto className="card" heading="Curation" text="Curating essential items so we have what we need, and we use what we have." />
