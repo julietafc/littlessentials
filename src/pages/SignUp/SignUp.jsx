@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert, Container, Spinner } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import { useButtonsState } from "../../contexts/ButtonsStateContext";
+import { useSubscription } from "../../contexts/SubscriptionContext";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function SignUp() {
@@ -12,6 +13,7 @@ export default function SignUp() {
   const userNameRef = useRef();
   const { signup, loginWithGoogle } = useAuth();
   const { setShowSignup, setShowLogin } = useButtonsState();
+  const { inSubscription } = useSubscription();
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -34,7 +36,9 @@ export default function SignUp() {
     }
 
     setLoading(false);
-    navigate("/subscription", { replace: true });
+    if (!inSubscription) {
+      navigate("/subscription", { replace: true });
+    }
   }
 
   return (
