@@ -60,6 +60,30 @@ export default function Subscription(props) {
           <div className={`${styles.stepsFormWrapper} col-xl-8 `}>
             <Steps step={step} setStep={setStep} infoArr={infoArr} setTotalSteps={setTotalSteps} />
             <ProgressBar now={now} variant="info" className="w-100" />
+            <div className="col-12 p-2">
+              <Button
+                disabled={step <= 1}
+                className="col-4 col-md-2 btn btn-light fs-5"
+                type="button"
+                onClick={() => {
+                  prev();
+                }}
+              >
+                <span>&#8592;</span>prev
+              </Button>
+              {!visible5 && (
+                <Button
+                  disabled={!infoArr[step - 1]}
+                  className="col-4 offset-4 col-md-2 offset-md-8 btn btn-light fs-5"
+                  type="button"
+                  onClick={() => {
+                    next();
+                  }}
+                >
+                  next <span>&#8594;</span>
+                </Button>
+              )}
+            </div>
             <div className={`${styles.formsWrapper}`}>
               {visible1 && <FormSize selectedSize={selectedSize} setSelectedSize={setSelectedSize} />}
               {visible2 && <FormStyle selectedStyle={selectedStyle} setSelectedStyle={setSelectedStyle} />}
