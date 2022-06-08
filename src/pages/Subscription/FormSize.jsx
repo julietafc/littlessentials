@@ -11,17 +11,19 @@ export default function FormSize(props) {
   const userName = theUser && theUser.displayName ? theUser.displayName.split(" ")[0] : theUserName.split(" ")[0];
 
   useEffect(() => {
-    // let subscriber = new Subscription({ name: theUser.displayName, email: theUser.email, ID: theUser.uid });
-    const subscriber = { user: { name: theUser ? theUser.displayName : theUserName, email: theUser.email, ID: theUser.uid }, payed: false };
     if (!localStorage.getItem("subscriber")) {
+      const subscriber = {
+        user: { name: null, email: null, ID: null },
+        payed: false,
+      };
       localStorage.setItem("subscriber", JSON.stringify(subscriber));
     }
-    console.log(subscriber);
   }, []);
 
   function handleChange(e) {
     const index = e.currentTarget.value;
     props.setSelectedSize(index);
+
     const subscription = JSON.parse(localStorage.getItem("subscriber"));
     subscription.size = sizes[index - 1];
     subscription.size.index = index - 1;
