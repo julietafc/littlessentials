@@ -1,6 +1,7 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./SectionNewsletter.scss";
+import MailchimpFormContainer from "../Mailchimp/MailchimpFormContainer";
 
 export default function SectionNewsletter(props) {
   return (
@@ -9,6 +10,7 @@ export default function SectionNewsletter(props) {
         <h2>Stay updated</h2>
         <h5>{props.heading}</h5>
       </div>
+      <MailchimpFormContainer />
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
