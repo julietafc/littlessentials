@@ -13,8 +13,9 @@ export default function NGOS() {
       <div className="layout_innerpages brands">
         <p>
           Children grow out of clothing faster than any other group, and many times what we no longer need is still 100% usable by others. So instead of wasting these items, we encourage you to pass on the items you no longer need to one of our
-          circularity partners, who will make sure they get a new home. In every Littlessentials package shipped to you, you will find an envelope and label directed to one of our local NGO partners. You can use this to easily send the items you no
-          longer need. Currently we are teamed up with every Mødrehjælpen and Red Barnet shop across Denmark, so you can also just drop by with your used items. In doing so, you make sure they’ll get used by others within your local community.
+          circularity partners, who will make sure they get a new home. <br />
+          In every Littlessentials package shipped to you, you will find an envelope and label directed to one of our local NGO partners. You can use this to easily send the items you no longer need. Currently we are teamed up with every Mødrehjælpen
+          and Red Barnet shop across Denmark, so you can also just drop by with your used items. In doing so, you make sure they’ll get used by others within your local community.
         </p>
         <div className="card_wrapper_ngos">
           <Card className="card_brand" style={{ width: "18rem" }}>
