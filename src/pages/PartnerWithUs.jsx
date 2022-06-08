@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import "../sass/layout/layout.scss";
 import Header from "../components/Header/Header";
 import { Link } from "react-router-dom";
+import SoMe from "../components/SoMe/SoMe";
 export default function PartnerWithUs() {
   return (
     <>
@@ -15,17 +16,7 @@ export default function PartnerWithUs() {
       <Banner heading="Partner With Us" text="We can help your business by connecting you to conscious costumers" bgColor={"#8b5028"} color={"#d1cbbe"} />
       <div className="layout_innerpages getintouch">
         <aside>
-          <div>
-            <h6>Follow & Connect with us and our community</h6>
-            <div className="social">
-              <a href="https://www.instagram.com/littlessentialsuniverse/?hl=es" target="_blank">
-                Instagram
-              </a>
-              <a href="https://www.facebook.com/littlessentialsuniverse" target="_blank">
-                Facebook
-              </a>
-            </div>
-          </div>
+          <SoMe />
         </aside>
         <section>
           <p>

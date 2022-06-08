@@ -2,6 +2,7 @@ import Banner from "../components/Banner/Banner";
 import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
+import SoMe from "../components/SoMe/SoMe";
 import "../sass/layout/layout.scss";
 export default function Values() {
   return (
@@ -11,17 +12,7 @@ export default function Values() {
       <Banner className="banner_guide" heading="Our values" text="Sourcing environmentally friendly brands to simplify parenting." bgColor={"#d1cbbe"} color={"#8b5028"} />
       <div className="layout_innerpages">
         <aside>
-          <div>
-            <h6>Follow & Connect with us and our community</h6>
-            <div className="social">
-              <a href="https://www.instagram.com/littlessentialsuniverse/?hl=es" target="_blank">
-                Instagram
-              </a>
-              <a href="https://www.facebook.com/littlessentialsuniverse" target="_blank">
-                Facebook
-              </a>
-            </div>
-          </div>
+          <SoMe />
           <img className="el" src="../../assets/color_hands.svg" alt="moon shapes tan color" />
         </aside>
         <section>

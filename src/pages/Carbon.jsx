@@ -45,7 +45,8 @@ export default function Carbon() {
         </section>
         <section className="section1">
           <p>
-            If you would like more info about how you can reduce your digital footprint, feel free to reach out to us via info@littlessentials.dk and we’ll be happy to share what we know with you. Every small change starts with a seed of awareness.
+            If you would like more info about how you can reduce your digital footprint, feel free to reach out to us via <a href="mailto: info@littlessentials.dk">info@littlessentials.dk</a> and we’ll be happy to share what we know with you. Every
+            small change starts with a seed of awareness.
           </p>
         </section>
       </div>

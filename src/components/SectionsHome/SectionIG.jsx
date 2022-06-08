@@ -9,7 +9,7 @@ export default function SectionIG(props) {
         <div className="header">
           <h2>Follow our journey</h2>
 
-          <a href="https://www.instagram.com/littlessentialsuniverse/?hl=es" target="_blank">
+          <a title="external link to littlessential's instagram account" href="https://www.instagram.com/littlessentialsuniverse/?hl=es" target="_blank">
             <Button className="button_news" label="check us out" />
           </a>
         </div>

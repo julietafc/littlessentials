@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "../sass/layout/layout.scss";
 import Header from "../components/Header/Header";
+import SoMe from "../components/SoMe/SoMe";
 export default function GetInTouch() {
   return (
     <>
@@ -14,17 +15,7 @@ export default function GetInTouch() {
       <Banner heading="Get in touch" text="Don't hesitate to reach out! We'd love to hear from you" bgColor={"#e8c37f"} color={"#8b5028"} />
       <div className="layout_innerpages getintouch">
         <aside>
-          <div>
-            <h6>Follow & Connect with us and our community</h6>
-            <div className="social">
-              <a href="https://www.instagram.com/littlessentialsuniverse/?hl=es" target="_blank">
-                Instagram
-              </a>
-              <a href="https://www.facebook.com/littlessentialsuniverse" target="_blank">
-                Facebook
-              </a>
-            </div>
-          </div>
+          <SoMe />
         </aside>
         <section>
           <p>
