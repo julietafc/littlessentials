@@ -1,6 +1,7 @@
 @use "../../sass/base/" as *;
 
-body {
+body,
+p {
   font-family: var(--font-body);
 }
 
@@ -58,6 +59,10 @@ body {
     h6 {
       font-family: var(--font-body);
     }
+
+    .btn-primary {
+      margin-top: 3rem;
+    }
   }
 
   &.faq {
@@ -67,6 +72,17 @@ body {
 
     .accordion.accordion-flush {
       width: 65%;
+
+      .accordion-item {
+        .accordion-button.collapsed {
+          &:hover {
+            background-color: var(--light);
+          }
+        }
+        .accordion-body {
+          font-family: var(--font-body);
+        }
+      }
     }
 
     h5 {

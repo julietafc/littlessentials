@@ -18,7 +18,6 @@ import Policy from "./pages/Policy";
 import NGOS from "./pages/NGOS";
 
 import PromoBanner from "./components/PromoBanner/PromoBanner";
-import FaceLogo from "./components/FaceLogo/FaceLogo";
 import SignUp from "./pages/SignUp/SignUp";
 import LogIn from "./pages/LogIn/LogIn";
 import Profile from "./pages/Profile/Profile";
@@ -106,7 +105,6 @@ function App() {
             <Route path="update-profile" element={theUser ? <UpdateProfile /> : <Navigate to="/" />} />
             <Route path="subscription" element={theUser ? <Subscription /> : <Navigate to="/" />} />
           </Routes>
-          {/*<FaceLogo></FaceLogo> */}
         </main>
       </div>
     </ParallaxProvider>

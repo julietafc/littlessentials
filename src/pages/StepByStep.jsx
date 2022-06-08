@@ -1,9 +1,10 @@
 import Banner from "../components/Banner/Banner";
+import ButtonCmp from "../components/Button/Button";
 import Chat from "../components/Chat/Chat";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
-
 import "../sass/layout/layout.scss";
+
 export default function StepByStep() {
   return (
     <div className="guide_wrapper">
@@ -32,6 +33,7 @@ export default function StepByStep() {
             We have partnered up with local NGOs where you can drop off the items you no longer need, so that others can keep enjoying them. By passing them on, the items last longer and become more sustainable, and you get to help others in the
             process. It’s a win for your local community and the planet.
           </p>
+          <ButtonCmp className="button_start" label="Get started" />
         </section>
       </div>
       <Footer />
