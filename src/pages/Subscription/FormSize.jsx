@@ -18,7 +18,7 @@ export default function FormSize(props) {
 
     const subscription = JSON.parse(localStorage.getItem("subscriber"));
     subscription.size = sizes[index - 1];
-    subscription.size.index = index;
+    subscription.size.index = Number(index);
     localStorage.setItem("subscriber", JSON.stringify(subscription));
   }
 

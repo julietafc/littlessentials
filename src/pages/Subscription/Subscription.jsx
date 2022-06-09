@@ -28,7 +28,7 @@ export default function Subscription(props) {
 
   const { theUser, theUserName } = useAuth();
 
-  const { selectedSize, selectedStyle, selectedPlan, address, deliveryAt, inSubscription, setInSubscription, step, setStep } = useSubscription();
+  const { selectedSize, selectedStyle, selectedPlan, address, deliveryAt, setSelectedSize, setSelectedStyle, setSelectedPlan, setAddress, setDeliveryAt, inSubscription, setInSubscription, step, setStep } = useSubscription();
 
   const deliveryValid = address && deliveryAt;
 
@@ -51,6 +51,16 @@ export default function Subscription(props) {
     const urlStep = urlParams.get("step");
     if (urlStep) {
       setStep(5);
+    }
+
+    if (localStorage.getItem("subscriber")) {
+      const subscription = JSON.parse(localStorage.getItem("subscriber"));
+      subscription.size && setSelectedSize(Number(subscription.size.index));
+      subscription.clothStyle && setSelectedStyle(Number(subscription.clothStyle.index));
+      subscription.plan && setSelectedPlan(Number(subscription.plan.index));
+      subscription.address && setAddress(subscription.address);
+      subscription.deliveryAt && setDeliveryAt(subscription.deliveryAt);
+      subscription.isPaid && setIsPaid(subscription.isPaid);
     }
   }, []);
 

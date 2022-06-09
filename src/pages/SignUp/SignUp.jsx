@@ -13,7 +13,7 @@ export default function SignUp(props) {
   const userNameRef = useRef();
   const { signup, loginWithGoogle } = useAuth();
   const { setShowSignup, setShowLogin } = useButtonsState();
-  const { inSubscription } = useSubscription();
+  const { inSubscription, setInSubscription } = useSubscription();
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -37,6 +37,7 @@ export default function SignUp(props) {
     setLoading(false);
 
     navigate(`/subscription${inSubscription && "?step=save"}`, { replace: true });
+    setInSubscription(false);
   }
 
   return (

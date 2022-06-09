@@ -12,7 +12,7 @@ export default function LogIn() {
 
   const { login } = useAuth();
   const { setShowSignup, setShowLogin } = useButtonsState();
-  const { inSubscription } = useSubscription();
+  const { inSubscription, setInSubscription } = useSubscription();
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -30,6 +30,7 @@ export default function LogIn() {
       if (!inSubscription) {
         navigate("/profile");
       }
+      setInSubscription(false);
     } catch {
       setError("Fail to sign in");
     }
