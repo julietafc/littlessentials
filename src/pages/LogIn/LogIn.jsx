@@ -24,7 +24,9 @@ export default function LogIn() {
     try {
       setError("");
       setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
+      await login(emailRef.current.value, passwordRef.current.value).then((ress) => {
+        console.log(ress);
+      });
       if (!inSubscription) {
         navigate("/profile");
       }
