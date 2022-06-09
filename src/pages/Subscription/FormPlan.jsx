@@ -13,7 +13,7 @@ function Plan(props) {
 
   const handleLocalStorage = (index) => {
     const subscription = JSON.parse(localStorage.getItem("subscriber"));
-    subscription.plan = plans[index];
+    subscription.plan = plans[index - 1];
     subscription.plan.index = index;
     localStorage.setItem("subscriber", JSON.stringify(subscription));
   };
@@ -36,7 +36,7 @@ function Plan(props) {
             className={`w-100 border-dark mt-3 ${selectedPlan === props.no ? "btn-sun" : ""}`}
             onClick={() => {
               setSelectedPlan(props.no);
-              handleLocalStorage(props.no - 1);
+              handleLocalStorage(props.no);
             }}
           >
             {props.plan.btnLabel}

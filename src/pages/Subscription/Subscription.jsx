@@ -18,7 +18,6 @@ import Header from "../../components/Header/Header";
 import { sizes, clothStyles, plans } from "../../modules/options";
 
 export default function Subscription(props) {
-  const [step, setStep] = useState(1);
   const [right, setRight] = useState(null);
   const [left, setLeft] = useState(null);
 
@@ -29,7 +28,7 @@ export default function Subscription(props) {
 
   const { theUser, theUserName } = useAuth();
 
-  const { selectedSize, selectedStyle, selectedPlan, address, deliveryAt, inSubscription, setInSubscription } = useSubscription();
+  const { selectedSize, selectedStyle, selectedPlan, address, deliveryAt, inSubscription, setInSubscription, step, setStep } = useSubscription();
 
   const deliveryValid = address && deliveryAt;
 
@@ -48,6 +47,11 @@ export default function Subscription(props) {
 
   useEffect(() => {
     setInSubscription(true);
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlStep = urlParams.get("step");
+    if (urlStep) {
+      setStep(5);
+    }
   }, []);
 
   function prev() {

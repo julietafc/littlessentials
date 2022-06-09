@@ -1,10 +1,10 @@
 import React from "react";
-import { useEffect, useState } from "react";
+
 import { Container } from "react-bootstrap";
 import styles from "../Subscription/subscription.module.scss";
 import { useAuth } from "../../contexts/AuthContext";
 import { useSubscription } from "../../contexts/SubscriptionContext";
-import { Subscription, sizes } from "../../modules/options";
+import { sizes } from "../../modules/options";
 
 export default function FormSize(props) {
   // const [index, setIndex] = useState(null);
@@ -18,7 +18,7 @@ export default function FormSize(props) {
 
     const subscription = JSON.parse(localStorage.getItem("subscriber"));
     subscription.size = sizes[index - 1];
-    subscription.size.index = index - 1;
+    subscription.size.index = index;
     localStorage.setItem("subscriber", JSON.stringify(subscription));
   }
 

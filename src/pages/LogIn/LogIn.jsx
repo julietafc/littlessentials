@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert, Container } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import { useButtonsState } from "../../contexts/ButtonsStateContext";
+import { useSubscription } from "../../contexts/SubscriptionContext";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function LogIn() {
@@ -11,6 +12,8 @@ export default function LogIn() {
 
   const { login, currentUser } = useAuth();
   const { setShowSignup, setShowLogin } = useButtonsState();
+  const { inSubscription } = useSubscription();
+
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -22,7 +25,9 @@ export default function LogIn() {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      navigate("/profile");
+      if (!inSubscription) {
+        navigate("/profile");
+      }
     } catch {
       setError("Fail to sign in");
     }

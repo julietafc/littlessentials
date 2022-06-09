@@ -19,6 +19,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      console.log(user);
       user ? setTheUser(user) : setTheUser(null);
       setError("");
       setLoading(false);
@@ -32,10 +33,8 @@ export function AuthProvider({ children }) {
   function signup(email, password, userName) {
     setLoading(true);
     setTheUserName(userName);
-    console.log("step1");
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
-        console.log("step2");
         return updateProfile(auth.currentUser, {
           displayName: userName,
         });
@@ -97,6 +96,7 @@ export function AuthProvider({ children }) {
     udEmail,
     udPassword,
     theUser,
+    setTheUser,
     theUserName,
     auth,
     showSignup,

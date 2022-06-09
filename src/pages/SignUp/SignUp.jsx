@@ -6,7 +6,7 @@ import { useButtonsState } from "../../contexts/ButtonsStateContext";
 import { useSubscription } from "../../contexts/SubscriptionContext";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function SignUp() {
+export default function SignUp(props) {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
@@ -34,11 +34,9 @@ export default function SignUp() {
     } catch {
       setError("Fail to create an account");
     }
-
     setLoading(false);
-    if (!inSubscription) {
-      navigate("/subscription", { replace: true });
-    }
+
+    navigate(`/subscription${inSubscription && "?step=save"}`, { replace: true });
   }
 
   return (
@@ -74,9 +72,11 @@ export default function SignUp() {
             <Button
               className="w-100 mt-4 btn-desert"
               onClick={() =>
-                loginWithGoogle().then(() => {
+                loginWithGoogle().then((ress) => {
                   setLoading(false);
-                  navigate("/subscription", { replace: true });
+                  if (!inSubscription) {
+                    navigate("/subscription", { replace: true });
+                  }
                 })
               }
             >

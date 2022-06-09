@@ -9,7 +9,7 @@ export default function FormStyle(props) {
 
   const handleLocalStorage = (index) => {
     const subscription = JSON.parse(localStorage.getItem("subscriber"));
-    subscription.clothStyle = clothStyles[index];
+    subscription.clothStyle = clothStyles[index - 1];
     subscription.clothStyle.index = index;
     localStorage.setItem("subscriber", JSON.stringify(subscription));
   };
@@ -29,7 +29,7 @@ export default function FormStyle(props) {
           className={`col-4 col-xl-2 border-dark ${selectedStyle === 1 ? "btn-sun" : ""}`}
           onClick={() => {
             setSelectedStyle(1);
-            handleLocalStorage(1 - 1);
+            handleLocalStorage(1);
           }}
           // autoFocus={selectedStyle === 1 || !selectedStyle}
         >
@@ -40,7 +40,7 @@ export default function FormStyle(props) {
           className={`col-4 col-xl-2 border-dark ${selectedStyle === 2 ? "btn-sun" : ""}`}
           onClick={() => {
             setSelectedStyle(2);
-            handleLocalStorage(2 - 1);
+            handleLocalStorage(2);
           }}
           // autoFocus={selectedStyle === 2}
         >
@@ -51,7 +51,7 @@ export default function FormStyle(props) {
           className={`col-4 col-xl-2 border-dark ${selectedStyle === 3 ? "btn-sun" : ""}`}
           onClick={() => {
             setSelectedStyle(3);
-            handleLocalStorage(3 - 1);
+            handleLocalStorage(3);
           }}
           // autoFocus={selectedStyle === 3}
         >
