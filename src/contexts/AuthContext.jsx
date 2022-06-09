@@ -64,7 +64,6 @@ export function AuthProvider({ children }) {
   }
 
   function logout() {
-    localStorage.removeItem("subscriber");
     return signOut(auth);
   }
 
