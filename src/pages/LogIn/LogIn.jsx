@@ -10,7 +10,7 @@ export default function LogIn() {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const { login, currentUser } = useAuth();
+  const { login } = useAuth();
   const { setShowSignup, setShowLogin } = useButtonsState();
   const { inSubscription } = useSubscription();
 
