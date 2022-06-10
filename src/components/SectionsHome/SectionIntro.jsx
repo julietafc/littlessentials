@@ -4,7 +4,6 @@ import styles from "./SectionIntro.module.scss";
 import ButtonCmp from "../Button/Button";
 import { useAuth } from "../../contexts/AuthContext";
 import "../../App.scss";
-import "../Button/Button.scss";
 
 export default function SectionIntro() {
   const { setShowSignup, setShowLogin } = useAuth();
@@ -25,9 +24,6 @@ export default function SectionIntro() {
           <p>Get the best out of your time with your little ones by subscribing to a curated selection of clothes, toys & gear for children aged 0-6, that cater to their growth, developmental milestones and the changing seasons.</p>
 
           <ButtonCmp label="Subscribe now" title="link to subscription flow" onClick={() => setShowSignup(true)} />
-          {/* <Button className={` ${hover && "bg-transparent text-primary"} rounded-pill px-4`} type="button" onMouseOver={handleMauseOver} onMouseOut={handleMauseOut} onClick={() => setShowSignup(true)}>
-            subscribe now
-          </Button> */}
         </div>
       </section>
     </div>

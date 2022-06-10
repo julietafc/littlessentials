@@ -1,6 +1,6 @@
 import "./SectionCarousel.scss";
 import React, { useEffect, useState } from "react";
-import Button from "../Button/Button";
+import ButtonCmp from "../Button/Button";
 import { Link } from "react-router-dom";
 
 function BrandLi(props) {
@@ -35,9 +35,7 @@ export default function SectionCarousel() {
       <section className="carousel">
         <div className="header">
           <h2>Our Partners</h2>
-          <Link className="button_carousel" to="/brands">
-            <Button label="learn more" />
-          </Link>
+          <ButtonCmp label="Learn more" path="/brands" title="link to how it partners page" />
         </div>
         <div className="carousel_main">
           <ul className="scroll-container" data-layoutmethod="flexbox">

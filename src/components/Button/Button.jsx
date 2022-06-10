@@ -1,4 +1,3 @@
-import "./Button.scss";
 import { Button } from "react-bootstrap";
 import React, { useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
