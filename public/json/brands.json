@@ -6,7 +6,7 @@
     "logo": "liewood.svg",
     "img1": "liewood1.webp",
     "img2": "liewood2.webp",
-    "category": "Interior & Design"
+    "category": "Clothing, Interior & Design"
   },
   {
     "title": "Konges Sløjd",
@@ -34,7 +34,7 @@
     "logo": "small.png",
     "img1": "smallstuff1.webp",
     "img2": "smallstuff2.webp",
-    "category": "Clothing & Interior"
+    "category": "Clothing & Toys"
   },
   {
     "title": "Wauw Kapow",
@@ -61,6 +61,6 @@
     "logo": "camcam.svg",
     "img1": "camcam1.webp",
     "img2": "camcam2.webp",
-    "category": "Interior Design"
+    "category": "Clothing, Toys & Interior Design"
   }
 ]

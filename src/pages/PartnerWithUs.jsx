@@ -13,7 +13,7 @@ export default function PartnerWithUs() {
     <>
       <Header />
       <Chat />
-      <Banner heading="Partner With Us" text="We can help your business by connecting you to conscious costumers" bgColor={"#8b5028"} color={"#d1cbbe"} />
+      <Banner heading="Partner With Us" text="We can help your business by connecting you to conscious customers" bgColor={"#8b5028"} color={"#d1cbbe"} />
       <div className="layout_innerpages getintouch">
         <aside>
           <SoMe />
