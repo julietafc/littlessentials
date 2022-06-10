@@ -97,7 +97,7 @@ export default function Subscription(props) {
               {!visible6 && (
                 <Button
                   disabled={!infoArr[step - 1]}
-                  className="col-4 offset-4 col-md-2 offset-md-8 btn btn-light fs-5"
+                  className={`col-4 offset-4 col-md-2 offset-md-8 btn btn-light fs-5 ${infoArr[step - 1] && styles.jump}`}
                   type="button"
                   onClick={() => {
                     next();

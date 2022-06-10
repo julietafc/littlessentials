@@ -22,7 +22,10 @@ export default function Profile(props) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getSubscription(theUser.uid, setLoading);
+    if (!localStorage.getItem("subscriber")) {
+      setLoading(true);
+      getSubscription(theUser.uid, setLoading);
+    }
   }, []);
 
   async function handleLogout() {
