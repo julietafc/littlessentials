@@ -8,7 +8,7 @@ export default function SectionTestimonial(props) {
     <div className="wrapper">
       <section className="testimonial col">
         <Row className="d-md-none d-sm-inline w-100 mb-3">
-          <h2 className="text-center "> Essential Community</h2>
+          <h2> Essential Community</h2>
         </Row>
         <Row>
           <Col className="d-flex justify-content-center justify-content-md-end pe-lg-3 col-12 col-md ">
