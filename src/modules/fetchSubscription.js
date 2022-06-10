@@ -1,5 +1,4 @@
 function getSubscription(uid, setLoading) {
-  setLoading(true);
   fetch(`${import.meta.env.VITE_RESTDB_URL}?q={"userID": "${uid}"}`, {
     method: "GET",
     headers: {

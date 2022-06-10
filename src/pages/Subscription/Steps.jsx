@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import styles from "../Subscription/subscription.module.scss";
+import { useSubscription } from "../../contexts/SubscriptionContext";
 
 function Step(props) {
-  const tick = props.step >= props.no && props.infoArr[props.no - 1];
+  const { isPaid } = useSubscription();
+  const tick = (props.step >= props.no && props.infoArr[props.no - 1]) || isPaid;
 
   return (
     <div className={styles.step}>

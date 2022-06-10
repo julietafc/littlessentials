@@ -23,39 +23,42 @@ export default function FormSave(props) {
   const userName = theUser && theUser.displayName ? theUser.displayName.split(" ")[0] : theUserName.split(" ")[0];
 
   return (
-    <Container className={`${styles.appear} d-flex align-items-center justify-content-center p-5`}>
-      <Card style={{ width: "80%", maxWidth: "400px" }}>
-        {theUser ? (
+    <Container className={`${styles.appear} d-flex flex-wrap gap-3 align-items-center justify-content-around p-5`}>
+      {theUser ? (
+        <Card style={{ width: "80%", maxWidth: "400px" }}>
           <Card.Body className="p-5">Just one step more {userName}!</Card.Body>
-        ) : (
-          <>
-            <Card.Body className="p-5">To save your preferences you just need to log in or sign up</Card.Body>
-            <Row className="p-5">
-              <Col className=" d-flex justify-content-center">
-                <Button
-                  onClick={() => {
-                    setShowLogin(false);
-                    setShowSignup(true);
-                  }}
-                >
-                  Sign up
-                </Button>
-              </Col>
+        </Card>
+      ) : (
+        <>
+          <Card className="p-4" style={{ width: "40%", maxWidth: "300px", minWidth: "250px" }}>
+            <Card.Body className="p-2 mb-4">To save your preferences you just need to log in or sign up</Card.Body>
 
-              <Col className=" d-flex justify-content-center">
-                <Button
-                  onClick={() => {
-                    setShowSignup(false);
-                    setShowLogin(true);
-                  }}
-                >
-                  Log in{" "}
-                </Button>
-              </Col>
-            </Row>
-          </>
-        )}
-      </Card>
+            <div className=" d-flex justify-content-center">
+              <Button
+                onClick={() => {
+                  setShowLogin(false);
+                  setShowSignup(true);
+                }}
+              >
+                Sign up
+              </Button>
+            </div>
+          </Card>
+          <Card className="p-4" style={{ width: "40%", maxWidth: "300px", minWidth: "250px" }}>
+            <Card.Body className="p-2 mb-4">To save your preferences you just need to log in or sign up</Card.Body>
+            <div className=" d-flex justify-content-center">
+              <Button
+                onClick={() => {
+                  setShowSignup(false);
+                  setShowLogin(true);
+                }}
+              >
+                Log in{" "}
+              </Button>
+            </div>
+          </Card>
+        </>
+      )}
     </Container>
   );
 }

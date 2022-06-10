@@ -30,7 +30,6 @@ export default function LogIn() {
       if (!inSubscription) {
         navigate("/profile");
       }
-      setInSubscription(false);
     } catch {
       setError("Fail to sign in");
     }

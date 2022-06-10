@@ -28,7 +28,7 @@ export default function Subscription(props) {
 
   const { theUser, theUserName } = useAuth();
 
-  const { selectedSize, selectedStyle, selectedPlan, address, deliveryAt, setSelectedSize, setSelectedStyle, setSelectedPlan, setAddress, setDeliveryAt, inSubscription, setInSubscription, step, setStep } = useSubscription();
+  const { selectedSize, selectedStyle, selectedPlan, address, deliveryAt, setSelectedSize, setSelectedStyle, setSelectedPlan, setAddress, setDeliveryAt, isPaid, setIsPaid, inSubscription, setInSubscription, step, setStep } = useSubscription();
 
   const deliveryValid = address && deliveryAt;
 
@@ -49,6 +49,7 @@ export default function Subscription(props) {
     setInSubscription(true);
     const urlParams = new URLSearchParams(window.location.search);
     const urlStep = urlParams.get("step");
+
     if (urlStep) {
       setStep(5);
     }
@@ -96,7 +97,7 @@ export default function Subscription(props) {
               {!visible6 && (
                 <Button
                   disabled={!infoArr[step - 1]}
-                  className="col-4 offset-4 col-md-2 offset-md-8 btn btn-light fs-5"
+                  className={`col-4 offset-4 col-md-2 offset-md-8 btn btn-light fs-5 ${infoArr[step - 1] && styles.jump}`}
                   type="button"
                   onClick={() => {
                     next();
