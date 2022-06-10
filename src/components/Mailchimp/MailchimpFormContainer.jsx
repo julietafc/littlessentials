@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-
+import { Button } from "bootstrap";
+import React, { useState, useEffect } from "react";
+// import { useGHStContext } from "../../../utils/ContextProvider";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 const CustomForm = ({ status, message, onValidated }) => {
+  // const { modalOpen, setModalOpen } = useGHStContext();
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [modal, setModalOpen] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,18 +22,63 @@ const CustomForm = ({ status, message, onValidated }) => {
         MERGE2: lastName,
       });
   };
+  useEffect(() => {
+    if (status === "success") clearFields();
+    if (status === "success") clearFields();
+  }, [status]);
+
+  const clearFields = () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+  };
 
   return (
     <form className="mc__form" onSubmit={(e) => handleSubmit(e)}>
-      <div className="mc__field-container">
-        <input label="First Name" onChangeHandler={setFirstName} type="text" value={firstName} placeholder="Your email" isRequired />
+      <h3 className="mc__title">{status === "success" ? "Success!" : "Join our email list for future updates."}</h3>
 
-        <input label="Last Name" onChangeHandler={setLastName} type="text" value={lastName} placeholder="Your last name" isRequired />
+      {status === "sending" && <div className="mc__alert mc__alert--sending">sending...</div>}
+      {status === "error" && <div className="mc__alert mc__alert--error" dangerouslySetInnerHTML={{ __html: message }} />}
+      {status === "success" && <div className="mc__alert mc__alert--success" dangerouslySetInnerHTML={{ __html: message }} />}
+      {status !== "success" ? (
+        <div className="mc__field-container">
+          <input
+            label="First Name"
+            onChange={(e) => {
+              setFirstName(e.target.value);
+            }}
+            type="text"
+            value={firstName}
+            placeholder="Your email"
+            isRequired
+          />
 
-        <input label="Email" onChangeHandler={setEmail} type="email" value={email} placeholder="your@email.com" isRequired />
-      </div>
+          <input
+            label="Last Name"
+            onChange={(e) => {
+              setLastName(e.target.value);
+            }}
+            type="text"
+            value={lastName}
+            placeholder="Your last name"
+            isRequired
+          />
 
-      <input label="subscribe" type="submit" formvalues={[email, firstName, lastName]} />
+          <input
+            label="Email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            type="email"
+            value={email}
+            placeholder="your@email.com"
+            isRequired
+          />
+        </div>
+      ) : null}
+
+      {/*Close button appears if form was successfully sent*/}
+      {status !== "success" && <input label="subscribe" type="submit" formValues={[email, firstName, lastName]} />}
     </form>
   );
 };
