@@ -2,13 +2,18 @@ import styles from "./logIn.module.scss";
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert, Container } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
+import { useButtonsState } from "../../contexts/ButtonsStateContext";
+import { useSubscription } from "../../contexts/SubscriptionContext";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function LogIn() {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const { login, currentUser, setShowSignup, setShowLogin } = useAuth();
+  const { login } = useAuth();
+  const { setShowSignup, setShowLogin } = useButtonsState();
+  const { inSubscription, setInSubscription } = useSubscription();
+
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -19,8 +24,13 @@ export default function LogIn() {
     try {
       setError("");
       setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
-      navigate("/profile");
+      await login(emailRef.current.value, passwordRef.current.value).then((ress) => {
+        console.log(ress);
+      });
+      if (!inSubscription) {
+        navigate("/profile");
+      }
+      setInSubscription(false);
     } catch {
       setError("Fail to sign in");
     }

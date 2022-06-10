@@ -1,30 +1,24 @@
 import React from "react";
-import { useEffect, useState } from "react";
+
 import { Container } from "react-bootstrap";
 import styles from "../Subscription/subscription.module.scss";
 import { useAuth } from "../../contexts/AuthContext";
-import { Subscription, sizes } from "../../modules/options";
+import { useSubscription } from "../../contexts/SubscriptionContext";
+import { sizes } from "../../modules/options";
 
 export default function FormSize(props) {
   // const [index, setIndex] = useState(null);
   const { theUser, theUserName } = useAuth();
+  const { selectedSize, setSelectedSize } = useSubscription();
   const userName = theUser && theUser.displayName ? theUser.displayName.split(" ")[0] : theUserName.split(" ")[0];
-
-  useEffect(() => {
-    // let subscriber = new Subscription({ name: theUser.displayName, email: theUser.email, ID: theUser.uid });
-    const subscriber = { user: { name: theUser ? theUser.displayName : theUserName, email: theUser.email, ID: theUser.uid }, payed: false };
-    if (!localStorage.getItem("subscriber")) {
-      localStorage.setItem("subscriber", JSON.stringify(subscriber));
-    }
-    console.log(subscriber);
-  }, []);
 
   function handleChange(e) {
     const index = e.currentTarget.value;
-    props.setSelectedSize(index);
+    setSelectedSize(index);
+
     const subscription = JSON.parse(localStorage.getItem("subscriber"));
     subscription.size = sizes[index - 1];
-    subscription.size.index = index - 1;
+    subscription.size.index = Number(index);
     localStorage.setItem("subscriber", JSON.stringify(subscription));
   }
 
@@ -34,7 +28,7 @@ export default function FormSize(props) {
 
       <form action="" className={`${styles.formSize} mt-3 p-3`}>
         <div className={styles.box}>
-          <input name="age" type="radio" id="newborn" value={1} onChange={handleChange} checked={Number(props.selectedSize) === 1} />
+          <input name="age" type="radio" id="newborn" value={1} onChange={handleChange} checked={Number(selectedSize) === 1} />
           <label htmlFor="newborn" className={`${styles.label} ${styles.chosed}`}>
             Newborn
             <br />
@@ -42,7 +36,7 @@ export default function FormSize(props) {
           </label>
         </div>
         <div className={styles.box}>
-          <input name="age" type="radio" id="baby" value={2} onChange={handleChange} checked={Number(props.selectedSize) === 2} />
+          <input name="age" type="radio" id="baby" value={2} onChange={handleChange} checked={Number(selectedSize) === 2} />
           <label htmlFor="baby" className={`${styles.label} ${styles.chosed}`}>
             Baby
             <br />
@@ -50,7 +44,7 @@ export default function FormSize(props) {
           </label>
         </div>
         <div className={styles.box}>
-          <input name="age" type="radio" id="junior" value={3} onChange={handleChange} checked={Number(props.selectedSize) === 3} />
+          <input name="age" type="radio" id="junior" value={3} onChange={handleChange} checked={Number(selectedSize) === 3} />
           <label htmlFor="junior" className={`${styles.label} ${styles.chosed}`}>
             Junior
             <br />
@@ -58,7 +52,7 @@ export default function FormSize(props) {
           </label>
         </div>
         <div className={styles.box}>
-          <input name="age" type="radio" id="youngster" value={4} onChange={handleChange} checked={Number(props.selectedSize) === 4} />
+          <input name="age" type="radio" id="youngster" value={4} onChange={handleChange} checked={Number(selectedSize) === 4} />
           <label htmlFor="youngster" className={`${styles.label} ${styles.chosed}`}>
             Youngster
             <br />

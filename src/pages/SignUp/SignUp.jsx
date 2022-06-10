@@ -2,14 +2,18 @@ import styles from "./signUp.module.scss";
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert, Container, Spinner } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
+import { useButtonsState } from "../../contexts/ButtonsStateContext";
+import { useSubscription } from "../../contexts/SubscriptionContext";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function SignUp() {
+export default function SignUp(props) {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const userNameRef = useRef();
-  const { signup, loginWithGoogle, setShowSignup, setShowLogin } = useAuth();
+  const { signup, loginWithGoogle } = useAuth();
+  const { setShowSignup, setShowLogin } = useButtonsState();
+  const { inSubscription, setInSubscription } = useSubscription();
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -30,9 +34,10 @@ export default function SignUp() {
     } catch {
       setError("Fail to create an account");
     }
-
     setLoading(false);
-    navigate("/subscription", { replace: true });
+
+    navigate(`/subscription${inSubscription && "?step=save"}`, { replace: true });
+    setInSubscription(false);
   }
 
   return (
@@ -68,9 +73,11 @@ export default function SignUp() {
             <Button
               className="w-100 mt-4 btn-desert"
               onClick={() =>
-                loginWithGoogle().then(() => {
+                loginWithGoogle().then((ress) => {
                   setLoading(false);
-                  navigate("/subscription", { replace: true });
+                  if (!inSubscription) {
+                    navigate("/subscription", { replace: true });
+                  }
                 })
               }
             >

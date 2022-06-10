@@ -20,7 +20,7 @@ export default function Steps(props) {
     props.setStep(Number(e.target.value));
   };
 
-  const stepsLabels = ["size", "style", "plan", "delivery", "pay"];
+  const stepsLabels = ["size", "style", "plan", "delivery", "save", "pay"];
   const amountOfSteps = stepsLabels.length;
 
   useEffect(() => {

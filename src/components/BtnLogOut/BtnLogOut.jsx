@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
+import { useSubscription } from "../../contexts/SubscriptionContext";
 import { Button } from "react-bootstrap";
 import styles from "../../sass/layout/buttons_links.module.scss";
 
 export default function BtnLogOut() {
   const { logout } = useAuth();
+  const { setInSubscription } = useSubscription();
 
   const [hover, setHover] = useState(false);
   const handleMauseOver = () => setHover(true);
@@ -12,6 +14,7 @@ export default function BtnLogOut() {
 
   const handleClick = (e) => {
     localStorage.removeItem("subscriber");
+
     logout();
   };
 

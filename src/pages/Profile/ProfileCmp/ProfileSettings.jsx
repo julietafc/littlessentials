@@ -1,8 +1,15 @@
+import React, { useEffect, useState } from "react";
 import { Form, Button, Card, Alert, Container, Accordion } from "react-bootstrap";
 import { useAuth } from "../../../contexts/AuthContext";
+import { useSubscription } from "../../../contexts/SubscriptionContext";
 
 export default function ProfileSettings(props) {
   const { theUser } = useAuth();
+  const [subscription, setSubscription] = useState(null);
+
+  useEffect(() => {
+    setSubscription(JSON.parse(localStorage.getItem("subscriber")));
+  }, []);
 
   return (
     <>
@@ -13,19 +20,19 @@ export default function ProfileSettings(props) {
             <Form>
               <Form.Group id="name">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="name" required></Form.Control>
+                <Form.Control type="text" required defaultValue={subscription && subscription.user.name.split(" ")[0]}></Form.Control>
               </Form.Group>
               <Form.Group id="lastname">
                 <Form.Label>Last name</Form.Label>
-                <Form.Control type="lastname" required></Form.Control>
+                <Form.Control type="text" required defaultValue={subscription && subscription.user.name.split(" ")[1]}></Form.Control>
               </Form.Group>
               <Form.Group id="email">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="email" required></Form.Control>
+                <Form.Control type="email" required defaultValue={subscription && subscription.user.email}></Form.Control>
               </Form.Group>
-              <Form.Group id="password">
+              <Form.Group id="phone">
                 <Form.Label>Phone number</Form.Label>
-                <Form.Control type="password" required></Form.Control>
+                <Form.Control type="text" required defaultValue={subscription && subscription.address.phone}></Form.Control>
               </Form.Group>
             </Form>
           </Accordion.Body>
@@ -34,21 +41,21 @@ export default function ProfileSettings(props) {
           <Accordion.Header>Address</Accordion.Header>
           <Accordion.Body>
             <Form>
-              <Form.Group id="name">
+              <Form.Group id="street">
                 <Form.Label>Street Address</Form.Label>
-                <Form.Control type="name" required></Form.Control>
+                <Form.Control type="text" required defaultValue={subscription && subscription.address.streetNumber.split(",")[0]}></Form.Control>
               </Form.Group>
-              <Form.Group id="lastname">
+              <Form.Group id="aparmet">
                 <Form.Label>Apartment/Unit</Form.Label>
-                <Form.Control type="lastname" required></Form.Control>
+                <Form.Control type="text" required defaultValue={subscription && subscription.address.streetNumber.split(",")[1]}></Form.Control>
               </Form.Group>
-              <Form.Group id="email">
+              <Form.Group id="city">
                 <Form.Label>City</Form.Label>
-                <Form.Control type="email" required></Form.Control>
+                <Form.Control type="text" required defaultValue={subscription && subscription.address.city}></Form.Control>
               </Form.Group>
-              <Form.Group id="password">
+              <Form.Group id="zipcode">
                 <Form.Label>Zip code</Form.Label>
-                <Form.Control type="password" required></Form.Control>
+                <Form.Control type="text" required defaultValue={subscription && subscription.address.zipCode}></Form.Control>
               </Form.Group>
             </Form>
           </Accordion.Body>

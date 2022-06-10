@@ -1,46 +1,68 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "../../contexts/AuthContext";
+import { useSubscription } from "../../contexts/SubscriptionContext";
 import styles from "../Subscription/subscription.module.scss";
 import { Container, Row, Button, ProgressBar } from "react-bootstrap";
+
 import Steps from "./Steps";
 import InfoAside from "./InfoAside";
+import FormSize from "./FormSize";
 import FormStyle from "./FormStyle";
 import FormPlan from "./FormPlan";
 import FormDelivery from "./FormDelivery";
+import FormSave from "./FormSave";
 import FormPayment from "./FormPayment";
 import Header from "../../components/Header/Header";
-import FormSize from "./FormSize";
+
 import { sizes, clothStyles, plans } from "../../modules/options";
 
 export default function Subscription(props) {
-  const [step, setStep] = useState(1);
   const [right, setRight] = useState(null);
   const [left, setLeft] = useState(null);
 
   const [position, setPosition] = useState(0);
   const [totalSteps, setTotalSteps] = useState(0);
 
-  const [selectedSize, setSelectedSize] = useState(null);
-  const [selectedStyle, setSelectedStyle] = useState(null);
-  const [selectedPlan, setSelectedPlan] = useState(null);
-  const [address, setAddress] = useState(null);
-  const [deliveryAt, setDeliveryAt] = useState(null);
   const [acepted, setAcepted] = useState(false);
 
   const { theUser, theUserName } = useAuth();
 
+  const { selectedSize, selectedStyle, selectedPlan, address, deliveryAt, setSelectedSize, setSelectedStyle, setSelectedPlan, setAddress, setDeliveryAt, inSubscription, setInSubscription, step, setStep } = useSubscription();
+
   const deliveryValid = address && deliveryAt;
 
-  const infoArr = [selectedSize, selectedStyle, selectedPlan, deliveryValid, acepted];
+  const saved = theUser && inSubscription;
+
+  const infoArr = [selectedSize, selectedStyle, selectedPlan, deliveryValid, saved, acepted];
 
   let visible1 = step === 1 || right === 1 || left === 1;
   let visible2 = step === 2 || right === 2 || left === 2;
   let visible3 = step === 3 || right === 3 || left === 3;
   let visible4 = step === 4 || right === 4 || left === 4;
   let visible5 = step === 5 || right === 5 || left === 5;
+  let visible6 = step === 6 || right === 6 || left === 6;
 
-  const now = (step - 1) * 25;
+  const now = ((step - 1) * 100) / (totalSteps - 1);
+
+  useEffect(() => {
+    setInSubscription(true);
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlStep = urlParams.get("step");
+    if (urlStep) {
+      setStep(5);
+    }
+
+    if (localStorage.getItem("subscriber")) {
+      const subscription = JSON.parse(localStorage.getItem("subscriber"));
+      subscription.size && setSelectedSize(Number(subscription.size.index));
+      subscription.clothStyle && setSelectedStyle(Number(subscription.clothStyle.index));
+      subscription.plan && setSelectedPlan(Number(subscription.plan.index));
+      subscription.address && setAddress(subscription.address);
+      subscription.deliveryAt && setDeliveryAt(subscription.deliveryAt);
+      subscription.isPaid && setIsPaid(subscription.isPaid);
+    }
+  }, []);
 
   function prev() {
     if (step <= 1) return;
@@ -71,7 +93,7 @@ export default function Subscription(props) {
               >
                 <span>&#8592;</span>prev
               </Button>
-              {!visible5 && (
+              {!visible6 && (
                 <Button
                   disabled={!infoArr[step - 1]}
                   className="col-4 offset-4 col-md-2 offset-md-8 btn btn-light fs-5"
@@ -85,11 +107,12 @@ export default function Subscription(props) {
               )}
             </div>
             <div className={`${styles.formsWrapper}`}>
-              {visible1 && <FormSize selectedSize={selectedSize} setSelectedSize={setSelectedSize} />}
-              {visible2 && <FormStyle selectedStyle={selectedStyle} setSelectedStyle={setSelectedStyle} />}
-              {visible3 && <FormPlan selectedPlan={selectedPlan} setSelectedPlan={setSelectedPlan} />}
-              {visible4 && <FormDelivery address={address} setAddress={setAddress} deliveryAt={deliveryAt} setDeliveryAt={setDeliveryAt} />}
-              {visible5 && <FormPayment acepted={acepted} setAcepted={setAcepted} />}
+              {visible1 && <FormSize />}
+              {visible2 && <FormStyle />}
+              {visible3 && <FormPlan />}
+              {visible4 && <FormDelivery />}
+              {visible5 && <FormSave />}
+              {visible6 && <FormPayment acepted={acepted} setAcepted={setAcepted} />}
             </div>
           </div>
           <div className={`${styles.asideWrapper} col `}>
@@ -108,7 +131,7 @@ export default function Subscription(props) {
             >
               <span>&#8592;</span>prev
             </Button>
-            {!visible5 && (
+            {!visible6 && (
               <Button
                 disabled={!infoArr[step - 1]}
                 className="col-4 offset-4 col-md-2 offset-md-8 btn btn-light fs-5"

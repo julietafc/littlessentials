@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../Subscription/subscription.module.scss";
 import { Container, Row, Button, Col, Spinner, Card } from "react-bootstrap";
+import { useSubscription } from "../../contexts/SubscriptionContext";
 import { plans } from "../../modules/options";
 
 function Plan(props) {
+  const { selectedPlan, setSelectedPlan } = useSubscription();
   const plan = props.plan.name;
   const productList = props.plan.products.map((product, i) => <li key={plan + "pr" + i}>{product}</li>);
 
@@ -11,14 +13,14 @@ function Plan(props) {
 
   const handleLocalStorage = (index) => {
     const subscription = JSON.parse(localStorage.getItem("subscriber"));
-    subscription.plan = plans[index];
+    subscription.plan = plans[index - 1];
     subscription.plan.index = index;
     localStorage.setItem("subscriber", JSON.stringify(subscription));
   };
 
   return (
     <Col>
-      <Card className={`gap-1 rounded-3 ${props.selectedPlan === props.no ? "border-info border-2" : ""} `}>
+      <Card className={`gap-1 rounded-3 ${selectedPlan === props.no ? "border-info border-2" : ""} `}>
         <Card.Header as="h5" className={`text-center ${props.plan.bestValue ? "bg-info" : " bg-white border-white text-white"}`}>
           BEST VALUE
         </Card.Header>
@@ -31,10 +33,10 @@ function Plan(props) {
           </Container>
           <Button
             variant="white"
-            className={`w-100 border-dark mt-3 ${props.selectedPlan === props.no ? "btn-sun" : ""}`}
+            className={`w-100 border-dark mt-3 ${selectedPlan === props.no ? "btn-sun" : ""}`}
             onClick={() => {
-              props.setSelectedPlan(props.no);
-              handleLocalStorage(props.no - 1);
+              setSelectedPlan(props.no);
+              handleLocalStorage(props.no);
             }}
           >
             {props.plan.btnLabel}

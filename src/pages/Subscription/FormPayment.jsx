@@ -20,6 +20,7 @@ export default function FormPayment(props) {
     // function handleS
     e.preventDefault();
     const subscription = JSON.parse(localStorage.getItem("subscriber"));
+    subscription.isPaid = true;
 
     postSubscription(theUser.uid, subscription, setLoading, setShowThanks);
   }
