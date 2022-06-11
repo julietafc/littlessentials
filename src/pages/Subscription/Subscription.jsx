@@ -82,11 +82,11 @@ export default function Subscription(props) {
         <Row>
           <div className={`${styles.stepsFormWrapper} col-xl-8 `}>
             <Steps step={step} setStep={setStep} infoArr={infoArr} setTotalSteps={setTotalSteps} />
-            <ProgressBar now={now} variant="info" className="w-100" />
+            <ProgressBar now={now} variant="primary" className="w-100" />
             <div className="col-12 p-2">
               <Button
                 disabled={step <= 1}
-                className="col-4 col-md-2 btn btn-light fs-5"
+                className="col-4 col-md-2 btn btn-light fs-6"
                 type="button"
                 onClick={() => {
                   prev();
@@ -97,7 +97,7 @@ export default function Subscription(props) {
               {!visible6 && (
                 <Button
                   disabled={!infoArr[step - 1]}
-                  className={`col-4 offset-4 col-md-2 offset-md-8 btn btn-light fs-5 ${infoArr[step - 1] && styles.jump}`}
+                  className={`col-4 offset-4 col-md-2 offset-md-8 btn btn-light fs-6 ${infoArr[step - 1] && "bg-primary text-white"}`}
                   type="button"
                   onClick={() => {
                     next();
@@ -120,7 +120,7 @@ export default function Subscription(props) {
             <InfoAside selectedSize={sizes[selectedSize - 1]} selectedStyle={clothStyles[selectedStyle - 1]} selectedPlan={plans[selectedPlan - 1]} />
           </div>
         </Row>
-        <Row>
+        {/* <Row>
           <div className="col col-xl-8 p-2">
             <Button
               disabled={step <= 1}
@@ -145,7 +145,7 @@ export default function Subscription(props) {
               </Button>
             )}
           </div>
-        </Row>
+        </Row> */}
       </Container>
     </>
   );

@@ -1,5 +1,6 @@
 .subscriptionWrapper {
   min-height: 90vh;
+  font-family: var(--font-body);
 }
 
 .stepsFormWrapper {
@@ -48,10 +49,10 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     justify-content: center;
     align-items: center;
-    border: solid black 2px;
+    border: solid rgb(240 240 240) 1px;
+    box-shadow: rgb(167 167 167 / 20%) 0px 2px 11px;
     border-radius: 5px;
     font-size: 110%;
     transition: background-color 0.3s ease;
@@ -63,18 +64,16 @@
   display: flex;
   width: 100%;
   justify-content: space-around;
-  padding: 1rem 0;
+  padding: 1rem 0 0;
 }
 
 input[type="radio"] {
   display: none;
   &:checked ~ .label > .chosed {
     color: white;
-    border: solid var(--sun) 2px;
     background-color: var(--desert);
   }
   &:checked ~ .chosed {
-    border: solid var(--desert) 2px;
     background-color: var(--sun);
   }
 }
@@ -91,11 +90,13 @@ input[type="radio"] {
     padding: 0.5rem 1rem;
     aspect-ratio: 1;
     border-radius: 50%;
-    border: solid black 2px;
+    background-color: var(--light);
+    opacity: 40%;
     transition: background-color 0.3s ease;
     &.check {
       color: white;
       background-color: var(--sun);
+      opacity: 100%;
     }
   }
 

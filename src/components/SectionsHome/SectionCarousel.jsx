@@ -1,6 +1,6 @@
 import "./SectionCarousel.scss";
 import React, { useEffect, useState } from "react";
-import Button from "../Button/Button";
+import ButtonCmp from "../Button/Button";
 import { Link } from "react-router-dom";
 
 function BrandLi(props) {
@@ -8,7 +8,7 @@ function BrandLi(props) {
 
   return (
     <li className="scroll-item">
-      <Link className="link" to={`/brands?brand=${title}`}>
+      <Link className="link" to={`/brands?brand=${title}`} title={`link to ${props.title} info page`}>
         <img src={`../assets/webP/${props.img1}`} alt={`products from ${props.title}`} className="imgSquare" />
         <img src={`../assets/brands/${props.logo}`} alt={`${props.title}'s logo`} className="logo_brand" />
       </Link>
@@ -35,9 +35,7 @@ export default function SectionCarousel() {
       <section className="carousel">
         <div className="header">
           <h2>Our Partners</h2>
-          <Link className="button_carousel" to="/brands">
-            <Button label="learn more" />
-          </Link>
+          <ButtonCmp label="Learn more" path="/brands" title="link to how it partners page" />
         </div>
         <div className="carousel_main">
           <ul className="scroll-container" data-layoutmethod="flexbox">

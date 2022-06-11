@@ -24,8 +24,6 @@ export default function Values() {
           <p>We celebrate our diversity as humans. No matter your gender, income level, or limitations, we are here to support you.</p>
           <h3>Inspirational</h3>
           <p>Parenthood is a rite of passage. We want to establish a community and platform where you can find resources, share struggles and celebrate your victories together.</p>
-          <h3>Inspirational</h3>
-          <p>Parenthood is a rite of passage. We want to establish a community and platform where you can find resources, share struggles and celebrate your victories together.</p>
           <h3>Conscious</h3>
           <p>We want to create awareness so that we can live with intention. As we learn more, we share more.</p>
           <h3>Kind</h3>

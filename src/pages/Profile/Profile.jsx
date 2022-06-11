@@ -14,7 +14,7 @@ import "./Profile.scss";
 import { Card, Button, Alert, Container } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import { getSubscription } from "../../modules/fetchSubscription";
+import { getSubscription, patchSubscription, postSubscription } from "../../modules/fetchSubscription";
 
 export default function Profile(props) {
   const { theUser, logout, theUserName } = useAuth();
@@ -31,7 +31,38 @@ export default function Profile(props) {
         setLoading(false);
       });
     }
+    if (theUser) {
+      setLoading(true);
+      getSubscription(theUser.uid).then((res) => {
+        console.log(res);
+        localStorage.setItem("subscriber", JSON.stringify(res[0].subscription));
+        setLoading(false);
+      });
+    }
   }, []);
+
+  // useEffect(() => {
+  //   const abortFetch = new AbortController();
+  //   const subscription = JSON.parse(localStorage.getItem("subscriber"));
+  //   if (theUser) {
+  //     setLoading(true);
+  //     getSubscription(theUser.uid, abortFetch).then((res) => {
+  //       console.log(res);
+  //       if (res.length > 0 && res[0]._id) {
+  //         patchSubscription(res[0]._id, { subscription: subscription }).then((res) => {
+  //           console.log("patched with", res.status);
+  //           setLoading(false);
+  //         });
+  //       } else {
+  //         postSubscription(theUser.uid, subscription).then((res) => {
+  //           console.log("post with", res);
+  //           setLoading(false);
+  //         });
+  //       }
+  //     });
+  //   }
+  //   return () => abortFetch.abort();
+  // }, []);
 
   async function handleLogout() {
     setError("");
@@ -60,10 +91,7 @@ export default function Profile(props) {
                   <Nav.Link eventKey="second">Subscription</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="third">Billing</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="fourth">Messages</Nav.Link>
+                  <Nav.Link eventKey="third">Messages</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Button variant="link" onClick={handleLogout}>
@@ -78,17 +106,10 @@ export default function Profile(props) {
                   {loading ? <h2>loading...</h2> : <ProfileSettings />}
                 </Tab.Pane>
                 <Tab.Pane eventKey="second" id="second">
-                  <h4>Subscription edit page</h4>
                   {loading ? <h2>loading...</h2> : <InfoAside />}
                 </Tab.Pane>
-                <Tab.Pane eventKey="third" id="third">
-                  <h4>Billing</h4>
-                </Tab.Pane>
-                <Tab.Pane eventKey="fourth" id="fourth">
+                <Tab.Pane eventKey="third" id="fourth">
                   <h4>Messages page</h4>
-                </Tab.Pane>
-                <Tab.Pane eventKey="fifth" id="fifth">
-                  <h4>Log out</h4>
                 </Tab.Pane>
               </Tab.Content>
             </Col>
