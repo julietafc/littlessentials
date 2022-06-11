@@ -21,17 +21,17 @@ function Plan(props) {
   return (
     <Col>
       <Card className={`gap-1 rounded-3 ${selectedPlan === props.no ? "border-info border-2" : ""} `}>
-        <Card.Header as="h6" className={`text-center ${props.plan.bestValue ? "bg-info text-primary" : " bg-white border-white text-white"}`}>
+        <Card.Header as="h5" className={`text-center ${props.plan.bestValue ? "bg-info text-primary" : " bg-white border-white text-white"}`}>
           BEST VALUE
         </Card.Header>
         <Card.Body className="gap-3">
-          <Card.Title className="text-center fs-5">
+          <Card.Title className="text-center fs-3">
             <strong>{props.plan.name}</strong>
           </Card.Title>
-          <Card.Subtitle className="text-center fs-6">{props.plan.period}</Card.Subtitle>
+          <Card.Subtitle className="text-center fs-5">{props.plan.period}</Card.Subtitle>
           <Container className="d-flex justify-content-between border-bottom mt-3">
-            <p className="fs-5">{props.plan.items} items</p>
-            <p className="fs-5 fw-bolder">{props.plan.price} kr</p>
+            <p className="fs-4">{props.plan.items} items</p>
+            <p className="fs-4 fw-bolder">{props.plan.price} kr</p>
           </Container>
           <Button
             variant="white"
