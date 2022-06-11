@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Footer.scss";
 import LElement from "../LElement/LElement";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import MailchimpFormContainer from "../Mailchimp/MailchimpFormContainer";
 
 export default function Footer(props) {

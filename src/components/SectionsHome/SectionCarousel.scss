@@ -39,8 +39,6 @@ section.carousel {
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       list-style: none;
-
-      // pointer-events: none;
     }
     .scroll-item {
       scroll-snap-align: center;

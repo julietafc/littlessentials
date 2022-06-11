@@ -16,7 +16,9 @@ export default function HeaderLanding() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Link to="/">Discover more</Link>
+            <Link title="link to Littlessentials' website" to="/">
+              Discover more
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

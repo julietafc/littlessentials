@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Form, Button, Card, Alert, Container, Accordion } from "react-bootstrap";
+import { Form, Container, Accordion } from "react-bootstrap";
 import { useAuth } from "../../../contexts/AuthContext";
-import { useSubscription } from "../../../contexts/SubscriptionContext";
 
 export default function ProfileSettings(props) {
   const { theUser } = useAuth();

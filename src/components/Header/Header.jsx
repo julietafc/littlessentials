@@ -8,7 +8,6 @@ import LElement from "../LElement/LElement";
 import { Link } from "react-router-dom";
 
 import OffCanvasForm from "../OffCanvasForm/OffCanvasForm";
-import SignUp from "../../pages/SignUp/SignUp";
 import LogIn from "../../pages/LogIn/LogIn";
 import BtnLogOut from "../BtnLogOut/BtnLogOut";
 import { useAuth } from "../../contexts/AuthContext";
@@ -76,9 +75,7 @@ export default function Header() {
                 </>
               ) : (
                 <>
-                  <OffCanvasForm name="signup" btnLabel="get started">
-                    <SignUp />
-                  </OffCanvasForm>
+                  <BtnLink link={"/subscription"} label={"get started"} />
                   <OffCanvasForm name="login" btnLabel="login">
                     <LogIn />
                   </OffCanvasForm>
