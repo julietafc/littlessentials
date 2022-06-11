@@ -76,7 +76,7 @@ export default function Header() {
                 </>
               ) : (
                 <>
-                  <OffCanvasForm name="signup" btnLabel="get started">
+                  <OffCanvasForm name="signup" btnLabel="invisible">
                     <SignUp />
                   </OffCanvasForm>
                   <OffCanvasForm name="login" btnLabel="login">
