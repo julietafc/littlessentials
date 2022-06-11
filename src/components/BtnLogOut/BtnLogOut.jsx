@@ -6,7 +6,7 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import styles from "../../sass/layout/buttons_links.module.scss";
 
-export default function BtnLogOut() {
+export default function BtnLogOut(props) {
   const { logout } = useAuth();
   const { inSubscription, setInSubscription } = useSubscription();
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ export default function BtnLogOut() {
   };
 
   return (
-    <Button variant="link" onMouseOver={handleMauseOver} onMouseOut={handleMauseOut} className={`pt-0 pb-0 text-white text-decoration-none ${hover && "text-opacity-50"} ${styles.linkButton}`} onClick={handleClick}>
+    <Button variant="link" onMouseOver={handleMauseOver} onMouseOut={handleMauseOut} className={`pt-0 pb-0 text-${props.color} text-decoration-none ${hover && "text-opacity-50"} ${styles.linkButton}`} onClick={handleClick}>
       log out
     </Button>
   );

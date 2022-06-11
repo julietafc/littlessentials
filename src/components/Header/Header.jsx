@@ -20,28 +20,31 @@ import BtnLink from "../BtnLink/BtnLink";
 
 export default function Header() {
   let location = useLocation();
-  const { theUser } = useAuth();
+  const { theUser, logout } = useAuth();
   const [activePage, setActivePage] = useState("");
-  const [about, setAbout] = useState(false);
-  const [partners, setPartners] = useState(false);
-  const [connect, setConnect] = useState(false);
+  const [activeDrop, setActiveDrop] = useState("");
 
   useEffect(() => {
     setActivePage(location.pathname);
 
     ["/story", "/guide", "/values", "/lowcarbon", "/faq"].forEach((key) => {
       if (key === location.pathname) {
-        setAbout(true);
+        setActiveDrop("about");
       }
     });
     ["/brands", "/ngos"].forEach((key) => {
       if (key === location.pathname) {
-        setPartners(true);
+        setActiveDrop("partners");
       }
     });
     ["/get-in-touch", "/partner-with-us"].forEach((key) => {
       if (key === location.pathname) {
-        setConnect(true);
+        setActiveDrop("connect");
+      }
+    });
+    ["/subscription", "/profile"].forEach((key) => {
+      if (key === location.pathname) {
+        setActiveDrop("hello");
       }
     });
   }, []);
@@ -60,7 +63,7 @@ export default function Header() {
                 how it works
               </Nav.Link>
 
-              <NavDropdown title="about" id="collasible-nav-dropdown" className={`${styles.linkButton} ${about && styles.linkActive} ${styles.other}`}>
+              <NavDropdown title="about" id="collasible-nav-dropdown" className={`${styles.linkButton} ${activeDrop === "about" && styles.linkActive} ${styles.other}`}>
                 <NavDropdown.Item title="link to Littlessentials' story page" href="story" eventKey="/story">
                   Our story
                 </NavDropdown.Item>
@@ -77,7 +80,7 @@ export default function Header() {
                   FAQ
                 </NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown title="partners" id="collasible-nav-dropdown" className={`${styles.linkButton} ${partners && styles.linkActive} ${styles.other}`}>
+              <NavDropdown title="partners" id="collasible-nav-dropdown" className={`${styles.linkButton} ${activeDrop === "partners" && styles.linkActive} ${styles.other}`}>
                 <NavDropdown.Item title="link to Littlessentials' partners page" href="brands" eventKey="/brands">
                   Brands
                 </NavDropdown.Item>
@@ -85,7 +88,7 @@ export default function Header() {
                   NGOs
                 </NavDropdown.Item>
               </NavDropdown>
-              <NavDropdown title="connect" id="collasible-nav-dropdown" className={`${styles.linkButton} ${connect && styles.linkActive} ${styles.other}`}>
+              <NavDropdown title="connect" id="collasible-nav-dropdown" className={`${styles.linkButton} ${activeDrop === "connect" && styles.linkActive} ${styles.other}`}>
                 <NavDropdown.Item title="link to contact form form customers" href="get-in-touch" eventKey="/get-in-touch">
                   Get in touch
                 </NavDropdown.Item>
@@ -94,13 +97,26 @@ export default function Header() {
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            <Nav>
+            <Nav activeKey={activePage}>
               {theUser ? (
-                <>
-                  <BtnLink link={"/subscription"} label={"subscription"} />
+                <Container className="d-flex align-items-center gap-1">
+                  {theUser.photoURL ? <img src={theUser.photoURL} width={"25"} height={"25"} alt="profile picture" className="rounded-circle" /> : <>&#128512;</>}
+                  <NavDropdown title={`Hello ${theUser.displayName.split(" ")[0]}!`} id="collasible-nav-dropdown" className={`${styles.linkButton} ${activeDrop === "hello" && styles.linkActive} ${styles.other}`}>
+                    <NavDropdown.Item title="link to subscription for customers" href="subscription" eventKey="/subscription">
+                      Subscription
+                    </NavDropdown.Item>
+                    <NavDropdown.Item title="link to profile" href="profile" eventKey="/profile">
+                      Profile
+                    </NavDropdown.Item>
+                    <NavDropdown.Item title="link to profile" as="button" onClick={() => logout()}>
+                      Log out
+                    </NavDropdown.Item>
+                  </NavDropdown>
+
+                  {/* <BtnLink link={"/subscription"} label={"subscription"} />
                   <BtnLink link={"/profile"} label={"profile"} />
-                  <BtnLogOut />
-                </>
+                  <BtnLogOut color={"white"} /> */}
+                </Container>
               ) : (
                 <>
                   <OffCanvasForm name="signup" btnLabel="invisible">
