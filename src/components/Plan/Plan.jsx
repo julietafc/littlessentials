@@ -9,7 +9,7 @@ export default function Plan(props) {
 
   return (
     <Col className=" col-12 col-sm-8 col-md-6 col-lg-4" style={{ height: "100%" }}>
-      <Card className={`gap-1 rounded-3 border border-2 minHeight plan_style`}>
+      <Card className={`gap-1 rounded-3 border border-2 plan_style minHeight`}>
         <Card.Header as="h5" className={`text-center ${props.plan.bestValue ? "bg-info text-primary" : " bg-white border-white text-white"}`}>
           BEST VALUE
         </Card.Header>
