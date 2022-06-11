@@ -79,7 +79,7 @@ export default function FormSave(props) {
                   setShowLogin(true);
                 }}
               >
-                Log in{" "}
+                Log in
               </Button>
             </div>
           </Card>

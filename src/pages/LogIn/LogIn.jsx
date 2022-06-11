@@ -40,7 +40,7 @@ export default function LogIn() {
   return (
     <Container className="d-flex align-items-center justify-content-center">
       <div className="w-100" style={{ maxWidth: "400px" }}>
-        <Card>
+        <Card class={styles.card}>
           <Card.Body>
             <h2 className="text-center mb-4">Log In</h2>
             {error && <Alert variant="danger">{error}</Alert>}
@@ -63,7 +63,7 @@ export default function LogIn() {
           </Card.Body>
         </Card>
         <div className="w-100 text-center mt-2">
-          Do you need an account?{" "}
+          Do you need an account?
           <Button
             variant="link"
             onClick={() => {
