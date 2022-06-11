@@ -1,12 +1,14 @@
 import React, { useRef, useEffect } from "react";
 import styles from "../Subscription/subscription.module.scss";
 import { useAuth } from "../../contexts/AuthContext";
-import { Button, Card, Container, Col, Row } from "react-bootstrap";
+import { useSubscription } from "../../contexts/SubscriptionContext";
 import { useButtonsState } from "../../contexts/ButtonsStateContext";
+import { getSubscription, postSubscription, patchSubscription } from "../../modules/fetchSubscription";
+import { Button, Card, Container } from "react-bootstrap";
 
 export default function FormSave(props) {
   const { theUser, theUserName } = useAuth();
-
+  const { isPaid } = useSubscription();
   const { setShowSignup, setShowLogin } = useButtonsState();
 
   useEffect(() => {
@@ -19,6 +21,30 @@ export default function FormSave(props) {
       localStorage.setItem("subscriber", JSON.stringify(subscription));
     }
   }, [theUser]);
+
+  //-----------------------
+  //working with a normal error mesage
+
+  useEffect(() => {
+    const abortFetch = new AbortController();
+    const subscription = JSON.parse(localStorage.getItem("subscriber"));
+    if (isPaid) {
+      getSubscription(theUser.uid, abortFetch).then((res) => {
+        console.log(res);
+        if (res.length > 0 && res[0]._id) {
+          patchSubscription(res[0]._id, { subscription: subscription }).then((res) => {
+            console.log("patched with", res.status);
+          });
+        } else {
+          postSubscription(theUser.uid, subscription).then((res) => {
+            console.log("post with", res);
+          });
+        }
+      });
+    }
+    return () => abortFetch.abort();
+  }, []);
+  //---------------------------------------
 
   const userName = theUser && theUser.displayName ? theUser.displayName.split(" ")[0] : theUserName.split(" ")[0];
 

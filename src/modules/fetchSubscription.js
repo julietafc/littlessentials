@@ -1,46 +1,46 @@
-function getSubscription(uid, setLoading) {
-  fetch(`${import.meta.env.VITE_RESTDB_URL}?q={"userID": "${uid}"}`, {
+async function getSubscription(uid, abortCont) {
+  let subscription = await fetch(`${import.meta.env.VITE_RESTDB_URL}?q={"userID": "${uid}"}`, {
     method: "GET",
     headers: {
       "x-apikey": import.meta.env.VITE_RESTDB_API_KEY,
+      "Content-Type": "application/json",
     },
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      data[0] && localStorage.setItem("subscriber", JSON.stringify(data[0].subscription));
-      setLoading(false);
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+    signal: abortCont.signal,
+  });
+
+  return subscription.json();
 }
 
-function postSubscription(uid, subscription, setLoading, setShowThanks) {
+async function postSubscription(uid, subscription) {
   const body = {
     userID: uid,
     subscription: subscription,
   };
 
-  setLoading(true);
-
-  fetch("https://reicpe-9cc2.restdb.io/rest/littlessentials", {
+  let subscriptionRes = await fetch(`${import.meta.env.VITE_RESTDB_URL}`, {
     method: "POST",
     headers: {
-      "x-apikey": "606d5dcef5535004310074f4",
+      "x-apikey": import.meta.env.VITE_RESTDB_API_KEY,
       "Content-Type": "application/json",
     },
     body: JSON.stringify(body),
-  })
-    .then((res) => res.json())
-    .then((response) => {
-      console.log(response);
-      setLoading(false);
-      setShowThanks(true);
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+  });
+
+  return subscriptionRes.json();
 }
 
-export { getSubscription, postSubscription };
+async function patchSubscription(subscriptionID, subscriptionDetails) {
+  let subscriptionRes = fetch(`${import.meta.env.VITE_RESTDB_URL}/${subscriptionID}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      "x-apikey": import.meta.env.VITE_RESTDB_API_KEY,
+      "cache-control": "no-cache",
+    },
+    body: JSON.stringify(subscriptionDetails),
+  });
+
+  return subscriptionRes;
+}
+
+export { getSubscription, postSubscription, patchSubscription };
