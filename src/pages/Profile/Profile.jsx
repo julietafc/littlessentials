@@ -91,10 +91,7 @@ export default function Profile(props) {
                   <Nav.Link eventKey="second">Subscription</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="third">Billing</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="fourth">Messages</Nav.Link>
+                  <Nav.Link eventKey="third">Messages</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Button variant="link" onClick={handleLogout}>
@@ -109,17 +106,10 @@ export default function Profile(props) {
                   {loading ? <h2>loading...</h2> : <ProfileSettings />}
                 </Tab.Pane>
                 <Tab.Pane eventKey="second" id="second">
-                  <h4>Subscription edit page</h4>
                   {loading ? <h2>loading...</h2> : <InfoAside />}
                 </Tab.Pane>
-                <Tab.Pane eventKey="third" id="third">
-                  <h4>Billing</h4>
-                </Tab.Pane>
-                <Tab.Pane eventKey="fourth" id="fourth">
+                <Tab.Pane eventKey="third" id="fourth">
                   <h4>Messages page</h4>
-                </Tab.Pane>
-                <Tab.Pane eventKey="fifth" id="fifth">
-                  <h4>Log out</h4>
                 </Tab.Pane>
               </Tab.Content>
             </Col>
