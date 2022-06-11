@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./Header.scss";
 
 import LElement from "../LElement/LElement";
@@ -20,6 +20,7 @@ import BtnLink from "../BtnLink/BtnLink";
 
 export default function Header() {
   let location = useLocation();
+  const navigate = useNavigate();
   const { theUser, logout } = useAuth();
   const [activePage, setActivePage] = useState("");
   const [activeDrop, setActiveDrop] = useState("");
@@ -48,6 +49,18 @@ export default function Header() {
       }
     });
   }, []);
+
+  const handleLogOut = async (e) => {
+    logout()
+      .then(() => {
+        localStorage.removeItem("subscriber");
+      })
+      .then(() => {
+        if (activePage === "subscription") {
+          navigate("/");
+        }
+      });
+  };
 
   return (
     <>
@@ -108,7 +121,7 @@ export default function Header() {
                     <NavDropdown.Item title="link to profile" href="profile" eventKey="/profile">
                       Profile
                     </NavDropdown.Item>
-                    <NavDropdown.Item title="link to profile" as="button" onClick={() => logout()}>
+                    <NavDropdown.Item title="link to profile" as="button" onClick={handleLogOut}>
                       Log out
                     </NavDropdown.Item>
                   </NavDropdown>
@@ -119,6 +132,7 @@ export default function Header() {
                 </Container>
               ) : (
                 <>
+                  <BtnLink link={"/subscription"} label={"get started"} />
                   <OffCanvasForm name="signup" btnLabel="invisible">
                     <SignUp />
                   </OffCanvasForm>
