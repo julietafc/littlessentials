@@ -11,6 +11,7 @@ import OffCanvasForm from "../OffCanvasForm/OffCanvasForm";
 import LogIn from "../../pages/LogIn/LogIn";
 import BtnLogOut from "../BtnLogOut/BtnLogOut";
 import { useAuth } from "../../contexts/AuthContext";
+import SignUp from "../../pages/SignUp/SignUp";
 
 import styles from "../../sass/layout/buttons_links.module.scss";
 import BtnLink from "../BtnLink/BtnLink";
@@ -76,6 +77,9 @@ export default function Header() {
               ) : (
                 <>
                   <BtnLink link={"/subscription"} label={"get started"} />
+                  <OffCanvasForm name="signup" btnLabel="invisible">
+                    <SignUp />
+                  </OffCanvasForm>
                   <OffCanvasForm name="login" btnLabel="login">
                     <LogIn />
                   </OffCanvasForm>

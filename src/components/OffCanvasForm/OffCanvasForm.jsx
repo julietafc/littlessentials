@@ -36,19 +36,23 @@ export default function OffCanvasForm({ btnLabel, name, children, ...props }) {
 
   return (
     <>
-      <Button
-        variant="link"
-        onClick={handleShow}
-        onMouseOver={handleMauseOver}
-        onMouseOut={handleMauseOut}
-        className={`pt-0 pb-0 ${props.textColor ? props.textColor : "text-white"} text-decoration-none ${!hover && "text-opacity-50"} ${styles.linkButton}`}
-      >
-        {btnLabel}
-      </Button>
+      {btnLabel !== "invisible" && (
+        <Button
+          variant="link"
+          onClick={handleShow}
+          onMouseOver={handleMauseOver}
+          onMouseOut={handleMauseOut}
+          className={`pt-0 pb-0 ${props.textColor ? props.textColor : "text-white"} text-decoration-none ${!hover && "text-opacity-50"} ${styles.linkButton}`}
+        >
+          {btnLabel}
+        </Button>
+      )}
+
       <Offcanvas show={show} onHide={handleClose} placement={"end"} scroll={true}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
+
         {children}
       </Offcanvas>
     </>
