@@ -2,20 +2,29 @@ import React, { useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { useSubscription } from "../../contexts/SubscriptionContext";
 import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import styles from "../../sass/layout/buttons_links.module.scss";
 
 export default function BtnLogOut() {
   const { logout } = useAuth();
-  const { setInSubscription } = useSubscription();
+  const { inSubscription, setInSubscription } = useSubscription();
+  const navigate = useNavigate();
 
   const [hover, setHover] = useState(false);
   const handleMauseOver = () => setHover(true);
   const handleMauseOut = () => setHover(false);
 
-  const handleClick = (e) => {
-    localStorage.removeItem("subscriber");
-
-    logout();
+  const handleClick = async (e) => {
+    logout()
+      .then(() => {
+        localStorage.removeItem("subscriber");
+      })
+      .then(() => {
+        if (inSubscription) {
+          navigate("/");
+          setInSubscription(false);
+        }
+      });
   };
 
   return (

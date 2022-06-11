@@ -1,12 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
+import { useSubscription } from "../../contexts/SubscriptionContext";
 import { postSubscription } from "../../modules/fetchSubscription";
 import { useNavigate } from "react-router-dom";
 import styles from "./subscription.module.scss";
 
 export default function FormPayment(props) {
   const { theUser } = useAuth();
+  const { setIsPaid } = useSubscription();
   const [loading, setLoading] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
   const userName = theUser.displayName.split(" ")[0];
@@ -21,8 +23,14 @@ export default function FormPayment(props) {
     e.preventDefault();
     const subscription = JSON.parse(localStorage.getItem("subscriber"));
     subscription.isPaid = true;
-
-    postSubscription(theUser.uid, subscription, setLoading, setShowThanks);
+    console.log(subscription);
+    localStorage.setItem("subscriber", JSON.stringify(subscription));
+    setLoading(true);
+    setIsPaid(true);
+    postSubscription(theUser.uid, subscription).then(() => {
+      setLoading(false);
+      setShowThanks(true);
+    });
   }
 
   function resetAndBack(e) {
