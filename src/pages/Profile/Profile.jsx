@@ -31,38 +31,38 @@ export default function Profile(props) {
         setLoading(false);
       });
     }
-    // if (theUser) {
-    //   setLoading(true);
-    //   getSubscription(theUser.uid).then((res) => {
-    //     console.log(res);
-    //     localStorage.setItem("subscriber", JSON.stringify(res[0].subscription));
-    //     setLoading(false);
-    //   });
-    // }
-  }, []);
-
-  useEffect(() => {
-    const abortFetch = new AbortController();
-    const subscription = JSON.parse(localStorage.getItem("subscriber"));
     if (theUser) {
       setLoading(true);
-      getSubscription(theUser.uid, abortFetch).then((res) => {
+      getSubscription(theUser.uid).then((res) => {
         console.log(res);
-        if (res.length > 0 && res[0]._id) {
-          patchSubscription(res[0]._id, { subscription: subscription }).then((res) => {
-            console.log("patched with", res.status);
-            setLoading(false);
-          });
-        } else {
-          postSubscription(theUser.uid, subscription).then((res) => {
-            console.log("post with", res);
-            setLoading(false);
-          });
-        }
+        localStorage.setItem("subscriber", JSON.stringify(res[0].subscription));
+        setLoading(false);
       });
     }
-    return () => abortFetch.abort();
   }, []);
+
+  // useEffect(() => {
+  //   const abortFetch = new AbortController();
+  //   const subscription = JSON.parse(localStorage.getItem("subscriber"));
+  //   if (theUser) {
+  //     setLoading(true);
+  //     getSubscription(theUser.uid, abortFetch).then((res) => {
+  //       console.log(res);
+  //       if (res.length > 0 && res[0]._id) {
+  //         patchSubscription(res[0]._id, { subscription: subscription }).then((res) => {
+  //           console.log("patched with", res.status);
+  //           setLoading(false);
+  //         });
+  //       } else {
+  //         postSubscription(theUser.uid, subscription).then((res) => {
+  //           console.log("post with", res);
+  //           setLoading(false);
+  //         });
+  //       }
+  //     });
+  //   }
+  //   return () => abortFetch.abort();
+  // }, []);
 
   async function handleLogout() {
     setError("");
