@@ -1,11 +1,12 @@
 async function getSubscription(uid, abortCont) {
+  const signal = abortCont ? abortCont.signal : null;
   let subscription = await fetch(`${import.meta.env.VITE_RESTDB_URL}?q={"userID": "${uid}"}`, {
     method: "GET",
     headers: {
       "x-apikey": import.meta.env.VITE_RESTDB_API_KEY,
       "Content-Type": "application/json",
     },
-    signal: abortCont.signal,
+    signal: signal,
   });
 
   return subscription.json();

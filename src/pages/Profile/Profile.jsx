@@ -8,6 +8,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import ProfileSettings from "./ProfileCmp/ProfileSettings";
+import InfoAside from "../Subscription/InfoAside";
 import "./Profile.scss";
 
 import { Card, Button, Alert, Container } from "react-bootstrap";
@@ -24,7 +25,11 @@ export default function Profile(props) {
   useEffect(() => {
     if (!localStorage.getItem("subscriber")) {
       setLoading(true);
-      getSubscription(theUser.uid, setLoading);
+      getSubscription(theUser.uid).then((res) => {
+        console.log(res);
+        localStorage.setItem("subscriber", JSON.stringify(res[0].subscription));
+        setLoading(false);
+      });
     }
   }, []);
 
@@ -70,10 +75,11 @@ export default function Profile(props) {
             <Col sm={9}>
               <Tab.Content>
                 <Tab.Pane eventKey="first" id="first">
-                  <ProfileSettings />
+                  {loading ? <h2>loading...</h2> : <ProfileSettings />}
                 </Tab.Pane>
                 <Tab.Pane eventKey="second" id="second">
                   <h4>Subscription edit page</h4>
+                  {loading ? <h2>loading...</h2> : <InfoAside />}
                 </Tab.Pane>
                 <Tab.Pane eventKey="third" id="third">
                   <h4>Billing</h4>
