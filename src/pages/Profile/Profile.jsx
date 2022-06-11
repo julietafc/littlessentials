@@ -31,6 +31,14 @@ export default function Profile(props) {
         setLoading(false);
       });
     }
+    if (theUser) {
+      setLoading(true);
+      getSubscription(theUser.uid).then((res) => {
+        console.log(res);
+        localStorage.setItem("subscriber", JSON.stringify(res[0].subscription));
+        setLoading(false);
+      });
+    }
   }, []);
 
   async function handleLogout() {
