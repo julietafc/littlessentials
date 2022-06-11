@@ -78,7 +78,7 @@ export default function Home(props) {
         <SectionManifestoDk className="manifesto_desktop" />
         <SectionCarousel />
         <SectionTestimonial />
-        <SectionNewsletter heading="Receive 10% off your first order when you sign up for our newsletter." />
+        <SectionNewsletter title="Stay updated" heading="Receive 10% off your first order when you sign up for our newsletter." />
         <SectionIG />
       </div>
       <div className="floating_actions">

@@ -3,6 +3,7 @@ import "./Footer.scss";
 import LElement from "../LElement/LElement";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import MailchimpFormContainer from "../Mailchimp/MailchimpFormContainer";
 
 export default function Footer(props) {
   return (
@@ -23,14 +24,7 @@ export default function Footer(props) {
                 Facebook
               </a>
             </div>
-            <Form>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Enter your email" />
-              </Form.Group>
-              <Button variant="primary" type="submit">
-                Subscribe
-              </Button>
-            </Form>
+            <MailchimpFormContainer />
           </div>
           <div className="nav">
             <div className="column">

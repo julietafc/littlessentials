@@ -5,7 +5,7 @@ export default function SectionNewsletter(props) {
   return (
     <section className="news">
       <div className="_text">
-        <h2>Stay updated</h2>
+        <h2>{props.title}</h2>
         <h5>{props.heading}</h5>
       </div>
       <MailchimpFormContainer />
