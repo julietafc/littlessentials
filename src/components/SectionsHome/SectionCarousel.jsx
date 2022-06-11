@@ -8,7 +8,7 @@ function BrandLi(props) {
 
   return (
     <li className="scroll-item">
-      <Link className="link" to={`/brands?brand=${title}`}>
+      <Link className="link" to={`/brands?brand=${title}`} title={`link to ${props.title} info page`}>
         <img src={`../assets/webP/${props.img1}`} alt={`products from ${props.title}`} className="imgSquare" />
         <img src={`../assets/brands/${props.logo}`} alt={`${props.title}'s logo`} className="logo_brand" />
       </Link>

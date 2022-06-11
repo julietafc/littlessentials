@@ -75,7 +75,11 @@ export default function Policy() {
                     </p>
                     <p>
                       <strong> Sharing your Personal Information</strong> <br /> We share your Personal Information with third parties to help us use your Personal Information, as described above. We also use Google Analytics to help us understand
-                      how our customers use the Site -- you can read more about how Google uses your Personal Information by clicking <a href="https://www.google.com/intl/en/policies/privacy/">right here</a>. You can also opt-out of Google Analytics
+                      how our customers use the Site -- you can read more about how Google uses your Personal Information by clicking{" "}
+                      <a title="link to privacy policy info" href="https://www.google.com/intl/en/policies/privacy/">
+                        right here
+                      </a>
+                      . You can also opt-out of Google Analytics
                       <a title="external link to info about google analytics " href="https://tools.google.com/dlpage/gaoptout">
                         here
                       </a>
@@ -113,7 +117,12 @@ export default function Policy() {
                       </li>
                     </ul>
                     <p>
-                      Additionally, you can opt-out of some of these services by visiting the Digital Advertising Alliance’s opt-out portal at <a href="http://optout.aboutads.info/"> http://optout.aboutads.info/</a>.
+                      Additionally, you can opt-out of some of these services by visiting the Digital Advertising Alliance’s opt-out portal at
+                      <a title="info about opt out" href="http://optout.aboutads.info/">
+                        {" "}
+                        http://optout.aboutads.info/
+                      </a>
+                      .
                     </p>
                     <p>
                       <strong>Do not track</strong>
@@ -138,7 +147,10 @@ export default function Policy() {
                     </p>
                     <p>
                       <strong>Contact us</strong>
-                      <br /> For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e‑mail at <a href="mailto: info@littlessentials.dk">info@littlessentials.dk</a>
+                      <br /> For more information about our privacy practices, if you have questions, or if you would like to make a complaint, please contact us by e‑mail at
+                      <a title="link to Littlessential email" href="mailto: info@littlessentials.dk">
+                        info@littlessentials.dk
+                      </a>
                     </p>
                   </Tab.Pane>
                   <Tab.Pane eventKey="second">
