@@ -38,6 +38,7 @@ export default function FormStyle(props) {
         <Button
           variant="white"
           className={`col-4 col-xl-2 border-dark ${selectedStyle === 2 ? "btn-sun" : ""}`}
+          style={{ "--bs-border-opacity": " .5" }}
           onClick={() => {
             setSelectedStyle(2);
             handleLocalStorage(2);

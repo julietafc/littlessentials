@@ -21,7 +21,7 @@ function Plan(props) {
   return (
     <Col>
       <Card className={`gap-1 rounded-3 ${selectedPlan === props.no ? "border-info border-2" : ""} `}>
-        <Card.Header as="h6" className={`text-center ${props.plan.bestValue ? "bg-info" : " bg-white border-white text-white"}`}>
+        <Card.Header as="h6" className={`text-center ${props.plan.bestValue ? "bg-info text-primary" : " bg-white border-white text-white"}`}>
           BEST VALUE
         </Card.Header>
         <Card.Body className="gap-3">
