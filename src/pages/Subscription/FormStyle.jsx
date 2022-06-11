@@ -61,19 +61,20 @@ export default function FormStyle(props) {
       <Row className="mt-5 justify-content-center mb-5">
         <Col className="d-none d-sm-block">
           <Row>
-            <img src={clothStyles[selectedStyle ? selectedStyle - 1 : 0].url2} alt="styles packages" className="" />
+            <h4 className="text-center p-2">{clothStyles[selectedStyle ? selectedStyle - 1 : 0].name}</h4>
           </Row>
           <Row>
-            <h4 className="text-center p-2">{clothStyles[selectedStyle ? selectedStyle - 1 : 0].name}</h4>
+            <img src={clothStyles[selectedStyle ? selectedStyle - 1 : 0].url2} alt="styles packages" className="" />
           </Row>
         </Col>
         <Col className="  col-md-6">
-          <Row className="">
-            <p className="text-center">Contains these colors</p>
-            <ul className={`${styles.colorList} d-flex justify-content-around`}>{colorsList}</ul>
-          </Row>
           <Row>
             <img src={clothStyles[selectedStyle ? selectedStyle - 1 : 0].url1} alt="products for children" />
+          </Row>
+          <Row className="">
+            <br />
+            <p className="text-center">Contains these colors</p>
+            <ul className={`${styles.colorList} d-flex justify-content-around`}>{colorsList}</ul>
           </Row>
         </Col>
       </Row>

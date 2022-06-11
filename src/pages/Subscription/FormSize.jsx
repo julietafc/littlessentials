@@ -7,7 +7,6 @@ import { useSubscription } from "../../contexts/SubscriptionContext";
 import { sizes } from "../../modules/options";
 
 export default function FormSize(props) {
-  // const [index, setIndex] = useState(null);
   const { theUser, theUserName } = useAuth();
   const { selectedSize, setSelectedSize } = useSubscription();
   const userName = theUser && theUser.displayName ? theUser.displayName.split(" ")[0] : theUserName.split(" ")[0];
@@ -30,32 +29,29 @@ export default function FormSize(props) {
         <div className={styles.box}>
           <input name="age" type="radio" id="newborn" value={1} onChange={handleChange} checked={Number(selectedSize) === 1} />
           <label htmlFor="newborn" className={`${styles.label} ${styles.chosed}`}>
-            Newborn
-            <br />
+            <strong> Newborn</strong>
             <span>(0-3 months)</span>
           </label>
         </div>
         <div className={styles.box}>
           <input name="age" type="radio" id="baby" value={2} onChange={handleChange} checked={Number(selectedSize) === 2} />
           <label htmlFor="baby" className={`${styles.label} ${styles.chosed}`}>
-            Baby
-            <br />
+            <strong> Baby</strong>
             <span>(3-12 months)</span>
           </label>
         </div>
         <div className={styles.box}>
           <input name="age" type="radio" id="junior" value={3} onChange={handleChange} checked={Number(selectedSize) === 3} />
           <label htmlFor="junior" className={`${styles.label} ${styles.chosed}`}>
-            Junior
-            <br />
+            <strong> Junior</strong>
+
             <span>(1-3 years)</span>
           </label>
         </div>
         <div className={styles.box}>
           <input name="age" type="radio" id="youngster" value={4} onChange={handleChange} checked={Number(selectedSize) === 4} />
           <label htmlFor="youngster" className={`${styles.label} ${styles.chosed}`}>
-            Youngster
-            <br />
+            <strong> Youngster</strong>
             <span>(3-6 years)</span>
           </label>
         </div>

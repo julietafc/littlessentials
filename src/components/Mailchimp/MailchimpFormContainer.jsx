@@ -26,7 +26,7 @@ const CustomForm = ({ status, message, onValidated }) => {
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
-      <h3>{status === "success" ? "Welcome to our community!" : "Join our email list for future updates."}</h3>
+      <h3>{status === "success" ? "Welcome to our community!" : ""}</h3>
 
       {status === "sending" && <div>sending...</div>}
       {status === "error" && <div dangerouslySetInnerHTML={{ __html: message }} />}
@@ -48,7 +48,7 @@ const CustomForm = ({ status, message, onValidated }) => {
         </Form>
       ) : null}
       {status !== "success" && (
-        <Button formValues={[email]} variant="primary" type="submit">
+        <Button formvalues={[email]} variant="primary" type="submit">
           Subscribe
         </Button>
       )}

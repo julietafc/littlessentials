@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "../Subscription/subscription.module.scss";
 import { Container, Row, Button, Col, Spinner, Card } from "react-bootstrap";
 import { useSubscription } from "../../contexts/SubscriptionContext";
@@ -21,15 +21,17 @@ function Plan(props) {
   return (
     <Col>
       <Card className={`gap-1 rounded-3 ${selectedPlan === props.no ? "border-info border-2" : ""} `}>
-        <Card.Header as="h5" className={`text-center ${props.plan.bestValue ? "bg-info" : " bg-white border-white text-white"}`}>
+        <Card.Header as="h6" className={`text-center ${props.plan.bestValue ? "bg-info" : " bg-white border-white text-white"}`}>
           BEST VALUE
         </Card.Header>
         <Card.Body className="gap-3">
-          <Card.Title className="text-center fs-3">{props.plan.name}</Card.Title>
-          <Card.Subtitle className="text-center fs-5">{props.plan.period}</Card.Subtitle>
+          <Card.Title className="text-center fs-5">
+            <strong>{props.plan.name}</strong>
+          </Card.Title>
+          <Card.Subtitle className="text-center fs-6">{props.plan.period}</Card.Subtitle>
           <Container className="d-flex justify-content-between border-bottom mt-3">
-            <p className="fs-4">{props.plan.items} items</p>
-            <p className="fs-4 fw-bolder">{props.plan.price} kr</p>
+            <p className="fs-5">{props.plan.items} items</p>
+            <p className="fs-5 fw-bolder">{props.plan.price} kr</p>
           </Container>
           <Button
             variant="white"
@@ -47,7 +49,9 @@ function Plan(props) {
             </Button>
           </Container>
           <div className={!showList && `d-none d-sm-block`}>
-            <h5 className="mt-4">What’s included?</h5>
+            <h6 className="mt-4">
+              <strong>What’s included?</strong>
+            </h6>
             <ul>{productList}</ul>
           </div>
         </Card.Body>
