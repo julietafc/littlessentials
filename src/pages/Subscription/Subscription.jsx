@@ -82,7 +82,7 @@ export default function Subscription(props) {
         <Row>
           <div className={`${styles.stepsFormWrapper} col-xl-8 `}>
             <Steps step={step} setStep={setStep} infoArr={infoArr} setTotalSteps={setTotalSteps} />
-            <ProgressBar now={now} variant="info" className="w-100" />
+            <ProgressBar now={now} variant="primary" className="w-100" />
             <div className="col-12 p-2">
               <Button
                 disabled={step <= 1}
