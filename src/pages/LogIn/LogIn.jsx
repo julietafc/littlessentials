@@ -44,7 +44,7 @@ export default function LogIn() {
           <Card.Body>
             <h2 className="text-center mb-4">Log In</h2>
             {error && <Alert variant="danger">{error}</Alert>}
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} className="border-bottom pb-2">
               <Form.Group id="email">
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="email" ref={emailRef} required></Form.Control>
@@ -57,7 +57,23 @@ export default function LogIn() {
                 Log In
               </Button>
             </Form>
-            <div className="w-100 text-center mt-3 ">
+
+            <Button
+              className="w-100 mt-4 btn-desert"
+              onClick={() => {
+                setLoading(true);
+                loginWithGoogle().then((ress) => {
+                  setLoading(false);
+                  if (!inSubscription) {
+                    navigate("/subscription", { replace: true });
+                  }
+                });
+              }}
+            >
+              Log In With Google
+            </Button>
+
+            <div className="w-100 text-center mt-4 border-top pt-2 ">
               <Link to="/forgot-password">Forgot Password</Link>
             </div>
           </Card.Body>

@@ -35,7 +35,7 @@ function Plan(props) {
           </Container>
           <Button
             variant="white"
-            className={`w-100 border-dark mt-3 ${selectedPlan === props.no ? "btn-sun" : ""}`}
+            className={`w-100 border-dark mt-3 ${selectedPlan === props.no ? "btn-sun" : ""} ${styles.btnHover}`}
             onClick={() => {
               setSelectedPlan(props.no);
               handleLocalStorage(props.no);

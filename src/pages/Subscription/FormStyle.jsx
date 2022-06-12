@@ -26,7 +26,7 @@ export default function FormStyle(props) {
       <Row className="justify-content-around mt-3 options">
         <Button
           variant="white"
-          className={`col-4 col-xl-2 border-dark ${selectedStyle === 1 ? "btn-sun" : ""}`}
+          className={`col-4 col-xl-2 border-dark ${selectedStyle === 1 ? "btn-sun" : ""} ${styles.btnHover}`}
           onClick={() => {
             setSelectedStyle(1);
             handleLocalStorage(1);
@@ -36,7 +36,7 @@ export default function FormStyle(props) {
         </Button>
         <Button
           variant="white"
-          className={`col-4 col-xl-2 border-dark ${selectedStyle === 2 ? "btn-sun" : ""}`}
+          className={`col-4 col-xl-2 border-dark ${selectedStyle === 2 ? "btn-sun" : ""} ${styles.btnHover}`}
           style={{ "--bs-border-opacity": " .5" }}
           onClick={() => {
             setSelectedStyle(2);
@@ -47,7 +47,7 @@ export default function FormStyle(props) {
         </Button>
         <Button
           variant="white"
-          className={`col-4 col-xl-2 border-dark ${selectedStyle === 3 ? "btn-sun" : ""}`}
+          className={`col-4 col-xl-2 border-dark ${selectedStyle === 3 ? "btn-sun" : ""} ${styles.btnHover}`}
           onClick={() => {
             setSelectedStyle(3);
             handleLocalStorage(3);

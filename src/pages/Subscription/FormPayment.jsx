@@ -4,6 +4,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { useSubscription } from "../../contexts/SubscriptionContext";
 import { postSubscription } from "../../modules/fetchSubscription";
 import { useNavigate } from "react-router-dom";
+import ButtonCmp from "../../components/Button/Button";
 import styles from "./subscription.module.scss";
 
 export default function FormPayment(props) {
@@ -76,9 +77,8 @@ export default function FormPayment(props) {
           <div>
             <object id="hand" data="assets/one_line.svg" width="40%" height="40%" type="image/svg+xml"></object>
             <h3>{`Thanks for your preference ${userName}!`}</h3>
-            <Button variant="primary" type="button" className={`mt-3 px-5 text-primary rounded-pill bg-transparent`} onClick={resetAndBack}>
-              Take me back home
-            </Button>
+
+            <ButtonCmp label="Take me back home" title="link to home page" path="/" />
           </div>
         </div>
       )}
