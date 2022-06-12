@@ -10,13 +10,15 @@ export default function HeaderLanding() {
   return (
     <Navbar className="header_landing" collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container className="header_wrapper">
-        <Link to="/">
+        <Link title="link to homepage" to="/">
           <LElement width="55" color="white"></LElement>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Link to="/">Discover more</Link>
+            <Link title="link to Littlessentials' website" to="/">
+              Discover more
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "../Subscription/subscription.module.scss";
 import { useAuth } from "../../contexts/AuthContext";
 import { useSubscription } from "../../contexts/SubscriptionContext";
@@ -79,7 +79,7 @@ export default function FormSave(props) {
                   setShowLogin(true);
                 }}
               >
-                Log in{" "}
+                Log in
               </Button>
             </div>
           </Card>

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../Subscription/subscription.module.scss";
-import { Container, Row, Button, Col, Spinner } from "react-bootstrap";
+import { Container, Row, Button, Col } from "react-bootstrap";
 import { useSubscription } from "../../contexts/SubscriptionContext";
 import { clothStyles } from "../../modules/options";
 
@@ -23,7 +23,7 @@ export default function FormStyle(props) {
       <Row>
         <h3 className="text-center">What style do you prefer?</h3>
       </Row>
-      <Row className="justify-content-around mt-3">
+      <Row className="justify-content-around mt-3 options">
         <Button
           variant="white"
           className={`col-4 col-xl-2 border-dark ${selectedStyle === 1 ? "btn-sun" : ""}`}
@@ -31,7 +31,6 @@ export default function FormStyle(props) {
             setSelectedStyle(1);
             handleLocalStorage(1);
           }}
-          // autoFocus={selectedStyle === 1 || !selectedStyle}
         >
           playful
         </Button>
@@ -43,7 +42,6 @@ export default function FormStyle(props) {
             setSelectedStyle(2);
             handleLocalStorage(2);
           }}
-          // autoFocus={selectedStyle === 2}
         >
           earth
         </Button>
@@ -54,7 +52,6 @@ export default function FormStyle(props) {
             setSelectedStyle(3);
             handleLocalStorage(3);
           }}
-          // autoFocus={selectedStyle === 3}
         >
           poetic
         </Button>

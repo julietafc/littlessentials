@@ -64,7 +64,6 @@ export default function UpdateProfile() {
           <Card>
             <Card.Body>
               <h2 className="text-center mb-4">Update Profile</h2>
-              {/* {theUser.email} */}
               {error && <Alert variant="danger">{error}</Alert>}
               <Form onSubmit={handleSubmit}>
                 <Form.Group id="userName" className="mb-4">

@@ -6,7 +6,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "../sass/layout/layout.scss";
 import Header from "../components/Header/Header";
-import { Link } from "react-router-dom";
 import SoMe from "../components/SoMe/SoMe";
 export default function PartnerWithUs() {
   return (

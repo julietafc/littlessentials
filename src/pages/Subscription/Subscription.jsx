@@ -21,12 +21,11 @@ export default function Subscription(props) {
   const [right, setRight] = useState(null);
   const [left, setLeft] = useState(null);
 
-  const [position, setPosition] = useState(0);
   const [totalSteps, setTotalSteps] = useState(0);
 
   const [acepted, setAcepted] = useState(false);
 
-  const { theUser, theUserName } = useAuth();
+  const { theUser } = useAuth();
 
   const { selectedSize, selectedStyle, selectedPlan, address, deliveryAt, setSelectedSize, setSelectedStyle, setSelectedPlan, setAddress, setDeliveryAt, isPaid, setIsPaid, inSubscription, setInSubscription, step, setStep } = useSubscription();
 

@@ -36,8 +36,6 @@ export default function Home(props) {
     };
   }, []);
 
-  // window.addEventListener("scroll", handleScroll);
-
   let top = window.pageYOffset;
 
   const body = document.body,
@@ -50,7 +48,6 @@ export default function Home(props) {
   let second = 600 < Number(offsetY) && 2200 > Number(offsetY);
   let thirth = Number(offsetY) > 3900;
   let color = first ? "white" : second ? "#d0e2fd" : thirth ? "#d0e2fd" : "white";
-  // let color = thirth ? "#d0e2fd" : second ? "#d0e2fd" : first ? "white" : "#d0e2fd";
   let translate = first ? "translateX(100%)" : second ? "translateX(0)" : thirth ? "translateX(0)" : "translateX(-100%)";
 
   const styleDynamic = {
@@ -62,13 +59,11 @@ export default function Home(props) {
     height: "100%",
     backgroundColor: color,
     transform: translate,
-    // filter: "blur(50px)",
     transition: "background-color .5s ease, transform .5s ease",
   };
 
   return (
     <div className="Home">
-      {/* <div className="backGround" style={styleDynamic}></div> */}
       <Header />
       <div className="layout">
         <SectionIntro />
@@ -78,7 +73,7 @@ export default function Home(props) {
         <SectionManifestoDk className="manifesto_desktop" />
         <SectionCarousel />
         <SectionTestimonial />
-        <SectionNewsletter heading="Receive 10% off your first order when you sign up for our newsletter." />
+        <SectionNewsletter title="Stay updated" heading="Receive 10% off your first order when you sign up for our newsletter." />
         <SectionIG />
       </div>
       <div className="floating_actions">

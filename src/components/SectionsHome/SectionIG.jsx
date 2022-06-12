@@ -1,7 +1,6 @@
 import "./SectionManifesto.scss";
 import Button from "../Button/Button";
 import "./SectionIG.scss";
-import { Link } from "react-router-dom";
 export default function SectionIG(props) {
   return (
     <div className="wrapper">

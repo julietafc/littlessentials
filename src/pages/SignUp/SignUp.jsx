@@ -20,7 +20,6 @@ export default function SignUp(props) {
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
-    // function handleSubmit(e) {
     e.preventDefault();
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {

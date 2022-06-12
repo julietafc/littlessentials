@@ -119,7 +119,6 @@ export default function Policy() {
                     <p>
                       Additionally, you can opt-out of some of these services by visiting the Digital Advertising Alliance’s opt-out portal at
                       <a title="info about opt out" href="http://optout.aboutads.info/">
-                        {" "}
                         http://optout.aboutads.info/
                       </a>
                       .

@@ -2,7 +2,7 @@ import CardsManifesto from "../Cards/CardsManifesto";
 import "./SectionManifesto.scss";
 import ButtonCmp from "../Button/Button";
 
-export default function SectionValues(props) {
+export default function SectionValues() {
   return (
     <div className="wrapper">
       <section className="manifestomb">

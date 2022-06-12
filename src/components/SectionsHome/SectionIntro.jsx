@@ -1,16 +1,9 @@
-import React, { useState } from "react";
-// import { Button } from "react-bootstrap";
+import React from "react";
 import styles from "./SectionIntro.module.scss";
 import ButtonCmp from "../Button/Button";
-import { useAuth } from "../../contexts/AuthContext";
 import "../../App.scss";
 
 export default function SectionIntro() {
-  const { setShowSignup, setShowLogin } = useAuth();
-  const [hover, setHover] = useState(false);
-  const handleMauseOver = () => setHover(true);
-  const handleMauseOut = () => setHover(false);
-
   return (
     <div className={styles.wrapper}>
       <section className={styles.SecInfo}>

@@ -6,7 +6,6 @@ footer {
   color: #fff;
   align-items: center;
   padding: 3rem 4rem;
-  // margin-top: 4rem;
 
   .footer_wrapper {
     max-width: 1300px;
@@ -35,9 +34,6 @@ footer {
           &:hover {
             text-decoration: underline;
           }
-        }
-        .form-control {
-          background-color: var(--blackIsh);
         }
       }
 

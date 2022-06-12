@@ -14,8 +14,6 @@ import PartnerWithUs from "./pages/PartnerWithUs";
 import Policy from "./pages/Policy";
 import NGOS from "./pages/NGOS";
 import PromoBanner from "./components/PromoBanner/PromoBanner";
-// import SignUp from "./pages/SignUp/SignUp";
-// import LogIn from "./pages/LogIn/LogIn";
 import Profile from "./pages/Profile/Profile";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import ScrollToTop from "./ScrollToTop";
@@ -43,7 +41,6 @@ function App() {
           <Route path="brands" element={<Brands />} />
           <Route path="get-in-touch" element={<GetInTouch />} />
           <Route path="partner-with-us" element={<PartnerWithUs />} />
-
           <Route path="forgot-password" element={<ForgotPassword />} />
           <Route path="policy" element={<Policy />} />
           <Route path="ngos" element={<NGOS />} />

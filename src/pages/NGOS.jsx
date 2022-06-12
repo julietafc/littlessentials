@@ -25,7 +25,6 @@ export default function NGOS() {
               <Card.Link href="https://moedrehjaelpen.dk/" title="external link to moedrehjaelpen oficial website" target="_blank">
                 https://moedrehjaelpen.dk/
               </Card.Link>
-              {/* <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text> */}
             </Card.Body>
           </Card>
           <Card className="card_brand" style={{ width: "18rem" }}>
@@ -35,7 +34,6 @@ export default function NGOS() {
               <Card.Link href="https://redbarnet.dk/" title="external link to red barnet oficial website" target="_blank">
                 https://redbarnet.dk/
               </Card.Link>
-              {/* <Card.Text>Some quick example text to build on the card title and make up the bulk of the card's content.</Card.Text> */}
             </Card.Body>
           </Card>
         </div>

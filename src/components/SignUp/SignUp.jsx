@@ -1,3 +1,4 @@
+import styles from "../../pages/LogIn/logIn.module.scss";
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 
@@ -31,7 +32,7 @@ export default function SignUp() {
 
   return (
     <>
-      <Card>
+      <Card className={styles.card}>
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}

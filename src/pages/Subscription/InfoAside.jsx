@@ -9,7 +9,7 @@ export default function InfoAside(props) {
   return (
     <aside>
       <h3>Your subscription</h3>
-      <Card style={{ width: "18rem" }} className="mb-2 bg-transparent p-5 border-0 gap-3">
+      <Card style={{ width: "18rem" }} className="mb-2 bg-transparent p-2 border-0 gap-3">
         <Card.Body className="border-bottom border-2 border-sun p-3 rounded-3">
           <Card.Title>
             <strong>Size:</strong>

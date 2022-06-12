@@ -16,22 +16,32 @@
   .sc-header--img {
     width: 15%;
   }
+  .sc-message {
+    width: 400px;
+  }
 }
-// @media screen and (max-width: 769px) {
-//   .sc-chat-window.opened,
-//   .sc-chat-window.closed {
-//     z-index: 99;
-//     height: 65%;
-//     width: 90%;
+@media screen and (max-width: 769px) {
+  .sc-chat-window {
+    right: 10px;
+    bottom: 110px;
+  }
+  .sc-chat-window.opened,
+  .sc-chat-window.closed {
+    z-index: 99;
+    height: 65%;
+    width: 90%;
 
-//     .sc-header {
-//       background-color: var(--desert);
-//     }
-//     .sc-message {
-//       width: 400px;
-//     }
-//     .sc-message--text {
-//       font-size: 16px;
-//     }
-//   }
-// }
+    .sc-header {
+      background-color: var(--desert);
+    }
+    .sc-message-list {
+      padding: 40px 20px;
+    }
+    .sc-message {
+      width: 300px;
+    }
+    .sc-message--text {
+      font-size: 16px;
+    }
+  }
+}
