@@ -56,7 +56,8 @@ export default function Header() {
         localStorage.removeItem("subscriber");
       })
       .then(() => {
-        if (activePage === "subscription") {
+        console.log();
+        if (activePage === "/subscription") {
           navigate("/");
         }
       });
