@@ -49,6 +49,24 @@ export function SubscriptionProvider({ children }) {
     }
   }, [theUser]);
 
+  function cleaner() {
+    setSelectedSize(null);
+
+    setSelectedStyle(null);
+
+    setSelectedPlan(null);
+
+    setAddress(null);
+
+    setDeliveryAt(null);
+
+    setInSubscription(false);
+
+    setIsPaid(false);
+
+    setStep(1);
+  }
+
   const value = {
     selectedSize,
     setSelectedSize,
@@ -66,6 +84,7 @@ export function SubscriptionProvider({ children }) {
     setIsPaid,
     step,
     setStep,
+    cleaner,
   };
 
   return <SubscriptionContext.Provider value={value}>{children}</SubscriptionContext.Provider>;

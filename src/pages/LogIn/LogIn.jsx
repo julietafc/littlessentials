@@ -4,7 +4,7 @@ import { Form, Button, Card, Alert, Container } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import { useButtonsState } from "../../contexts/ButtonsStateContext";
 import { useSubscription } from "../../contexts/SubscriptionContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function LogIn() {
   const emailRef = useRef();
@@ -16,7 +16,9 @@ export default function LogIn() {
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
+  let location = useLocation();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -27,8 +29,10 @@ export default function LogIn() {
       await login(emailRef.current.value, passwordRef.current.value).then((ress) => {
         console.log(ress);
       });
-      if (!inSubscription) {
-        navigate("/profile");
+      if (location.pathname === "/subscription") {
+        navigate("/subscription");
+      } else {
+        navigate("/profile", { replace: true });
       }
     } catch {
       setError("Fail to sign in");
@@ -64,7 +68,10 @@ export default function LogIn() {
                 setLoading(true);
                 loginWithGoogle().then((ress) => {
                   setLoading(false);
-                  if (!inSubscription) {
+                  console.log(location.pathname);
+                  if (location.pathname === "/subscription") {
+                    navigate("/subscription");
+                  } else {
                     navigate("/profile", { replace: true });
                   }
                 });

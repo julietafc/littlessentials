@@ -8,7 +8,7 @@ import styles from "../../sass/layout/buttons_links.module.scss";
 
 export default function BtnLogOut(props) {
   const { logout } = useAuth();
-  const { inSubscription, setInSubscription } = useSubscription();
+  const { inSubscription, setInSubscription, cleaner } = useSubscription();
   const navigate = useNavigate();
 
   const [hover, setHover] = useState(false);
@@ -22,6 +22,7 @@ export default function BtnLogOut(props) {
       })
       .then(() => {
         if (inSubscription) {
+          cleaner();
           navigate("/");
           setInSubscription(false);
         }

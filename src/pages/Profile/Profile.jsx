@@ -13,33 +13,45 @@ import "./Profile.scss";
 
 import { Card, Button, Alert, Container } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
+import { useSubscription } from "../../contexts/SubscriptionContext";
 import { Link, useNavigate } from "react-router-dom";
 import { getSubscription, patchSubscription, postSubscription } from "../../modules/fetchSubscription";
 
 export default function Profile(props) {
   const { theUser, logout, theUserName } = useAuth();
+  const { setSelectedSize, setSelectedStyle, setSelectedPlan } = useSubscription();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [subscriptionRes, setSubscription] = useState(undefined);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!localStorage.getItem("subscriber")) {
+    if (!localStorage.getItem("subscriber") || theUser) {
       setLoading(true);
       getSubscription(theUser.uid).then((res) => {
-        console.log(res);
+        setSubscription(res[0].subscription);
+        console.log(res[0].subscription);
         localStorage.setItem("subscriber", JSON.stringify(res[0].subscription));
         setLoading(false);
       });
     }
-    if (theUser) {
-      setLoading(true);
-      getSubscription(theUser.uid).then((res) => {
-        console.log(res);
-        localStorage.setItem("subscriber", JSON.stringify(res[0].subscription));
-        setLoading(false);
-      });
-    }
+    // if (theUser) {
+    //   setLoading(true);
+    //   getSubscription(theUser.uid).then((res) => {
+    //     console.log(res);
+    //     localStorage.setItem("subscriber", JSON.stringify(res[0].subscription));
+    //     setLoading(false);
+    //   });
+    // }
   }, []);
+
+  useEffect(() => {
+    if (subscriptionRes) {
+      setSelectedSize(Number(subscriptionRes.size.index));
+      setSelectedStyle(Number(subscriptionRes.clothStyle.index));
+      setSelectedPlan(Number(subscriptionRes.plan.index));
+    }
+  }, [subscriptionRes]);
 
   // useEffect(() => {
   //   const abortFetch = new AbortController();
@@ -116,7 +128,7 @@ export default function Profile(props) {
           </Row>
         </Tab.Container>
       </section>
-      <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
+      {/* <Container className="d-flex align-items-center justify-content-center" style={{ minHeight: "100vh" }}>
         <div className="w-100" style={{ maxWidth: "400px" }}>
           <Card>
             <Card.Body>
@@ -143,7 +155,7 @@ export default function Profile(props) {
             </Button>
           </div>
         </div>
-      </Container>
+      </Container> */}
       <Footer />
     </>
   );

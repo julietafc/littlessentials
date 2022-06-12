@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Header.scss";
-
+import { useSubscription } from "../../contexts/SubscriptionContext";
 import LElement from "../LElement/LElement";
 import { Link } from "react-router-dom";
 
@@ -22,6 +22,7 @@ export default function Header() {
   let location = useLocation();
   const navigate = useNavigate();
   const { theUser, logout } = useAuth();
+  const { cleaner } = useSubscription();
   const [activePage, setActivePage] = useState("");
   const [activeDrop, setActiveDrop] = useState("");
 
@@ -57,6 +58,7 @@ export default function Header() {
       })
       .then(() => {
         console.log();
+        cleaner();
         if (activePage === "/subscription") {
           navigate("/");
         }
