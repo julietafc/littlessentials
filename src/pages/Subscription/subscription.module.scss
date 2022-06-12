@@ -135,6 +135,22 @@ input[type="radio"] {
   display: block;
 }
 
+section.appearSMS {
+  display: flex;
+  min-height: 300px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 110%;
+  opacity: 0;
+  transform-origin: center;
+  animation: appearing 0.5s ease 1 forwards;
+
+  p {
+    margin-top: 1rem;
+  }
+}
+
 .appear {
   opacity: 0;
   transform-origin: center;
