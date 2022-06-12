@@ -22,7 +22,7 @@ export default function Footer(props) {
                 Facebook
               </a>
             </div>
-            <MailchimpFormContainer />
+            <MailchimpFormContainer className="footer_news" />
           </div>
           <div className="nav">
             <div className="column">
@@ -64,7 +64,7 @@ export default function Footer(props) {
                 Get in touch
               </Link>
               <Link title="link to contact form for potential partners" to="/partner-with-us">
-                Partner with us{" "}
+                Partner with us
               </Link>
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function Footer(props) {
             </Link>
           </div>
 
-          <Link to="/">
+          <Link title="link to homepage" to="/">
             <LElement width="35" color="white"></LElement>
           </Link>
         </div>
