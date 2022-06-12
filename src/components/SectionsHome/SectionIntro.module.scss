@@ -60,6 +60,39 @@
   }
 }
 
+.parallaxWrapper {
+  overflow-x: hidden;
+  perspective: 300px;
+}
+
+.parallaxGroup {
+  position: relative;
+  height: 90vh;
+  transform-style: preserve-3d;
+}
+
+.parallaxLayer {
+  position: absolute;
+  inset: 0;
+  top: 10rem;
+  left: 10rem;
+}
+
+.baseLayer {
+  top: 5rem;
+  transform: translateZ(-300px) scale(1.5);
+}
+
+.midLayer {
+  top: 15rem;
+  left: 25rem;
+  transform: translateZ(-150px) scale(1.5);
+}
+
+.topLayer {
+  transform: translateZ(0) scale(0.5);
+}
+
 @media screen and (max-width: 769px) {
   .SecInfo {
     flex-direction: column;

@@ -3,6 +3,7 @@ import React from "react";
 
 import Chat from "../components/Chat/Chat";
 import "../sass/layout/layout.scss";
+import styles from "../components/SectionsHome/SectionIntro.module.scss";
 
 import SectionIntro from "../components/SectionsHome/SectionIntro";
 import SectionManifesto from "../components/SectionsHome/SectionManifesto";
@@ -63,24 +64,36 @@ export default function Home(props) {
   };
 
   return (
-    <div className="Home">
-      <Header />
-      <div className="layout">
-        <SectionIntro />
-        <SectionWorks />
-        <SectionPlans />
-        <SectionManifesto className="manifesto_mobile" />
-        <SectionManifestoDk className="manifesto_desktop" />
-        <SectionCarousel />
-        <SectionTestimonial />
-        <SectionNewsletter title="Stay updated" heading="Receive 10% off your first order when you sign up for our newsletter." />
-        <SectionIG />
+    <div className={`Home ${styles.parallaxWrapper}`}>
+      <div className={`${styles.parallaxGroup}`}>
+        <div className={`${styles.parallaxLayer} ${styles.baseLayer}`}>
+          <img src="../assets/webP/littlessentials_playful-package2.webp" alt="kids clothes" />
+        </div>
+        <div className={`${styles.parallaxLayer} ${styles.midLayer}`}>
+          <img src="../assets/img02.webp" alt="girl holding a camera toy" />
+        </div>
+        <div className={`${styles.parallaxLayer} ${styles.topLayer}`}>
+          <img src="../assets/webP/littlessentials_earth-package.webp" alt="mix of products for children" />
+        </div>
+
+        <Header />
+        <div className="layout">
+          <SectionIntro />
+          <SectionWorks />
+          <SectionPlans />
+          <SectionManifesto className="manifesto_mobile" />
+          <SectionManifestoDk className="manifesto_desktop" />
+          <SectionCarousel />
+          <SectionTestimonial />
+          <SectionNewsletter title="Stay updated" heading="Receive 10% off your first order when you sign up for our newsletter." />
+          <SectionIG />
+        </div>
+        <div className="floating_actions">
+          <Chat />
+          <Co2Button />
+        </div>
+        <Footer />
       </div>
-      <div className="floating_actions">
-        <Chat />
-        <Co2Button />
-      </div>
-      <Footer />
     </div>
   );
 }
