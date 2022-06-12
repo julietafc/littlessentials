@@ -73,7 +73,7 @@ export default function Faq() {
               >
                 Chat now
               </Button>
-            </span>{" "}
+            </span>
             with our friendly team
           </p>
         </section>
