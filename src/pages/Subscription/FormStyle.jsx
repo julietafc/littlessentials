@@ -23,7 +23,7 @@ export default function FormStyle(props) {
       <Row>
         <h3 className="text-center">What style do you prefer?</h3>
       </Row>
-      <Row className="justify-content-around mt-3">
+      <Row className="justify-content-around mt-3 options">
         <Button
           variant="white"
           className={`col-4 col-xl-2 border-dark ${selectedStyle === 1 ? "btn-sun" : ""}`}
