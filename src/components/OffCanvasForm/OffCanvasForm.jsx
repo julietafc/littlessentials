@@ -42,7 +42,7 @@ export default function OffCanvasForm({ btnLabel, name, children, ...props }) {
           onClick={handleShow}
           onMouseOver={handleMauseOver}
           onMouseOut={handleMauseOut}
-          className={`pt-0 pb-0 ${props.textColor ? props.textColor : "text-white"} text-decoration-none ${!hover && "text-opacity-50"} ${styles.linkButton}`}
+          className={`pt-0 pb-0 ${props.textColor ? props.textColor : "text-white"} text-decoration-none ${hover && "text-opacity-50"} ${styles.linkButton}`}
         >
           {btnLabel}
         </Button>
