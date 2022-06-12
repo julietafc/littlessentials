@@ -10,7 +10,7 @@ export default function LogIn() {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const { login } = useAuth();
+  const { login, loginWithGoogle } = useAuth();
   const { setShowSignup, setShowLogin } = useButtonsState();
   const { inSubscription, setInSubscription } = useSubscription();
 
@@ -65,7 +65,7 @@ export default function LogIn() {
                 loginWithGoogle().then((ress) => {
                   setLoading(false);
                   if (!inSubscription) {
-                    navigate("/subscription", { replace: true });
+                    navigate("/profile", { replace: true });
                   }
                 });
               }}
